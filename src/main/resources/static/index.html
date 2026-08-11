@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PoE Lens</title>
+    <style>body{max-width:900px;margin:3rem auto;font:16px system-ui;padding:0 1rem}textarea{width:100%;min-height:12rem}button{margin:1rem 0;padding:.7rem 1rem}section{border-top:1px solid #ddd;padding:1rem 0}small{color:#555}</style>
+</head>
+<body>
+<h1>PoE Lens</h1>
+<p>Paste a raw Path of Building XML export to explain its verified mechanics.</p>
+<textarea id="pobInput" aria-label="Path of Building export" placeholder="&lt;PathOfBuilding&gt;...&lt;/PathOfBuilding&gt;"></textarea>
+<br><button id="analyze">Analyze build</button>
+<main id="result" aria-live="polite"></main>
+<script>
+const result = document.querySelector('#result');
+document.querySelector('#analyze').addEventListener('click', async () => {
+  result.textContent = 'Analyzing…';
+  const response = await fetch('/api/analyses', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pobInput:document.querySelector('#pobInput').value})});
+  const body = await response.json();
+  if (!response.ok) { result.textContent = body.message; return; }
+  const list = (title, values) => `<section><h2>${title}</h2><ul>${values.map(value => `<li>${typeof value === 'string' ? value : `${value.title}: ${value.explanation}`}</li>`).join('')}</ul></section>`;
+  result.innerHTML = `<p><strong>${body.overview}</strong><br><small>PoE ${body.gameVersion}</small></p>` + list('Core mechanics', body.interactions) + list('Contributors', body.contributors) + list('Defence', body.defences) + list('Resource sustain', body.resourceSustain) + list('Unverified', body.unverified) + list('Evidence', body.evidence.map(e => `${e.name} — ${e.sourceUrl} (${e.collectedAt}, reviewed: ${e.reviewed})`));
+});
+</script>
+</body>
+</html>

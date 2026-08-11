@@ -20,7 +20,8 @@ document.querySelector('#analyze').addEventListener('click', async () => {
   const body = await response.json();
   if (!response.ok) { result.textContent = body.message; return; }
   const list = (title, values) => `<section><h2>${title}</h2><ul>${values.map(value => `<li>${typeof value === 'string' ? value : `${value.title}: ${value.explanation}`}</li>`).join('')}</ul></section>`;
-  result.innerHTML = `<p><strong>${body.overview}</strong><br><small>PoE ${body.gameVersion}</small></p>` + list('Core mechanics', body.interactions) + list('Contributors', body.contributors) + list('Defence', body.defences) + list('Resource sustain', body.resourceSustain) + list('Unverified', body.unverified) + list('Evidence', body.evidence.map(e => `${e.name} — ${e.sourceUrl} (${e.collectedAt}, reviewed: ${e.reviewed})`));
+  const analysis = body.returnObject;
+  result.innerHTML = `<p><strong>${analysis.overview}</strong><br><small>PoE ${analysis.gameVersion}</small></p>` + list('Core mechanics', analysis.interactions) + list('Contributors', analysis.contributors) + list('Defence', analysis.defences) + list('Resource sustain', analysis.resourceSustain) + list('Unverified', analysis.unverified) + list('Evidence', analysis.evidence.map(e => `${e.name} — ${e.sourceUrl} (${e.collectedAt}, reviewed: ${e.reviewed})`));
 });
 </script>
 </body>

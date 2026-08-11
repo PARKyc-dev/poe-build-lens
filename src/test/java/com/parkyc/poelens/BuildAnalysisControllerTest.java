@@ -32,7 +32,8 @@ class BuildAnalysisControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"pobInput\":\"\"}"))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.code").value("MISSING_BUILD_INPUT"));
+                .andExpect(jsonPath("$.code").value("MISSING_BUILD_INPUT"))
+                .andExpect(jsonPath("$.message").value("PoB build input is required."));
     }
 
     @Test
@@ -46,10 +47,12 @@ class BuildAnalysisControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"pobInput\":" + objectMapper.writeValueAsString(pobExport) + "}"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.gameVersion").value("3.27"))
-                .andExpect(jsonPath("$.overview").value("Level 90 Witch using Fireball"))
-                .andExpect(jsonPath("$.interactions[0].title").value("Fireball deals fire spell damage"))
-                .andExpect(jsonPath("$.evidence[0].sourceUrl").value("https://www.pathofexile.com/"));
+                .andExpect(jsonPath("$.code").value("OK"))
+                .andExpect(jsonPath("$.message").value("SUCCESS"))
+                .andExpect(jsonPath("$.returnObject.gameVersion").value("3.27"))
+                .andExpect(jsonPath("$.returnObject.overview").value("Level 90 Witch using Fireball"))
+                .andExpect(jsonPath("$.returnObject.interactions[0].title").value("Fireball deals fire spell damage"))
+                .andExpect(jsonPath("$.returnObject.evidence[0].sourceUrl").value("https://www.pathofexile.com/"));
     }
 
     @Test
@@ -61,7 +64,7 @@ class BuildAnalysisControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"pobInput\":" + objectMapper.writeValueAsString(compress(pobExport)) + "}"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.overview").value("Level 85 Templar using Fireball"));
+                .andExpect(jsonPath("$.returnObject.overview").value("Level 85 Templar using Fireball"));
     }
 
     @Test
@@ -73,7 +76,28 @@ class BuildAnalysisControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"pobInput\":" + objectMapper.writeValueAsString(pobExport) + "}"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.interactions[0].title").value("Arc chains lightning spell damage"));
+                .andExpect(jsonPath("$.returnObject.interactions[0].title").value("Arc chains lightning spell damage"));
+    }
+
+    @Test
+    void rejectsInvalidPathOfBuildingInput() throws Exception {
+        mockMvc.perform(post("/api/analyses")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"pobInput\":\"not-a-pob-export\"}"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("INVALID_POB_INPUT"));
+    }
+
+    @Test
+    void rejectsUnsupportedGameVersion() throws Exception {
+        String pobExport = "<PathOfBuilding><Build level=\"90\" className=\"Witch\" gameVersion=\"3.26\"/>"
+                + "<Skills><Skill><Gem nameSpec=\"Fireball\"/></Skill></Skills></PathOfBuilding>";
+
+        mockMvc.perform(post("/api/analyses")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"pobInput\":" + objectMapper.writeValueAsString(pobExport) + "}"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("UNSUPPORTED_GAME_VERSION"));
     }
 
     private String compress(String value) throws Exception {

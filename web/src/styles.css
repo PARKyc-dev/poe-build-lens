@@ -1,0 +1,40 @@
+:root {
+  color: #242424;
+  background: #ffffff;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+textarea {
+  min-height: 12rem;
+  resize: vertical;
+}
+
+button {
+  justify-self: start;
+  padding: 0.7rem 1rem;
+}
+
+section {
+  border-top: 1px solid #dddddd;
+  padding: 1rem 0;
+}
+
+.overview small {
+  display: block;
+  color: #555555;
+}

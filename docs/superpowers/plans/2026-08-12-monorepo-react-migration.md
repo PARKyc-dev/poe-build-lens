@@ -22,6 +22,7 @@
 ### Task 1: Move the Spring Boot project behind the `api/` boundary
 
 **Files:**
+- Create: `api/.gitignore`
 - Move: `build.gradle` → `api/build.gradle`
 - Move: `settings.gradle` → `api/settings.gradle`
 - Move: `gradlew` → `api/gradlew`
@@ -77,6 +78,7 @@ git commit -m "refactor: Spring API를 api 디렉터리로 이동"
 ### Task 2: Build the typed React analysis flow test-first
 
 **Files:**
+- Create: `web/.gitignore`
 - Create: `web/package.json`
 - Create: `web/package-lock.json`
 - Create: `web/index.html`
@@ -90,6 +92,7 @@ git commit -m "refactor: Spring API를 api 디렉터리로 이동"
 - Create: `web/src/main.tsx`
 - Create: `web/src/styles.css`
 - Create: `web/src/test/setup.ts`
+- Create: `web/src/vite-env.d.ts`
 
 **Interfaces:**
 - Consumes: `POST /api/analyses` with `{ pobInput: string }` and the existing `code`, `message`, `returnObject` response envelope.
@@ -97,7 +100,7 @@ git commit -m "refactor: Spring API를 api 디렉터리로 이동"
 
 - [ ] **Step 1: Create the minimal Vite and test configuration**
 
-Define npm scripts `dev`, `build`, and `test`. Pin these dependencies: `react` and `react-dom` 19.2.8; TypeScript 7.0.2, Vite 8.2.1, `@vitejs/plugin-react` 6.0.5, Vitest 4.1.10, Testing Library React 16.3.2, Testing Library jest-dom 7.0.1, user-event 14.6.4, jsdom 30.0.1, `@types/react` 19.2.18, and `@types/react-dom` 19.2.4. Configure Vitest with jsdom and `src/test/setup.ts`, import `@testing-library/jest-dom/vitest` from that setup file, and configure Vite to proxy `/api` to `http://localhost:8080`.
+Define npm scripts `dev`, `build`, and `test`. Pin these dependencies: `react` and `react-dom` 19.2.8; TypeScript 7.0.2, Vite 8.2.1, `@vitejs/plugin-react` 6.0.5, Vitest 4.1.10, Testing Library React 16.3.2, Testing Library jest-dom 7.0.1, user-event 14.6.4, jsdom 29.1.1, `@types/react` 19.2.18, and `@types/react-dom` 19.2.4. Configure Vitest with jsdom and `src/test/setup.ts`, import `@testing-library/jest-dom/vitest` from that setup file, and configure Vite to proxy `/api` to `http://localhost:8080`.
 
 - [ ] **Step 2: Write failing user-flow tests**
 
@@ -194,6 +197,7 @@ git commit -m "feat: React 분석 화면 추가"
 - Create: `worker/README.md`
 - Create: `memory/decisions/003-monorepo-application-boundaries.md`
 - Modify: `AGENTS.md`
+- Modify: `WORKFLOW.md`
 - Modify: `README.md`
 - Modify: `memory/active/2026-08-12-monorepo-react-migration.md`
 - Modify: `memory/INDEX.md`
@@ -218,7 +222,7 @@ Web development: cd web && npm run dev
 Web verification: cd web && npm test -- --run && npm run build
 ```
 
-Explain that API changes must preserve or deliberately update the typed contract in `web/src/api/analysis.ts`. Document starting the API and web development servers in separate terminals and opening the Vite URL.
+Explain that API changes must preserve or deliberately update the typed contract in `web/src/api/analysis.ts`. Update `WORKFLOW.md` so cross-application work records one coordinated task, verifies each affected application, and keeps `AGENTS.md`, README, and memory aligned when boundaries or commands change. Document starting the API and web development servers in separate terminals and opening the Vite URL.
 
 - [ ] **Step 3: Perform the integrated development smoke test**
 
@@ -242,6 +246,6 @@ Record the exact commands and successful results, move the active record to `mem
 - [ ] **Step 6: Commit the harness and completion record**
 
 ```bash
-git add AGENTS.md README.md worker/README.md memory/INDEX.md memory/completed/2026-08-12-monorepo-react-migration.md memory/decisions/003-monorepo-application-boundaries.md
+git add AGENTS.md WORKFLOW.md README.md worker/README.md memory/INDEX.md memory/completed/2026-08-12-monorepo-react-migration.md memory/decisions/003-monorepo-application-boundaries.md
 git commit -m "docs: 모노레포 작업 흐름 갱신"
 ```

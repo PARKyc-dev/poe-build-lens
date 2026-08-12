@@ -12,11 +12,18 @@
 - 관련 없는 기능, 리팩터링, 서식 변경, 정리를 추가하지 않는다.
 - 요청에서 명시적으로 바꾸지 않는 한 기존 동작을 유지한다.
 - 기능 추가와 버그 수정은 먼저 집중된 테스트를 추가하거나, 요구 동작을 보여 주는 기존 테스트를 사용한다.
-- 코드 변경 완료를 보고하기 전에 전체 테스트를 실행하고 Spring Boot 패키지를 생성한다.
+- API 계약을 바꾸면 같은 변경에서 `web/src/api/analysis.ts`의 타입과 관련 테스트를 갱신한다.
+- 코드 변경 완료를 보고하기 전에 영향받은 애플리케이션의 전체 테스트와 빌드를 실행한다. API가 변경되면 Spring Boot 패키지도 생성한다.
 
 ## 프로젝트 구조
 
-PoE 빌드 분석은 기능별 최상위 패키지로 관리한다.
+PoE Lens는 애플리케이션 경계별 모노레포로 관리한다.
+
+- `web`: Vite, React, TypeScript 기반 사용자 화면과 분석 API 클라이언트
+- `api`: Spring Boot 기반 PoB 입력 검증·파싱, 메커니즘 카탈로그, 공통 HTTP 응답
+- `worker`: 향후 PoB 엔진 프로세스 관리를 위한 예약 영역. 현재는 런타임을 두지 않는다.
+
+`api`의 PoE 빌드 분석 코드는 기능별 최상위 Java 패키지로 관리한다.
 
 - `build`: HTTP 컨트롤러, PoB 파서, 분석 DTO, `BuildAnalysisService` 인터페이스와 구현체
 - `mechanics`: 로컬 메커니즘 카탈로그, JPA 엔티티·리포지터리, `MechanicService` 인터페이스와 구현체
@@ -24,6 +31,14 @@ PoE 빌드 분석은 기능별 최상위 패키지로 관리한다.
 - `config`: 코드 기반 예외와 전역 성공 응답·예외 처리
 
 메커니즘 카탈로그는 `mechanics`의 JPA 엔티티와 리포지터리를 통해 영속화한다. 개발에는 로컬 파일형 H2 데이터베이스를, 테스트에는 메모리 H2 설정을 사용한다.
+
+## 실행과 검증
+
+- API 테스트: `cd api && ./gradlew test --no-daemon`
+- API 패키지 생성: `cd api && ./gradlew bootJar --no-daemon`
+- 웹 개발 서버: `cd web && npm run dev`
+- 웹 테스트: `cd web && npm test -- --run`
+- 웹 프로덕션 빌드: `cd web && npm run build`
 
 ## 작업 인수인계
 

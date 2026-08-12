@@ -6,6 +6,8 @@
 
 ![Java](https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.0-6DB33F?logo=springboot&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-7-3178C6?logo=typescript&logoColor=white)
 ![Game](https://img.shields.io/badge/Path%20of%20Exile-1-8E2D2D)
 
 </div>
@@ -50,6 +52,44 @@ PoE 1의 빌드는 스킬 하나만으로 결정되지 않습니다. 스킬 젬�
 - 카탈로그에 없는 스킬은 미확인(`Unverified`)으로 분리해 추측성 설명을 방지
 
 현재 로컬 카탈로그는 PoE 1 버전 `3.27`을 대상으로 하며, Fireball과 Arc의 초기 데이터만 포함합니다.
+
+## 프로젝트 구조
+
+```text
+poe-lens/
+├── web/       # Vite, React, TypeScript 사용자 화면
+├── api/       # Spring Boot 분석 API
+├── worker/    # 향후 PoB 엔진 프로세스 관리 영역
+└── memory/    # 작업 상태와 장기 결정 기록
+```
+
+`web`과 `api`는 독립적으로 실행하고 검증합니다. `worker`는 향후 확장을 위한 예약 디렉터리이며 현재 실행 코드는 없습니다.
+
+## 로컬 실행
+
+API를 실행합니다.
+
+```bash
+cd api
+./gradlew bootRun
+```
+
+다른 터미널에서 웹 개발 서버를 실행합니다.
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+브라우저에서 Vite가 안내하는 주소를 엽니다. 개발 서버는 `/api` 요청을 `http://localhost:8080`의 Spring Boot API로 전달합니다.
+
+전체 검증 명령은 다음과 같습니다.
+
+```bash
+cd api && ./gradlew test --no-daemon && ./gradlew bootJar --no-daemon
+cd web && npm test -- --run && npm run build
+```
 
 ## 설계 원칙
 

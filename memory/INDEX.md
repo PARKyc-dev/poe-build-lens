@@ -2,7 +2,7 @@
 
 ## 진행 중
 
-- 진행 중인 작업 없음. 새 작업은 `active/`에 상세 문서를 만든 뒤 이 목록에 추가한다.
+- [모노레포 및 React 전환](active/2026-08-12-monorepo-react-migration.md)
 
 ## 완료
 

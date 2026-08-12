@@ -36,6 +36,8 @@ out/
 ### VS Code ###
 .vscode/
 /docs/superpowers
+/worker/spike/.cache/
+/worker/spike/reports/*.json
 
 ### macOS ###
 .DS_Store

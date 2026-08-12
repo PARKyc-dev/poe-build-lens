@@ -31,6 +31,95 @@ afterEach(() => {
 })
 
 describe('build analysis', () => {
+  it('shows the ready worker status returned by the health endpoint', async () => {
+    vi.stubGlobal('fetch', async (input: RequestInfo | URL) => {
+      if (input === '/worker/health') {
+        return Response.json({ status: 'ready' })
+      }
+      throw new Error('Unexpected request')
+    })
+
+    render(<App />)
+
+    expect(await screen.findByLabelText('PoB engine status: ready')).toBeInTheDocument()
+    expect(screen.getByText('PoB engine ready')).toBeInTheDocument()
+  })
+
+  it('shows an unavailable worker status when the health endpoint cannot be reached', async () => {
+    vi.stubGlobal('fetch', async () => { throw new Error('worker offline') })
+
+    render(<App />)
+
+    expect(await screen.findByLabelText('PoB engine status: unavailable')).toBeInTheDocument()
+    expect(screen.getByText('PoB engine unavailable')).toBeInTheDocument()
+  })
+
+  it('groups the inspect and analysis workflows in labelled panels', () => {
+    render(<App />)
+
+    expect(screen.getByText('PoB engine checking')).toBeInTheDocument()
+    expect(screen.getByRole('region', { name: 'PoB headless inspect' })).toBeInTheDocument()
+    expect(screen.getByRole('region', { name: 'Build analysis' })).toBeInTheDocument()
+  })
+
+  it('sends a PoB export to the worker and renders the active configurations', async () => {
+    vi.stubGlobal('fetch', async (input: RequestInfo | URL, init?: RequestInit) => {
+      const request = JSON.parse(String(init?.body)) as { pobXml?: string }
+      if (input !== '/worker/builds/inspect' || request.pobXml !== '<PathOfBuilding />') {
+        throw new Error('Unexpected worker inspect request')
+      }
+      return Response.json({
+        specs: [{ id: 1, title: 'Spec A' }],
+        skillSets: [{ id: 2, title: 'Skill Set B' }],
+        itemSets: [{ id: 3, title: 'Item Set C' }],
+        activeSpec: 1,
+        activeSkillSet: 2,
+        activeItemSet: 3,
+      })
+    })
+
+    render(<App />)
+    const user = userEvent.setup()
+    await user.type(screen.getByLabelText('PoB export code or XML for headless inspect'), '<PathOfBuilding />')
+    await user.click(screen.getByRole('button', { name: 'Inspect PoB' }))
+
+    expect(await screen.findByText('Spec A (active)')).toBeInTheDocument()
+    expect(screen.getByText('Skill Set B (active)')).toBeInTheDocument()
+    expect(screen.getByText('Item Set C (active)')).toBeInTheDocument()
+  })
+
+  it('keeps the previous inspect result when a later inspect request fails', async () => {
+    let inspectRequestCount = 0
+    const fetchMock = vi.fn(async (input: RequestInfo | URL) => {
+      if (input === '/worker/health') return Response.json({ status: 'ready' })
+      inspectRequestCount += 1
+      if (inspectRequestCount === 1) {
+        return Response.json({
+          specs: [{ id: 1, title: 'Spec A' }],
+          skillSets: [],
+          itemSets: [],
+          activeSpec: 1,
+          activeSkillSet: 0,
+          activeItemSet: 0,
+        })
+      }
+      return Response.json(
+        { detail: 'The PoB inspect worker is unavailable.' },
+        { status: 503 },
+      )
+    })
+    vi.stubGlobal('fetch', fetchMock)
+
+    render(<App />)
+    const user = userEvent.setup()
+    await user.click(screen.getByRole('button', { name: 'Inspect PoB' }))
+    await screen.findByText('Spec A (active)')
+    await user.click(screen.getByRole('button', { name: 'Inspect PoB' }))
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('The PoB inspect worker is unavailable.')
+    expect(screen.getByText('Spec A (active)')).toBeInTheDocument()
+  })
+
   it('submits a PoB build and renders the analysis', async () => {
     vi.stubGlobal('fetch', async (input: RequestInfo | URL, init?: RequestInit) => {
       const request = JSON.parse(String(init?.body)) as { pobInput?: string }

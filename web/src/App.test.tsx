@@ -46,9 +46,19 @@ describe('build analysis', () => {
     await user.click(screen.getByRole('button', { name: 'Analyze build' }))
 
     expect(await screen.findByText('Level 90 Witch using Fireball')).toBeInTheDocument()
+    expect(screen.getByText('PoE 3.27')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Core mechanics' })).toBeInTheDocument()
     expect(screen.getByText('Fireball deals fire spell damage: Fireball is a fire spell.')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Contributors' })).toBeInTheDocument()
+    expect(screen.getByText('Fireball', { selector: 'li' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Defence' })).toBeInTheDocument()
+    expect(screen.getByText('No defence interaction is verified by the local catalog yet.')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Resource sustain' })).toBeInTheDocument()
+    expect(screen.getByText('No resource-sustain interaction is verified by the local catalog yet.')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Unverified' })).toBeInTheDocument()
+    expect(screen.getByText('Combustion Support')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Evidence' })).toBeInTheDocument()
+    expect(screen.getByText('Fireball — https://www.pathofexile.com/ (2026-08-12, reviewed: true)')).toBeInTheDocument()
   })
 
   it('shows the API error message', async () => {
@@ -70,5 +80,38 @@ describe('build analysis', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Analyze build' }))
 
     expect(screen.getByRole('button', { name: 'Analyzing…' })).toBeDisabled()
+  })
+
+  it.each([
+    null,
+    'success',
+    {},
+    { code: 'OK', message: 'SUCCESS', returnObject: null },
+    { code: 'OK', message: 'SUCCESS', returnObject: { ...analysisResult, interactions: null } },
+  ])('shows a connection error for malformed JSON structures', async (body) => {
+    vi.stubGlobal('fetch', async () => Response.json(body))
+
+    render(<App />)
+    await userEvent.click(screen.getByRole('button', { name: 'Analyze build' }))
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('Unable to connect to the analysis API.')
+  })
+
+  it('shows a connection error for invalid JSON', async () => {
+    vi.stubGlobal('fetch', async () => new Response('not-json'))
+
+    render(<App />)
+    await userEvent.click(screen.getByRole('button', { name: 'Analyze build' }))
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('Unable to connect to the analysis API.')
+  })
+
+  it('shows a connection error when the API cannot be reached', async () => {
+    vi.stubGlobal('fetch', async () => { throw new Error('network unavailable') })
+
+    render(<App />)
+    await userEvent.click(screen.getByRole('button', { name: 'Analyze build' }))
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('Unable to connect to the analysis API.')
   })
 })

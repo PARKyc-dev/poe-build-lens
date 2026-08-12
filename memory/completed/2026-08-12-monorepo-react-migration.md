@@ -19,7 +19,7 @@ Docker, PoB 워커 구현, 운영 배포, 새 분석 기능은 범위에서 제�
 - Gradle Wrapper, 설정, Spring 운영·테스트 소스를 `api`로 이동했다.
 - 기존 정적 HTML을 제거하고 Vite·React·TypeScript 기반 `web`을 추가했다.
 - 분석 요청·응답 타입과 API 오류 처리를 `web/src/api/analysis.ts`에 정의했다.
-- 분석 성공, API 오류, 중복 요청 방지를 검증하는 React 사용자 흐름 테스트를 추가했다.
+- 분석 성공, API 오류, 해석할 수 없는 응답, 네트워크 실패, 중복 요청 방지를 검증하는 React 사용자 흐름 테스트를 추가했다.
 - Vite 개발 서버가 `/api`를 Spring Boot 포트 8080으로 전달하도록 구성했다.
 - `worker`를 향후 PoB 엔진 프로세스 관리용 예약 경계로 문서화했다.
 - `AGENTS.md`, `WORKFLOW.md`, README와 결정 기록을 모노레포 구조에 맞게 갱신했다.
@@ -30,7 +30,7 @@ Docker, PoB 워커 구현, 운영 배포, 새 분석 기능은 범위에서 제�
 - 이동 전 `./gradlew bootJar --no-daemon` 통과
 - 최종 `cd api && ./gradlew test --no-daemon` 통과
 - 최종 `cd api && ./gradlew bootJar --no-daemon` 통과
-- 최종 `cd web && npm test -- --run` 통과: 테스트 파일 1개, 테스트 3개
+- 최종 `cd web && npm test -- --run` 통과: 테스트 파일 1개, 테스트 10개
 - 최종 `cd web && npm run build` 통과
 - `http://127.0.0.1:5173/api/analyses` 프록시 요청이 HTTP 200, `code: OK`, `Level 90 Witch using Fireball`을 반환함
 - 통합 검증 후 Spring Boot와 Vite 개발 서버를 종료함

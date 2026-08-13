@@ -2,7 +2,7 @@
 
 ## 진행 중
 
-- 없음
+- [브라우저 headless PoB와 패시브 트리 렌더링](active/2026-08-13-browser-headless-pob-tree.md)
 
 ## 완료
 
@@ -14,6 +14,10 @@
 - [압축 PoB 코드 inspect 입력 지원](completed/2026-08-13-compressed-pob-inspect-input.md)
 - [Worker 시작 스크립트](completed/2026-08-13-worker-start-script.md)
 - [Worker 실제 상태 표시](completed/2026-08-13-worker-health-status.md)
+- [PoB inspect 검색형 레이아웃](completed/2026-08-13-pob-inspect-search-layout.md)
+- [한국어 검색형 히어로 레이아웃](completed/2026-08-13-korean-search-hero-layout.md)
+- [현재 프로젝트 기준 README 갱신](completed/2026-08-13-readme-current-project.md)
+- [README 목표 서술 복원과 기술 상태 갱신](completed/2026-08-13-readme-tone-rollback.md)
 
 ## 결정 기록
 

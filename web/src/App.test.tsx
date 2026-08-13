@@ -2,28 +2,30 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-import App from './App'
-
-const analysisResult = {
-  gameVersion: '3.27',
-  overview: 'Level 90 Witch using Fireball',
-  interactions: [
-    { title: 'Fireball deals fire spell damage', explanation: 'Fireball is a fire spell.' },
-  ],
-  contributors: ['Fireball'],
-  items: ['The Searing Touch'],
-  defences: ['No defence interaction is verified by the local catalog yet.'],
-  resourceSustain: ['No resource-sustain interaction is verified by the local catalog yet.'],
-  unverified: ['Combustion Support'],
-  evidence: [
-    {
-      name: 'Fireball',
-      sourceUrl: 'https://www.pathofexile.com/',
-      collectedAt: '2026-08-12',
-      reviewed: true,
+vi.mock('./pob/browserPob', () => ({
+  inspectBuildInBrowser: vi.fn(async () => ({
+    specs: [{ id: 1, title: 'Spec A' }],
+    skillSets: [{ id: 2, title: 'Skill Set B' }],
+    itemSets: [{ id: 3, title: 'Item Set C' }],
+    activeSpec: 1,
+    activeSkillSet: 2,
+    activeItemSet: 3,
+    activeSkillName: 'Fireball',
+    summary: { life: 2800, energyShield: 0, armour: 1200, evasion: 900, totalDps: 123456 },
+    equipment: [{
+      slot: 'Weapon 1', name: 'Doom Branch', baseName: 'Sceptre', rarity: 'RARE',
+      modifiers: ['+90 to maximum Life', '+42% to Fire Resistance'],
+    }],
+    tree: {
+      version: '3_27',
+      nodes: [{ id: '1', x: 0, y: 0, allocated: true }],
+      links: [],
     },
-  ],
-}
+  })),
+}))
+
+import App from './App'
+import { inspectBuildInBrowser } from './pob/browserPob'
 
 afterEach(() => {
   cleanup()
@@ -31,176 +33,67 @@ afterEach(() => {
 })
 
 describe('build analysis', () => {
-  it('shows the ready worker status returned by the health endpoint', async () => {
-    vi.stubGlobal('fetch', async (input: RequestInfo | URL) => {
-      if (input === '/worker/health') {
-        return Response.json({ status: 'ready' })
-      }
-      throw new Error('Unexpected request')
-    })
-
+  it('shows the browser PoB engine as ready without a worker HTTP request', () => {
     render(<App />)
 
-    expect(await screen.findByLabelText('PoB engine status: ready')).toBeInTheDocument()
-    expect(screen.getByText('PoB engine ready')).toBeInTheDocument()
+    expect(screen.getByLabelText('PoB 엔진 상태: 준비 완료')).toBeInTheDocument()
+    expect(screen.getByText('PoB 엔진 준비 완료')).toBeInTheDocument()
   })
 
-  it('shows an unavailable worker status when the health endpoint cannot be reached', async () => {
-    vi.stubGlobal('fetch', async () => { throw new Error('worker offline') })
-
+  it('shows the Korean inspect entry point without a separate inspect heading', () => {
     render(<App />)
 
-    expect(await screen.findByLabelText('PoB engine status: unavailable')).toBeInTheDocument()
-    expect(screen.getByText('PoB engine unavailable')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'PoE Lens', level: 1 })).toBeInTheDocument()
+    expect(screen.getByText('PoB 엔진 준비 완료')).toBeInTheDocument()
+    expect(screen.getByLabelText('검사할 PoB 코드, pobb.in 또는 XML')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'PoB 검사' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'PoB headless inspect' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('region', { name: 'Build analysis' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Analyze build' })).not.toBeInTheDocument()
   })
 
-  it('groups the inspect and analysis workflows in labelled panels', () => {
-    render(<App />)
-
-    expect(screen.getByText('PoB engine checking')).toBeInTheDocument()
-    expect(screen.getByRole('region', { name: 'PoB headless inspect' })).toBeInTheDocument()
-    expect(screen.getByRole('region', { name: 'Build analysis' })).toBeInTheDocument()
-  })
-
-  it('sends a PoB export to the worker and renders the active configurations', async () => {
-    vi.stubGlobal('fetch', async (input: RequestInfo | URL, init?: RequestInit) => {
-      const request = JSON.parse(String(init?.body)) as { pobXml?: string }
-      if (input !== '/worker/builds/inspect' || request.pobXml !== '<PathOfBuilding />') {
-        throw new Error('Unexpected worker inspect request')
-      }
-      return Response.json({
-        specs: [{ id: 1, title: 'Spec A' }],
-        skillSets: [{ id: 2, title: 'Skill Set B' }],
-        itemSets: [{ id: 3, title: 'Item Set C' }],
-        activeSpec: 1,
-        activeSkillSet: 2,
-        activeItemSet: 3,
-      })
-    })
-
+  it('sends a PoB export to the browser engine and changes to the insight detail view', async () => {
     render(<App />)
     const user = userEvent.setup()
-    await user.type(screen.getByLabelText('PoB export code or XML for headless inspect'), '<PathOfBuilding />')
-    await user.click(screen.getByRole('button', { name: 'Inspect PoB' }))
+    await user.type(screen.getByLabelText('검사할 PoB 코드, pobb.in 또는 XML'), '<PathOfBuilding />')
+    await user.click(screen.getByRole('button', { name: 'PoB 검사' }))
 
-    expect(await screen.findByText('Spec A (active)')).toBeInTheDocument()
-    expect(screen.getByText('Skill Set B (active)')).toBeInTheDocument()
-    expect(screen.getByText('Item Set C (active)')).toBeInTheDocument()
+    expect(await screen.findByRole('main', { name: '빌드 상세' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Fireball Insight' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '이 빌드에서 먼저 볼 것' })).toBeInTheDocument()
+    expect(screen.getByText('생명력 여유가 부족합니다')).toBeInTheDocument()
+    expect(screen.getByText('생명력 기반 방어를 먼저 보강하세요')).toBeInTheDocument()
+    expect(screen.getByText('Skill Set B')).toBeInTheDocument()
+    expect(screen.getByText('Item Set C')).toBeInTheDocument()
+    expect(screen.getByText('Doom Branch')).toBeInTheDocument()
+    expect(screen.getByText('+90 to maximum Life')).toBeInTheDocument()
+    expect(screen.queryByText('장비 상세 예시')).not.toBeInTheDocument()
+    expect(screen.queryByLabelText('할당 패시브 트리 캔버스')).not.toBeInTheDocument()
+
+    const equipment = screen.getByRole('region', { name: '장비 상세' })
+    expect(equipment.closest('aside')).toBeNull()
+    expect(screen.getByRole('heading', { name: '이 빌드에서 먼저 볼 것' }).compareDocumentPosition(equipment)).toBe(Node.DOCUMENT_POSITION_FOLLOWING)
   })
 
-  it('keeps the previous inspect result when a later inspect request fails', async () => {
-    let inspectRequestCount = 0
-    const fetchMock = vi.fn(async (input: RequestInfo | URL) => {
-      if (input === '/worker/health') return Response.json({ status: 'ready' })
-      inspectRequestCount += 1
-      if (inspectRequestCount === 1) {
-        return Response.json({
-          specs: [{ id: 1, title: 'Spec A' }],
-          skillSets: [],
-          itemSets: [],
-          activeSpec: 1,
-          activeSkillSet: 0,
-          activeItemSet: 0,
-        })
-      }
-      return Response.json(
-        { detail: 'The PoB inspect worker is unavailable.' },
-        { status: 503 },
-      )
-    })
-    vi.stubGlobal('fetch', fetchMock)
-
+  it('changes to the detail loading screen before the browser engine returns', async () => {
+    let resolveInspection: (value: Awaited<ReturnType<typeof inspectBuildInBrowser>>) => void
+    vi.mocked(inspectBuildInBrowser).mockImplementationOnce(() => new Promise((resolve) => {
+      resolveInspection = resolve
+    }))
     render(<App />)
     const user = userEvent.setup()
-    await user.click(screen.getByRole('button', { name: 'Inspect PoB' }))
-    await screen.findByText('Spec A (active)')
-    await user.click(screen.getByRole('button', { name: 'Inspect PoB' }))
 
-    expect(await screen.findByRole('alert')).toHaveTextContent('The PoB inspect worker is unavailable.')
-    expect(screen.getByText('Spec A (active)')).toBeInTheDocument()
-  })
+    await user.type(screen.getByLabelText('검사할 PoB 코드, pobb.in 또는 XML'), '<PathOfBuilding />')
+    await user.click(screen.getByRole('button', { name: 'PoB 검사' }))
 
-  it('submits a PoB build and renders the analysis', async () => {
-    vi.stubGlobal('fetch', async (input: RequestInfo | URL, init?: RequestInit) => {
-      const request = JSON.parse(String(init?.body)) as { pobInput?: string }
-      if (input !== '/api/analyses' || init?.method !== 'POST' || request.pobInput !== '<PathOfBuilding />') {
-        throw new Error('Unexpected analysis request')
-      }
-      return Response.json({ code: 'OK', message: 'SUCCESS', returnObject: analysisResult })
+    expect(screen.getByRole('main', { name: '빌드 분석 중' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'PoB 빌드를 분석하고 있습니다' })).toBeInTheDocument()
+    expect(screen.getByText('빌드 계산')).toBeInTheDocument()
+
+    resolveInspection!({
+      specs: [], skillSets: [], itemSets: [], activeSpec: 0, activeSkillSet: 0, activeItemSet: 0,
+      activeSkillName: null, summary: {}, equipment: [], tree: { version: '3_27', nodes: [], links: [] },
     })
-
-    render(<App />)
-    const user = userEvent.setup()
-    await user.type(screen.getByLabelText('Path of Building export'), '<PathOfBuilding />')
-    await user.click(screen.getByRole('button', { name: 'Analyze build' }))
-
-    expect(await screen.findByText('Level 90 Witch using Fireball')).toBeInTheDocument()
-    expect(screen.getByText('PoE 3.27')).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Core mechanics' })).toBeInTheDocument()
-    expect(screen.getByText('Fireball deals fire spell damage: Fireball is a fire spell.')).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Contributors' })).toBeInTheDocument()
-    expect(screen.getByText('Fireball', { selector: 'li' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Defence' })).toBeInTheDocument()
-    expect(screen.getByText('No defence interaction is verified by the local catalog yet.')).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Resource sustain' })).toBeInTheDocument()
-    expect(screen.getByText('No resource-sustain interaction is verified by the local catalog yet.')).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Unverified' })).toBeInTheDocument()
-    expect(screen.getByText('Combustion Support')).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: 'Evidence' })).toBeInTheDocument()
-    expect(screen.getByText('Fireball — https://www.pathofexile.com/ (2026-08-12, reviewed: true)')).toBeInTheDocument()
   })
 
-  it('shows the API error message', async () => {
-    vi.stubGlobal('fetch', async () => Response.json(
-      { code: 'INVALID_POB_INPUT', message: 'Provide a raw Path of Building XML export.' },
-      { status: 400 },
-    ))
-
-    render(<App />)
-    await userEvent.click(screen.getByRole('button', { name: 'Analyze build' }))
-
-    expect(await screen.findByRole('alert')).toHaveTextContent('Provide a raw Path of Building XML export.')
-  })
-
-  it('prevents duplicate submissions while analysis is pending', async () => {
-    vi.stubGlobal('fetch', () => new Promise<Response>(() => undefined))
-
-    render(<App />)
-    await userEvent.click(screen.getByRole('button', { name: 'Analyze build' }))
-
-    expect(screen.getByRole('button', { name: 'Analyzing…' })).toBeDisabled()
-  })
-
-  it.each([
-    null,
-    'success',
-    {},
-    { code: 'OK', message: 'SUCCESS', returnObject: null },
-    { code: 'OK', message: 'SUCCESS', returnObject: { ...analysisResult, interactions: null } },
-  ])('shows a connection error for malformed JSON structures', async (body) => {
-    vi.stubGlobal('fetch', async () => Response.json(body))
-
-    render(<App />)
-    await userEvent.click(screen.getByRole('button', { name: 'Analyze build' }))
-
-    expect(await screen.findByRole('alert')).toHaveTextContent('Unable to connect to the analysis API.')
-  })
-
-  it('shows a connection error for invalid JSON', async () => {
-    vi.stubGlobal('fetch', async () => new Response('not-json'))
-
-    render(<App />)
-    await userEvent.click(screen.getByRole('button', { name: 'Analyze build' }))
-
-    expect(await screen.findByRole('alert')).toHaveTextContent('Unable to connect to the analysis API.')
-  })
-
-  it('shows a connection error when the API cannot be reached', async () => {
-    vi.stubGlobal('fetch', async () => { throw new Error('network unavailable') })
-
-    render(<App />)
-    await userEvent.click(screen.getByRole('button', { name: 'Analyze build' }))
-
-    expect(await screen.findByRole('alert')).toHaveTextContent('Unable to connect to the analysis API.')
-  })
 })

@@ -9,11 +9,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "test": "vitest"
+    "test": "vitest",
+    "pack:pob": "node scripts/pack-pob.mjs"
   },
   "dependencies": {
+    "fflate": "^0.8.2",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "wasmoon": "^1.16.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "7.0.1",

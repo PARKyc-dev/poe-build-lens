@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "pobTag": "v2.67.2",
+  "pobCommit": "b32759ab0f31a1c8499a0d420cb0f0633d4fe478",
+  "sourceLicense": "/pob/LICENSE.md",
+  "core": {
+    "url": "/pob/core.zip",
+    "byteSize": 7467447,
+    "sha256": "6aabfa1f34ffbc4cbf7e06f16da77c20973b6ea377b41c9d05cf6ee46c64c96c"
+  },
+  "latestTree": "3_29",
+  "trees": {
+    "2_6": {
+      "url": "/pob/trees/2_6.zip",
+      "byteSize": 173243,
+      "sha256": "9da22ad1bfc817f4fa5f5c63321588c7a10102c0c958ee0d17b3eadb9aca954e"
+    },
+    "3_10": {
+      "url": "/pob/trees/3_10.zip",
+      "byteSize": 294460,
+      "sha256": "3fc5d5bfc31d9ec5348c05d8ff2f9514d70cb2f3ba6fffa9e51aa324274fd985"
+    },
+    "3_11": {
+      "url": "/pob/trees/3_11.zip",
+      "byteSize": 305807,
+      "sha256": "9a416424bac00693cae9f613377c54d375a5ffa555e4db939b2768e8c87dffa8"
+    },
+    "3_12": {
+      "url": "/pob/trees/3_12.zip",
+      "byteSize": 307807,
+      "sha256": "365ea6e5556237985e74b5dd3fbcb0c08416feac7dea0cbe790bd106afcd7833"
+    },
+    "3_13": {
+      "url": "/pob/trees/3_13.zip",
+      "byteSize": 304624,
+      "sha256": "12d99dc5590fbc89ec2641e630dc51cbc59bf5acb7737c3525febbe59c47723a"
+    },
+    "3_14": {
+      "url": "/pob/trees/3_14.zip",
+      "byteSize": 310779,
+      "sha256": "ad01d24fdd50383a6a73631ed3c5cba1164eb57189753bab9df253bd143b9719"
+    },
+    "3_15": {
+      "url": "/pob/trees/3_15.zip",
+      "byteSize": 311771,
+      "sha256": "cc786fd3e2d2342a48e2745f6a79770b4c0857b9f6fefbf014f515c1d31cdbf1"
+    },
+    "3_16": {
+      "url": "/pob/trees/3_16.zip",
+      "byteSize": 370094,
+      "sha256": "88e27ddcca4a59198ec199a9e6bd5384ef3fda2fc1750e08b511fa33805f6c05"
+    },
+    "3_17": {
+      "url": "/pob/trees/3_17.zip",
+      "byteSize": 360927,
+      "sha256": "e88f827f2bc33d10ce4d20d68dbe12664be4b199c150d0a661faf2f130d87a86"
+    },
+    "3_18": {
+      "url": "/pob/trees/3_18.zip",
+      "byteSize": 364858,
+      "sha256": "3aa62851e94d6e2bfd17c03c92fb734e5fe68e81873c98d9a2307ef10fb8d22f"
+    },
+    "3_19": {
+      "url": "/pob/trees/3_19.zip",
+      "byteSize": 357489,
+      "sha256": "cc2a98b6235aa6da99cbb475fd8df953b14059fbcae07adb8917fa5d4d029b2d"
+    },
+    "3_20": {
+      "url": "/pob/trees/3_20.zip",
+      "byteSize": 358941,
+      "sha256": "5a85efb42e9c36b39f8934a5376086c671fd41ffa0bbdba9c60e9af76a10e45e"
+    },
+    "3_21": {
+      "url": "/pob/trees/3_21.zip",
+      "byteSize": 373971,
+      "sha256": "983ebf735b8336cbac547a7e0cde993d5f72e07ad5e973771f3ec4eb1c8fa021"
+    },
+    "3_22": {
+      "url": "/pob/trees/3_22.zip",
+      "byteSize": 378469,
+      "sha256": "1c4a9cef4a1a730e910af2ef19c4897e8b9ea02d6498897c433fd7b00ea3b8e2"
+    },
+    "3_22_ruthless": {
+      "url": "/pob/trees/3_22_ruthless.zip",
+      "byteSize": 375747,
+      "sha256": "80cfad2f7a33c50e4faa3e3e9a965615b13d38d6af8cc6c53c2f377bf5db4f3f"
+    },
+    "3_23": {
+      "url": "/pob/trees/3_23.zip",
+      "byteSize": 385974,
+      "sha256": "77d70596b265ce960ffe10197f338cede3f79e320c48a01101d39b2b6ed08d87"
+    },
+    "3_23_ruthless": {
+      "url": "/pob/trees/3_23_ruthless.zip",
+      "byteSize": 383361,
+      "sha256": "c2764081d3554c6e5d6bac2c3735064ea7eb11f1d93cbf9431af14785beef767"
+    },
+    "3_24": {
+      "url": "/pob/trees/3_24.zip",
+      "byteSize": 386696,
+      "sha256": "9cefb0be82c03ea5f9202c277674c5f82f38a7e9dccd67239f8634fbc0608e22"
+    },
+    "3_24_ruthless": {
+      "url": "/pob/trees/3_24_ruthless.zip",
+      "byteSize": 384157,
+      "sha256": "722e42a0288a3c2880a86d88d3a97d8d4c59f9b0a11981c8f7ab8b8c351aa7d1"
+    },
+    "3_25": {
+      "url": "/pob/trees/3_25.zip",
+      "byteSize": 317570,
+      "sha256": "e0b768b8474f6baffcd486fb1519b4496064bfa9b00b3c843b01467ee902f177"
+    },
+    "3_25_alternate": {
+      "url": "/pob/trees/3_25_alternate.zip",
+      "byteSize": 316256,
+      "sha256": "82273245ac1a209c4fb218ad70b54f98fab4b48f6283525b5128424a7ac936ef"
+    },
+    "3_25_ruthless": {
+      "url": "/pob/trees/3_25_ruthless.zip",
+      "byteSize": 315537,
+      "sha256": "916fd023f349b26c0c4bc8853a3e1eacddd3cd8d048e18579b2a2de6992e798e"
+    },
+    "3_25_ruthless_alternate": {
+      "url": "/pob/trees/3_25_ruthless_alternate.zip",
+      "byteSize": 316271,
+      "sha256": "2961b5d4d125aa28f608fe3f2e31aa482fa96cd94511039fd1a7f55c4679afcb"
+    },
+    "3_26": {
+      "url": "/pob/trees/3_26.zip",
+      "byteSize": 320839,
+      "sha256": "ba58c802516a1d50709b8e4adfd74c3cf62c153d5de37c7f8a2722c658619486"
+    },
+    "3_26_alternate": {
+      "url": "/pob/trees/3_26_alternate.zip",
+      "byteSize": 317395,
+      "sha256": "579061d5948535eebeea7d359bc164a0f68c2ad32803fb1ad8636dcbfd203987"
+    },
+    "3_26_ruthless": {
+      "url": "/pob/trees/3_26_ruthless.zip",
+      "byteSize": 318871,
+      "sha256": "83c0a056e85d1ae3550e0e5b5801a167edab785261ab839699cb6d7bf8b9f7ea"
+    },
+    "3_26_ruthless_alternate": {
+      "url": "/pob/trees/3_26_ruthless_alternate.zip",
+      "byteSize": 317416,
+      "sha256": "828c33d01ae1daef29b167799cc2a33f16f450d0880c1403b52d930b9e4cbcaf"
+    },
+    "3_27": {
+      "url": "/pob/trees/3_27.zip",
+      "byteSize": 335617,
+      "sha256": "a57e5874fd30f942f3fc38f65ebbb0d134df67317cebda5dadfc6a57028f72d9"
+    },
+    "3_27_alternate": {
+      "url": "/pob/trees/3_27_alternate.zip",
+      "byteSize": 332983,
+      "sha256": "1621489e057f2b33164c9d649bc5ef8929b41808a86fedc684afaa97871b3b84"
+    },
+    "3_27_ruthless": {
+      "url": "/pob/trees/3_27_ruthless.zip",
+      "byteSize": 333812,
+      "sha256": "651d9cf85c65b1322a877738f497515a08d3e95c7280599205aaac622cdcd05a"
+    },
+    "3_27_ruthless_alternate": {
+      "url": "/pob/trees/3_27_ruthless_alternate.zip",
+      "byteSize": 332999,
+      "sha256": "5d5e3371a9da9120a524c99874f43a931374d6967bc90dda1cb093310652b7d6"
+    },
+    "3_28": {
+      "url": "/pob/trees/3_28.zip",
+      "byteSize": 342459,
+      "sha256": "d7a448a0fd7d83a1effc2f2d0fc044698561b05f6ff2c8a30bda10a15495a104"
+    },
+    "3_28_alternate": {
+      "url": "/pob/trees/3_28_alternate.zip",
+      "byteSize": 334692,
+      "sha256": "a0cf4d7a6d1fb9f8192901f7f80486f375b6f9c0b793f3568fcad6310ca1f9bb"
+    },
+    "3_28_ruthless": {
+      "url": "/pob/trees/3_28_ruthless.zip",
+      "byteSize": 340597,
+      "sha256": "54d6eb99939ee0b4d518036cdd05dd237567b344f399a58e5615b54e39c4d791"
+    },
+    "3_28_ruthless_alternate": {
+      "url": "/pob/trees/3_28_ruthless_alternate.zip",
+      "byteSize": 334708,
+      "sha256": "b1a0bc3ca965cbc0b21163f468169caf09c72fdde384eb7c537eb54eb4c149d0"
+    },
+    "3_29": {
+      "url": "/pob/trees/3_29.zip",
+      "byteSize": 349526,
+      "sha256": "d596eb2091b1b724a1455934a2870722ee3addd37907888adb48881f3388b2e8"
+    },
+    "3_29_ruthless": {
+      "url": "/pob/trees/3_29_ruthless.zip",
+      "byteSize": 347746,
+      "sha256": "2b124b6c1575496c6c72453650f509b37edfed61c6f030d1c3cc7ceae35f2af9"
+    },
+    "3_6": {
+      "url": "/pob/trees/3_6.zip",
+      "byteSize": 196553,
+      "sha256": "3783fac63bf9716a961916e9fae32793bf2f6904201d35cffc8e2db163e2948d"
+    },
+    "3_7": {
+      "url": "/pob/trees/3_7.zip",
+      "byteSize": 206507,
+      "sha256": "916c5bfc56c9258d6df45131d70a66b2228480261eb2ef71852ff5ed0843e0d5"
+    },
+    "3_8": {
+      "url": "/pob/trees/3_8.zip",
+      "byteSize": 213691,
+      "sha256": "5e01c6779315ba3414251fdcba0f72c78adb75c40ee624243f681e7c00ad5f08"
+    },
+    "3_9": {
+      "url": "/pob/trees/3_9.zip",
+      "byteSize": 216322,
+      "sha256": "d2d3c28226c0a8c956f6dc4a8273d793b1cacb28238417a283ce3b28a859bbba"
+    }
+  }
+}

@@ -6,10 +6,6 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': 'http://localhost:8080',
-      '/worker': {
-        target: 'http://localhost:8000',
-        rewrite: (path) => path.replace(/^\/worker/, '/v1'),
-      },
     },
   },
   test: {

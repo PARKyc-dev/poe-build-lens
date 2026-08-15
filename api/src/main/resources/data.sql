@@ -1,11 +1,5 @@
 MERGE INTO mechanics (name, game_version, title, explanation, source_url, collected_at, reviewed)
 KEY (name, game_version)
-VALUES ('Fireball', '3.27', 'Fireball deals fire spell damage',
-        'Fireball is a spell that hits enemies with fire damage. Support gems and modifiers that apply to fire, spell, projectile, or area damage can change how the build scales it.',
-        'https://www.pathofexile.com/', DATE '2026-08-11', TRUE);
-
-MERGE INTO mechanics (name, game_version, title, explanation, source_url, collected_at, reviewed)
-KEY (name, game_version)
-VALUES ('Arc', '3.27', 'Arc chains lightning spell damage',
-        'Arc is a lightning spell that chains between enemies. Modifiers that apply to lightning, spell, or chain effects can change how the build scales it.',
-        'https://www.pathofexile.com/', DATE '2026-08-11', TRUE);
+VALUES ('Righteous Fire', '3.29', 'Righteous Fire의 생명력 기반 화염 지속 피해',
+        'Righteous Fire는 최대 생명력과 에너지 보호막을 기반으로 주변 적에게 화염 지속 피해를 주며, 자신에게도 화염 지속 피해를 적용합니다.',
+        'https://www.pathofexile.com/', DATE '2026-08-15', TRUE);

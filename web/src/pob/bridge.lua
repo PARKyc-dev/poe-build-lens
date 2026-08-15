@@ -93,6 +93,10 @@ local jsonType = type
 local jsonPairs = pairs
 local jsonConcat = table.concat
 local jsonFormat = nativeFormat
+local function jsonArray()
+  return { __jsonArray = true }
+end
+
 local function jsonEncode(value)
   local valueType = jsonType(value)
   if valueType == "nil" then return "null" end
@@ -102,7 +106,7 @@ local function jsonEncode(value)
     local encoded = jsonFormat("%q", value):gsub("\\\n", "\\n")
     return encoded
   end
-  local isArray = #value > 0
+  local isArray = value.__jsonArray or #value > 0
   local parts = { }
   if isArray then
     for index = 1, #value do table.insert(parts, jsonEncode(value[index])) end
@@ -118,7 +122,7 @@ local function titleOrDefault(value)
   return value and value ~= "" and value or "Default"
 end
 
-local equipmentSlots = { "Weapon 1", "Weapon 2", "Helmet", "Body Armour", "Gloves", "Boots", "Amulet", "Ring 1", "Ring 2", "Belt" }
+local equipmentSlots = { "Weapon 1", "Weapon 2", "Helmet", "Body Armour", "Gloves", "Boots", "Amulet", "Ring 1", "Ring 2", "Belt", "Flask 1", "Flask 2", "Flask 3", "Flask 4", "Flask 5" }
 
 local function equipmentFromActiveSet()
   local result = { }
@@ -142,6 +146,286 @@ local function equipmentFromActiveSet()
     end
   end
   return result
+end
+
+local function isTriggeredMainSkill(mainSkill)
+  local skillData = mainSkill.skillData or { }
+  local skillTypes = mainSkill.skillTypes or { }
+  local activeEffect = mainSkill.activeEffect or { }
+  local grantedEffect = activeEffect.grantedEffect or { }
+  local srcInstance = activeEffect.srcInstance or { }
+  return (skillData.triggered
+    or skillData.triggeredByUnique
+    or skillTypes[SkillType.Triggered]
+    or skillTypes[SkillType.InbuiltTrigger]
+    or grantedEffect.triggered
+    or srcInstance.triggered) and true or false
+end
+
+local function flagsFromMainSkill(mainSkill)
+  if not mainSkill then return nil end
+  local skillFlags = mainSkill.skillFlags or { }
+  return {
+    isAttack = skillFlags.attack and true or false,
+    isTotem = skillFlags.totem and true or false,
+    isTrap = skillFlags.trap and true or false,
+    isMine = skillFlags.mine and true or false,
+    isBrand = skillFlags.brand and true or false,
+    isSelfCast = skillFlags.selfCast and true or false,
+    isMinion = (skillFlags.haveMinion or skillFlags.minion) and true or false,
+    isTriggered = isTriggeredMainSkill(mainSkill),
+  }
+end
+
+local function deliveryFromSkill(skill)
+  local flags = skill.skillFlags or { }
+  if isTriggeredMainSkill(skill) then return "trigger" end
+  if flags.haveMinion or flags.minion then return "minion" end
+  if flags.totem then return "totem" end
+  if flags.trap then return "trap" end
+  if flags.mine then return "mine" end
+  if flags.brand then return "brand" end
+  if flags.attack then return "attack" end
+  if flags.selfCast then return "self-cast" end
+  return "unverified"
+end
+
+local function tagsFromSkill(skill)
+  local flags = skill.skillFlags or { }
+  local types = skill.skillTypes or { }
+  local tags = jsonArray()
+  local function addTag(value, present)
+    if present then table.insert(tags, value) end
+  end
+  addTag("attack", flags.attack)
+  addTag("spell", flags.spell or types[SkillType.Spell])
+  addTag("damage-over-time", flags.dot)
+  addTag("projectile", flags.projectile)
+  addTag("area", flags.area)
+  addTag("minion", flags.haveMinion or flags.minion)
+  addTag("fire", types[SkillType.Fire])
+  addTag("cold", types[SkillType.Cold])
+  addTag("lightning", types[SkillType.Lightning])
+  addTag("chaos", types[SkillType.Chaos])
+  return tags
+end
+
+local modTagMap = {
+  Life = "life",
+  EnergyShield = "energy-shield",
+  LifeRegen = "life-regeneration",
+  LifeRegenPercent = "life-regeneration",
+  EnergyShieldRechargeRate = "energy-shield-recovery",
+  EnergyShieldRegen = "energy-shield-recovery",
+  Armour = "armour",
+  Evasion = "evasion",
+  Ward = "ward",
+  PhysicalDamageReduction = "physical-mitigation",
+  FireResist = "fire-resistance",
+  ColdResist = "cold-resistance",
+  LightningResist = "lightning-resistance",
+  ChaosResist = "chaos-resistance",
+  BlockChance = "block",
+  SpellBlockChance = "spell-block",
+  SpellSuppressionChance = "spell-suppression",
+  AttackDodgeChance = "attack-dodge",
+  SpellDodgeChance = "spell-dodge",
+  AvoidAllDamageFromHitsChance = "damage-avoidance",
+  ShockImmune = "shock-immunity",
+  AvoidShock = "shock-avoidance",
+  FreezeImmune = "freeze-immunity",
+  ChillImmune = "chill-immunity",
+  IgniteImmune = "ignite-immunity",
+  DamageOverTime = "damage-over-time",
+  PhysicalDamage = "physical",
+  PhysicalDamageOverTimeMultiplier = { "physical", "damage-over-time" },
+  PoisonDamage = { "chaos", "damage-over-time" },
+  BleedDamage = { "physical", "damage-over-time" },
+  FireDamage = "fire",
+  ColdDamage = "cold",
+  LightningDamage = "lightning",
+  ChaosDamage = "chaos",
+}
+
+local function tagsFromModList(modList)
+  local tags = jsonArray()
+  local seen = { }
+  for index = 1, #(modList or { }) do
+    local mod = modList[index]
+    local tag = modTagMap[mod.name]
+    local tagList = type(tag) == "table" and tag or tag and { tag } or mod.name == "ElementalResist" and { "fire-resistance", "cold-resistance", "lightning-resistance" } or { }
+    for _, value in ipairs(tagList) do
+      if not seen[value] then
+        seen[value] = true
+        table.insert(tags, value)
+      end
+    end
+  end
+  return tags
+end
+
+local function allPassiveTags(spec)
+  local result = jsonArray()
+  local seen = { }
+  for _, node in pairs(spec.allocNodes or { }) do
+    for _, tag in ipairs(tagsFromModList(node.modList)) do
+      if not seen[tag] then
+        seen[tag] = true
+        table.insert(result, tag)
+      end
+    end
+  end
+  return result
+end
+
+local function offenceFacts(player)
+  local result = jsonArray()
+  local seen = { }
+  local function addSkill(skill)
+    if not skill then return end
+    local flags = skill.skillFlags or { }
+    local effect = skill.activeEffect or { }
+    local grantedEffect = effect.grantedEffect or { }
+    local isMovement = skill.skillTypes and skill.skillTypes[SkillType.Movement]
+    if not flags.disable and not isMovement and not skill.buffSkill and (flags.hit or flags.dot) and grantedEffect.name then
+      local delivery = deliveryFromSkill(skill)
+      local key = grantedEffect.name .. "|" .. delivery
+      if not seen[key] then
+        seen[key] = true
+        table.insert(result, {
+          name = grantedEffect.name,
+          role = skill == player.mainSkill and "primary" or "secondary",
+          delivery = delivery,
+          tags = tagsFromSkill(skill),
+        })
+      end
+    end
+  end
+  addSkill(player.mainSkill)
+  for _, skill in ipairs(player.activeSkillList or { }) do
+    if skill ~= player.mainSkill then addSkill(skill) end
+  end
+  return result
+end
+
+local function mobilityFacts(player)
+  local result = jsonArray()
+  local seen = { }
+  for _, skill in ipairs(player.activeSkillList or { }) do
+    local name = skill.activeEffect and skill.activeEffect.grantedEffect and skill.activeEffect.grantedEffect.name
+    if name and skill.skillTypes and skill.skillTypes[SkillType.Movement] and not seen[name] then
+      seen[name] = true
+      table.insert(result, { name = name })
+    end
+  end
+  return result
+end
+
+local function passiveFacts(spec)
+  local result = jsonArray()
+  for _, node in pairs(spec.allocNodes or { }) do
+    if node.isNotable or node.isKeystone or node.isMastery then
+      local effects = jsonArray()
+      for _, effect in ipairs(node.sd or { }) do
+        if type(effect) == "string" and effect ~= "" then table.insert(effects, effect) end
+      end
+      local name = node.dn or node.name
+      if name then
+        table.insert(result, { name = name, effects = effects, tags = tagsFromModList(node.modList) })
+      end
+    end
+  end
+  return result
+end
+
+local defenceOutputKeys = {
+  { kind = "life", output = "Life" },
+  { kind = "energy-shield", output = "EnergyShield" },
+  { kind = "mana", output = "Mana" },
+  { kind = "armour", output = "Armour" },
+  { kind = "evasion", output = "Evasion" },
+  { kind = "fire-resistance", output = "FireResist" },
+  { kind = "cold-resistance", output = "ColdResist" },
+  { kind = "lightning-resistance", output = "LightningResist" },
+  { kind = "chaos-resistance", output = "ChaosResist" },
+  { kind = "block", output = "BlockChance" },
+  { kind = "spell-block", output = "SpellBlockChance" },
+  { kind = "spell-suppression", output = "SpellSuppressionChance" },
+  { kind = "guard", output = "GuardSkillActive" },
+  { kind = "ward", output = "Ward" },
+  { kind = "attack-dodge", output = "AttackDodgeChance" },
+  { kind = "spell-dodge", output = "SpellDodgeChance" },
+  { kind = "damage-avoidance", output = "AvoidAllDamageFromHitsChance" },
+}
+
+local function defenceFacts(output)
+  local result = jsonArray()
+  for _, entry in ipairs(defenceOutputKeys) do
+    local value = output[entry.output]
+    if value == true then value = 1 end
+    if type(value) == "number" and value > 0 then
+      table.insert(result, { kind = entry.kind, value = value })
+    end
+  end
+  return result
+end
+
+local function buffKind(skill, buff)
+  if buff.type == "Guard" then return "guard" end
+  if skill.skillTypes and skill.skillTypes[SkillType.Aura] then return "aura" end
+  if skill.skillTypes and (skill.skillTypes[SkillType.Hex] or skill.skillTypes[SkillType.Mark]) then return "curse" end
+  return "buff"
+end
+
+local function addBuff(result, seen, name, kind, appliesTo, tags)
+  local key = name .. "|" .. kind .. "|" .. appliesTo
+  if not seen[key] then
+    seen[key] = true
+    table.insert(result, {
+      name = name,
+      kind = kind,
+      appliesTo = appliesTo,
+      tags = tags,
+    })
+  end
+end
+
+local function buffFacts(env, output)
+  local result = jsonArray()
+  local seen = { }
+  for _, skill in ipairs(env.player.activeSkillList or { }) do
+    if skill.buffSkill then
+      for _, buff in ipairs(skill.buffList or { }) do
+        if buff.name and not buff.applyNotPlayer then
+          addBuff(result, seen, buff.name, buffKind(skill, buff), "player", tagsFromModList(buff.modList))
+        end
+      end
+    end
+  end
+  return result
+end
+
+local function itemFacts()
+  local result = jsonArray()
+  local itemSet = build.itemsTab.activeItemSet
+  for _, slotName in ipairs(equipmentSlots) do
+    local slot = itemSet[slotName]
+    local item = slot and slot.selItemId and build.itemsTab.items[slot.selItemId]
+    if item then table.insert(result, { slot = slotName, tags = tagsFromModList(item.modList) }) end
+  end
+  return result
+end
+
+local function buildFacts(env, output, spec)
+  return {
+    offence = offenceFacts(env.player),
+    defence = defenceFacts(output),
+    buffs = buffFacts(env, output),
+    mobility = mobilityFacts(env.player),
+    passives = passiveFacts(spec),
+    passiveTags = allPassiveTags(spec),
+    items = itemFacts(),
+  }
 end
 
 function inspectBuild(xmlText, specId)
@@ -182,7 +466,8 @@ function inspectBuild(xmlText, specId)
     return results
   end
   local output = build.calcsTab.mainOutput or { }
-  local mainSkill = build.calcsTab.mainEnv and build.calcsTab.mainEnv.player and build.calcsTab.mainEnv.player.mainSkill
+  local mainEnv = build.calcsTab.mainEnv
+  local mainSkill = mainEnv and mainEnv.player and mainEnv.player.mainSkill
   return jsonEncode({
     specs = specs,
     skillSets = entries(build.skillsTab.skillSetOrderList, build.skillsTab.skillSets),
@@ -191,6 +476,8 @@ function inspectBuild(xmlText, specId)
     activeSkillSet = build.skillsTab.activeSkillSetId,
     activeItemSet = build.itemsTab.activeItemSetId,
     activeSkillName = mainSkill and mainSkill.activeEffect and mainSkill.activeEffect.grantedEffect and mainSkill.activeEffect.grantedEffect.name or nil,
+    mainSkillFlags = flagsFromMainSkill(mainSkill),
+    buildFacts = mainEnv and buildFacts(mainEnv, output, spec) or { offence = { }, defence = { }, buffs = { }, mobility = { }, passives = { }, passiveTags = { }, items = { } },
     summary = {
       totalDps = output.TotalDPS,
       combinedDps = output.CombinedDPS,

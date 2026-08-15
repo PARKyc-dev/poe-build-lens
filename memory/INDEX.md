@@ -6,6 +6,10 @@
 
 ## 완료
 
+- [브라우저 PoB 분석 결과 API 연동](completed/2026-08-15-browser-analysis-api.md)
+- [태그 기반 빌드 분석](completed/2026-08-15-tag-based-build-analysis.md)
+- [BuildFacts 기반 기재 분석](completed/2026-08-15-build-facts-analysis.md)
+- [공격 기재와 운용 방식 분류](completed/2026-08-15-offence-delivery-classification.md)
 - [초기 분석기와 작업 하네스 구성](completed/2026-08-11-initial-build-analyzer.md)
 - [패키지 구조 및 공통 응답 리팩터링](completed/2026-08-12-package-refactoring.md)
 - [모노레포 및 React 전환](completed/2026-08-12-monorepo-react-migration.md)

@@ -21,6 +21,6 @@ public class BuildAnalysisController {
 
     @PostMapping
     public AnalysisResult analyze(@Valid @RequestBody BuildAnalysisRequest request) {
-        return buildAnalysisService.analyze(request.pobInput());
+        return buildAnalysisService.analyze(request);
     }
 }

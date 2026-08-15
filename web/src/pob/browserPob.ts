@@ -1,5 +1,6 @@
 import type { PassiveTree } from './passiveTree'
 import type { BuildSummary } from '../build/buildInsight'
+import type { MainSkillFlags } from '../build/offenceClassification'
 
 export type BrowserInspectEntry = { id: number; title: string }
 export type BrowserEquipmentItem = {
@@ -10,6 +11,50 @@ export type BrowserEquipmentItem = {
   modifiers: string[]
   imageUrl?: string | null
 }
+export type BuildFactOffence = {
+  name: string
+  role: 'primary' | 'secondary'
+  delivery: string
+  tags: string[]
+}
+
+export type BuildFactPassive = {
+  name: string
+  effects: string[]
+  tags: string[]
+}
+
+export type BuildFactDefence = {
+  kind: string
+  value: number
+}
+
+export type BuildFactBuff = {
+  name: string
+  kind: string
+  appliesTo: string
+  tags: string[]
+}
+
+export type BuildFactMobility = {
+  name: string
+}
+
+export type BuildFactItem = {
+  slot: string
+  tags: string[]
+}
+
+export type BuildFacts = {
+  offence: BuildFactOffence[]
+  defence: BuildFactDefence[]
+  buffs: BuildFactBuff[]
+  mobility: BuildFactMobility[]
+  passives: BuildFactPassive[]
+  passiveTags: string[]
+  items: BuildFactItem[]
+}
+
 export type BrowserInspectResult = {
   specs: BrowserInspectEntry[]
   skillSets: BrowserInspectEntry[]
@@ -18,6 +63,8 @@ export type BrowserInspectResult = {
   activeSkillSet: number
   activeItemSet: number
   activeSkillName: string | null
+  mainSkillFlags: MainSkillFlags | null
+  buildFacts: BuildFacts
   summary: BuildSummary
   equipment: BrowserEquipmentItem[]
   tree: PassiveTree

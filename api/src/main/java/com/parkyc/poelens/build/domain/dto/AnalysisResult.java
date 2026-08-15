@@ -4,12 +4,11 @@ import java.util.List;
 
 public record AnalysisResult(
         String gameVersion,
-        String overview,
-        List<Mechanic> interactions,
-        List<String> contributors,
-        List<String> items,
-        List<String> defences,
-        List<String> resourceSustain,
+        List<Mechanic> offence,
+        List<Mechanic> defence,
+        List<Mechanic> buffs,
+        List<Mechanic> passives,
+        List<Mechanic> overrides,
         List<String> unverified,
         List<Evidence> evidence) {
 }

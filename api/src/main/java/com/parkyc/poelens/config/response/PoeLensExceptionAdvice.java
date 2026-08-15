@@ -18,7 +18,7 @@ public class PoeLensExceptionAdvice {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<CommonDTO.Exception> handleValidationException(MethodArgumentNotValidException exception) {
-        return error(ErrorCode.MISSING_BUILD_INPUT);
+        return error(ErrorCode.MISSING_GAME_VERSION);
     }
 
     private ResponseEntity<CommonDTO.Exception> error(ErrorCode errorCode) {

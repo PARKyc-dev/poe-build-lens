@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 import { BuildDetailPage } from './build/BuildDetailPage'
 import { BuildLoadingPage } from './build/BuildLoadingPage'
+import { analyzeBuild } from './api/analysis'
+import type { BuildAnalysisResult } from './api/analysis'
 import { inspectBuildInBrowser } from './pob/browserPob'
 import type { BrowserInspectResult } from './pob/browserPob'
 import './styles.css'
@@ -23,6 +25,7 @@ const workerStatusDescription: Record<WorkerStatus, string> = {
 export default function App() {
   const [inspectInput, setInspectInput] = useState('')
   const [inspectResult, setInspectResult] = useState<BrowserInspectResult | null>(null)
+  const [analysisResult, setAnalysisResult] = useState<BuildAnalysisResult | null>(null)
   const [inspectError, setInspectError] = useState<string | null>(null)
   const [isInspecting, setIsInspecting] = useState(false)
   const workerStatus: WorkerStatus = 'ready'
@@ -31,9 +34,12 @@ export default function App() {
     event.preventDefault()
     setIsInspecting(true)
     setInspectError(null)
+    setAnalysisResult(null)
     try {
       const result = await inspectBuildInBrowser(inspectInput)
+      const analysis = await analyzeBuild(result)
       setInspectResult(result)
+      setAnalysisResult(analysis)
     } catch (reason) {
       setInspectError(reason instanceof Error ? reason.message : 'PoB 검사 워커에 연결할 수 없습니다.')
     } finally {
@@ -41,8 +47,11 @@ export default function App() {
     }
   }
 
-  if (inspectResult) {
-    return <BuildDetailPage result={inspectResult} onNewInspection={() => setInspectResult(null)} />
+  if (inspectResult && analysisResult) {
+    return <BuildDetailPage result={inspectResult} analysis={analysisResult} onNewInspection={() => {
+      setInspectResult(null)
+      setAnalysisResult(null)
+    }} />
   }
 
   if (isInspecting) {

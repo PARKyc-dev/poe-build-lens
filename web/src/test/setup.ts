@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/vitest'
 
-HTMLCanvasElement.prototype.getContext = (() => ({
+if (typeof HTMLCanvasElement !== 'undefined') HTMLCanvasElement.prototype.getContext = (() => ({
   arc() {},
   beginPath() {},
   clearRect() {},

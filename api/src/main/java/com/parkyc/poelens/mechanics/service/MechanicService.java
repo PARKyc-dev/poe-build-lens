@@ -6,7 +6,5 @@ import java.util.Optional;
 
 public interface MechanicService {
 
-    String gameVersion();
-
-    Optional<MechanicEntity> find(String name);
+    Optional<MechanicEntity> find(String gameVersion, String name);
 }

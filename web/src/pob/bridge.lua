@@ -303,9 +303,9 @@ local function allPassiveTags(spec)
   return result
 end
 
-local function offenceFacts(player)
-  local result = jsonArray()
-  local seen = { }
+local function offenceFacts(env)
+  local player = env.player
+  local candidates = { }
   local function addSkill(skill)
     if not skill then return end
     local flags = skill.skillFlags or { }
@@ -315,20 +315,43 @@ local function offenceFacts(player)
     if not flags.disable and not isMovement and not skill.buffSkill and (flags.hit or flags.dot) and grantedEffect.name then
       local delivery = deliveryFromSkill(skill)
       local key = grantedEffect.name .. "|" .. delivery
-      if not seen[key] then
-        seen[key] = true
-        table.insert(result, {
+      if not candidates[key] then
+        candidates[key] = {
           name = grantedEffect.name,
-          role = skill == player.mainSkill and "primary" or "secondary",
           delivery = delivery,
           tags = tagsFromSkill(skill),
-        })
+          skill = skill,
+          combinedDps = 0,
+        }
       end
     end
   end
   addSkill(player.mainSkill)
   for _, skill in ipairs(player.activeSkillList or { }) do
     if skill ~= player.mainSkill then addSkill(skill) end
+  end
+  local selectedSkill = player.mainSkill
+  for _, candidate in pairs(candidates) do
+    player.mainSkill = candidate.skill
+    build.calcsTab.calcs.perform(env, true)
+    candidate.combinedDps = player.output.CombinedDPS or 0
+    candidate.skill = nil
+  end
+  player.mainSkill = selectedSkill
+  build.calcsTab.calcs.perform(env)
+  local ranked = { }
+  for _, candidate in pairs(candidates) do
+    if candidate.combinedDps > 0 then table.insert(ranked, candidate) end
+  end
+  table.sort(ranked, function(left, right)
+    if left.combinedDps == right.combinedDps then return left.name < right.name end
+    return left.combinedDps > right.combinedDps
+  end)
+  local result = jsonArray()
+  for index, candidate in ipairs(ranked) do
+    if index > 2 then break end
+    candidate.role = index == 1 and "primary" or "secondary"
+    table.insert(result, candidate)
   end
   return result
 end
@@ -507,14 +530,66 @@ local function itemFacts()
   for _, slotName in ipairs(equipmentSlots) do
     local slot = itemSet[slotName]
     local item = slot and slot.selItemId and build.itemsTab.items[slot.selItemId]
-    if item then table.insert(result, { slot = slotName, tags = tagsFromModList(item.modList) }) end
+    if item then
+      local modifiers = jsonArray()
+      for index, mod in ipairs(item.explicitModLines or { }) do
+        if index > 4 then break end
+        table.insert(modifiers, mod.line or mod.extra)
+      end
+      table.insert(result, {
+        slot = slotName,
+        name = item.title or item.name or item.baseName,
+        baseName = item.baseName,
+        rarity = item.rarity,
+        modifiers = modifiers,
+        tags = tagsFromModList(item.modList),
+      })
+    end
   end
   return result
 end
 
+local function jewelFacts(spec)
+  local result = jsonArray()
+  for socketId, itemId in pairs(spec.jewels or { }) do
+    local item = build.itemsTab.items[itemId]
+    if item then
+      local modifiers = jsonArray()
+      for index, mod in ipairs(item.explicitModLines or { }) do
+        if index > 4 then break end
+        table.insert(modifiers, mod.line or mod.extra)
+      end
+      local baseName = item.baseName
+      table.insert(result, {
+        socket = tostring(socketId),
+        name = item.title or item.name or baseName,
+        baseName = baseName,
+        rarity = item.rarity,
+        modifiers = modifiers,
+        kind = baseName and string.find(baseName, "Cluster Jewel", 1, true) and "cluster" or "jewel",
+        tags = tagsFromModList(item.modList),
+      })
+    end
+  end
+  return result
+end
+
+local function performanceFact(output)
+  return {
+    totalDps = output.TotalDPS,
+    combinedDps = output.CombinedDPS,
+    life = output.Life,
+    energyShield = output.EnergyShield,
+    mana = output.Mana,
+    armour = output.Armour,
+    evasion = output.Evasion,
+    totalEhp = output.TotalEHP,
+  }
+end
+
 local function buildFacts(env, output, spec)
   return {
-    offence = offenceFacts(env.player),
+    offence = offenceFacts(env),
     skills = skillFacts(),
     defence = defenceFacts(output),
     buffs = buffFacts(env, output),
@@ -523,6 +598,8 @@ local function buildFacts(env, output, spec)
     ascendancies = ascendancyFacts(spec),
     passiveTags = allPassiveTags(spec),
     items = itemFacts(),
+    jewels = jewelFacts(spec),
+    performance = performanceFact(output),
   }
 end
 
@@ -586,7 +663,7 @@ function inspectBuild(xmlText, specId)
     activeItemSet = build.itemsTab.activeItemSetId,
     activeSkillName = mainSkill and mainSkill.activeEffect and mainSkill.activeEffect.grantedEffect and mainSkill.activeEffect.grantedEffect.name or nil,
     mainSkillFlags = flagsFromMainSkill(mainSkill),
-    buildFacts = mainEnv and buildFacts(mainEnv, output, spec) or { offence = { }, skills = { }, defence = { }, buffs = { }, mobility = { }, passives = { }, ascendancies = { }, passiveTags = { }, items = { } },
+    buildFacts = mainEnv and buildFacts(mainEnv, output, spec) or { offence = { }, skills = { }, defence = { }, buffs = { }, mobility = { }, passives = { }, ascendancies = { }, passiveTags = { }, items = { }, jewels = { }, performance = { } },
     summary = {
       totalDps = output.TotalDPS,
       combinedDps = output.CombinedDPS,

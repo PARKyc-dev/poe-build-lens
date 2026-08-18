@@ -19,6 +19,41 @@ class BuildAnalysisControllerTest {
     private MockMvc mockMvc;
 
     @Test
+    void combinesBuildFactsIntoMechanismNarratives() throws Exception {
+        mockMvc.perform(post("/api/analyses")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {
+                                  "gameVersion": "3.29",
+                                  "buildFacts": {
+                                    "offence": [
+                                      { "name": "Righteous Fire", "role": "primary", "combinedDps": 100000, "delivery": "self-cast", "tags": ["spell", "damage-over-time", "fire", "area"] },
+                                      { "name": "Fire Trap", "role": "secondary", "combinedDps": 50000, "delivery": "trap", "tags": ["spell", "damage-over-time", "fire", "area"] }
+                                    ],
+                                    "defence": [
+                                      { "kind": "life", "value": 5000 }, { "kind": "fire-resistance", "value": 85 }, { "kind": "cold-resistance", "value": 75 }, { "kind": "lightning-resistance", "value": 75 }, { "kind": "armour", "value": 20000 }, { "kind": "block", "value": 50 }
+                                    ],
+                                    "buffs": [
+                                      { "name": "Determination", "kind": "aura", "appliesTo": "player", "tags": ["armour"] },
+                                      { "name": "Tempest Shield", "kind": "buff", "appliesTo": "player", "tags": ["spell-block", "shock-immunity"] }
+                                    ],
+                                    "passives": [{ "name": "Growth and Decay", "effects": ["Regenerate 1% of Life per second"], "tags": ["life-regeneration", "damage-over-time"] }],
+                                    "ascendancies": [{ "ascendancyName": "Chieftain", "name": "Hinekora, Death's Fury", "effects": ["Enemies you or your Totems Kill have a 5% chance to Explode"], "tags": ["fire", "area"] }]
+                                  }
+                                }
+                                """))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
+                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value(org.hamcrest.Matchers.containsString("Righteous Fire")))
+                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value(org.hamcrest.Matchers.containsString("Fire Trap")))
+                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value(org.hamcrest.Matchers.containsString("Hinekora, Death's Fury")))
+                .andExpect(jsonPath("$.returnObject.defence[0].title").value("방어 기재"))
+                .andExpect(jsonPath("$.returnObject.defence[0].explanation").value(org.hamcrest.Matchers.containsString("생명력 재생")))
+                .andExpect(jsonPath("$.returnObject.defence[0].explanation").value(org.hamcrest.Matchers.containsString("Determination")))
+                .andExpect(jsonPath("$.returnObject.defence[0].explanation").value(org.hamcrest.Matchers.containsString("Tempest Shield")));
+    }
+
+    @Test
     void buildsAnalysisFromTagsInsteadOfSkillOrBuffNames() throws Exception {
         mockMvc.perform(post("/api/analyses")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -38,9 +73,8 @@ class BuildAnalysisControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.code").value("OK"))
                 .andExpect(jsonPath("$.returnObject.gameVersion").value("3.29"))
-                .andExpect(jsonPath("$.returnObject.offence[0].title").value("주력 공격: Arbitrary Main Skill"))
-                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value("직접 시전 (Self-Cast) 방식으로 지속 피해·화염·범위 태그를 활용해 주 피해를 담당합니다."))
-                .andExpect(jsonPath("$.returnObject.defence[0].explanation").value("생명력을 피해를 견디는 기본 자원으로 사용합니다. 패시브와 장비 효과 태그가 이 방어 축을 보강합니다."))
+                .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
+                .andExpect(jsonPath("$.returnObject.defence[0].title").value("방어 기재"))
                 .andExpect(jsonPath("$.returnObject.buffs[0].title").value("버프 유틸리티: Arbitrary Utility"))
                 .andExpect(jsonPath("$.returnObject.buffs[0].explanation").value("감전 면역·주문 막기 태그가 활성화되어 상태 이상 방지와 방어 수치를 보강합니다."))
                 .andExpect(jsonPath("$.returnObject.buffs[1].title").value("이동기: Arbitrary Movement"))
@@ -72,11 +106,8 @@ class BuildAnalysisControllerTest {
                                 }
                                 """))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.returnObject.defence[0].title").value("생존 자원 기반 방어"))
-                .andExpect(jsonPath("$.returnObject.defence[1].title").value("방어도·회피 기반 방어"))
-                .andExpect(jsonPath("$.returnObject.defence[2].title").value("주문 방어"))
-                .andExpect(jsonPath("$.returnObject.defence[3].title").value("보조 피해 방어"))
-                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value("직접 시전 (Self-Cast) 방식으로 화염 태그를 활용해 주 피해를 담당합니다. 장비 효과 태그가 이 피해 축을 보강합니다."))
+                .andExpect(jsonPath("$.returnObject.defence[0].title").value("방어 기재"))
+                .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
                 .andExpect(jsonPath("$.returnObject.buffs[0].title").value("버프 유틸리티: Any Defensive Buff"))
                 .andExpect(jsonPath("$.returnObject.buffs[0].explanation").value("동결 면역·방어도·주문 억제 태그가 활성화되어 상태 이상 방지와 방어 수치를 보강합니다."))
                 .andExpect(jsonPath("$.returnObject.passives[0].title").value("피해 핵심 패시브"))
@@ -117,8 +148,7 @@ class BuildAnalysisControllerTest {
                                 }
                                 """))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.returnObject.offence[0].title").value("주력 공격: Righteous Fire"))
-                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value("직접 시전 (Self-Cast) 방식으로 지속 피해 태그를 활용해 주 피해를 담당합니다."))
+                .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
                 .andExpect(jsonPath("$.returnObject.evidence").isEmpty());
     }
 
@@ -137,7 +167,7 @@ class BuildAnalysisControllerTest {
                                 }
                                 """))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.returnObject.offence[0].title").value("주력 공격: Unknown Totem Skill"))
+                .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
                 .andExpect(jsonPath("$.returnObject.overrides").isEmpty());
     }
 
@@ -162,7 +192,7 @@ class BuildAnalysisControllerTest {
                                 }
                                 """))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value("직접 시전 (Self-Cast) 방식으로 화염 태그를 활용해 주 피해를 담당합니다. 연결된 보조 젬: Awakened Added Fire Damage (레벨 5, 품질 20, Default, 활성, 각성)."))
+                .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
                 .andExpect(jsonPath("$.returnObject.ascendancies[0].title").value("전직 노드: Void Beacon"))
                 .andExpect(jsonPath("$.returnObject.ascendancies[0].explanation").value("Occultist 전직의 적용된 효과: Nearby Enemies have -20% to Cold Resistance"));
     }
@@ -186,6 +216,37 @@ class BuildAnalysisControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.returnObject.passiveNodes[0].title").value("주요 패시브: Growth and Decay"))
                 .andExpect(jsonPath("$.returnObject.passiveNodes[0].explanation").value("적용된 효과: Regenerate 1% of Life per second · 20% increased Damage over Time"));
+    }
+
+    @Test
+    void returnsEquipmentJewelsAndPobPerformanceDetails() throws Exception {
+        mockMvc.perform(post("/api/analyses")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {
+                                  "gameVersion": "3.29",
+                                  "buildFacts": {
+                                    "items": [{
+                                      "slot": "Helmet", "name": "Mind Crown", "baseName": "Hubris Circlet", "rarity": "RARE",
+                                      "modifiers": ["+90 to maximum Life", "+42% to Fire Resistance"], "tags": ["life", "fire-resistance"]
+                                    }],
+                                    "jewels": [{
+                                      "socket": "1234", "name": "Crimson Jewel of the Fox", "baseName": "Crimson Jewel", "rarity": "MAGIC",
+                                      "modifiers": ["+7% to maximum Life"], "kind": "jewel", "tags": ["life"]
+                                    }],
+                                    "performance": {
+                                      "totalDps": 123456.0, "combinedDps": 234567.0, "life": 4500.0,
+                                      "energyShield": 1200.0, "armour": 8000.0, "evasion": 3000.0, "totalEhp": 25000.0
+                                    }
+                                  }
+                                }
+                                """))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.returnObject.gear[0].title").value("장비: Helmet · Mind Crown"))
+                .andExpect(jsonPath("$.returnObject.gear[0].explanation").value("옵션: +90 to maximum Life · +42% to Fire Resistance"))
+                .andExpect(jsonPath("$.returnObject.gear[1].title").value("주얼: Crimson Jewel of the Fox"))
+                .andExpect(jsonPath("$.returnObject.performance[0].title").value("PoB 계산 수치"))
+                .andExpect(jsonPath("$.returnObject.performance[0].explanation").value("주력 DPS 123,456 · 합산 DPS 234,567 · 생명력 4,500 · 에너지 보호막 1,200 · 방어도 8,000 · 회피 3,000 · 총 EHP 25,000"));
     }
 
     @Test
@@ -222,12 +283,8 @@ class BuildAnalysisControllerTest {
                                 }
                                 """))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.returnObject.offence[0].title").value("주력 공격: Righteous Fire"))
-                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value("직접 시전 (Self-Cast) 방식으로 지속 피해 태그를 활용해 주 피해를 담당합니다."))
-                .andExpect(jsonPath("$.returnObject.offence[1].title").value("보조 공격: Detonate Dead"))
-                .andExpect(jsonPath("$.returnObject.offence[1].explanation").value("직접 시전 (Self-Cast) 방식으로 주문 태그를 활용해 주력 공격을 보완합니다."))
-                .andExpect(jsonPath("$.returnObject.defence[0].title").value("생존 자원 기반 방어"))
-                .andExpect(jsonPath("$.returnObject.defence[0].explanation").value("생명력을 피해를 견디는 기본 자원으로 사용합니다. 패시브와 장비 효과 태그가 이 방어 축을 보강합니다."))
+                .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
+                .andExpect(jsonPath("$.returnObject.defence[0].title").value("방어 기재"))
                 .andExpect(jsonPath("$.returnObject.passives[0].title").value("생존 핵심 패시브"))
                 .andExpect(jsonPath("$.returnObject.passives[0].explanation").value("패시브 효과 태그가 생명력 회복·화염 저항을 보강합니다."));
     }

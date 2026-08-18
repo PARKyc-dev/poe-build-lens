@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: poe-lens
+  datasource:
+    url: jdbc:h2:file:./data/poe-lens
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+
+poe-lens:
+  openai:
+    enabled: false
+    api-key: ${OPENAI_API_KEY:}
+    model: gpt-5.4-nano

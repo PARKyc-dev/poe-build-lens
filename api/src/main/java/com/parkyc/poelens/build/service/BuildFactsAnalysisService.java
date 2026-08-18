@@ -10,6 +10,8 @@ import com.parkyc.poelens.build.domain.dto.ItemFact;
 import com.parkyc.poelens.build.domain.dto.SkillFact;
 import com.parkyc.poelens.build.domain.dto.SupportGemFact;
 import com.parkyc.poelens.build.domain.dto.AscendancyFact;
+import com.parkyc.poelens.build.domain.dto.JewelFact;
+import com.parkyc.poelens.build.domain.dto.PerformanceFact;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -54,6 +56,36 @@ public class BuildFactsAnalysisService {
             }
         }
         return analysis;
+    }
+
+    public List<Mechanic> analyseOffenceNarrative(List<OffenceFact> facts, List<AscendancyFact> ascendancies) {
+        List<OffenceFact> attacks = safe(facts);
+        if (attacks.isEmpty()) return List.of();
+        OffenceFact primary = attacks.stream().filter(fact -> "primary".equals(fact.role())).findFirst().orElse(attacks.getFirst());
+        OffenceFact secondary = attacks.stream().filter(fact -> "secondary".equals(fact.role())).findFirst().orElse(null);
+        String text = primary.name() + "이 " + skillProfile(primary.tags()) + " 피해를 주력으로 담당합니다.";
+        if (secondary != null) text += " " + secondary.name() + "을 사용해 추가 피해를 더합니다.";
+        List<String> explosions = safe(ascendancies).stream()
+                .filter(fact -> safe(fact.effects()).stream().anyMatch(effect -> effect.toLowerCase().contains("explode")))
+                .map(fact -> fact.name() + "의 시체 폭발 효과가 처치 시 광역 피해를 추가합니다.")
+                .toList();
+        if (!explosions.isEmpty()) text += " " + String.join(" ", explosions);
+        return List.of(new Mechanic("공격 기재", text));
+    }
+
+    public List<Mechanic> analyseDefenceNarrative(List<DefenceFact> facts, List<PassiveFact> passives, List<BuffFact> buffs) {
+        Set<String> kinds = safe(facts).stream().filter(fact -> fact.value() != null && fact.value() > 0).map(DefenceFact::kind).collect(java.util.stream.Collectors.toSet());
+        if (kinds.isEmpty()) return List.of();
+        List<String> layers = new ArrayList<>();
+        if (kinds.contains("life")) layers.add("생명력");
+        if (safe(passives).stream().flatMap(fact -> safe(fact.tags()).stream()).anyMatch("life-regeneration"::equals)) layers.add("생명력 재생");
+        if (kinds.containsAll(Set.of("fire-resistance", "cold-resistance", "lightning-resistance"))) layers.add("높은 원소 저항");
+        if (kinds.contains("armour")) layers.add("방어도");
+        if (hasAny(kinds, "block", "spell-block")) layers.add("막기");
+        String text = String.join("과 ", layers) + "을 기반으로 생존력을 확보합니다.";
+        List<String> buffNames = safe(buffs).stream().filter(buff -> !safe(buff.tags()).isEmpty()).map(BuffFact::name).toList();
+        if (!buffNames.isEmpty()) text += " " + String.join(", ", buffNames) + " 등의 버프로 생존력을 강화합니다.";
+        return List.of(new Mechanic("방어 기재", text));
     }
 
     public List<Mechanic> analyseDefence(List<DefenceFact> facts, List<PassiveFact> passives, List<String> passiveTags, List<ItemFact> items) {
@@ -129,6 +161,36 @@ public class BuildFactsAnalysisService {
         return analysis;
     }
 
+    public List<Mechanic> analyseGear(List<ItemFact> items, List<JewelFact> jewels) {
+        List<Mechanic> analysis = new ArrayList<>();
+        for (ItemFact item : safe(items)) {
+            if (item.name() != null && !item.name().isBlank()) {
+                analysis.add(new Mechanic("장비: " + item.slot() + " · " + item.name(), "옵션: " + String.join(" · ", safe(item.modifiers()))));
+            }
+        }
+        for (JewelFact jewel : safe(jewels)) {
+            if (jewel.name() != null && !jewel.name().isBlank()) {
+                String kind = "cluster".equals(jewel.kind()) ? "군 주얼" : "주얼";
+                analysis.add(new Mechanic(kind + ": " + jewel.name(), "옵션: " + String.join(" · ", safe(jewel.modifiers()))));
+            }
+        }
+        return analysis;
+    }
+
+    public List<Mechanic> analysePerformance(PerformanceFact fact) {
+        if (fact == null) return List.of();
+        List<String> values = new ArrayList<>();
+        addPerformance(values, "주력 DPS", fact.totalDps());
+        addPerformance(values, "합산 DPS", fact.combinedDps());
+        addPerformance(values, "생명력", fact.life());
+        addPerformance(values, "에너지 보호막", fact.energyShield());
+        addPerformance(values, "마나", fact.mana());
+        addPerformance(values, "방어도", fact.armour());
+        addPerformance(values, "회피", fact.evasion());
+        addPerformance(values, "총 EHP", fact.totalEhp());
+        return values.isEmpty() ? List.of() : List.of(new Mechanic("PoB 계산 수치", String.join(" · ", values)));
+    }
+
     public List<Mechanic> analyseBuffs(List<BuffFact> facts) {
         List<Mechanic> analysis = new ArrayList<>();
         for (BuffFact fact : safe(facts)) {
@@ -184,6 +246,10 @@ public class BuildFactsAnalysisService {
         String enabled = Boolean.TRUE.equals(support.enabled()) ? "활성" : "비활성";
         String awakened = Boolean.TRUE.equals(support.awakened()) ? ", 각성" : "";
         return support.name() + " (레벨 " + level + ", 품질 " + quality + ", " + qualityType + ", " + enabled + awakened + ")";
+    }
+
+    private void addPerformance(List<String> values, String label, Double value) {
+        if (value != null) values.add(label + " " + String.format("%,d", Math.round(value)));
     }
 
     private String skillProfile(List<String> values) {

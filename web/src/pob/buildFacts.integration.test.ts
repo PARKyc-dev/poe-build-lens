@@ -26,12 +26,12 @@ async function inspectFixture(name: string, transform?: (xml: string) => string)
 }
 
 describe('PoB BuildFacts bridge', () => {
-  it('marks only mainSkill as primary and returns allocated passive effects', async () => {
+  it('returns top DPS attacks and allocated passive effects', async () => {
     const result = await inspectFixture('OccVortex')
 
     expect(result.buildFacts.offence).toEqual(expect.arrayContaining([
       expect.objectContaining({ name: 'Vortex', role: 'primary' }),
-      expect.objectContaining({ name: 'Storm Brand', role: 'secondary' }),
+      expect.objectContaining({ name: 'Cold Snap', role: 'secondary' }),
     ]))
     expect(result.buildFacts.offence).not.toEqual(expect.arrayContaining([
       expect.objectContaining({ name: 'Shield Charge' }),
@@ -68,8 +68,19 @@ describe('PoB BuildFacts bridge', () => {
       expect.objectContaining({ socket: '36634', name: 'Cataclysm Stone', baseName: 'Cobalt Jewel', kind: 'jewel' }),
     ]))
     expect(result.buildFacts.items).toEqual(expect.arrayContaining([
-      expect.objectContaining({ slot: 'Weapon 2', tags: expect.arrayContaining(['cold-resistance']) }),
+      expect.objectContaining({ slot: 'Weapon 2', name: expect.any(String), modifiers: expect.any(Array), tags: expect.arrayContaining(['cold-resistance']) }),
     ]))
+    expect(result.buildFacts.performance).toMatchObject({ life: expect.any(Number), totalDps: expect.any(Number) })
+  }, 30_000)
+
+  it('ranks the two highest combined DPS skills as primary and secondary attacks', async () => {
+    const result = await inspectFixture('OccVortex')
+    const attacks = result.buildFacts.offence
+
+    expect(attacks).toHaveLength(2)
+    expect(attacks[0]).toMatchObject({ role: 'primary', combinedDps: expect.any(Number) })
+    expect(attacks[1]).toMatchObject({ role: 'secondary', combinedDps: expect.any(Number) })
+    expect(attacks[0].combinedDps).toBeGreaterThanOrEqual(attacks[1].combinedDps)
   }, 30_000)
 
   it('returns each skill support gem and allocated ascendancy node details', async () => {
@@ -102,6 +113,9 @@ describe('PoB BuildFacts bridge', () => {
 
     expect(result.jewels).toEqual(expect.arrayContaining([
       expect.objectContaining({ socket: '49080', name: 'Glyph Star', baseName: 'Medium Cluster Jewel', kind: 'cluster' }),
+    ]))
+    expect(result.buildFacts.jewels).toEqual(expect.arrayContaining([
+      expect.objectContaining({ socket: '49080', name: 'Glyph Star', kind: 'cluster', modifiers: expect.any(Array), tags: expect.any(Array) }),
     ]))
   }, 30_000)
 

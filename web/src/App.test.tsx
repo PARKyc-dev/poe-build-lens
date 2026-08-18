@@ -29,6 +29,8 @@ vi.mock('./pob/browserPob', () => ({
       ascendancies: [],
       passiveTags: ['fire-resistance'],
       items: [],
+      jewels: [],
+      performance: {},
     },
     summary: { life: 2800, energyShield: 0, armour: 1200, evasion: 900, totalDps: 123456 },
     equipment: [{
@@ -74,6 +76,8 @@ vi.mock('./api/analysis', () => ({
     }],
     passiveNodes: [],
     ascendancies: [],
+    gear: [],
+    performance: [],
     overrides: [],
     unverified: [],
     evidence: [{
@@ -125,10 +129,7 @@ describe('build analysis', () => {
     expect(screen.getByRole('heading', { name: '이 빌드에서 먼저 볼 것' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '공격 기재 분석' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '방어 기재 분석' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '유틸리티·버프 분석' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '핵심 패시브 분석' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '주요 패시브 노드 분석' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '전직 노드 분석' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '분석 근거' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '발사체 적중과 폭발' })).toBeInTheDocument()
     expect(screen.getByText('Fireball은 적중 지점에서 폭발 피해를 줍니다.')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '생명력·저항·막기 기반 방어' })).toBeInTheDocument()
@@ -205,6 +206,8 @@ describe('build analysis', () => {
       passives: [],
       passiveNodes: [],
       ascendancies: [],
+      gear: [],
+      performance: [],
       overrides: [],
       unverified: ['3.30 / Fireball / self-cast 조합은 아직 검증되지 않았습니다.'],
       evidence: [],
@@ -236,7 +239,7 @@ describe('build analysis', () => {
 
     resolveInspection!({
       specs: [], skillSets: [], itemSets: [], activeSpec: 0, activeSkillSet: 0, activeItemSet: 0,
-      activeSkillName: null, mainSkillFlags: null, buildFacts: { offence: [], skills: [], defence: [], buffs: [], mobility: [], passives: [], ascendancies: [], passiveTags: [], items: [] }, summary: {}, equipment: [], jewels: [], tree: { version: '3_27', nodes: [], links: [] },
+      activeSkillName: null, mainSkillFlags: null, buildFacts: { offence: [], skills: [], defence: [], buffs: [], mobility: [], passives: [], ascendancies: [], passiveTags: [], items: [], jewels: [], performance: {} }, summary: {}, equipment: [], jewels: [], tree: { version: '3_27', nodes: [], links: [] },
     })
 
     expect(await screen.findByText('활성 장비 세트와 패시브 트리에 장착된 아이템이 없습니다.')).toBeInTheDocument()

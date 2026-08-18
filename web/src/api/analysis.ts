@@ -20,6 +20,8 @@ export type BuildAnalysisResult = {
   passives: Mechanic[]
   passiveNodes: Mechanic[]
   ascendancies: Mechanic[]
+  gear: Mechanic[]
+  performance: Mechanic[]
   overrides: Mechanic[]
   unverified: string[]
   evidence: Evidence[]

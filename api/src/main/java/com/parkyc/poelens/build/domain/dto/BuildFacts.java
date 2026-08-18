@@ -11,5 +11,7 @@ public record BuildFacts(
         List<PassiveFact> passives,
         List<AscendancyFact> ascendancies,
         List<String> passiveTags,
-        List<ItemFact> items) {
+        List<ItemFact> items,
+        List<JewelFact> jewels,
+        PerformanceFact performance) {
 }

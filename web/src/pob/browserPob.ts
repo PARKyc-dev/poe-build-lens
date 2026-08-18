@@ -22,6 +22,7 @@ export type BrowserJewelItem = {
 export type BuildFactOffence = {
   name: string
   role: 'primary' | 'secondary'
+  combinedDps: number
   delivery: string
   tags: string[]
 }
@@ -70,7 +71,24 @@ export type BuildFactMobility = {
 
 export type BuildFactItem = {
   slot: string
+  name: string
+  baseName: string | null
+  rarity: string
+  modifiers: string[]
   tags: string[]
+}
+
+export type BuildFactJewel = BrowserJewelItem & { tags: string[] }
+
+export type BuildFactPerformance = {
+  totalDps?: number
+  combinedDps?: number
+  life?: number
+  energyShield?: number
+  mana?: number
+  armour?: number
+  evasion?: number
+  totalEhp?: number
 }
 
 export type BuildFacts = {
@@ -83,6 +101,8 @@ export type BuildFacts = {
   ascendancies: BuildFactAscendancy[]
   passiveTags: string[]
   items: BuildFactItem[]
+  jewels: BuildFactJewel[]
+  performance: BuildFactPerformance
 }
 
 export type BrowserInspectResult = {

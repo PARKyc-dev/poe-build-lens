@@ -10,6 +10,8 @@ public record AnalysisResult(
         List<Mechanic> passives,
         List<Mechanic> passiveNodes,
         List<Mechanic> ascendancies,
+        List<Mechanic> gear,
+        List<Mechanic> performance,
         List<Mechanic> overrides,
         List<String> unverified,
         List<Evidence> evidence) {

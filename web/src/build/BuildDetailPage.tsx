@@ -128,10 +128,7 @@ export function BuildDetailPage({ result, analysis, onNewInspection }: {
           <div className="analysis-sections">
             <AnalysisSection title="공격 기재 분석" mechanics={analysis.offence} emptyMessage="분석할 공격 기재가 없습니다." />
             <AnalysisSection title="방어 기재 분석" mechanics={analysis.defence} emptyMessage="분석할 방어 기재가 없습니다." />
-            <AnalysisSection title="유틸리티·버프 분석" mechanics={analysis.buffs} emptyMessage="현재 활성화된 유틸리티·버프 기재가 없습니다." />
-            <AnalysisSection title="핵심 패시브 분석" mechanics={analysis.passives} emptyMessage="분석 가능한 핵심 패시브가 없습니다." />
-            <AnalysisSection title="주요 패시브 노드 분석" mechanics={analysis.passiveNodes} emptyMessage="할당된 주요 패시브 노드가 없습니다." />
-            <AnalysisSection title="전직 노드 분석" mechanics={analysis.ascendancies} emptyMessage="할당된 전직 노드가 없습니다." />
+            <AnalysisSection title="분석 근거" mechanics={[...analysis.buffs, ...analysis.passives, ...analysis.passiveNodes, ...analysis.ascendancies, ...analysis.gear, ...analysis.performance]} emptyMessage="분석 근거가 없습니다." />
           </div>
 
           {analysis.unverified.length > 0 && <section className="analysis-section" aria-label="미검증 항목">

@@ -8,6 +8,8 @@ public record AnalysisResult(
         List<Mechanic> defence,
         List<Mechanic> buffs,
         List<Mechanic> passives,
+        List<Mechanic> passiveNodes,
+        List<Mechanic> ascendancies,
         List<Mechanic> overrides,
         List<String> unverified,
         List<Evidence> evidence) {

@@ -148,6 +148,31 @@ local function equipmentFromActiveSet()
   return result
 end
 
+local function jewelsFromActiveSpec()
+  local result = { }
+  for socketId, itemId in pairs(build.spec.jewels or { }) do
+    local item = build.itemsTab.items[itemId]
+    if item then
+      local modifiers = { }
+      for index, mod in ipairs(item.explicitModLines or { }) do
+        if index > 4 then break end
+        table.insert(modifiers, mod.line or mod.extra)
+      end
+      local baseName = item.baseName
+      table.insert(result, {
+        socket = tostring(socketId),
+        name = item.title or item.name or baseName,
+        baseName = baseName,
+        rarity = item.rarity,
+        modifiers = modifiers,
+        kind = baseName and string.find(baseName, "Cluster Jewel", 1, true) and "cluster" or "jewel",
+      })
+    end
+  end
+  table.sort(result, function(left, right) return left.socket < right.socket end)
+  return result
+end
+
 local function isTriggeredMainSkill(mainSkill)
   local skillData = mainSkill.skillData or { }
   local skillTypes = mainSkill.skillTypes or { }
@@ -308,6 +333,58 @@ local function offenceFacts(player)
   return result
 end
 
+local function gemName(gem)
+  local grantedEffect = gem.grantedEffect or (gem.gemData and gem.gemData.grantedEffect) or { }
+  return grantedEffect.name or (gem.gemData and gem.gemData.name) or gem.nameSpec
+end
+
+local function isSupportGem(gem)
+  local grantedEffect = gem.grantedEffect or (gem.gemData and gem.gemData.grantedEffect) or { }
+  return grantedEffect.support and true or false
+end
+
+local gemQualityTypes = { }
+
+local function qualityType(gem)
+  return gem.qualityId or (gem.gemData and gemQualityTypes[gem.gemData.gameId]) or "Default"
+end
+
+local function supportGemFact(gem, group)
+  local grantedEffect = gem.grantedEffect or (gem.gemData and gem.gemData.grantedEffect) or { }
+  return {
+    name = gemName(gem),
+    level = gem.level,
+    quality = gem.quality,
+    qualityType = qualityType(gem),
+    enabled = gem.enabled and group.enabled and true or false,
+    awakened = (grantedEffect.plusVersionOf or (gem.gemData and gem.gemData.name and gem.gemData.name:match("^Awakened "))) and true or false,
+  }
+end
+
+local function skillFacts()
+  local result = jsonArray()
+  for _, group in ipairs(build.skillsTab.socketGroupList or { }) do
+    local supports = jsonArray()
+    for _, gem in ipairs(group.gemList or { }) do
+      if isSupportGem(gem) then table.insert(supports, supportGemFact(gem, group)) end
+    end
+    for _, gem in ipairs(group.gemList or { }) do
+      if not isSupportGem(gem) and gemName(gem) then
+        table.insert(result, {
+          name = gemName(gem),
+          level = gem.level,
+          quality = gem.quality,
+          qualityType = qualityType(gem),
+          enabled = gem.enabled and group.enabled and true or false,
+          awakened = (gem.gemData and gem.gemData.name and gem.gemData.name:match("^Awakened ")) and true or false,
+          supports = supports,
+        })
+      end
+    end
+  end
+  return result
+end
+
 local function mobilityFacts(player)
   local result = jsonArray()
   local seen = { }
@@ -333,6 +410,25 @@ local function passiveFacts(spec)
       if name then
         table.insert(result, { name = name, effects = effects, tags = tagsFromModList(node.modList) })
       end
+    end
+  end
+  return result
+end
+
+local function ascendancyFacts(spec)
+  local result = jsonArray()
+  for _, node in pairs(spec.allocNodes or { }) do
+    if node.ascendancyName and not node.isAscendancyStart then
+      local effects = jsonArray()
+      for _, effect in ipairs(node.sd or { }) do
+        if type(effect) == "string" and effect ~= "" then table.insert(effects, effect) end
+      end
+      table.insert(result, {
+        ascendancyName = node.ascendancyName,
+        name = node.dn or node.name,
+        effects = effects,
+        tags = tagsFromModList(node.modList),
+      })
     end
   end
   return result
@@ -419,17 +515,30 @@ end
 local function buildFacts(env, output, spec)
   return {
     offence = offenceFacts(env.player),
+    skills = skillFacts(),
     defence = defenceFacts(output),
     buffs = buffFacts(env, output),
     mobility = mobilityFacts(env.player),
     passives = passiveFacts(spec),
+    ascendancies = ascendancyFacts(spec),
     passiveTags = allPassiveTags(spec),
     items = itemFacts(),
   }
 end
 
+local function qualityTypesFromXml(xmlText)
+  local result = { }
+  for attributes in xmlText:gmatch("<Gem%s+([^>]-)/>") do
+    local gemId = attributes:match('gemId="([^"]+)"')
+    local qualityId = attributes:match('qualityId="([^"]+)"')
+    if gemId and qualityId then result[gemId] = qualityId end
+  end
+  return result
+end
+
 function inspectBuild(xmlText, specId)
   loadBuildFromXML(xmlText, "poe-lens-browser")
+  gemQualityTypes = qualityTypesFromXml(xmlText)
   if specId then build.treeTab:SetActiveSpec(specId) end
   wipeGlobalCache()
   build.buildFlag = true
@@ -477,7 +586,7 @@ function inspectBuild(xmlText, specId)
     activeItemSet = build.itemsTab.activeItemSetId,
     activeSkillName = mainSkill and mainSkill.activeEffect and mainSkill.activeEffect.grantedEffect and mainSkill.activeEffect.grantedEffect.name or nil,
     mainSkillFlags = flagsFromMainSkill(mainSkill),
-    buildFacts = mainEnv and buildFacts(mainEnv, output, spec) or { offence = { }, defence = { }, buffs = { }, mobility = { }, passives = { }, passiveTags = { }, items = { } },
+    buildFacts = mainEnv and buildFacts(mainEnv, output, spec) or { offence = { }, skills = { }, defence = { }, buffs = { }, mobility = { }, passives = { }, ascendancies = { }, passiveTags = { }, items = { } },
     summary = {
       totalDps = output.TotalDPS,
       combinedDps = output.CombinedDPS,
@@ -489,6 +598,7 @@ function inspectBuild(xmlText, specId)
       totalEhp = output.TotalEHP,
     },
     equipment = equipmentFromActiveSet(),
+    jewels = jewelsFromActiveSpec(),
     tree = {
       version = spec.treeVersion,
       nodes = nodes,

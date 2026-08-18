@@ -21,11 +21,11 @@ public class BuildAnalysisServiceImpl implements BuildAnalysisService {
     public AnalysisResult analyze(BuildAnalysisRequest request) {
         BuildFacts facts = request.buildFacts();
         if (facts == null) {
-            return new AnalysisResult(request.gameVersion(), List.of(), List.of(), List.of(), List.of(), List.of(),
+            return new AnalysisResult(request.gameVersion(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(),
                     List.of("No build facts are available for analysis."), List.of());
         }
 
-        List<Mechanic> offence = new java.util.ArrayList<>(buildFactsAnalysisService.analyseOffence(facts.offence(), facts.items()));
+        List<Mechanic> offence = new java.util.ArrayList<>(buildFactsAnalysisService.analyseOffence(facts.offence(), facts.items(), facts.skills()));
         List<Mechanic> buffs = new java.util.ArrayList<>(buildFactsAnalysisService.analyseBuffs(facts.buffs()));
         buffs.addAll(buildFactsAnalysisService.analyseMobility(facts.mobility()));
         return new AnalysisResult(request.gameVersion(),
@@ -33,6 +33,8 @@ public class BuildAnalysisServiceImpl implements BuildAnalysisService {
                 buildFactsAnalysisService.analyseDefence(facts.defence(), facts.passives(), facts.passiveTags(), facts.items()),
                 buffs,
                 buildFactsAnalysisService.analysePassives(facts.passives(), facts.passiveTags()),
+                buildFactsAnalysisService.analysePassiveNodes(facts.passives()),
+                buildFactsAnalysisService.analyseAscendancies(facts.ascendancies()),
                 List.of(), List.of(), List.of());
     }
 }

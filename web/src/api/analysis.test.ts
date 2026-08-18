@@ -11,9 +11,10 @@ const inspectedFireball: BrowserInspectResult = {
   activeItemSet: 0,
   activeSkillName: 'Fireball',
   mainSkillFlags: { isSelfCast: true },
-  buildFacts: { offence: [], defence: [], buffs: [], mobility: [], passives: [], passiveTags: [], items: [] },
+  buildFacts: { offence: [], skills: [], defence: [], buffs: [], mobility: [], passives: [], ascendancies: [], passiveTags: [], items: [] },
   summary: { life: 4500, totalDps: 123456 },
   equipment: [],
+  jewels: [],
   tree: { version: '3_29', nodes: [], links: [] },
 }
 
@@ -32,6 +33,8 @@ describe('analyzeBuild', () => {
         defence: [],
         buffs: [],
         passives: [],
+        passiveNodes: [],
+        ascendancies: [],
         overrides: [],
         unverified: [],
         evidence: [],
@@ -46,7 +49,7 @@ describe('analyzeBuild', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         gameVersion: '3.29',
-        buildFacts: { offence: [], defence: [], buffs: [], mobility: [], passives: [], passiveTags: [], items: [] },
+        buildFacts: { offence: [], skills: [], defence: [], buffs: [], mobility: [], passives: [], ascendancies: [], passiveTags: [], items: [] },
       }),
     })
   })

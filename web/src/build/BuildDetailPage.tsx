@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { createBuildInsight } from './buildInsight'
 import type { BuildAnalysisResult } from '../api/analysis'
 import type { BrowserInspectResult } from '../pob/browserPob'
@@ -29,6 +30,29 @@ const slotLabels: Record<string, string> = {
   'Flask 3': '플라스크 3',
   'Flask 4': '플라스크 4',
   'Flask 5': '플라스크 5',
+}
+
+const equipmentSlots = [
+  'Weapon 1', 'Weapon 2', 'Helmet', 'Body Armour', 'Gloves', 'Boots', 'Amulet',
+  'Ring 1', 'Ring 2', 'Belt', 'Flask 1', 'Flask 2', 'Flask 3', 'Flask 4', 'Flask 5',
+]
+
+const slotClasses: Record<string, string> = {
+  'Weapon 1': 'weapon-1',
+  'Weapon 2': 'weapon-2',
+  Helmet: 'helmet',
+  'Body Armour': 'body-armour',
+  Gloves: 'gloves',
+  Boots: 'boots',
+  Amulet: 'amulet',
+  'Ring 1': 'ring-1',
+  'Ring 2': 'ring-2',
+  Belt: 'belt',
+  'Flask 1': 'flask-1',
+  'Flask 2': 'flask-2',
+  'Flask 3': 'flask-3',
+  'Flask 4': 'flask-4',
+  'Flask 5': 'flask-5',
 }
 
 const defenceLabels: Record<string, { label: string; unit?: string }> = {
@@ -76,6 +100,14 @@ export function BuildDetailPage({ result, analysis, onNewInspection }: {
   onNewInspection: () => void
 }) {
   const insight = createBuildInsight({ summary: result.summary })
+  const equipmentBySlot = new Map(result.equipment.map((item) => [item.slot, item]))
+  const [selectedEquipmentKey, setSelectedEquipmentKey] = useState<string | null>(null)
+  const selectedEquipment = selectedEquipmentKey?.startsWith('equipment:') ? equipmentBySlot.get(selectedEquipmentKey.slice('equipment:'.length)) : undefined
+  const selectedJewel = selectedEquipmentKey?.startsWith('jewel:') ? result.jewels.find((item) => item.socket === selectedEquipmentKey.slice('jewel:'.length)) : undefined
+  const selectedItem = selectedEquipment ?? selectedJewel
+  const selectedItemLabel = selectedEquipment ? slotLabels[selectedEquipment.slot] ?? selectedEquipment.slot : selectedJewel?.kind === 'cluster' ? '군 주얼' : '주얼'
+  const jewels = result.jewels.filter((item) => item.kind === 'jewel')
+  const clusterJewels = result.jewels.filter((item) => item.kind === 'cluster')
 
   return (
     <main className="build-detail" aria-label="빌드 상세">
@@ -98,6 +130,8 @@ export function BuildDetailPage({ result, analysis, onNewInspection }: {
             <AnalysisSection title="방어 기재 분석" mechanics={analysis.defence} emptyMessage="분석할 방어 기재가 없습니다." />
             <AnalysisSection title="유틸리티·버프 분석" mechanics={analysis.buffs} emptyMessage="현재 활성화된 유틸리티·버프 기재가 없습니다." />
             <AnalysisSection title="핵심 패시브 분석" mechanics={analysis.passives} emptyMessage="분석 가능한 핵심 패시브가 없습니다." />
+            <AnalysisSection title="주요 패시브 노드 분석" mechanics={analysis.passiveNodes} emptyMessage="할당된 주요 패시브 노드가 없습니다." />
+            <AnalysisSection title="전직 노드 분석" mechanics={analysis.ascendancies} emptyMessage="할당된 전직 노드가 없습니다." />
           </div>
 
           {analysis.unverified.length > 0 && <section className="analysis-section" aria-label="미검증 항목">
@@ -141,19 +175,46 @@ export function BuildDetailPage({ result, analysis, onNewInspection }: {
       <section className="equipment-panel" aria-label="장비 상세">
         <p className="section-kicker">EQUIPMENT</p>
         <h2>장비 상세</h2>
-        {result.equipment.length === 0 ? <p>활성 장비 세트에 장착된 아이템이 없습니다.</p> : <ul className="equipment-list">
+        {result.equipment.length === 0 && result.jewels.length === 0 ? <p>활성 장비 세트와 패시브 트리에 장착된 아이템이 없습니다.</p> : <>
+        <div className="equipment-stage">
+          <ul className="equipment-layout">
+            {equipmentSlots.map((slot) => {
+              const item = equipmentBySlot.get(slot)
+              const label = slotLabels[slot]
+              return <li key={slot} className={`equipment-slot ${slotClasses[slot]} ${item ? `rarity-${item.rarity.toLowerCase()}` : 'empty'}`} onMouseEnter={() => setSelectedEquipmentKey(item ? `equipment:${slot}` : null)} onMouseLeave={() => setSelectedEquipmentKey(null)}>
+                {item ? <button type="button" aria-label={`${label} 슬롯: ${item.name}`} aria-describedby={selectedEquipmentKey === `equipment:${slot}` ? 'equipment-tooltip' : undefined} onFocus={() => setSelectedEquipmentKey(`equipment:${slot}`)} onBlur={() => setSelectedEquipmentKey(null)}>
+                  {item.imageUrl ? <img src={item.imageUrl} alt="" /> : <span className="equipment-slot-label">{label}</span>}
+                  <strong>{item.name}</strong>
+                </button> : <span aria-label={`${label} 슬롯`} className="equipment-slot-label">{label}</span>}
+              </li>
+            })}
+          </ul>
+          {result.jewels.length > 0 && <div className="jewel-groups">
+            {jewels.length > 0 && <section aria-label="주얼"><h3>주얼</h3><ul className="jewel-list">{jewels.map((item) => <li key={item.socket} className={`rarity-${item.rarity.toLowerCase()}`} onMouseEnter={() => setSelectedEquipmentKey(`jewel:${item.socket}`)} onMouseLeave={() => setSelectedEquipmentKey(null)}><button type="button" aria-label={`주얼: ${item.name}`} aria-describedby={selectedEquipmentKey === `jewel:${item.socket}` ? 'equipment-tooltip' : undefined} onFocus={() => setSelectedEquipmentKey(`jewel:${item.socket}`)} onBlur={() => setSelectedEquipmentKey(null)}><strong>{item.name}</strong><span>{item.baseName}</span></button></li>)}</ul></section>}
+            {clusterJewels.length > 0 && <section aria-label="군 주얼"><h3>군 주얼</h3><ul className="jewel-list">{clusterJewels.map((item) => <li key={item.socket} className={`rarity-${item.rarity.toLowerCase()}`} onMouseEnter={() => setSelectedEquipmentKey(`jewel:${item.socket}`)} onMouseLeave={() => setSelectedEquipmentKey(null)}><button type="button" aria-label={`군 주얼: ${item.name}`} aria-describedby={selectedEquipmentKey === `jewel:${item.socket}` ? 'equipment-tooltip' : undefined} onFocus={() => setSelectedEquipmentKey(`jewel:${item.socket}`)} onBlur={() => setSelectedEquipmentKey(null)}><strong>{item.name}</strong><span>{item.baseName}</span></button></li>)}</ul></section>}
+          </div>}
+          {selectedItem && <aside id="equipment-tooltip" className={`equipment-tooltip rarity-${selectedItem.rarity.toLowerCase()}`} style={{ position: 'absolute' }} role="tooltip" aria-label={`${selectedItem.name} 장비 정보`}>
+            <small>{selectedItemLabel}</small>
+            <h3>{selectedItem.name}</h3>
+            {selectedItem.baseName && <p>{selectedItem.baseName}</p>}
+            <div>{selectedItem.modifiers.map((modifier) => <p key={modifier}>{modifier}</p>)}</div>
+          </aside>}
+        </div>
+        <ul className="equipment-details">
           {result.equipment.map((item) => <li key={item.slot} className={`rarity-${item.rarity.toLowerCase()}`}>
-            <div className="equipment-icon" aria-label={`${slotLabels[item.slot] ?? item.slot} 아이콘`}>
-              {item.imageUrl ? <img src={item.imageUrl} alt="" /> : <span>{slotLabels[item.slot] ?? item.slot}</span>}
-            </div>
-            <div className="equipment-copy">
-              <small>{slotLabels[item.slot] ?? item.slot}</small>
-              <strong>{item.name}</strong>
-              {item.baseName && <span>{item.baseName}</span>}
-              {item.modifiers.map((modifier) => <em key={modifier}>{modifier}</em>)}
-            </div>
+            <small>{slotLabels[item.slot] ?? item.slot}</small>
+            <strong>{item.name}</strong>
+            {item.baseName && <span>{item.baseName}</span>}
+            {item.modifiers.map((modifier) => <em key={modifier}>{modifier}</em>)}
           </li>)}
-        </ul>}
+          {result.jewels.map((item) => <li key={item.socket} className={`rarity-${item.rarity.toLowerCase()}`}>
+            <small>{item.kind === 'cluster' ? '군 주얼' : '주얼'}</small>
+            <strong>{item.name}</strong>
+            {item.baseName && <span>{item.baseName}</span>}
+            {item.modifiers.map((modifier) => <em key={modifier}>{modifier}</em>)}
+          </li>)}
+        </ul>
+        </>}
       </section>
     </main>
   )

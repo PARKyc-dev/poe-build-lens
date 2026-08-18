@@ -7,7 +7,7 @@ import bridgeSource from './bridge.lua?raw'
 import type { BuildSummary } from '../build/buildInsight'
 import type { MainSkillFlags } from '../build/offenceClassification'
 import type { PassiveTree } from './passiveTree'
-import type { BuildFacts } from './browserPob'
+import type { BrowserJewelItem, BuildFacts } from './browserPob'
 
 type InspectEntry = { id: number; title: string }
 type EquipmentItem = { slot: string; name: string; baseName: string | null; rarity: string; modifiers: string[]; imageUrl?: string | null }
@@ -23,6 +23,7 @@ type BrowserInspectResult = {
   buildFacts: BuildFacts
   summary: BuildSummary
   equipment: EquipmentItem[]
+  jewels: BrowserJewelItem[]
   tree: PassiveTree
 }
 type Asset = { url: string; byteSize: number; sha256: string }

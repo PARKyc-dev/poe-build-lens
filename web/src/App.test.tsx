@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, render, screen, within } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 vi.mock('./pob/browserPob', () => ({
@@ -17,6 +17,7 @@ vi.mock('./pob/browserPob', () => ({
         { name: 'Fireball', role: 'primary', delivery: 'self-cast', tags: ['spell'] },
         { name: 'Flame Wall', role: 'secondary', delivery: 'self-cast', tags: ['spell'] },
       ],
+      skills: [],
       defence: [
         { kind: 'life', value: 2800 },
         { kind: 'fire-resistance', value: 75 },
@@ -25,6 +26,7 @@ vi.mock('./pob/browserPob', () => ({
       buffs: [{ name: 'Determination', kind: 'aura', appliesTo: 'player', tags: [] }],
       mobility: [{ name: 'Shield Charge' }],
       passives: [{ name: 'Tasalio, Cleansing Water', effects: ['+100% to Fire Resistance'], tags: ['fire-resistance'] }],
+      ascendancies: [],
       passiveTags: ['fire-resistance'],
       items: [],
     },
@@ -35,6 +37,13 @@ vi.mock('./pob/browserPob', () => ({
     }, {
       slot: 'Flask 1', name: 'Granite Flask', baseName: 'Granite Flask', rarity: 'MAGIC',
       modifiers: ['+1500 to Armour during Flask effect'],
+    }],
+    jewels: [{
+      socket: '1234', name: 'Crimson Jewel of the Fox', baseName: 'Crimson Jewel', rarity: 'MAGIC',
+      modifiers: ['+7% to maximum Life'], kind: 'jewel',
+    }, {
+      socket: '5678', name: 'Large Cluster Jewel', baseName: 'Large Cluster Jewel', rarity: 'RARE',
+      modifiers: ['Added Small Passive Skills grant: 12% increased Fire Damage'], kind: 'cluster',
     }],
     tree: {
       version: '3_27',
@@ -63,6 +72,8 @@ vi.mock('./api/analysis', () => ({
       title: '저항 핵심 패시브',
       explanation: '패시브 효과 태그가 원소 저항을 방어 축으로 보강합니다.',
     }],
+    passiveNodes: [],
+    ascendancies: [],
     overrides: [],
     unverified: [],
     evidence: [{
@@ -116,15 +127,14 @@ describe('build analysis', () => {
     expect(screen.getByRole('heading', { name: '방어 기재 분석' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '유틸리티·버프 분석' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '핵심 패시브 분석' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '주요 패시브 노드 분석' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '전직 노드 분석' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '발사체 적중과 폭발' })).toBeInTheDocument()
     expect(screen.getByText('Fireball은 적중 지점에서 폭발 피해를 줍니다.')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '생명력·저항·막기 기반 방어' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '상태 이상·주문 방어 유틸리티' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '저항 핵심 패시브' })).toBeInTheDocument()
     expect(screen.getByText('생명력 기반 방어를 먼저 보강하세요')).toBeInTheDocument()
-    expect(screen.getByText('Doom Branch')).toBeInTheDocument()
-    expect(screen.getAllByText('Granite Flask')).toHaveLength(2)
-    expect(screen.getAllByText('플라스크 1')).toHaveLength(2)
     expect(screen.getByText('+90 to maximum Life')).toBeInTheDocument()
     expect(screen.queryByText('장비 상세 예시')).not.toBeInTheDocument()
     expect(screen.queryByLabelText('할당 패시브 트리 캔버스')).not.toBeInTheDocument()
@@ -132,6 +142,19 @@ describe('build analysis', () => {
     const equipment = screen.getByRole('region', { name: '장비 상세' })
     expect(equipment.closest('aside')).toBeNull()
     expect(screen.getByRole('heading', { name: '이 빌드에서 먼저 볼 것' }).compareDocumentPosition(equipment)).toBe(Node.DOCUMENT_POSITION_FOLLOWING)
+    expect(within(screen.getByLabelText('주무기 슬롯: Doom Branch')).getByText('Doom Branch')).toBeInTheDocument()
+    expect(within(screen.getByLabelText('플라스크 1 슬롯: Granite Flask')).getByText('Granite Flask')).toBeInTheDocument()
+    expect(screen.getByLabelText('투구 슬롯')).toHaveTextContent('투구')
+    await user.hover(screen.getByLabelText('주무기 슬롯: Doom Branch'))
+    const tooltip = screen.getByRole('tooltip', { name: 'Doom Branch 장비 정보' })
+    expect(tooltip).toHaveTextContent('+90 to maximum Life')
+    expect(window.getComputedStyle(tooltip).position).toBe('absolute')
+    await user.unhover(screen.getByLabelText('주무기 슬롯: Doom Branch'))
+    expect(screen.queryByRole('tooltip', { name: 'Doom Branch 장비 정보' })).not.toBeInTheDocument()
+    fireEvent.focus(screen.getByRole('button', { name: '주무기 슬롯: Doom Branch' }))
+    expect(screen.getByRole('tooltip', { name: 'Doom Branch 장비 정보' })).toBeInTheDocument()
+    fireEvent.blur(screen.getByRole('button', { name: '주무기 슬롯: Doom Branch' }))
+    expect(screen.queryByRole('tooltip', { name: 'Doom Branch 장비 정보' })).not.toBeInTheDocument()
 
     const configuration = screen.getByRole('complementary', { name: '빌드 구성' })
     expect(screen.queryByRole('region', { name: '핵심 수치' })).not.toBeInTheDocument()
@@ -151,6 +174,28 @@ describe('build analysis', () => {
     expect(screen.queryByText('주력 공격 기재')).not.toBeInTheDocument()
   })
 
+  it('shows socketed jewels in the equipment panel', async () => {
+    render(<App />)
+    const user = userEvent.setup()
+    await user.type(screen.getByLabelText('검사할 PoB 코드, pobb.in 또는 XML'), '<PathOfBuilding />')
+    await user.click(screen.getByRole('button', { name: 'PoB 검사' }))
+
+    expect(await screen.findByRole('heading', { name: '주얼' })).toBeInTheDocument()
+    const jewel = screen.getByRole('button', { name: '주얼: Crimson Jewel of the Fox' })
+    expect(jewel).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '군 주얼' })).toBeInTheDocument()
+    const clusterJewel = screen.getByRole('button', { name: '군 주얼: Large Cluster Jewel' })
+    expect(clusterJewel).toBeInTheDocument()
+
+    await user.hover(jewel)
+    expect(screen.getByRole('tooltip', { name: 'Crimson Jewel of the Fox 장비 정보' })).toHaveTextContent('+7% to maximum Life')
+    await user.unhover(jewel)
+    fireEvent.focus(clusterJewel)
+    expect(screen.getByRole('tooltip', { name: 'Large Cluster Jewel 장비 정보' })).toHaveTextContent('12% increased Fire Damage')
+    fireEvent.blur(clusterJewel)
+    expect(screen.queryByRole('tooltip', { name: 'Large Cluster Jewel 장비 정보' })).not.toBeInTheDocument()
+  })
+
   it('shows the API unverified result instead of the browser-only pending mechanic', async () => {
     vi.mocked(analyzeBuild).mockResolvedValueOnce({
       gameVersion: '3.30',
@@ -158,6 +203,8 @@ describe('build analysis', () => {
       defence: [],
       buffs: [],
       passives: [],
+      passiveNodes: [],
+      ascendancies: [],
       overrides: [],
       unverified: ['3.30 / Fireball / self-cast 조합은 아직 검증되지 않았습니다.'],
       evidence: [],
@@ -189,8 +236,11 @@ describe('build analysis', () => {
 
     resolveInspection!({
       specs: [], skillSets: [], itemSets: [], activeSpec: 0, activeSkillSet: 0, activeItemSet: 0,
-      activeSkillName: null, mainSkillFlags: null, buildFacts: { offence: [], defence: [], buffs: [], mobility: [], passives: [], passiveTags: [], items: [] }, summary: {}, equipment: [], tree: { version: '3_27', nodes: [], links: [] },
+      activeSkillName: null, mainSkillFlags: null, buildFacts: { offence: [], skills: [], defence: [], buffs: [], mobility: [], passives: [], ascendancies: [], passiveTags: [], items: [] }, summary: {}, equipment: [], jewels: [], tree: { version: '3_27', nodes: [], links: [] },
     })
+
+    expect(await screen.findByText('활성 장비 세트와 패시브 트리에 장착된 아이템이 없습니다.')).toBeInTheDocument()
+    expect(screen.queryByLabelText('투구 슬롯')).not.toBeInTheDocument()
   })
 
 })

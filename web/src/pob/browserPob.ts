@@ -11,6 +11,14 @@ export type BrowserEquipmentItem = {
   modifiers: string[]
   imageUrl?: string | null
 }
+export type BrowserJewelItem = {
+  socket: string
+  name: string
+  baseName: string | null
+  rarity: string
+  modifiers: string[]
+  kind: 'jewel' | 'cluster'
+}
 export type BuildFactOffence = {
   name: string
   role: 'primary' | 'secondary'
@@ -18,7 +26,27 @@ export type BuildFactOffence = {
   tags: string[]
 }
 
+export type BuildFactSupportGem = {
+  name: string
+  level: number
+  quality: number
+  qualityType: string
+  enabled: boolean
+  awakened: boolean
+}
+
+export type BuildFactSkill = BuildFactSupportGem & {
+  supports: BuildFactSupportGem[]
+}
+
 export type BuildFactPassive = {
+  name: string
+  effects: string[]
+  tags: string[]
+}
+
+export type BuildFactAscendancy = {
+  ascendancyName: string
   name: string
   effects: string[]
   tags: string[]
@@ -47,10 +75,12 @@ export type BuildFactItem = {
 
 export type BuildFacts = {
   offence: BuildFactOffence[]
+  skills: BuildFactSkill[]
   defence: BuildFactDefence[]
   buffs: BuildFactBuff[]
   mobility: BuildFactMobility[]
   passives: BuildFactPassive[]
+  ascendancies: BuildFactAscendancy[]
   passiveTags: string[]
   items: BuildFactItem[]
 }
@@ -67,6 +97,7 @@ export type BrowserInspectResult = {
   buildFacts: BuildFacts
   summary: BuildSummary
   equipment: BrowserEquipmentItem[]
+  jewels: BrowserJewelItem[]
   tree: PassiveTree
 }
 

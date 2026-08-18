@@ -18,6 +18,8 @@ export type BuildAnalysisResult = {
   defence: Mechanic[]
   buffs: Mechanic[]
   passives: Mechanic[]
+  passiveNodes: Mechanic[]
+  ascendancies: Mechanic[]
   overrides: Mechanic[]
   unverified: string[]
   evidence: Evidence[]

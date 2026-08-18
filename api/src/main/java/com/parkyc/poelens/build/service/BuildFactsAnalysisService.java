@@ -7,6 +7,9 @@ import com.parkyc.poelens.build.domain.dto.OffenceFact;
 import com.parkyc.poelens.build.domain.dto.PassiveFact;
 import com.parkyc.poelens.build.domain.dto.MobilityFact;
 import com.parkyc.poelens.build.domain.dto.ItemFact;
+import com.parkyc.poelens.build.domain.dto.SkillFact;
+import com.parkyc.poelens.build.domain.dto.SupportGemFact;
+import com.parkyc.poelens.build.domain.dto.AscendancyFact;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -34,19 +37,20 @@ public class BuildFactsAnalysisService {
             "flask", "플라스크 (Flask)",
             "buff", "버프 (Buff)");
 
-    public List<Mechanic> analyseOffence(List<OffenceFact> facts, List<ItemFact> items) {
+    public List<Mechanic> analyseOffence(List<OffenceFact> facts, List<ItemFact> items, List<SkillFact> skills) {
         List<Mechanic> analysis = new ArrayList<>();
         Set<String> itemTags = new HashSet<>();
         for (ItemFact item : safe(items)) itemTags.addAll(safe(item.tags()));
         for (OffenceFact fact : safe(facts)) {
             Set<String> skillTags = new HashSet<>(safe(fact.tags()));
             String itemSupport = hasAny(itemTags, skillTags.toArray(String[]::new)) ? " 장비 효과 태그가 이 피해 축을 보강합니다." : "";
+            String gemSupport = supportSummary(fact.name(), skills);
             if ("primary".equals(fact.role())) {
                 analysis.add(new Mechanic("주력 공격: " + fact.name(),
-                        deliveryTitle(fact.delivery()) + " 방식으로 " + skillProfile(fact.tags()) + " 태그를 활용해 주 피해를 담당합니다." + itemSupport));
+                        deliveryTitle(fact.delivery()) + " 방식으로 " + skillProfile(fact.tags()) + " 태그를 활용해 주 피해를 담당합니다." + itemSupport + gemSupport));
             } else if ("secondary".equals(fact.role())) {
                 analysis.add(new Mechanic("보조 공격: " + fact.name(),
-                        deliveryTitle(fact.delivery()) + " 방식으로 " + skillProfile(fact.tags()) + " 태그를 활용해 주력 공격을 보완합니다." + itemSupport));
+                        deliveryTitle(fact.delivery()) + " 방식으로 " + skillProfile(fact.tags()) + " 태그를 활용해 주력 공격을 보완합니다." + itemSupport + gemSupport));
             }
         }
         return analysis;
@@ -102,6 +106,29 @@ public class BuildFactsAnalysisService {
         return analysis;
     }
 
+    public List<Mechanic> analysePassiveNodes(List<PassiveFact> facts) {
+        List<Mechanic> analysis = new ArrayList<>();
+        for (PassiveFact fact : safe(facts)) {
+            if (fact.name() != null && !fact.name().isBlank()) {
+                String effect = safe(fact.effects()).isEmpty() ? "효과 정보가 없습니다." : String.join(" · ", fact.effects());
+                analysis.add(new Mechanic("주요 패시브: " + fact.name(), "적용된 효과: " + effect));
+            }
+        }
+        return analysis;
+    }
+
+    public List<Mechanic> analyseAscendancies(List<AscendancyFact> facts) {
+        List<Mechanic> analysis = new ArrayList<>();
+        for (AscendancyFact fact : safe(facts)) {
+            if (fact.name() != null && !fact.name().isBlank()) {
+                String effect = safe(fact.effects()).isEmpty() ? "효과 정보가 없습니다." : String.join(" · ", fact.effects());
+                analysis.add(new Mechanic("전직 노드: " + fact.name(),
+                        (fact.ascendancyName() == null ? "전직" : fact.ascendancyName() + " 전직") + "의 적용된 효과: " + effect));
+            }
+        }
+        return analysis;
+    }
+
     public List<Mechanic> analyseBuffs(List<BuffFact> facts) {
         List<Mechanic> analysis = new ArrayList<>();
         for (BuffFact fact : safe(facts)) {
@@ -137,6 +164,26 @@ public class BuildFactsAnalysisService {
 
     private String deliveryTitle(String delivery) {
         return DELIVERY_TITLES.getOrDefault(delivery, "확인 불가 (Unverified)");
+    }
+
+    private String supportSummary(String skillName, List<SkillFact> skills) {
+        for (SkillFact skill : safe(skills)) {
+            if (skillName != null && skillName.equals(skill.name()) && !safe(skill.supports()).isEmpty()) {
+                return " 연결된 보조 젬: " + safe(skill.supports()).stream()
+                        .map(this::supportDescription)
+                        .collect(java.util.stream.Collectors.joining(", ")) + ".";
+            }
+        }
+        return "";
+    }
+
+    private String supportDescription(SupportGemFact support) {
+        String level = support.level() == null ? "?" : support.level().toString();
+        String quality = support.quality() == null ? "?" : support.quality().toString();
+        String qualityType = support.qualityType() == null ? "Default" : support.qualityType();
+        String enabled = Boolean.TRUE.equals(support.enabled()) ? "활성" : "비활성";
+        String awakened = Boolean.TRUE.equals(support.awakened()) ? ", 각성" : "";
+        return support.name() + " (레벨 " + level + ", 품질 " + quality + ", " + qualityType + ", " + enabled + awakened + ")";
     }
 
     private String skillProfile(List<String> values) {

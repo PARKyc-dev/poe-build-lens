@@ -142,6 +142,53 @@ class BuildAnalysisControllerTest {
     }
 
     @Test
+    void includesSupportGemsAndAscendancyNodesInAnalysis() throws Exception {
+        mockMvc.perform(post("/api/analyses")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {
+                                  "gameVersion": "3.29",
+                                  "buildFacts": {
+                                    "offence": [{ "name": "Any Fire Skill", "role": "primary", "delivery": "self-cast", "tags": ["spell", "fire"] }],
+                                    "skills": [{
+                                      "name": "Any Fire Skill", "level": 21, "quality": 20, "qualityType": "Default", "enabled": true, "awakened": false,
+                                      "supports": [{ "name": "Awakened Added Fire Damage", "level": 5, "quality": 20, "qualityType": "Default", "enabled": true, "awakened": true }]
+                                    }],
+                                    "ascendancies": [{
+                                      "ascendancyName": "Occultist", "name": "Void Beacon",
+                                      "effects": ["Nearby Enemies have -20% to Cold Resistance"], "tags": ["cold"]
+                                    }]
+                                  }
+                                }
+                                """))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value("직접 시전 (Self-Cast) 방식으로 화염 태그를 활용해 주 피해를 담당합니다. 연결된 보조 젬: Awakened Added Fire Damage (레벨 5, 품질 20, Default, 활성, 각성)."))
+                .andExpect(jsonPath("$.returnObject.ascendancies[0].title").value("전직 노드: Void Beacon"))
+                .andExpect(jsonPath("$.returnObject.ascendancies[0].explanation").value("Occultist 전직의 적용된 효과: Nearby Enemies have -20% to Cold Resistance"));
+    }
+
+    @Test
+    void returnsAllocatedMajorPassiveNodeDetails() throws Exception {
+        mockMvc.perform(post("/api/analyses")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {
+                                  "gameVersion": "3.29",
+                                  "buildFacts": {
+                                    "passives": [{
+                                      "name": "Growth and Decay",
+                                      "effects": ["Regenerate 1% of Life per second", "20% increased Damage over Time"],
+                                      "tags": ["life-regeneration", "damage-over-time"]
+                                    }]
+                                  }
+                                }
+                                """))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.returnObject.passiveNodes[0].title").value("주요 패시브: Growth and Decay"))
+                .andExpect(jsonPath("$.returnObject.passiveNodes[0].explanation").value("적용된 효과: Regenerate 1% of Life per second · 20% increased Damage over Time"));
+    }
+
+    @Test
     void returnsRelationshipInsightsFromOffenceDefenceAndPassiveTags() throws Exception {
         mockMvc.perform(post("/api/analyses")
                         .contentType(MediaType.APPLICATION_JSON)

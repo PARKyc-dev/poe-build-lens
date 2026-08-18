@@ -6,6 +6,11 @@
 
 ## 완료
 
+- [장비창 주얼 표시](completed/2026-08-18-equipment-jewels.md)
+- [장비 설명 오버레이 레이어](completed/2026-08-18-equipment-overlay-layer.md)
+- [보조 젬과 전직 노드 분석 입력](completed/2026-08-18-support-gems-ascendancies.md)
+- [PC 장비 설명 레이어](completed/2026-08-18-equipment-tooltip.md)
+- [장비 슬롯 레이아웃](completed/2026-08-18-equipment-slot-layout.md)
 - [브라우저 PoB 분석 결과 API 연동](completed/2026-08-15-browser-analysis-api.md)
 - [태그 기반 빌드 분석](completed/2026-08-15-tag-based-build-analysis.md)
 - [BuildFacts 기반 기재 분석](completed/2026-08-15-build-facts-analysis.md)

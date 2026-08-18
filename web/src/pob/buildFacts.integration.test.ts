@@ -12,7 +12,7 @@ async function mountArchive(factory: LuaFactory, relativePath: string) {
   await Promise.all(Object.entries(archive).map(([path, content]) => factory.mountFile(path, content)))
 }
 
-async function inspectFixture(name: string) {
+async function inspectFixture(name: string, transform?: (xml: string) => string) {
   const factory = new LuaFactory(`${webRoot}/node_modules/wasmoon/dist/glue.wasm`)
   await mountArchive(factory, 'public/pob/core.zip')
   await mountArchive(factory, 'public/pob/trees/3_13.zip')
@@ -20,7 +20,8 @@ async function inspectFixture(name: string) {
   const runtime = await factory.createEngine()
   await runtime.doFile('bridge.lua')
   const inspectBuild = runtime.global.get('inspectBuild') as (xml: string) => Promise<string>
-  const xml = await readFile(`${webRoot}/pob/.cache/PathOfBuilding/spec/TestBuilds/3.13/${name}.xml`, 'utf8')
+  const source = await readFile(`${webRoot}/pob/.cache/PathOfBuilding/spec/TestBuilds/3.13/${name}.xml`, 'utf8')
+  const xml = transform ? transform(source) : source
   return JSON.parse(await inspectBuild(xml))
 }
 
@@ -63,8 +64,56 @@ describe('PoB BuildFacts bridge', () => {
     expect(result.equipment).toEqual(expect.arrayContaining([
       expect.objectContaining({ slot: 'Flask 1' }),
     ]))
+    expect(result.jewels).toEqual(expect.arrayContaining([
+      expect.objectContaining({ socket: '36634', name: 'Cataclysm Stone', baseName: 'Cobalt Jewel', kind: 'jewel' }),
+    ]))
     expect(result.buildFacts.items).toEqual(expect.arrayContaining([
       expect.objectContaining({ slot: 'Weapon 2', tags: expect.arrayContaining(['cold-resistance']) }),
+    ]))
+  }, 30_000)
+
+  it('returns each skill support gem and allocated ascendancy node details', async () => {
+    const result = await inspectFixture('OccVortex')
+
+    expect(result.buildFacts.skills).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        name: 'Vortex',
+        supports: expect.arrayContaining([
+          { name: 'Hypothermia', level: 20, quality: 10, qualityType: 'Default', enabled: true, awakened: false },
+          { name: 'Controlled Destruction', level: 20, quality: 20, qualityType: 'Default', enabled: true, awakened: false },
+          { name: 'Swift Affliction', level: 20, quality: 0, qualityType: 'Default', enabled: true, awakened: false },
+          { name: 'Efficacy', level: 20, quality: 20, qualityType: 'Default', enabled: true, awakened: false },
+          { name: 'Concentrated Effect', level: 21, quality: 0, qualityType: 'Default', enabled: true, awakened: false },
+        ]),
+      }),
+    ]))
+    expect(result.buildFacts.ascendancies).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        ascendancyName: 'Occultist',
+        name: 'Void Beacon',
+        effects: expect.arrayContaining(['Nearby Enemies have -20% to Cold Resistance']),
+        tags: expect.any(Array),
+      }),
+    ]))
+  }, 30_000)
+
+  it('returns installed cluster jewels from the active passive tree', async () => {
+    const result = await inspectFixture('Generals Perforate Zerker')
+
+    expect(result.jewels).toEqual(expect.arrayContaining([
+      expect.objectContaining({ socket: '49080', name: 'Glyph Star', baseName: 'Medium Cluster Jewel', kind: 'cluster' }),
+    ]))
+  }, 30_000)
+
+  it('preserves a support gem quality type from the PoB export', async () => {
+    const result = await inspectFixture('OccVortex', (xml) => xml.replace(
+      'gemId="Metadata/Items/Gems/SupportGemDamageAgainstChilled" skillId="SupportDamageAgainstChilled" enableGlobal1="true" qualityId="Default"',
+      'gemId="Metadata/Items/Gems/SupportGemDamageAgainstChilled" skillId="SupportDamageAgainstChilled" enableGlobal1="true" qualityId="Anomalous"',
+    ))
+
+    const vortex = result.buildFacts.skills.find((skill: { name: string }) => skill.name === 'Vortex')
+    expect(vortex.supports).toEqual(expect.arrayContaining([
+      expect.objectContaining({ name: 'Hypothermia', qualityType: 'Anomalous' }),
     ]))
   }, 30_000)
 })

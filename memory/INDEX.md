@@ -6,6 +6,11 @@
 
 ## 완료
 
+- [로컬 환경 파일 Git 제외](completed/2026-08-19-ignore-local-env-files.md)
+- [OpenAI API 키 로컬 환경 설정](completed/2026-08-19-openai-api-key-env.md)
+- [로컬 메커니즘과 PoB 프롬프트 요약](completed/2026-08-19-local-mechanics-prompt-summary.md)
+- [OpenAI 응답 파싱 수정](completed/2026-08-19-openai-response-parsing.md)
+- [OpenAI 프롬프트 로그](completed/2026-08-19-openai-prompt-log.md)
 - [장비창 주얼 표시](completed/2026-08-18-equipment-jewels.md)
 - [장비 설명 오버레이 레이어](completed/2026-08-18-equipment-overlay-layer.md)
 - [보조 젬과 전직 노드 분석 입력](completed/2026-08-18-support-gems-ascendancies.md)

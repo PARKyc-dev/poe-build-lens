@@ -22,19 +22,19 @@
 PoE Lens는 애플리케이션 경계별 모노레포로 관리한다.
 
 - `web`: Vite, React, TypeScript 기반 사용자 화면과 분석 API 클라이언트
-- `api`: Spring Boot 기반 PoB 입력 검증·파싱, 메커니즘 카탈로그, 공통 HTTP 응답
+- `api`: Spring Boot 기반 PoB 분석, AI 문장 생성, 공통 HTTP 응답
 - `worker`: 향후 확장을 위한 빈 예약 영역.
 
 브라우저 PoB 엔진의 원본 버전 고정과 자산 생성 입력은 `web/pob/`에서 관리한다.
 
-`api`의 PoE 빌드 분석 코드는 기능별 최상위 Java 패키지로 관리한다.
+`api` 서버 코드는 DDD 스타일로 구현한다. 기능별 최상위 패키지 안에서 `controller`, `service`, `domain`, `repository` 책임을 분리하며, 도메인·서비스 계층은 외부 HTTP·DB 구현에 직접 의존하지 않는다.
 
-- `build`: HTTP 컨트롤러, PoB 파서, 분석 DTO, `BuildAnalysisService` 인터페이스와 구현체
-- `mechanics`: 로컬 메커니즘 카탈로그, JPA 엔티티·리포지터리, `MechanicService` 인터페이스와 구현체
+- `build`: 빌드 분석 도메인과 분석 유스케이스
+- `ai`: 외부 AI 제공자 연동 구현
 - `common`: 공통 성공·오류 코드와 DTO
-- `config`: 코드 기반 예외와 전역 성공 응답·예외 처리
+- `config`: 애플리케이션 공통 예외와 응답 처리
 
-메커니즘 카탈로그는 `mechanics`의 JPA 엔티티와 리포지터리를 통해 영속화한다. 개발에는 로컬 파일형 H2 데이터베이스를, 테스트에는 메모리 H2 설정을 사용한다.
+외부 제공자 구현은 기능 패키지의 `service`에 두고, 도메인 계층은 이를 직접 참조하지 않는다.
 
 ## 실행과 검증
 

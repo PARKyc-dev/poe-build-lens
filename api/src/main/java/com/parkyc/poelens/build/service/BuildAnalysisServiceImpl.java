@@ -1,5 +1,6 @@
 package com.parkyc.poelens.build.service;
 
+import com.parkyc.poelens.build.application.NarrativeRefiner;
 import com.parkyc.poelens.build.domain.dto.AnalysisResult;
 import com.parkyc.poelens.build.domain.dto.BuildAnalysisRequest;
 import com.parkyc.poelens.build.domain.dto.BuildFacts;
@@ -12,11 +13,11 @@ import java.util.List;
 public class BuildAnalysisServiceImpl implements BuildAnalysisService {
 
     private final BuildFactsAnalysisService buildFactsAnalysisService;
-    private final LocalNarrativeService localNarrativeService;
+    private final NarrativeRefiner narrativeRefiner;
 
-    public BuildAnalysisServiceImpl(BuildFactsAnalysisService buildFactsAnalysisService, LocalNarrativeService localNarrativeService) {
+    public BuildAnalysisServiceImpl(BuildFactsAnalysisService buildFactsAnalysisService, NarrativeRefiner narrativeRefiner) {
         this.buildFactsAnalysisService = buildFactsAnalysisService;
-        this.localNarrativeService = localNarrativeService;
+        this.narrativeRefiner = narrativeRefiner;
     }
 
     @Override
@@ -29,7 +30,7 @@ public class BuildAnalysisServiceImpl implements BuildAnalysisService {
 
         List<Mechanic> offence = new java.util.ArrayList<>(buildFactsAnalysisService.analyseOffenceNarrative(facts.offence(), facts.ascendancies()));
         List<Mechanic> defence = buildFactsAnalysisService.analyseDefenceNarrative(facts.defence(), facts.passives(), facts.buffs());
-        List<List<Mechanic>> narrative = localNarrativeService.refine(facts, offence, defence);
+        List<List<Mechanic>> narrative = narrativeRefiner.refine(facts, offence, defence);
         List<Mechanic> buffs = new java.util.ArrayList<>(buildFactsAnalysisService.analyseBuffs(facts.buffs()));
         buffs.addAll(buildFactsAnalysisService.analyseMobility(facts.mobility()));
         return new AnalysisResult(request.gameVersion(),

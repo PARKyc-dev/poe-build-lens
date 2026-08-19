@@ -6,6 +6,8 @@
 
 ## 완료
 
+- [Log4j2 백엔드 로깅](completed/2026-08-20-log4j2-backend-logging.md)
+- [에이전트 실행 서버 종료 규칙](completed/2026-08-19-stop-agent-started-servers.md)
 - [로컬 환경 파일 Git 제외](completed/2026-08-19-ignore-local-env-files.md)
 - [OpenAI API 키 로컬 환경 설정](completed/2026-08-19-openai-api-key-env.md)
 - [로컬 메커니즘과 PoB 프롬프트 요약](completed/2026-08-19-local-mechanics-prompt-summary.md)

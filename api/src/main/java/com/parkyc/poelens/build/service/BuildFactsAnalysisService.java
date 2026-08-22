@@ -143,7 +143,7 @@ public class BuildFactsAnalysisService {
         for (PassiveFact fact : safe(facts)) {
             if (fact.name() != null && !fact.name().isBlank()) {
                 String effect = safe(fact.effects()).isEmpty() ? "효과 정보가 없습니다." : String.join(" · ", fact.effects());
-                analysis.add(new Mechanic("주요 패시브: " + fact.name(), "적용된 효과: " + effect));
+                analysis.add(new Mechanic("mastery".equals(fact.kind()) ? "마스터리: " + fact.name() : "주요 패시브: " + fact.name(), "적용된 효과: " + effect));
             }
         }
         return analysis;

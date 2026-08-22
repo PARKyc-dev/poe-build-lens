@@ -42,7 +42,7 @@ describe('PoB BuildFacts bridge', () => {
       { name: 'Flame Dash' },
     ]))
     expect(result.buildFacts.passives).toEqual(expect.arrayContaining([
-      expect.objectContaining({ name: expect.any(String), effects: expect.arrayContaining([expect.any(String)]), tags: expect.any(Array) }),
+      expect.objectContaining({ name: expect.any(String), kind: expect.stringMatching(/notable|keystone|mastery/), effects: expect.arrayContaining([expect.any(String)]), tags: expect.any(Array) }),
       expect.objectContaining({ name: 'Growth and Decay', tags: expect.arrayContaining(['life-regeneration']) }),
     ]))
     expect(result.buildFacts.passives.every((passive: { effects: unknown }) => Array.isArray(passive.effects))).toBe(true)
@@ -53,6 +53,10 @@ describe('PoB BuildFacts bridge', () => {
     ]))
 
     expect(result.buildFacts.offence[0]).toMatchObject({ name: 'Vortex', delivery: 'self-cast' })
+    expect(result.skillTooltips).toEqual(expect.arrayContaining([
+      expect.objectContaining({ name: 'Vortex', details: expect.arrayContaining([expect.any(String)]) }),
+      expect.objectContaining({ name: 'Clarity', details: expect.arrayContaining([expect.any(String)]) }),
+    ]))
     expect(result.buildFacts.defence).toEqual(expect.arrayContaining([
       { kind: 'life', value: expect.any(Number) },
       { kind: 'fire-resistance', value: expect.any(Number) },
@@ -83,6 +87,14 @@ describe('PoB BuildFacts bridge', () => {
     expect(attacks[0].combinedDps).toBeGreaterThanOrEqual(attacks[1].combinedDps)
   }, 30_000)
 
+  it('calculates every equipped flask as active', async () => {
+    const activeFlasks = await inspectFixture('OccVortex')
+    const inactiveFlasks = await inspectFixture('OccVortex', (xml) => xml.replaceAll('<Slot active="true" name="Flask', '<Slot active="false" name="Flask'))
+
+    expect(inactiveFlasks.buildFacts.defence).toEqual(activeFlasks.buildFacts.defence)
+    expect(inactiveFlasks.summary.armour).toBe(activeFlasks.summary.armour)
+  }, 60_000)
+
   it('returns each skill support gem and allocated ascendancy node details', async () => {
     const result = await inspectFixture('OccVortex')
 
@@ -106,6 +118,7 @@ describe('PoB BuildFacts bridge', () => {
         tags: expect.any(Array),
       }),
     ]))
+    expect(result.buildFacts.ascendancies).toHaveLength(4)
   }, 30_000)
 
   it('returns installed cluster jewels from the active passive tree', async () => {

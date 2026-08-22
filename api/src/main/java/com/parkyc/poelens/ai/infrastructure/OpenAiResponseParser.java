@@ -43,4 +43,8 @@ public class OpenAiResponseParser {
         log.warn("OpenAI 응답에 message output_text가 없습니다");
         return Map.of();
     }
+
+    public String formatForLog(Map<String, String> response) throws Exception {
+        return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response);
+    }
 }

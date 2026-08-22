@@ -24,4 +24,14 @@ class OpenAiResponseParserTest {
         assertThat(new OpenAiResponseParser().parse(responseBody))
                 .isEqualTo(Map.of("offenceSummary", "공격 문장", "defenceSummary", "방어 문장"));
     }
+
+    @Test
+    void formatsParsedResponseForReadableLogging() throws Exception {
+        String formatted = new OpenAiResponseParser().formatForLog(Map.of(
+                "offenceSummary", "공격 문장",
+                "defenceSummary", "방어 문장"));
+
+        assertThat(formatted).contains("\"offenceSummary\" : \"공격 문장\"");
+        assertThat(formatted).doesNotContain("\\\"offenceSummary\\\"");
+    }
 }

@@ -124,6 +124,15 @@ end
 
 local equipmentSlots = { "Weapon 1", "Weapon 2", "Helmet", "Body Armour", "Gloves", "Boots", "Amulet", "Ring 1", "Ring 2", "Belt", "Flask 1", "Flask 2", "Flask 3", "Flask 4", "Flask 5" }
 
+local function activateEquippedFlasks()
+  for _, slot in ipairs(build.itemsTab.orderedSlots or { }) do
+    if slot.slotName:match("^Flask") and slot.selItemId then
+      slot.active = true
+      build.itemsTab.activeItemSet[slot.slotName].active = true
+    end
+  end
+end
+
 local function equipmentFromActiveSet()
   local result = { }
   local itemSet = build.itemsTab.activeItemSet
@@ -431,7 +440,7 @@ local function passiveFacts(spec)
       end
       local name = node.dn or node.name
       if name then
-        table.insert(result, { name = name, effects = effects, tags = tagsFromModList(node.modList) })
+        table.insert(result, { name = name, kind = node.isMastery and "mastery" or node.isKeystone and "keystone" or "notable", effects = effects, tags = tagsFromModList(node.modList) })
       end
     end
   end
@@ -441,7 +450,7 @@ end
 local function ascendancyFacts(spec)
   local result = jsonArray()
   for _, node in pairs(spec.allocNodes or { }) do
-    if node.ascendancyName and not node.isAscendancyStart then
+    if node.ascendancyName and (node.isNotable or node.isKeystone) then
       local effects = jsonArray()
       for _, effect in ipairs(node.sd or { }) do
         if type(effect) == "string" and effect ~= "" then table.insert(effects, effect) end
@@ -452,6 +461,44 @@ local function ascendancyFacts(spec)
         effects = effects,
         tags = tagsFromModList(node.modList),
       })
+    end
+  end
+  return result
+end
+
+local function skillTooltipDetails(skill)
+  local result = jsonArray()
+  local effect = skill.activeEffect or { }
+  local grantedEffect = effect.grantedEffect or { }
+  if type(grantedEffect.description) == "string" and grantedEffect.description ~= "" then
+    table.insert(result, grantedEffect.description)
+  end
+  if calcLib and build.data.describeStats and grantedEffect.statDescriptionScope then
+    local stats = calcLib.buildSkillInstanceStats(effect, grantedEffect)
+    local descriptions = build.data.describeStats(stats, grantedEffect.statDescriptionScope)
+    for _, description in ipairs(descriptions or { }) do
+      if type(description) == "string" and description ~= "" then table.insert(result, description) end
+    end
+  end
+  return result
+end
+
+local function skillTooltipFacts(env)
+  local result = jsonArray()
+  local seen = { }
+  local function add(name, skill)
+    if name and not seen[name] then
+      seen[name] = true
+      table.insert(result, { name = name, details = skillTooltipDetails(skill) })
+    end
+  end
+  for _, skill in ipairs(env.player.activeSkillList or { }) do
+    local grantedEffect = skill.activeEffect and skill.activeEffect.grantedEffect
+    add(grantedEffect and grantedEffect.name, skill)
+    if skill.buffSkill then
+      for _, buff in ipairs(skill.buffList or { }) do
+        if buff.name and not buff.applyNotPlayer then add(buff.name, skill) end
+      end
     end
   end
   return result
@@ -615,6 +662,7 @@ end
 
 function inspectBuild(xmlText, specId)
   loadBuildFromXML(xmlText, "poe-lens-browser")
+  activateEquippedFlasks()
   gemQualityTypes = qualityTypesFromXml(xmlText)
   if specId then build.treeTab:SetActiveSpec(specId) end
   wipeGlobalCache()
@@ -663,6 +711,7 @@ function inspectBuild(xmlText, specId)
     activeItemSet = build.itemsTab.activeItemSetId,
     activeSkillName = mainSkill and mainSkill.activeEffect and mainSkill.activeEffect.grantedEffect and mainSkill.activeEffect.grantedEffect.name or nil,
     mainSkillFlags = flagsFromMainSkill(mainSkill),
+    skillTooltips = mainEnv and skillTooltipFacts(mainEnv) or { },
     buildFacts = mainEnv and buildFacts(mainEnv, output, spec) or { offence = { }, skills = { }, defence = { }, buffs = { }, mobility = { }, passives = { }, ascendancies = { }, passiveTags = { }, items = { }, jewels = { }, performance = { } },
     summary = {
       totalDps = output.TotalDPS,

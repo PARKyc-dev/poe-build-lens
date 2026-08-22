@@ -29,19 +29,20 @@ public class BuildAnalysisServiceImpl implements BuildAnalysisService {
         BuildFacts facts = request.buildFacts();
         if (facts == null) {
             log.warn("빌드 사실이 없는 분석 요청: 게임 버전={}", request.gameVersion());
-            return new AnalysisResult(request.gameVersion(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(),
+            return new AnalysisResult(request.gameVersion(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(),
                     List.of("No build facts are available for analysis."), List.of());
         }
 
         log.info("빌드 분석 시작: 게임 버전={}, 공격 사실 수={}, 방어 사실 수={}", request.gameVersion(), size(facts.offence()), size(facts.defence()));
         List<Mechanic> offence = new java.util.ArrayList<>(buildFactsAnalysisService.analyseOffenceNarrative(facts.offence(), facts.ascendancies()));
         List<Mechanic> defence = buildFactsAnalysisService.analyseDefenceNarrative(facts.defence(), facts.passives(), facts.buffs());
-        List<List<Mechanic>> narrative = narrativeRefiner.refine(facts, offence, defence);
-        List<Mechanic> buffs = new java.util.ArrayList<>(buildFactsAnalysisService.analyseBuffs(facts.buffs()));
-        buffs.addAll(buildFactsAnalysisService.analyseMobility(facts.mobility()));
+        List<Mechanic> buffs = buildFactsAnalysisService.analyseBuffs(facts.buffs());
+        List<Mechanic> mobility = buildFactsAnalysisService.analyseMobility(facts.mobility());
+        List<List<Mechanic>> narrative = narrativeRefiner.refine(facts, offence, defence, buffs, mobility);
         AnalysisResult result = new AnalysisResult(request.gameVersion(),
                 narrative.get(0), narrative.get(1),
-                buffs,
+                narrative.get(2),
+                narrative.get(3),
                 buildFactsAnalysisService.analysePassives(facts.passives(), facts.passiveTags()),
                 buildFactsAnalysisService.analysePassiveNodes(facts.passives()),
                 buildFactsAnalysisService.analyseAscendancies(facts.ascendancies()),

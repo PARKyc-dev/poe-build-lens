@@ -25,7 +25,7 @@ class BuildNarrativePromptBuilderTest {
                 List.of(new DefenceFact("armour", 21_000.0), new DefenceFact("block", 70.0)),
                 List.of(new BuffFact("Determination", "aura", "player", List.of("armour"))),
                 List.of(),
-                List.of(new PassiveFact("Arsonist", List.of("Regenerate 1.2% of Life per second"), List.of("life-regeneration"))),
+                List.of(new PassiveFact("Arsonist", "notable", List.of("Regenerate 1.2% of Life per second"), List.of("life-regeneration"))),
                 List.of(new AscendancyFact("Chieftain", "Hinekora, Death's Fury", List.of("Enemies you kill have a chance to Explode"), List.of("fire"))),
                 List.of("armour", "life-regeneration"),
                 List.of(new ItemFact("Weapon 1", "Secret Weapon", "Void Sceptre", "RARE", List.of("62% increased Fire Damage"), List.of("fire"))),

@@ -58,9 +58,9 @@ public class BuildNarrativePromptBuilder {
                 "defence", defence(facts.defence()),
                 "buffs", buffs(facts.buffs()),
                 "passives", passives,
-                "ascendancies", ascendancies,
-                "performance", facts.performance());
-        return "제공된 PoB 사실과 아래 게임 규칙 참고만 사용해 한국어로 공격과 방어를 각각 한 문장으로 설명해. "
+                "ascendancies", ascendancies);
+        return "제공된 PoB 사실과 아래 게임 규칙 참고만 사용해 공격·방어·버프·이동기를 각각 한 문장으로 설명해. "
+                + "딜량·DPS 등 수치 대신 실제 스킬이 어떤 순서와 방식으로 동작하는지 설명하고, 버프는 어떤 공격 또는 방어 축을 강화하는지 설명해. "
                 + "캐릭터에 실제로 존재하지 않는 스킬·수치·효과는 추측하거나 추가하지 마. "
                 + "게임 규칙 참고=" + objectMapper.writeValueAsString(mechanics)
                 + " PoB 사실 요약=" + objectMapper.writeValueAsString(summary);

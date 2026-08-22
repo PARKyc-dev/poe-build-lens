@@ -42,6 +42,7 @@ export type BuildFactSkill = BuildFactSupportGem & {
 
 export type BuildFactPassive = {
   name: string
+  kind: 'notable' | 'keystone' | 'mastery'
   effects: string[]
   tags: string[]
 }
@@ -63,6 +64,11 @@ export type BuildFactBuff = {
   kind: string
   appliesTo: string
   tags: string[]
+}
+
+export type BrowserSkillTooltip = {
+  name: string
+  details: string[]
 }
 
 export type BuildFactMobility = {
@@ -114,6 +120,7 @@ export type BrowserInspectResult = {
   activeItemSet: number
   activeSkillName: string | null
   mainSkillFlags: MainSkillFlags | null
+  skillTooltips: BrowserSkillTooltip[]
   buildFacts: BuildFacts
   summary: BuildSummary
   equipment: BrowserEquipmentItem[]

@@ -6,5 +6,5 @@ import com.parkyc.poelens.build.domain.dto.Mechanic;
 import java.util.List;
 
 public interface NarrativeRefiner {
-    List<List<Mechanic>> refine(BuildFacts facts, List<Mechanic> offence, List<Mechanic> defence);
+    List<List<Mechanic>> refine(BuildFacts facts, List<Mechanic> offence, List<Mechanic> defence, List<Mechanic> buffs, List<Mechanic> mobility);
 }

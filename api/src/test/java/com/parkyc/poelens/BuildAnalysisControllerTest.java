@@ -77,7 +77,7 @@ class BuildAnalysisControllerTest {
                 .andExpect(jsonPath("$.returnObject.defence[0].title").value("방어 기재"))
                 .andExpect(jsonPath("$.returnObject.buffs[0].title").value("버프 유틸리티: Arbitrary Utility"))
                 .andExpect(jsonPath("$.returnObject.buffs[0].explanation").value("감전 면역·주문 막기 태그가 활성화되어 상태 이상 방지와 방어 수치를 보강합니다."))
-                .andExpect(jsonPath("$.returnObject.buffs[1].title").value("이동기: Arbitrary Movement"))
+                .andExpect(jsonPath("$.returnObject.mobility[0].title").value("이동기: Arbitrary Movement"))
                 .andExpect(jsonPath("$.returnObject.passives[0].title").value("생존 핵심 패시브"))
                 .andExpect(jsonPath("$.returnObject.overrides").isEmpty());
     }
@@ -207,6 +207,7 @@ class BuildAnalysisControllerTest {
                                   "buildFacts": {
                                     "passives": [{
                                       "name": "Growth and Decay",
+                                      "kind": "mastery",
                                       "effects": ["Regenerate 1% of Life per second", "20% increased Damage over Time"],
                                       "tags": ["life-regeneration", "damage-over-time"]
                                     }]
@@ -214,7 +215,7 @@ class BuildAnalysisControllerTest {
                                 }
                                 """))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.returnObject.passiveNodes[0].title").value("주요 패시브: Growth and Decay"))
+                .andExpect(jsonPath("$.returnObject.passiveNodes[0].title").value("마스터리: Growth and Decay"))
                 .andExpect(jsonPath("$.returnObject.passiveNodes[0].explanation").value("적용된 효과: Regenerate 1% of Life per second · 20% increased Damage over Time"));
     }
 

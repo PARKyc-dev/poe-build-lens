@@ -7,6 +7,7 @@ public record AnalysisResult(
         List<Mechanic> offence,
         List<Mechanic> defence,
         List<Mechanic> buffs,
+        List<Mechanic> mobility,
         List<Mechanic> passives,
         List<Mechanic> passiveNodes,
         List<Mechanic> ascendancies,

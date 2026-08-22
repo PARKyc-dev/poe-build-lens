@@ -47,22 +47,22 @@ public class OpenAiNarrativeClient implements NarrativeRefiner {
     }
 
     @Override
-    public List<List<Mechanic>> refine(BuildFacts facts, List<Mechanic> offence, List<Mechanic> defence) {
+    public List<List<Mechanic>> refine(BuildFacts facts, List<Mechanic> offence, List<Mechanic> defence, List<Mechanic> buffs, List<Mechanic> mobility) {
         if (!enabled || apiKey.isBlank()) {
             log.info("OpenAI 기재 보정 건너뜀: 사용 설정={}, API 키 설정={}", enabled, !apiKey.isBlank());
-            return List.of(offence, defence);
+            return List.of(offence, defence, buffs, mobility);
         }
 
         try {
-            return queue.submit(() -> generate(facts, offence, defence)).get(45, TimeUnit.SECONDS);
+            return queue.submit(() -> generate(facts, offence, defence, buffs, mobility)).get(45, TimeUnit.SECONDS);
         } catch (Exception exception) {
             log.warn("OpenAI 기재 보정에 실패해 규칙 기반 기재를 사용합니다", exception);
-            return List.of(offence, defence);
+            return List.of(offence, defence, buffs, mobility);
         }
     }
 
     private List<List<Mechanic>> generate(BuildFacts facts,
-                                          List<Mechanic> offence, List<Mechanic> defence) throws Exception {
+                                          List<Mechanic> offence, List<Mechanic> defence, List<Mechanic> buffs, List<Mechanic> mobility) throws Exception {
         String prompt = promptBuilder.build(facts);
         long startedAt = System.nanoTime();
         log.info("OpenAI 기재 요청: 모델={}, 프롬프트 길이={}", model, prompt.length());
@@ -71,8 +71,8 @@ public class OpenAiNarrativeClient implements NarrativeRefiner {
                 "type", "object",
                 "properties", Map.of(
                         "offenceSummary", Map.of("type", "string"),
-                        "defenceSummary", Map.of("type", "string")),
-                "required", List.of("offenceSummary", "defenceSummary"),
+                        "defenceSummary", Map.of("type", "string"), "buffSummary", Map.of("type", "string"), "mobilitySummary", Map.of("type", "string")),
+                "required", List.of("offenceSummary", "defenceSummary", "buffSummary", "mobilitySummary"),
                 "additionalProperties", false);
         String body = objectMapper.writeValueAsString(Map.of(
                 "model", model,
@@ -92,20 +92,30 @@ public class OpenAiNarrativeClient implements NarrativeRefiner {
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         String responseBody = response.body();
         log.info("OpenAI 기재 응답 수신: 모델={}, 상태={}, 처리 시간(ms)={}", model, response.statusCode(), elapsedMillis(startedAt));
-        promptLogWriter.write(prompt, responseBody);
-        Map<String, String> narrative = responseParser.parse(responseBody);
+        Map<String, String> narrative;
+        try {
+            narrative = responseParser.parse(responseBody);
+            promptLogWriter.write(prompt, responseParser.formatForLog(narrative));
+        } catch (Exception exception) {
+            promptLogWriter.write(prompt, responseBody);
+            throw exception;
+        }
 
         String offenceText = narrative.get("offenceSummary");
         String defenceText = narrative.get("defenceSummary");
+        String buffText = narrative.get("buffSummary");
+        String mobilityText = narrative.get("mobilitySummary");
 
-        if (offenceText == null || defenceText == null) {
-            log.warn("OpenAI 기재 응답에 공격·방어 요약이 모두 없습니다");
-            return List.of(offence, defence);
+        if (offenceText == null || defenceText == null || buffText == null || mobilityText == null) {
+            log.warn("OpenAI 기재 응답에 필요한 요약이 없습니다");
+            return List.of(offence, defence, buffs, mobility);
         }
 
         return List.of(
                 List.of(new Mechanic("공격 기재", offenceText)),
-                List.of(new Mechanic("방어 기재", defenceText)));
+                List.of(new Mechanic("방어 기재", defenceText)),
+                List.of(new Mechanic("버프 기재", buffText)),
+                List.of(new Mechanic("이동기 기재", mobilityText)));
     }
 
     private long elapsedMillis(long startedAt) {

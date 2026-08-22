@@ -17,6 +17,7 @@ export type BuildAnalysisResult = {
   offence: Mechanic[]
   defence: Mechanic[]
   buffs: Mechanic[]
+  mobility?: Mechanic[]
   passives: Mechanic[]
   passiveNodes: Mechanic[]
   ascendancies: Mechanic[]

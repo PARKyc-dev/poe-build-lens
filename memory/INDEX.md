@@ -6,6 +6,14 @@
 
 ## 완료
 
+- [기재 영역의 메커니즘 분석 표시](completed/2026-08-22-mechanism-analysis-in-sections.md)
+- [항상 활성화된 플라스크 계산](completed/2026-08-22-always-active-flasks.md)
+- [기재 목록 중복 제거](completed/2026-08-22-unique-mechanic-lists.md)
+- [빌드 페이지 컴포넌트 분리](completed/2026-08-22-build-page-components.md)
+- [읽기 쉬운 OpenAI 응답 로그](completed/2026-08-22-readable-openai-responses.md)
+- [스킬별 툴팁과 대형 전직 노드](completed/2026-08-22-skill-specific-tooltips.md)
+- [읽기 쉬운 프롬프트 로그 파일명](completed/2026-08-22-readable-prompt-log-names.md)
+- [압축 메커니즘과 항목별 설명 팝업](completed/2026-08-22-compact-mechanic-tooltips.md)
 - [Log4j2 백엔드 로깅](completed/2026-08-20-log4j2-backend-logging.md)
 - [에이전트 실행 서버 종료 규칙](completed/2026-08-19-stop-agent-started-servers.md)
 - [로컬 환경 파일 Git 제외](completed/2026-08-19-ignore-local-env-files.md)

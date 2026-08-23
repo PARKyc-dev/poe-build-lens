@@ -31,7 +31,8 @@ public class BuildFactsAnalysisService {
             "mine", "마인 (Mine)",
             "minion", "소환수 (Minion)",
             "brand", "브랜드 (Brand)",
-            "trigger", "트리거 (Trigger)");
+            "trigger", "트리거 (Trigger)",
+            "persistent", "상시 유지형 피해 (Persistent)");
     private static final Map<String, String> BUFF_KIND_TITLES = Map.of(
             "aura", "오라 (Aura)",
             "curse", "저주 (Curse)",
@@ -58,19 +59,33 @@ public class BuildFactsAnalysisService {
         return analysis;
     }
 
-    public List<Mechanic> analyseOffenceNarrative(List<OffenceFact> facts, List<AscendancyFact> ascendancies) {
+    public List<Mechanic> analyseOffenceNarrative(List<OffenceFact> facts, List<AscendancyFact> ascendancies, List<SkillFact> skills) {
         List<OffenceFact> attacks = safe(facts);
         if (attacks.isEmpty()) return List.of();
-        OffenceFact primary = attacks.stream().filter(fact -> "primary".equals(fact.role())).findFirst().orElse(attacks.getFirst());
-        OffenceFact secondary = attacks.stream().filter(fact -> "secondary".equals(fact.role())).findFirst().orElse(null);
-        String text = primary.name() + "이 " + skillProfile(primary.tags()) + " 피해를 주력으로 담당합니다.";
-        if (secondary != null) text += " " + secondary.name() + "을 사용해 추가 피해를 더합니다.";
-        List<String> explosions = safe(ascendancies).stream()
-                .filter(fact -> safe(fact.effects()).stream().anyMatch(effect -> effect.toLowerCase().contains("explode")))
-                .map(fact -> fact.name() + "의 시체 폭발 효과가 처치 시 광역 피해를 추가합니다.")
-                .toList();
-        if (!explosions.isEmpty()) text += " " + String.join(" ", explosions);
-        return List.of(new Mechanic("공격 기재", text));
+        List<Mechanic> analysis = new ArrayList<>();
+        for (OffenceFact attack : attacks) {
+            String role = "secondary".equals(attack.role()) ? "보조" : "주력";
+            analysis.add(new Mechanic("primary".equals(attack.role()) ? "공격 기재" : "보조 공격 기재", attack.name() + "이 " + skillProfile(attack.tags()) + " 피해를 " + role + "으로 담당합니다."));
+            safe(skills).stream().filter(skill -> attack.name().equals(skill.name())).findFirst().ifPresent(skill -> {
+                List<String> supports = safe(skill.supports()).stream().filter(support -> Boolean.TRUE.equals(support.enabled())).map(support -> support.name() + (safe(support.effects()).isEmpty() ? "" : ": " + String.join(" ", support.effects()))).toList();
+                if (!supports.isEmpty()) analysis.add(new Mechanic("보조젬 연결: " + attack.name(), String.join(" · ", supports)));
+            });
+            List<String> applied = safe(attack.modifiers()).stream().map(modifier -> modifier.source() + "의 " + modifier.name() + " (" + modifier.type() + ")" + (Boolean.TRUE.equals(modifier.conditional()) ? " · 조건부" : "")).distinct().limit(12).toList();
+            if (!applied.isEmpty()) analysis.add(new Mechanic("적용된 빌드 효과: " + attack.name(), String.join(" · ", applied)));
+            analysis.add(new Mechanic("운용 방식: " + attack.name(), deliveryTitle(attack.delivery()) + " 방식으로 사용합니다. 조건부 효과는 PoB 설정에서 활성화된 경우에만 계산에 반영됩니다."));
+        }
+        return analysis;
+    }
+
+    public String analyseBuildSummary(List<OffenceFact> offence, List<DefenceFact> defence, List<BuffFact> buffs) {
+        List<String> parts = new ArrayList<>();
+        List<String> attacks = safe(offence).stream().filter(fact -> "primary".equals(fact.role())).map(OffenceFact::name).filter(name -> name != null && !name.isBlank()).toList();
+        if (!attacks.isEmpty()) parts.add(String.join("·", attacks) + "을 주력 공격으로 사용합니다.");
+        List<String> defenceKinds = safe(defence).stream().filter(fact -> fact.value() != null && fact.value() > 0).map(DefenceFact::kind).filter(kind -> kind != null && !kind.isBlank()).toList();
+        if (!defenceKinds.isEmpty()) parts.add(String.join("·", defenceKinds) + " 방어 수치를 기반으로 생존력을 확보합니다.");
+        List<String> buffNames = safe(buffs).stream().map(BuffFact::name).filter(name -> name != null && !name.isBlank()).distinct().toList();
+        if (!buffNames.isEmpty()) parts.add(String.join("·", buffNames) + " 버프가 빌드 효과를 보강합니다.");
+        return parts.isEmpty() ? "PoB에 기록된 공격·방어·버프 사실을 기준으로 분석한 빌드입니다." : String.join(" ", parts);
     }
 
     public List<Mechanic> analyseDefenceNarrative(List<DefenceFact> facts, List<PassiveFact> passives, List<BuffFact> buffs) {

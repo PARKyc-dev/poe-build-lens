@@ -55,4 +55,10 @@ PoE Lens는 애플리케이션 경계별 모노레포로 관리한다.
 
 ## 작업 인수인계
 
-작업 시작과 종료 시 `WORKFLOW.md`를 따른다. `memory/INDEX.md`를 진입점으로 사용하고, 진행 중 작업의 상세 상태는 `memory/active/`, 완료 작업은 `memory/completed/`, 장기적으로 유지할 구현 또는 분석 결정은 `memory/decisions/`에 기록한다.
+작업 시작과 종료 시 `WORKFLOW.md`를 따른다.
+
+## 메모리
+
+프로젝트 메모리 관리의 기준은 `memory/README.md`다. 작업 시작 시 관련된 활성 문맥과 필요한 지식·결정 기록만 읽고, `memory/archive/`는 기본으로 읽지 않는다.
+
+의미 있는 작업을 마칠 때는 활성 문맥을 갱신하고 완료 항목을 제거한다. 재사용할 지식은 `knowledge/`로, 중요한 안정된 결정은 `decisions/` ADR로, 완료 작업의 필요한 이력은 `archive/`로 옮긴다.

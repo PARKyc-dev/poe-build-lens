@@ -49,7 +49,7 @@ public class BuildNarrativePromptBuilder {
         Set<String> offenceNames = offence(facts.offence()).stream().map(OffenceFact::name).collect(java.util.stream.Collectors.toSet());
         List<SkillSummary> skills = skills(facts.skills()).stream()
                 .filter(value -> offenceNames.contains(value.name()))
-                .map(value -> new SkillSummary(value.name(), value.level(), supports(value.supports()).stream().map(SupportGemFact::name).toList()))
+                .map(value -> new SkillSummary(value.name(), value.level(), supports(value.supports())))
                 .toList();
 
         Map<String, Object> summary = Map.of(
@@ -59,7 +59,10 @@ public class BuildNarrativePromptBuilder {
                 "buffs", buffs(facts.buffs()),
                 "passives", passives,
                 "ascendancies", ascendancies);
-        return "제공된 PoB 사실과 아래 게임 규칙 참고만 사용해 공격·방어·버프·이동기를 각각 한 문장으로 설명해. "
+        return "제공된 PoB 사실과 아래 게임 규칙 참고만 사용해 buildSummary와 공격·방어·버프 메커니즘을 설명해. buildSummary의 문장 수를 제한하지 마. 이동기는 분석하지 마. "
+                + "offenceSections는 공격마다 core, supports, modifiers, operation 중 필요한 section을 사용하고, attackName은 PoB offence의 이름, evidence는 그 공격의 이름·지원젬 이름·수정자 이름 또는 출처만 넣어. "
+                + "defenceSections는 defenceKind와 resource, mitigation, avoidance, recovery 중 section을 사용하고 evidence에는 그 defenceKind를 반드시 넣어. "
+                + "buffSections는 buffName과 offence, defence, utility 중 section을 사용하고 evidence에는 그 buffName을 반드시 넣어. "
                 + "딜량·DPS 등 수치 대신 실제 스킬이 어떤 순서와 방식으로 동작하는지 설명하고, 버프는 어떤 공격 또는 방어 축을 강화하는지 설명해. "
                 + "캐릭터에 실제로 존재하지 않는 스킬·수치·효과는 추측하거나 추가하지 마. "
                 + "게임 규칙 참고=" + objectMapper.writeValueAsString(mechanics)
@@ -98,6 +101,6 @@ public class BuildNarrativePromptBuilder {
         return values == null ? List.of() : values;
     }
 
-    private record SkillSummary(String name, Integer level, List<String> supports) {
+    private record SkillSummary(String name, Integer level, List<SupportGemFact> supports) {
     }
 }

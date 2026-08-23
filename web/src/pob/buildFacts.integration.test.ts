@@ -74,6 +74,7 @@ describe('PoB BuildFacts bridge', () => {
     expect(result.buildFacts.items).toEqual(expect.arrayContaining([
       expect.objectContaining({ slot: 'Weapon 2', name: expect.any(String), modifiers: expect.any(Array), tags: expect.arrayContaining(['cold-resistance']) }),
     ]))
+    expect(result.buildFacts.items.some((item: { modifiers: string[] }) => item.modifiers.length > 4)).toBe(true)
     expect(result.buildFacts.performance).toMatchObject({ life: expect.any(Number), totalDps: expect.any(Number) })
   }, 30_000)
 
@@ -102,11 +103,11 @@ describe('PoB BuildFacts bridge', () => {
       expect.objectContaining({
         name: 'Vortex',
         supports: expect.arrayContaining([
-          { name: 'Hypothermia', level: 20, quality: 10, qualityType: 'Default', enabled: true, awakened: false },
-          { name: 'Controlled Destruction', level: 20, quality: 20, qualityType: 'Default', enabled: true, awakened: false },
-          { name: 'Swift Affliction', level: 20, quality: 0, qualityType: 'Default', enabled: true, awakened: false },
-          { name: 'Efficacy', level: 20, quality: 20, qualityType: 'Default', enabled: true, awakened: false },
-          { name: 'Concentrated Effect', level: 21, quality: 0, qualityType: 'Default', enabled: true, awakened: false },
+          expect.objectContaining({ name: 'Hypothermia', level: 20, quality: 10, qualityType: 'Default', enabled: true, awakened: false, effects: expect.arrayContaining(['Supports any skill that deals damage.']) }),
+          expect.objectContaining({ name: 'Controlled Destruction', level: 20, quality: 20, qualityType: 'Default', enabled: true, awakened: false }),
+          expect.objectContaining({ name: 'Swift Affliction', level: 20, quality: 0, qualityType: 'Default', enabled: true, awakened: false }),
+          expect.objectContaining({ name: 'Efficacy', level: 20, quality: 20, qualityType: 'Default', enabled: true, awakened: false }),
+          expect.objectContaining({ name: 'Concentrated Effect', level: 21, quality: 0, qualityType: 'Default', enabled: true, awakened: false }),
         ]),
       }),
     ]))

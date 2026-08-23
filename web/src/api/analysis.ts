@@ -14,10 +14,10 @@ export type Evidence = {
 
 export type BuildAnalysisResult = {
   gameVersion: string
+  summary: string
   offence: Mechanic[]
   defence: Mechanic[]
   buffs: Mechanic[]
-  mobility?: Mechanic[]
   passives: Mechanic[]
   passiveNodes: Mechanic[]
   ascendancies: Mechanic[]

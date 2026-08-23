@@ -15,7 +15,7 @@ public class OpenAiResponseParser {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @SuppressWarnings("unchecked")
-    public Map<String, String> parse(String responseBody) throws Exception {
+    public Map<String, Object> parse(String responseBody) throws Exception {
         Map<String, Object> response = objectMapper.readValue(responseBody, new TypeReference<>() {});
         List<Map<String, Object>> output = (List<Map<String, Object>>) response.get("output");
         if (output == null) {
@@ -44,7 +44,7 @@ public class OpenAiResponseParser {
         return Map.of();
     }
 
-    public String formatForLog(Map<String, String> response) throws Exception {
+    public String formatForLog(Map<String, Object> response) throws Exception {
         return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response);
     }
 }

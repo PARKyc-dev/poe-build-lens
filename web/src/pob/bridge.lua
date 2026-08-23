@@ -141,8 +141,7 @@ local function equipmentFromActiveSet()
     local item = slot and slot.selItemId and build.itemsTab.items[slot.selItemId]
     if item then
       local modifiers = { }
-      for index, mod in ipairs(item.explicitModLines or { }) do
-        if index > 4 then break end
+      for _, mod in ipairs(item.explicitModLines or { }) do
         table.insert(modifiers, mod.line or mod.extra)
       end
       table.insert(result, {
@@ -163,8 +162,7 @@ local function jewelsFromActiveSpec()
     local item = build.itemsTab.items[itemId]
     if item then
       local modifiers = { }
-      for index, mod in ipairs(item.explicitModLines or { }) do
-        if index > 4 then break end
+      for _, mod in ipairs(item.explicitModLines or { }) do
         table.insert(modifiers, mod.line or mod.extra)
       end
       local baseName = item.baseName
@@ -213,6 +211,7 @@ end
 
 local function deliveryFromSkill(skill)
   local flags = skill.skillFlags or { }
+  if skill.buffSkill and flags.dot then return "persistent" end
   if isTriggeredMainSkill(skill) then return "trigger" end
   if flags.haveMinion or flags.minion then return "minion" end
   if flags.totem then return "totem" end
@@ -321,7 +320,7 @@ local function offenceFacts(env)
     local effect = skill.activeEffect or { }
     local grantedEffect = effect.grantedEffect or { }
     local isMovement = skill.skillTypes and skill.skillTypes[SkillType.Movement]
-    if not flags.disable and not isMovement and not skill.buffSkill and (flags.hit or flags.dot) and grantedEffect.name then
+    if not flags.disable and not isMovement and (not skill.buffSkill or flags.dot) and (flags.hit or flags.dot) and grantedEffect.name then
       local delivery = deliveryFromSkill(skill)
       local key = grantedEffect.name .. "|" .. delivery
       if not candidates[key] then
@@ -331,6 +330,7 @@ local function offenceFacts(env)
           tags = tagsFromSkill(skill),
           skill = skill,
           combinedDps = 0,
+          modifiers = jsonArray(),
         }
       end
     end
@@ -344,6 +344,20 @@ local function offenceFacts(env)
     player.mainSkill = candidate.skill
     build.calcsTab.calcs.perform(env, true)
     candidate.combinedDps = player.output.CombinedDPS or 0
+    local seenModifiers = { }
+    local modList = candidate.skill.skillModList
+    while modList do
+      for _, mod in ipairs(modList) do
+        if mod.source and mod.source ~= "Base" then
+          local modifierKey = (mod.name or "") .. "|" .. (mod.type or "") .. "|" .. mod.source
+          if not seenModifiers[modifierKey] then
+            seenModifiers[modifierKey] = true
+            table.insert(candidate.modifiers, { name = mod.name, type = mod.type, source = mod.source, conditional = mod[1] and true or false })
+          end
+        end
+      end
+      modList = modList.parent
+    end
     candidate.skill = nil
   end
   player.mainSkill = selectedSkill
@@ -390,6 +404,7 @@ local function supportGemFact(gem, group)
     qualityType = qualityType(gem),
     enabled = gem.enabled and group.enabled and true or false,
     awakened = (grantedEffect.plusVersionOf or (gem.gemData and gem.gemData.name and gem.gemData.name:match("^Awakened "))) and true or false,
+    effects = type(grantedEffect.description) == "string" and { grantedEffect.description } or { },
   }
 end
 
@@ -579,8 +594,7 @@ local function itemFacts()
     local item = slot and slot.selItemId and build.itemsTab.items[slot.selItemId]
     if item then
       local modifiers = jsonArray()
-      for index, mod in ipairs(item.explicitModLines or { }) do
-        if index > 4 then break end
+      for _, mod in ipairs(item.explicitModLines or { }) do
         table.insert(modifiers, mod.line or mod.extra)
       end
       table.insert(result, {
@@ -602,8 +616,7 @@ local function jewelFacts(spec)
     local item = build.itemsTab.items[itemId]
     if item then
       local modifiers = jsonArray()
-      for index, mod in ipairs(item.explicitModLines or { }) do
-        if index > 4 then break end
+      for _, mod in ipairs(item.explicitModLines or { }) do
         table.insert(modifiers, mod.line or mod.extra)
       end
       local baseName = item.baseName

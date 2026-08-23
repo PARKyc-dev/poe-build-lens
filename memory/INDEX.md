@@ -1,11 +1,13 @@
 # 작업 인덱스
 
-## 진행 중
-
-- [브라우저 headless PoB와 패시브 트리 렌더링](active/2026-08-13-browser-headless-pob-tree.md)
+활성 작업은 [current-context.md](active/current-context.md)에서 관리한다.
 
 ## 완료
 
+- [시작 스크립트 빈 포트·실행 포트 표시](completed/2026-08-23-start-script-runtime-port.md)
+- [메커니즘 중심 자연어 분석](completed/2026-08-23-mechanism-narrative-analysis.md)
+- [웹·API 종료 스크립트](completed/2026-08-23-shutdown-script.md)
+- [웹·API 통합 시작 스크립트](completed/2026-08-23-start-web-api.md)
 - [기재 영역의 메커니즘 분석 표시](completed/2026-08-22-mechanism-analysis-in-sections.md)
 - [항상 활성화된 플라스크 계산](completed/2026-08-22-always-active-flasks.md)
 - [기재 목록 중복 제거](completed/2026-08-22-unique-mechanic-lists.md)

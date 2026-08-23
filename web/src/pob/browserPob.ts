@@ -25,6 +25,7 @@ export type BuildFactOffence = {
   combinedDps: number
   delivery: string
   tags: string[]
+  modifiers: Array<{ name: string; type: string; source: string; conditional: boolean }>
 }
 
 export type BuildFactSupportGem = {
@@ -34,9 +35,16 @@ export type BuildFactSupportGem = {
   qualityType: string
   enabled: boolean
   awakened: boolean
+  effects: string[]
 }
 
-export type BuildFactSkill = BuildFactSupportGem & {
+export type BuildFactSkill = {
+  name: string
+  level: number
+  quality: number
+  qualityType: string
+  enabled: boolean
+  awakened: boolean
   supports: BuildFactSupportGem[]
 }
 

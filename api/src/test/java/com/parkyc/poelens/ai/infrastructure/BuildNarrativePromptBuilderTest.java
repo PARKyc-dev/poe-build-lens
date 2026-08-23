@@ -1,6 +1,7 @@
 package com.parkyc.poelens.ai.infrastructure;
 
 import com.parkyc.poelens.build.domain.dto.AscendancyFact;
+import com.parkyc.poelens.build.domain.dto.AppliedModifierFact;
 import com.parkyc.poelens.build.domain.dto.BuffFact;
 import com.parkyc.poelens.build.domain.dto.BuildFacts;
 import com.parkyc.poelens.build.domain.dto.DefenceFact;
@@ -9,6 +10,7 @@ import com.parkyc.poelens.build.domain.dto.OffenceFact;
 import com.parkyc.poelens.build.domain.dto.PassiveFact;
 import com.parkyc.poelens.build.domain.dto.PerformanceFact;
 import com.parkyc.poelens.build.domain.dto.SkillFact;
+import com.parkyc.poelens.build.domain.dto.SupportGemFact;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -20,8 +22,11 @@ class BuildNarrativePromptBuilderTest {
     @Test
     void includesRelevantMechanicsAndExcludesRawEquipmentDetails() throws Exception {
         BuildFacts facts = new BuildFacts(
-                List.of(new OffenceFact("Fire Trap", "primary", 730_000.0, "trap", List.of("fire", "damage-over-time"))),
-                List.of(new SkillFact("Fire Trap", 21, 20, "Default", true, false, List.of())),
+                List.of(new OffenceFact("Fire Trap", "primary", 730_000.0, "trap", List.of("fire", "damage-over-time"),
+                        List.of(new AppliedModifierFact("Fire Damage", "INC", "Passive", false)))),
+                List.of(new SkillFact("Fire Trap", 21, 20, "Default", true, false,
+                        List.of(new SupportGemFact("Burning Damage", 20, 0, "Default", true, false,
+                                List.of("Supports any skill that deals damage."))))),
                 List.of(new DefenceFact("armour", 21_000.0), new DefenceFact("block", 70.0)),
                 List.of(new BuffFact("Determination", "aura", "player", List.of("armour"))),
                 List.of(),
@@ -34,7 +39,10 @@ class BuildNarrativePromptBuilderTest {
 
         String prompt = new BuildNarrativePromptBuilder().build(facts);
 
-        assertThat(prompt).contains("지속 피해", "덫", "방어도", "막기", "Fire Trap", "730000.0", "Determination", "Hinekora, Death's Fury");
+        assertThat(prompt).contains("지속 피해", "덫", "방어도", "막기", "Fire Trap", "730000.0", "Fire Damage", "Supports any skill that deals damage.", "Determination", "Hinekora, Death's Fury");
+        assertThat(prompt).contains("buildSummary", "offenceSections", "core", "supports", "modifiers", "operation", "attackName", "defenceSections", "defenceKind", "buffSections", "buffName", "section", "evidence");
+        assertThat(prompt).doesNotContain("mobility");
+        assertThat(prompt).doesNotContain("caution");
         assertThat(prompt).doesNotContain("Secret Weapon", "62% increased Fire Damage");
     }
 }

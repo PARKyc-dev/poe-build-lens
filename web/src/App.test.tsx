@@ -72,6 +72,7 @@ vi.mock('./pob/browserPob', () => ({
 vi.mock('./api/analysis', () => ({
   analyzeBuild: vi.fn(async () => ({
     gameVersion: '3.29',
+    summary: 'Fireball을 주력으로 사용하고 방어도와 막기로 생존력을 확보하며, 오라로 두 축을 강화하는 빌드입니다.',
     offence: [{
       title: '발사체 적중과 폭발',
       explanation: 'Fireball은 적중 지점에서 폭발 피해를 줍니다.',
@@ -159,6 +160,7 @@ describe('build analysis', () => {
     expect(await screen.findByRole('main', { name: '빌드 상세' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Fireball Insight' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '이 빌드에서 먼저 볼 것' })).toBeInTheDocument()
+    expect(screen.getByText('Fireball을 주력으로 사용하고 방어도와 막기로 생존력을 확보하며, 오라로 두 축을 강화하는 빌드입니다.')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '공격 기재' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '방어 기재' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '버프 기재' })).toBeInTheDocument()

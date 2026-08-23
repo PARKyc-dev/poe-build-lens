@@ -1,10 +1,13 @@
 package com.parkyc.poelens.build.domain.dto;
 
+import java.util.List;
+
 public record SupportGemFact(
         String name,
         Integer level,
         Integer quality,
         String qualityType,
         Boolean enabled,
-        Boolean awakened) {
+        Boolean awakened,
+        List<String> effects) {
 }

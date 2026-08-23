@@ -37,6 +37,7 @@ export function BuildDetailPage({ result, analysis, onNewInspection }: {
     <div className="detail-grid">
       <section className="insight-panel" aria-labelledby="insight-title">
         <p className="section-kicker">BUILD INSIGHT</p><h2 id="insight-title">이 빌드에서 먼저 볼 것</h2>
+        <p className="build-summary">{analysis.summary}</p>
         <div className="analysis-sections"><SkillSections result={result} analysis={analysis} onShow={showTooltip} onHide={() => setTooltip(null)} /><PassiveSection analysis={analysis} onShow={showTooltip} onHide={() => setTooltip(null)} /></div>
         {analysis.unverified.length > 0 && <section className="analysis-section" aria-label="미검증 항목"><h3>미검증 항목</h3>{analysis.unverified.map((message) => <p className="analysis-empty" key={message}>{message}</p>)}</section>}
         <section className="analysis-section priorities-section" aria-label="강화 우선순위"><h3>강화 우선순위</h3><ol className="priority-list">{insight.priorities.map((item, index) => <li key={item.title}><span>{index + 1}</span><div><h4>{item.title}</h4><p>{item.description}</p></div></li>)}</ol></section>

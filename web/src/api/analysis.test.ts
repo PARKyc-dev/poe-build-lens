@@ -29,6 +29,7 @@ describe('analyzeBuild', () => {
       message: 'Success',
       returnObject: {
         gameVersion: '3.29',
+        summary: 'Fireball을 주력으로 사용하는 빌드입니다.',
         offence: [],
         defence: [],
         buffs: [],

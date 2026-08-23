@@ -45,12 +45,11 @@ class BuildAnalysisControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
                 .andExpect(jsonPath("$.returnObject.offence[0].explanation").value(org.hamcrest.Matchers.containsString("Righteous Fire")))
-                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value(org.hamcrest.Matchers.containsString("Fire Trap")))
-                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value(org.hamcrest.Matchers.containsString("Hinekora, Death's Fury")))
-                .andExpect(jsonPath("$.returnObject.defence[0].title").value("방어 기재"))
-                .andExpect(jsonPath("$.returnObject.defence[0].explanation").value(org.hamcrest.Matchers.containsString("생명력 재생")))
-                .andExpect(jsonPath("$.returnObject.defence[0].explanation").value(org.hamcrest.Matchers.containsString("Determination")))
-                .andExpect(jsonPath("$.returnObject.defence[0].explanation").value(org.hamcrest.Matchers.containsString("Tempest Shield")));
+                .andExpect(jsonPath("$.returnObject.offence[2].title").value("보조 공격 기재"))
+                .andExpect(jsonPath("$.returnObject.offence[2].explanation").value(org.hamcrest.Matchers.containsString("Fire Trap")))
+                .andExpect(jsonPath("$.returnObject.defence[0].title").value("생존 자원 기반 방어"))
+                .andExpect(jsonPath("$.returnObject.defence[0].explanation").value(org.hamcrest.Matchers.containsString("생명력")))
+                .andExpect(jsonPath("$.returnObject.defence[3].title").value("막기 기반 방어"));
     }
 
     @Test
@@ -73,11 +72,12 @@ class BuildAnalysisControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.code").value("OK"))
                 .andExpect(jsonPath("$.returnObject.gameVersion").value("3.29"))
+                .andExpect(jsonPath("$.returnObject.summary").value(org.hamcrest.Matchers.containsString("Arbitrary Main Skill")))
                 .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
-                .andExpect(jsonPath("$.returnObject.defence[0].title").value("방어 기재"))
+                .andExpect(jsonPath("$.returnObject.defence[0].title").value("생존 자원 기반 방어"))
                 .andExpect(jsonPath("$.returnObject.buffs[0].title").value("버프 유틸리티: Arbitrary Utility"))
                 .andExpect(jsonPath("$.returnObject.buffs[0].explanation").value("감전 면역·주문 막기 태그가 활성화되어 상태 이상 방지와 방어 수치를 보강합니다."))
-                .andExpect(jsonPath("$.returnObject.mobility[0].title").value("이동기: Arbitrary Movement"))
+                .andExpect(jsonPath("$.returnObject.mobility").doesNotExist())
                 .andExpect(jsonPath("$.returnObject.passives[0].title").value("생존 핵심 패시브"))
                 .andExpect(jsonPath("$.returnObject.overrides").isEmpty());
     }
@@ -106,7 +106,7 @@ class BuildAnalysisControllerTest {
                                 }
                                 """))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.returnObject.defence[0].title").value("방어 기재"))
+                .andExpect(jsonPath("$.returnObject.defence[0].title").value("생존 자원 기반 방어"))
                 .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
                 .andExpect(jsonPath("$.returnObject.buffs[0].title").value("버프 유틸리티: Any Defensive Buff"))
                 .andExpect(jsonPath("$.returnObject.buffs[0].explanation").value("동결 면역·방어도·주문 억제 태그가 활성화되어 상태 이상 방지와 방어 수치를 보강합니다."))
@@ -169,6 +169,17 @@ class BuildAnalysisControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
                 .andExpect(jsonPath("$.returnObject.overrides").isEmpty());
+    }
+
+    @Test
+    void describesPersistentDamageAsAnAlwaysActiveAttack() throws Exception {
+        mockMvc.perform(post("/api/analyses")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"gameVersion":"3.29","buildFacts":{"offence":[{"name":"Any Persistent Skill","role":"primary","delivery":"persistent","tags":["damage-over-time"]}]}}
+                                """))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.returnObject.offence[1].explanation").value(org.hamcrest.Matchers.containsString("상시 유지형 피해")));
     }
 
     @Test
@@ -285,7 +296,7 @@ class BuildAnalysisControllerTest {
                                 """))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
-                .andExpect(jsonPath("$.returnObject.defence[0].title").value("방어 기재"))
+                .andExpect(jsonPath("$.returnObject.defence[0].title").value("생존 자원 기반 방어"))
                 .andExpect(jsonPath("$.returnObject.passives[0].title").value("생존 핵심 패시브"))
                 .andExpect(jsonPath("$.returnObject.passives[0].explanation").value("패시브 효과 태그가 생명력 회복·화염 저항을 보강합니다."));
     }

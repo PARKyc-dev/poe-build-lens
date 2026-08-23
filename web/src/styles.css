@@ -345,17 +345,14 @@ ul {
 }
 
 .build-summary {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
+  padding: 1.1rem 1.2rem;
   margin: 1.5rem 0;
   border: 1px solid rgb(109 160 166 / 27%);
-  background: rgb(109 160 166 / 18%);
+  background: #091727;
+  color: #e9ecdf;
+  font-size: 1rem;
+  line-height: 1.7;
 }
-
-.build-summary div { padding: 1.1rem 1.2rem; background: #091727; }
-.build-summary small { display: block; color: #8294a7; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; }
-.build-summary strong { display: block; margin-top: 0.35rem; color: #f1ead5; font: 1.35rem Georgia, serif; }
 
 .detail-grid { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(18rem, 0.75fr); gap: 1.5rem; }
 .insight-panel, .build-sidebar > section, .equipment-panel { border: 1px solid rgb(109 160 166 / 26%); background: rgb(4 15 27 / 72%); }

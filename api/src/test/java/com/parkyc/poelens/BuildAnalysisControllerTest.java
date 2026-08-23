@@ -116,7 +116,7 @@ class BuildAnalysisControllerTest {
     }
 
     @Test
-    void usesGenericUtilityWhenDefensiveEffectTagsAreAbsent() throws Exception {
+    void omitsBuffNarrativeWhenPobHasNoClassifiedBuffEffect() throws Exception {
         mockMvc.perform(post("/api/analyses")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
@@ -130,7 +130,7 @@ class BuildAnalysisControllerTest {
                                 }
                                 """))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.returnObject.buffs[0].title").value("버프 (Buff): Arbitrary Utility"));
+                .andExpect(jsonPath("$.returnObject.buffs").isEmpty());
     }
 
     @Test

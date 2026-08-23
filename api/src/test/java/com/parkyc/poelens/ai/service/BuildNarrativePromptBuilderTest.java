@@ -1,4 +1,4 @@
-package com.parkyc.poelens.ai.infrastructure;
+package com.parkyc.poelens.ai.service;
 
 import com.parkyc.poelens.build.domain.dto.AscendancyFact;
 import com.parkyc.poelens.build.domain.dto.AppliedModifierFact;
@@ -41,6 +41,7 @@ class BuildNarrativePromptBuilderTest {
 
         assertThat(prompt).contains("지속 피해", "덫", "방어도", "막기", "Fire Trap", "730000.0", "Fire Damage", "Supports any skill that deals damage.", "Determination", "Hinekora, Death's Fury");
         assertThat(prompt).contains("buildSummary", "offenceSections", "core", "supports", "modifiers", "operation", "attackName", "defenceSections", "defenceKind", "buffSections", "buffName", "section", "evidence");
+        assertThat(prompt).contains("주력 공격의 동작·운용 방식");
         assertThat(prompt).doesNotContain("mobility");
         assertThat(prompt).doesNotContain("caution");
         assertThat(prompt).doesNotContain("Secret Weapon", "62% increased Fire Damage");

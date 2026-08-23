@@ -159,7 +159,7 @@ describe('build analysis', () => {
 
     expect(await screen.findByRole('main', { name: '빌드 상세' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Fireball Insight' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '이 빌드에서 먼저 볼 것' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '빌드 메커니즘 요약' })).toBeInTheDocument()
     expect(screen.getByText('Fireball을 주력으로 사용하고 방어도와 막기로 생존력을 확보하며, 오라로 두 축을 강화하는 빌드입니다.')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '공격 기재' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '방어 기재' })).toBeInTheDocument()
@@ -212,7 +212,7 @@ describe('build analysis', () => {
 
     const equipment = screen.getByRole('region', { name: '장비 상세' })
     expect(equipment.closest('aside')).toBeNull()
-    expect(screen.getByRole('heading', { name: '이 빌드에서 먼저 볼 것' }).compareDocumentPosition(equipment)).toBe(Node.DOCUMENT_POSITION_FOLLOWING)
+    expect(screen.getByRole('heading', { name: '빌드 메커니즘 요약' }).compareDocumentPosition(equipment)).toBe(Node.DOCUMENT_POSITION_FOLLOWING)
     expect(within(screen.getByLabelText('주무기 슬롯: Doom Branch')).getByText('Doom Branch')).toBeInTheDocument()
     expect(within(screen.getByLabelText('플라스크 1 슬롯: Granite Flask')).getByText('Granite Flask')).toBeInTheDocument()
     expect(screen.getByLabelText('투구 슬롯')).toHaveTextContent('투구')

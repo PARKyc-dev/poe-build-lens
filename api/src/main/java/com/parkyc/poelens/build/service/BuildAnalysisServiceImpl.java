@@ -1,6 +1,13 @@
 package com.parkyc.poelens.build.service;
 
 import com.parkyc.poelens.build.application.NarrativeRefiner;
+import com.parkyc.poelens.build.domain.analysis.BuffMechanicAnalyzer;
+import com.parkyc.poelens.build.domain.analysis.BuildSummaryGenerator;
+import com.parkyc.poelens.build.domain.analysis.DefenceMechanicAnalyzer;
+import com.parkyc.poelens.build.domain.analysis.EquipmentMechanicAnalyzer;
+import com.parkyc.poelens.build.domain.analysis.OffenceMechanicAnalyzer;
+import com.parkyc.poelens.build.domain.analysis.PassiveMechanicAnalyzer;
+import com.parkyc.poelens.build.domain.analysis.PerformanceMechanicAnalyzer;
 import com.parkyc.poelens.build.domain.dto.AnalysisResult;
 import com.parkyc.poelens.build.domain.dto.BuildAnalysisRequest;
 import com.parkyc.poelens.build.domain.dto.BuildFacts;
@@ -16,11 +23,26 @@ import java.util.List;
 public class BuildAnalysisServiceImpl implements BuildAnalysisService {
     private static final Logger log = LogManager.getLogger(BuildAnalysisServiceImpl.class);
 
-    private final BuildFactsAnalysisService buildFactsAnalysisService;
+    private final OffenceMechanicAnalyzer offenceAnalyzer;
+    private final DefenceMechanicAnalyzer defenceAnalyzer;
+    private final BuffMechanicAnalyzer buffAnalyzer;
+    private final PassiveMechanicAnalyzer passiveAnalyzer;
+    private final EquipmentMechanicAnalyzer equipmentAnalyzer;
+    private final PerformanceMechanicAnalyzer performanceAnalyzer;
+    private final BuildSummaryGenerator buildSummaryGenerator;
     private final NarrativeRefiner narrativeRefiner;
 
-    public BuildAnalysisServiceImpl(BuildFactsAnalysisService buildFactsAnalysisService, NarrativeRefiner narrativeRefiner) {
-        this.buildFactsAnalysisService = buildFactsAnalysisService;
+    public BuildAnalysisServiceImpl(OffenceMechanicAnalyzer offenceAnalyzer, DefenceMechanicAnalyzer defenceAnalyzer,
+                                    BuffMechanicAnalyzer buffAnalyzer, PassiveMechanicAnalyzer passiveAnalyzer,
+                                    EquipmentMechanicAnalyzer equipmentAnalyzer, PerformanceMechanicAnalyzer performanceAnalyzer,
+                                    BuildSummaryGenerator buildSummaryGenerator, NarrativeRefiner narrativeRefiner) {
+        this.offenceAnalyzer = offenceAnalyzer;
+        this.defenceAnalyzer = defenceAnalyzer;
+        this.buffAnalyzer = buffAnalyzer;
+        this.passiveAnalyzer = passiveAnalyzer;
+        this.equipmentAnalyzer = equipmentAnalyzer;
+        this.performanceAnalyzer = performanceAnalyzer;
+        this.buildSummaryGenerator = buildSummaryGenerator;
         this.narrativeRefiner = narrativeRefiner;
     }
 
@@ -35,17 +57,17 @@ public class BuildAnalysisServiceImpl implements BuildAnalysisService {
         }
 
         log.info("빌드 분석 시작: 게임 버전={}, 공격 사실 수={}, 방어 사실 수={}", request.gameVersion(), size(facts.offence()), size(facts.defence()));
-        List<Mechanic> offence = new java.util.ArrayList<>(buildFactsAnalysisService.analyseOffenceNarrative(facts.offence(), facts.ascendancies(), facts.skills()));
-        List<Mechanic> defence = buildFactsAnalysisService.analyseDefence(facts.defence(), facts.passives(), facts.passiveTags(), facts.items());
-        List<Mechanic> buffs = buildFactsAnalysisService.analyseBuffs(facts.buffs());
-        NarrativeResult narrative = narrativeRefiner.refine(facts, buildFactsAnalysisService.analyseBuildSummary(facts.offence(), facts.defence(), facts.buffs()), offence, defence, buffs);
+        List<Mechanic> offence = new java.util.ArrayList<>(offenceAnalyzer.analyseNarrative(facts.offence(), facts.skills()));
+        List<Mechanic> defence = defenceAnalyzer.analyse(facts.defence(), facts.passives(), facts.passiveTags(), facts.items());
+        List<Mechanic> buffs = buffAnalyzer.analyse(facts.buffs());
+        NarrativeResult narrative = narrativeRefiner.refine(facts, buildSummaryGenerator.generate(facts.offence(), facts.defence(), facts.buffs()), offence, defence, buffs);
         AnalysisResult result = new AnalysisResult(request.gameVersion(),
                 narrative.summary(), narrative.offence(), narrative.defence(), narrative.buffs(),
-                buildFactsAnalysisService.analysePassives(facts.passives(), facts.passiveTags()),
-                buildFactsAnalysisService.analysePassiveNodes(facts.passives()),
-                buildFactsAnalysisService.analyseAscendancies(facts.ascendancies()),
-                buildFactsAnalysisService.analyseGear(facts.items(), facts.jewels()),
-                buildFactsAnalysisService.analysePerformance(facts.performance()),
+                passiveAnalyzer.analyse(facts.passives(), facts.passiveTags()),
+                passiveAnalyzer.analyseNodes(facts.passives()),
+                passiveAnalyzer.analyseAscendancies(facts.ascendancies()),
+                equipmentAnalyzer.analyse(facts.items(), facts.jewels()),
+                performanceAnalyzer.analyse(facts.performance()),
                 List.of(), List.of(), List.of());
         log.info("빌드 분석 완료: 게임 버전={}, 공격 결과 수={}, 방어 결과 수={}, 처리 시간(ms)={}", request.gameVersion(), result.offence().size(), result.defence().size(), elapsedMillis(startedAt));
         return result;

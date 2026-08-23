@@ -88,6 +88,24 @@ describe('PoB BuildFacts bridge', () => {
     expect(attacks[0].combinedDps).toBeGreaterThanOrEqual(attacks[1].combinedDps)
   }, 30_000)
 
+  it('treats Flicker Strike as an attack instead of a movement skill', async () => {
+    const result = await inspectFixture('Generals Perforate Zerker', (xml) => xml
+      .replace('slot="Body Armour" mainActiveSkill="2"', 'slot="Body Armour" mainActiveSkill="7"')
+      .replace(
+        'skillId="BloodSpears" qualityId="Alternate3" skillPart="1" gemId="Metadata/Items/Gems/SkillGemPerforate" quality="14" enabled="true" count="1" nameSpec="Perforate"',
+        'skillId="FlickerStrike" qualityId="Default" gemId="Metadata/Items/Gems/SkillGemFlickerStrike" quality="14" enabled="true" count="1" nameSpec="Flicker Strike"',
+      ))
+
+    expect(result.activeSkillName).toBe('Flicker Strike')
+    expect(result.mainSkillFlags).toMatchObject({ isAttack: true })
+    expect(result.buildFacts.offence).toEqual(expect.arrayContaining([
+      expect.objectContaining({ name: 'Flicker Strike' }),
+    ]))
+    expect(result.buildFacts.mobility).not.toEqual(expect.arrayContaining([
+      { name: 'Flicker Strike' },
+    ]))
+  }, 30_000)
+
   it('calculates every equipped flask as active', async () => {
     const activeFlasks = await inspectFixture('OccVortex')
     const inactiveFlasks = await inspectFixture('OccVortex', (xml) => xml.replaceAll('<Slot active="true" name="Flask', '<Slot active="false" name="Flask'))

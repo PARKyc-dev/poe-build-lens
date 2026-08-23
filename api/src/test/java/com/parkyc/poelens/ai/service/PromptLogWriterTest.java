@@ -1,4 +1,4 @@
-package com.parkyc.poelens.ai.infrastructure;
+package com.parkyc.poelens.ai.service;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;

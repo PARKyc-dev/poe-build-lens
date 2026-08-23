@@ -194,11 +194,17 @@ local function isTriggeredMainSkill(mainSkill)
     or srcInstance.triggered) and true or false
 end
 
+local function isAttackSkill(skill)
+  local flags = skill.skillFlags or { }
+  local skillTypes = skill.skillTypes or { }
+  return flags.attack or skillTypes[SkillType.Attack]
+end
+
 local function flagsFromMainSkill(mainSkill)
   if not mainSkill then return nil end
   local skillFlags = mainSkill.skillFlags or { }
   return {
-    isAttack = skillFlags.attack and true or false,
+    isAttack = isAttackSkill(mainSkill) and true or false,
     isTotem = skillFlags.totem and true or false,
     isTrap = skillFlags.trap and true or false,
     isMine = skillFlags.mine and true or false,
@@ -218,7 +224,7 @@ local function deliveryFromSkill(skill)
   if flags.trap then return "trap" end
   if flags.mine then return "mine" end
   if flags.brand then return "brand" end
-  if flags.attack then return "attack" end
+  if isAttackSkill(skill) then return "attack" end
   if flags.selfCast then return "self-cast" end
   return "unverified"
 end
@@ -320,7 +326,9 @@ local function offenceFacts(env)
     local effect = skill.activeEffect or { }
     local grantedEffect = effect.grantedEffect or { }
     local isMovement = skill.skillTypes and skill.skillTypes[SkillType.Movement]
-    if not flags.disable and not isMovement and (not skill.buffSkill or flags.dot) and (flags.hit or flags.dot) and grantedEffect.name then
+    local isMain = skill == player.mainSkill
+    local isAttack = isAttackSkill(skill)
+    if (not flags.disable or (isMain and isAttack)) and (not isMovement or (isAttack and isMain)) and (not skill.buffSkill or flags.dot or (isMain and isAttack)) and (flags.hit or flags.dot or isAttack) and grantedEffect.name then
       local delivery = deliveryFromSkill(skill)
       local key = grantedEffect.name .. "|" .. delivery
       if not candidates[key] then
@@ -330,6 +338,7 @@ local function offenceFacts(env)
           tags = tagsFromSkill(skill),
           skill = skill,
           combinedDps = 0,
+          isMain = isMain,
           modifiers = jsonArray(),
         }
       end
@@ -364,7 +373,7 @@ local function offenceFacts(env)
   build.calcsTab.calcs.perform(env)
   local ranked = { }
   for _, candidate in pairs(candidates) do
-    if candidate.combinedDps > 0 then table.insert(ranked, candidate) end
+    if candidate.combinedDps > 0 or candidate.isMain then table.insert(ranked, candidate) end
   end
   table.sort(ranked, function(left, right)
     if left.combinedDps == right.combinedDps then return left.name < right.name end
@@ -437,7 +446,8 @@ local function mobilityFacts(player)
   local seen = { }
   for _, skill in ipairs(player.activeSkillList or { }) do
     local name = skill.activeEffect and skill.activeEffect.grantedEffect and skill.activeEffect.grantedEffect.name
-    if name and skill.skillTypes and skill.skillTypes[SkillType.Movement] and not seen[name] then
+    local flags = skill.skillFlags or { }
+    if name and skill.skillTypes and skill.skillTypes[SkillType.Movement] and not (isAttackSkill(skill) and skill.buffSkill) and not seen[name] then
       seen[name] = true
       table.insert(result, { name = name })
     end

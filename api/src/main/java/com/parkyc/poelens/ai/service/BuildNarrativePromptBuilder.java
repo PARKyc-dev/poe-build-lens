@@ -1,4 +1,4 @@
-package com.parkyc.poelens.ai.infrastructure;
+package com.parkyc.poelens.ai.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.parkyc.poelens.build.domain.dto.AscendancyFact;
@@ -60,9 +60,10 @@ public class BuildNarrativePromptBuilder {
                 "passives", passives,
                 "ascendancies", ascendancies);
         return "제공된 PoB 사실과 아래 게임 규칙 참고만 사용해 buildSummary와 공격·방어·버프 메커니즘을 설명해. buildSummary의 문장 수를 제한하지 마. 이동기는 분석하지 마. "
+                + "buildSummary에는 주력 공격의 동작·운용 방식, 방어 층, 효과가 확인된 활성 버프, 연관 패시브·전직 효과가 어떻게 맞물리는지 설명해. "
                 + "offenceSections는 공격마다 core, supports, modifiers, operation 중 필요한 section을 사용하고, attackName은 PoB offence의 이름, evidence는 그 공격의 이름·지원젬 이름·수정자 이름 또는 출처만 넣어. "
                 + "defenceSections는 defenceKind와 resource, mitigation, avoidance, recovery 중 section을 사용하고 evidence에는 그 defenceKind를 반드시 넣어. "
-                + "buffSections는 buffName과 offence, defence, utility 중 section을 사용하고 evidence에는 그 buffName을 반드시 넣어. "
+                + "buffSections는 효과 태그가 있는 버프에만 buffName과 offence, defence, utility 중 section을 사용하고 evidence에는 그 buffName을 반드시 넣어. "
                 + "딜량·DPS 등 수치 대신 실제 스킬이 어떤 순서와 방식으로 동작하는지 설명하고, 버프는 어떤 공격 또는 방어 축을 강화하는지 설명해. "
                 + "캐릭터에 실제로 존재하지 않는 스킬·수치·효과는 추측하거나 추가하지 마. "
                 + "게임 규칙 참고=" + objectMapper.writeValueAsString(mechanics)

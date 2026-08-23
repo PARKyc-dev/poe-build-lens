@@ -1,4 +1,4 @@
-package com.parkyc.poelens.ai.infrastructure;
+package com.parkyc.poelens.ai.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,4 +1,4 @@
-package com.parkyc.poelens.ai.infrastructure;
+package com.parkyc.poelens.ai.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

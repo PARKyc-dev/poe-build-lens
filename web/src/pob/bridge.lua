@@ -141,8 +141,10 @@ local function equipmentFromActiveSet()
     local item = slot and slot.selItemId and build.itemsTab.items[slot.selItemId]
     if item then
       local modifiers = { }
-      for _, mod in ipairs(item.explicitModLines or { }) do
-        table.insert(modifiers, mod.line or mod.extra)
+      for _, lines in ipairs({ item.implicitModLines or { }, item.explicitModLines or { } }) do
+        for _, mod in ipairs(lines) do
+          table.insert(modifiers, mod.line or mod.extra)
+        end
       end
       table.insert(result, {
         slot = slotName,
@@ -162,8 +164,10 @@ local function jewelsFromActiveSpec()
     local item = build.itemsTab.items[itemId]
     if item then
       local modifiers = { }
-      for _, mod in ipairs(item.explicitModLines or { }) do
-        table.insert(modifiers, mod.line or mod.extra)
+      for _, lines in ipairs({ item.implicitModLines or { }, item.explicitModLines or { } }) do
+        for _, mod in ipairs(lines) do
+          table.insert(modifiers, mod.line or mod.extra)
+        end
       end
       local baseName = item.baseName
       table.insert(result, {
@@ -303,6 +307,177 @@ local function tagsFromModList(modList)
   return tags
 end
 
+local function operationName(value)
+  if type(value) ~= "string" then return "" end
+  return value:gsub("(%l)(%u)", "%1-%2"):gsub("(%a)(%d)", "%1-%2"):gsub("[%s_]+", "-"):lower()
+end
+
+local function operationSubject(name)
+  local charge = name:match("([%a]+)%-charges?")
+  if charge then return charge .. "-charge" end
+  if name:find("energy%-shield") then return "energy-shield" end
+  if name:find("flask%-charge") then return "flask-charge" end
+  if name:find("mana") then return "mana" end
+  if name:find("life") then return "life" end
+  if name:match("^rage%-") or name:match("%-rage%-") or name:match("%-rage$") or name == "rage" then return "rage" end
+  local from, to = name:match("([%a]+)%-damage.-to%-([%a]+)")
+  if from and to then return from .. "-to-" .. to end
+  return name:gsub("^chance%-to%-", ""):gsub("%-on%-[%a-]+", "")
+end
+
+local function isExcludedOperationSubject(subject)
+  return subject == "life"
+    or subject:find("life", 1, true)
+    or subject:find("resist", 1, true)
+    or subject:find("movement", 1, true)
+    or subject:find("move%-speed")
+    or subject:find("armour", 1, true)
+end
+
+local function hasOperationEnhancement(name)
+  return name:find("damage", 1, true)
+    or name:find("speed", 1, true)
+    or name:find("duration", 1, true)
+    or name:find("effect", 1, true)
+    or name:find("area", 1, true)
+    or name:find("projectile", 1, true)
+    or name:find("spell", 1, true)
+    or name:find("attack", 1, true)
+    or name:find("trap", 1, true)
+    or name:find("mine", 1, true)
+    or name:find("totem", 1, true)
+    or name:find("brand", 1, true)
+    or name:find("ailment", 1, true)
+end
+
+local function classifyOperationFacts(mod)
+  local name = operationName(mod and mod.name)
+  if name == "" or name:find("^condition:") or name:find("^multiplier:") or name:find("^pvp") then return { } end
+  local subject = operationSubject(name)
+  if subject == "" or isExcludedOperationSubject(subject) then return { } end
+
+  local onKill = name:find("on%-kill") or name:find("when%-you%-kill")
+  local onHit = name:find("on%-hit") or name:find("when%-you%-hit")
+  local onDamaged = name:find("on%-damaged") or name:find("on%-taking%-damage") or name:find("when%-hit") or name:find("when%-you%-are%-hit")
+  local conditional = onKill or onHit or onDamaged
+  local chargeCondition = subject:find("%-charge$") and conditional
+
+  local actions = { }
+  if name:find("convert", 1, true) or name:find("conversion", 1, true) then
+    table.insert(actions, "convert")
+  elseif name:find("trigger", 1, true) or (conditional and not name:find("gain", 1, true) and not name:find("lose", 1, true) and not chargeCondition) then
+    table.insert(actions, "trigger")
+  elseif name:find("reserve", 1, true) then
+    table.insert(actions, "reserve")
+  elseif name:find("cooldown", 1, true) then
+    table.insert(actions, "cooldown")
+  elseif name:find("cost", 1, true) or name:find("charges%-used") or name:find("lose", 1, true) then
+    table.insert(actions, "consume")
+  elseif name:find("gain", 1, true) or chargeCondition then
+    table.insert(actions, "gain")
+  elseif name:find("duration", 1, true) or name:find("sustain", 1, true) then
+    table.insert(actions, "maintain")
+  elseif hasOperationEnhancement(name) then
+    table.insert(actions, "enhance")
+  end
+
+  if onKill then table.insert(actions, "on-kill") end
+  if onHit then table.insert(actions, "on-hit") end
+  if onDamaged then table.insert(actions, "on-damaged") end
+  return actions, subject
+end
+
+local function addOperationFact(result, seen, sourceType, sourceName, action, subject, effect)
+  local key = sourceType .. "|" .. sourceName .. "|" .. action .. "|" .. subject .. "|" .. effect
+  if not seen[key] then
+    seen[key] = true
+    table.insert(result, {
+      sourceType = sourceType,
+      sourceName = sourceName,
+      action = action,
+      subject = subject,
+      effects = { effect },
+    })
+  end
+end
+
+local function operationFactsFromModList(result, seen, modList, sourceType, sourceName)
+  local current = modList
+  while current do
+    for _, mod in ipairs(current or { }) do
+      local actions, subject = classifyOperationFacts(mod)
+      for _, action in ipairs(actions or { }) do
+        addOperationFact(result, seen, sourceType, sourceName, action, subject, mod.name)
+      end
+    end
+    current = current.parent
+  end
+end
+
+local function operationFactsFromEffects(result, seen, effects, sourceType, sourceName)
+  for _, effect in ipairs(effects or { }) do
+    if type(effect) == "string" and effect ~= "" then
+      local actions, subject = classifyOperationFacts({ name = effect })
+      for _, action in ipairs(actions or { }) do
+        addOperationFact(result, seen, sourceType, sourceName, action, subject, effect)
+      end
+    end
+  end
+end
+
+local function itemEffectLines(item)
+  local effects = { }
+  for _, mod in ipairs(item.explicitModLines or { }) do
+    local effect = mod.line or mod.extra
+    if type(effect) == "string" and effect ~= "" then table.insert(effects, effect) end
+  end
+  return effects
+end
+
+local function operationFacts(env, spec)
+  local result = jsonArray()
+  local seen = { }
+  for _, skill in ipairs(env.player.activeSkillList or { }) do
+    local effect = skill.activeEffect and skill.activeEffect.grantedEffect
+    local name = effect and effect.name
+    if name then operationFactsFromModList(result, seen, skill.skillModList, "skill", name) end
+  end
+  for _, slotName in ipairs(equipmentSlots) do
+    local slot = build.itemsTab.activeItemSet[slotName]
+    local item = slot and slot.selItemId and build.itemsTab.items[slot.selItemId]
+    if item then
+      operationFactsFromModList(result, seen, item.modList, "item", item.title or item.name or item.baseName)
+      operationFactsFromEffects(result, seen, itemEffectLines(item), "item", item.title or item.name or item.baseName)
+    end
+  end
+  for socketId, itemId in pairs(spec.jewels or { }) do
+    local item = build.itemsTab.items[itemId]
+    if item then
+      operationFactsFromModList(result, seen, item.modList, "item", item.title or item.name or item.baseName)
+      operationFactsFromEffects(result, seen, itemEffectLines(item), "item", item.title or item.name or item.baseName)
+    end
+  end
+  for _, node in pairs(spec.allocNodes or { }) do
+    local sourceType = node.ascendancyName and "ascendancy" or "passive"
+    local sourceName = node.dn or node.name
+    if sourceName then
+      operationFactsFromModList(result, seen, node.modList, sourceType, sourceName)
+      operationFactsFromEffects(result, seen, node.sd, sourceType, sourceName)
+    end
+  end
+  for _, skill in ipairs(env.player.activeSkillList or { }) do
+    if skill.buffSkill then
+      for _, buff in ipairs(skill.buffList or { }) do
+        if buff.name and not buff.applyNotPlayer then
+          addOperationFact(result, seen, "buff", buff.name, "maintain", operationName(buff.name), buff.name)
+          operationFactsFromModList(result, seen, buff.modList, "buff", buff.name)
+        end
+      end
+    end
+  end
+  return result
+end
+
 local function allPassiveTags(spec)
   local result = jsonArray()
   local seen = { }
@@ -376,6 +551,7 @@ local function offenceFacts(env)
     if candidate.combinedDps > 0 or candidate.isMain then table.insert(ranked, candidate) end
   end
   table.sort(ranked, function(left, right)
+    if left.isMain ~= right.isMain then return left.isMain end
     if left.combinedDps == right.combinedDps then return left.name < right.name end
     return left.combinedDps > right.combinedDps
   end)
@@ -388,54 +564,60 @@ local function offenceFacts(env)
   return result
 end
 
-local function gemName(gem)
-  local grantedEffect = gem.grantedEffect or (gem.gemData and gem.gemData.grantedEffect) or { }
-  return grantedEffect.name or (gem.gemData and gem.gemData.name) or gem.nameSpec
-end
-
-local function isSupportGem(gem)
-  local grantedEffect = gem.grantedEffect or (gem.gemData and gem.gemData.grantedEffect) or { }
-  return grantedEffect.support and true or false
-end
-
 local gemQualityTypes = { }
 
 local function qualityType(gem)
   return gem.qualityId or (gem.gemData and gemQualityTypes[gem.gemData.gameId]) or "Default"
 end
 
-local function supportGemFact(gem, group)
-  local grantedEffect = gem.grantedEffect or (gem.gemData and gem.gemData.grantedEffect) or { }
-  return {
-    name = gemName(gem),
-    level = gem.level,
-    quality = gem.quality,
-    qualityType = qualityType(gem),
-    enabled = gem.enabled and group.enabled and true or false,
-    awakened = (grantedEffect.plusVersionOf or (gem.gemData and gem.gemData.name and gem.gemData.name:match("^Awakened "))) and true or false,
-    effects = type(grantedEffect.description) == "string" and { grantedEffect.description } or { },
-  }
+local function effectDetails(effect, includeDescription)
+  local result = jsonArray()
+  local grantedEffect = effect.grantedEffect or { }
+  if includeDescription and type(grantedEffect.description) == "string" and grantedEffect.description ~= "" then
+    table.insert(result, grantedEffect.description)
+  end
+  if calcLib and build.data.describeStats and grantedEffect.statDescriptionScope then
+    local stats = calcLib.buildSkillInstanceStats(effect, grantedEffect)
+    local descriptions = build.data.describeStats(stats, grantedEffect.statDescriptionScope)
+    for _, description in ipairs(descriptions or { }) do
+      if type(description) == "string" and description ~= "" then table.insert(result, description) end
+    end
+  end
+  return result
 end
 
-local function skillFacts()
+local function skillFacts(env)
   local result = jsonArray()
-  for _, group in ipairs(build.skillsTab.socketGroupList or { }) do
-    local supports = jsonArray()
-    for _, gem in ipairs(group.gemList or { }) do
-      if isSupportGem(gem) then table.insert(supports, supportGemFact(gem, group)) end
-    end
-    for _, gem in ipairs(group.gemList or { }) do
-      if not isSupportGem(gem) and gemName(gem) then
-        table.insert(result, {
-          name = gemName(gem),
-          level = gem.level,
-          quality = gem.quality,
-          qualityType = qualityType(gem),
-          enabled = gem.enabled and group.enabled and true or false,
-          awakened = (gem.gemData and gem.gemData.name and gem.gemData.name:match("^Awakened ")) and true or false,
-          supports = supports,
-        })
+  for _, skill in ipairs(env.player.activeSkillList or { }) do
+    local effect = skill.activeEffect
+    local grantedEffect = effect and effect.grantedEffect
+    if grantedEffect and not (skill.skillFlags or { }).disable then
+      local gem = effect.srcInstance or { }
+      local supports = jsonArray()
+      for _, support in ipairs(skill.effectList or { }) do
+        if support.grantedEffect.support then
+          local source = support.srcInstance or { }
+          table.insert(supports, {
+            name = support.grantedEffect.name,
+            level = support.level,
+            quality = support.quality,
+            qualityType = qualityType(source),
+            enabled = true,
+            awakened = support.grantedEffect.plusVersionOf and true or false,
+            effects = effectDetails(support, false),
+          })
+        end
       end
+      table.insert(result, {
+        name = grantedEffect.name,
+        level = effect.level,
+        quality = effect.quality,
+        qualityType = qualityType(gem),
+        enabled = true,
+        awakened = false,
+        effects = effectDetails(effect, true),
+        supports = supports,
+      })
     end
   end
   return result
@@ -492,20 +674,7 @@ local function ascendancyFacts(spec)
 end
 
 local function skillTooltipDetails(skill)
-  local result = jsonArray()
-  local effect = skill.activeEffect or { }
-  local grantedEffect = effect.grantedEffect or { }
-  if type(grantedEffect.description) == "string" and grantedEffect.description ~= "" then
-    table.insert(result, grantedEffect.description)
-  end
-  if calcLib and build.data.describeStats and grantedEffect.statDescriptionScope then
-    local stats = calcLib.buildSkillInstanceStats(effect, grantedEffect)
-    local descriptions = build.data.describeStats(stats, grantedEffect.statDescriptionScope)
-    for _, description in ipairs(descriptions or { }) do
-      if type(description) == "string" and description ~= "" then table.insert(result, description) end
-    end
-  end
-  return result
+  return effectDetails(skill.activeEffect or { }, true)
 end
 
 local function skillTooltipFacts(env)
@@ -604,8 +773,10 @@ local function itemFacts()
     local item = slot and slot.selItemId and build.itemsTab.items[slot.selItemId]
     if item then
       local modifiers = jsonArray()
-      for _, mod in ipairs(item.explicitModLines or { }) do
-        table.insert(modifiers, mod.line or mod.extra)
+      for _, lines in ipairs({ item.implicitModLines or { }, item.explicitModLines or { } }) do
+        for _, mod in ipairs(lines) do
+          table.insert(modifiers, mod.line or mod.extra)
+        end
       end
       table.insert(result, {
         slot = slotName,
@@ -626,8 +797,10 @@ local function jewelFacts(spec)
     local item = build.itemsTab.items[itemId]
     if item then
       local modifiers = jsonArray()
-      for _, mod in ipairs(item.explicitModLines or { }) do
-        table.insert(modifiers, mod.line or mod.extra)
+      for _, lines in ipairs({ item.implicitModLines or { }, item.explicitModLines or { } }) do
+        for _, mod in ipairs(lines) do
+          table.insert(modifiers, mod.line or mod.extra)
+        end
       end
       local baseName = item.baseName
       table.insert(result, {
@@ -658,9 +831,16 @@ local function performanceFact(output)
 end
 
 local function buildFacts(env, output, spec)
+  local conditions = { }
+  for name, value in pairs(build.configTab.input or { }) do
+    if name:match("^condition") or name:match("^buff") or name:match("^use.*Charges$") then
+      if type(value) == "boolean" or type(value) == "number" then conditions[name] = value end
+    end
+  end
   return {
+    conditions = conditions,
     offence = offenceFacts(env),
-    skills = skillFacts(),
+    skills = skillFacts(env),
     defence = defenceFacts(output),
     buffs = buffFacts(env, output),
     mobility = mobilityFacts(env.player),
@@ -669,6 +849,7 @@ local function buildFacts(env, output, spec)
     passiveTags = allPassiveTags(spec),
     items = itemFacts(),
     jewels = jewelFacts(spec),
+    operationFacts = operationFacts(env, spec),
     performance = performanceFact(output),
   }
 end
@@ -735,7 +916,7 @@ function inspectBuild(xmlText, specId)
     activeSkillName = mainSkill and mainSkill.activeEffect and mainSkill.activeEffect.grantedEffect and mainSkill.activeEffect.grantedEffect.name or nil,
     mainSkillFlags = flagsFromMainSkill(mainSkill),
     skillTooltips = mainEnv and skillTooltipFacts(mainEnv) or { },
-    buildFacts = mainEnv and buildFacts(mainEnv, output, spec) or { offence = { }, skills = { }, defence = { }, buffs = { }, mobility = { }, passives = { }, ascendancies = { }, passiveTags = { }, items = { }, jewels = { }, performance = { } },
+    buildFacts = mainEnv and buildFacts(mainEnv, output, spec) or { offence = { }, skills = { }, defence = { }, buffs = { }, mobility = { }, passives = { }, ascendancies = { }, passiveTags = { }, items = { }, jewels = { }, operationFacts = jsonArray(), performance = { } },
     summary = {
       totalDps = output.TotalDPS,
       combinedDps = output.CombinedDPS,

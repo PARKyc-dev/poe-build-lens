@@ -9,5 +9,10 @@ public record SkillFact(
         String qualityType,
         Boolean enabled,
         Boolean awakened,
-        List<SupportGemFact> supports) {
+        List<SupportGemFact> supports,
+        List<String> effects) {
+    public SkillFact(String name, Integer level, Integer quality, String qualityType,
+                     Boolean enabled, Boolean awakened, List<SupportGemFact> supports) {
+        this(name, level, quality, qualityType, enabled, awakened, supports, List.of());
+    }
 }

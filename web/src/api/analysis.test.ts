@@ -56,4 +56,19 @@ describe('analyzeBuild', () => {
       }),
     })
   })
+  it('preserves skill mechanics and calculation assumptions in the request', async () => {
+    const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify({ code: 'OK', returnObject: {} })))
+    vi.stubGlobal('fetch', fetchMock)
+    const result = { ...inspectedFireball, buildFacts: {
+      ...inspectedFireball.buildFacts,
+      conditions: { buffLifetap: true, conditionStationary: 1 },
+      skills: [{ name: 'Fire Trap', level: 20, quality: 0, qualityType: 'Default', enabled: true,
+        awakened: false, effects: ['Leaves burning ground'], supports: [] }],
+    } }
+    await analyzeBuild(result)
+    const body = JSON.parse(fetchMock.mock.calls[0][1].body)
+    expect(body.buildFacts.conditions).toEqual(result.buildFacts.conditions)
+    expect(body.buildFacts.skills[0].effects).toEqual(['Leaves burning ground'])
+  })
+
 })

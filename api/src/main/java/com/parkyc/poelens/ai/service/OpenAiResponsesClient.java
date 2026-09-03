@@ -30,7 +30,7 @@ public class OpenAiResponsesClient {
                         "strict", true,
                         "schema", schema))));
         HttpRequest request = HttpRequest.newBuilder(URI.create("https://api.openai.com/v1/responses"))
-                .timeout(Duration.ofSeconds(40))
+                .timeout(Duration.ofSeconds(90))
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Bearer " + apiKey)
                 .POST(HttpRequest.BodyPublishers.ofString(body))

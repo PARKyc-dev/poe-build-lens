@@ -2,7 +2,7 @@
 
 import { readFile } from 'node:fs/promises'
 import { describe, expect, it } from 'vitest'
-import { unzipSync } from 'fflate'
+import { unzipSync, unzlibSync, strFromU8 } from 'fflate'
 import { LuaFactory } from 'wasmoon'
 
 const webRoot = process.cwd()
@@ -17,15 +17,53 @@ async function inspectFixture(name: string, transform?: (xml: string) => string)
   await mountArchive(factory, 'public/pob/core.zip')
   await mountArchive(factory, 'public/pob/trees/3_13.zip')
   await factory.mountFile('bridge.lua', await readFile(`${webRoot}/src/pob/bridge.lua`))
-  const runtime = await factory.createEngine()
+  const runtime = await factory.createEngine({ functionTimeout: 20_000 })
   await runtime.doFile('bridge.lua')
   const inspectBuild = runtime.global.get('inspectBuild') as (xml: string) => Promise<string>
   const source = await readFile(`${webRoot}/pob/.cache/PathOfBuilding/spec/TestBuilds/3.13/${name}.xml`, 'utf8')
   const xml = transform ? transform(source) : source
-  return JSON.parse(await inspectBuild(xml))
+  try {
+    return JSON.parse(await inspectBuild(xml))
+  } finally {
+    runtime.global.close()
+  }
 }
 
 describe('PoB BuildFacts bridge', () => {
+  it('provides RF mechanics, effective supports and operation conditions from the supplied build', async () => {
+    const factory = new LuaFactory(`${webRoot}/node_modules/wasmoon/dist/glue.wasm`)
+    await mountArchive(factory, 'public/pob/core.zip')
+    await mountArchive(factory, 'public/pob/trees/3_29.zip')
+    await factory.mountFile('bridge.lua', await readFile(`${webRoot}/src/pob/bridge.lua`))
+    const runtime = await factory.createEngine({ functionTimeout: 20_000 })
+    try {
+      await runtime.doFile('bridge.lua')
+      const code = (await readFile(`${webRoot}/../예시 pob.txt`, 'utf8')).trim()
+      const xml = strFromU8(unzlibSync(Buffer.from(code, 'base64url')))
+      const inspectBuild = runtime.global.get('inspectBuild') as (xml: string) => Promise<string>
+      const result = JSON.parse(await inspectBuild(xml))
+      const facts = result.buildFacts
+      expect(facts.offence[0]).toMatchObject({ name: 'Righteous Fire', role: 'primary' })
+      expect(facts.offence[1]).toMatchObject({ name: 'Fire Trap', role: 'secondary' })
+      const rf = facts.skills.find((skill: { name: string }) => skill.name === 'Righteous Fire')
+      const trap = facts.skills.find((skill: { name: string }) => skill.name === 'Fire Trap')
+      expect(rf.effects.join(' ')).toMatch(/burns you and nearby enemies/)
+      expect(trap.effects.join(' ')).toMatch(/burning ground/)
+      expect(rf.supports).toEqual(expect.arrayContaining([
+        expect.objectContaining({ name: 'Lifetap', effects: expect.arrayContaining([expect.stringMatching(/more Damage.*Lifetap/s)]) }),
+      ]))
+      expect(facts.skills).toEqual(expect.arrayContaining([
+        expect.objectContaining({ name: 'Shield Charge', supports: expect.arrayContaining([expect.objectContaining({ name: 'Lifetap', level: 1 })]) }),
+      ]))
+      expect(facts.conditions).toMatchObject({ buffLifetap: true, conditionStationary: 1 })
+      expect(facts.items).toEqual(expect.arrayContaining([
+        expect.objectContaining({ name: 'Golem Mitts', modifiers: expect.arrayContaining([expect.stringContaining('Ignites you inflict spread')]) }),
+      ]))
+    } finally {
+      runtime.global.close()
+    }
+  }, 60_000)
+
   it('returns top DPS attacks and allocated passive effects', async () => {
     const result = await inspectFixture('OccVortex')
 
@@ -78,14 +116,28 @@ describe('PoB BuildFacts bridge', () => {
     expect(result.buildFacts.performance).toMatchObject({ life: expect.any(Number), totalDps: expect.any(Number) })
   }, 30_000)
 
-  it('ranks the two highest combined DPS skills as primary and secondary attacks', async () => {
+  it('extracts generic operation facts while excluding basic defensive stats', async () => {
+    const result = await inspectFixture('Mirage Archer Toxic Rain')
+
+    expect(result.buildFacts.operationFacts).toEqual(expect.arrayContaining([
+      expect.objectContaining({ action: 'gain', subject: 'frenzy-charge', sourceType: 'item' }),
+    ]))
+    expect(result.buildFacts.operationFacts).not.toEqual(expect.arrayContaining([
+      expect.objectContaining({ subject: 'life' }),
+      expect.objectContaining({ subject: 'armour' }),
+      expect.objectContaining({ subject: 'fire-resistance' }),
+      expect.objectContaining({ subject: 'movement-speed' }),
+    ]))
+  }, 30_000)
+
+  it('keeps the selected skill first and uses DPS for the remaining attack', async () => {
     const result = await inspectFixture('OccVortex')
     const attacks = result.buildFacts.offence
 
     expect(attacks).toHaveLength(2)
     expect(attacks[0]).toMatchObject({ role: 'primary', combinedDps: expect.any(Number) })
     expect(attacks[1]).toMatchObject({ role: 'secondary', combinedDps: expect.any(Number) })
-    expect(attacks[0].combinedDps).toBeGreaterThanOrEqual(attacks[1].combinedDps)
+    expect(attacks[0].name).toBe(result.activeSkillName)
   }, 30_000)
 
   it('treats Flicker Strike as an attack instead of a movement skill', async () => {
@@ -121,11 +173,11 @@ describe('PoB BuildFacts bridge', () => {
       expect.objectContaining({
         name: 'Vortex',
         supports: expect.arrayContaining([
-          expect.objectContaining({ name: 'Hypothermia', level: 20, quality: 10, qualityType: 'Default', enabled: true, awakened: false, effects: expect.arrayContaining(['Supports any skill that deals damage.']) }),
-          expect.objectContaining({ name: 'Controlled Destruction', level: 20, quality: 20, qualityType: 'Default', enabled: true, awakened: false }),
-          expect.objectContaining({ name: 'Swift Affliction', level: 20, quality: 0, qualityType: 'Default', enabled: true, awakened: false }),
-          expect.objectContaining({ name: 'Efficacy', level: 20, quality: 20, qualityType: 'Default', enabled: true, awakened: false }),
-          expect.objectContaining({ name: 'Concentrated Effect', level: 21, quality: 0, qualityType: 'Default', enabled: true, awakened: false }),
+          expect.objectContaining({ name: 'Hypothermia', level: 20, quality: 20, qualityType: 'Default', enabled: true, awakened: false, effects: expect.arrayContaining([expect.stringMatching(/more.*Damage/i)]) }),
+          expect.objectContaining({ name: 'Controlled Destruction', level: 20, quality: 30, qualityType: 'Default', enabled: true, awakened: false }),
+          expect.objectContaining({ name: 'Swift Affliction', level: 20, quality: 10, qualityType: 'Default', enabled: true, awakened: false }),
+          expect.objectContaining({ name: 'Efficacy', level: 20, quality: 30, qualityType: 'Default', enabled: true, awakened: false }),
+          expect.objectContaining({ name: 'Concentrated Effect', level: 21, quality: 10, qualityType: 'Default', enabled: true, awakened: false }),
         ]),
       }),
     ]))

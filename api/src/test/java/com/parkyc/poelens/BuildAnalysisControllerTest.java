@@ -1,5 +1,7 @@
 package com.parkyc.poelens;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.parkyc.poelens.build.domain.dto.BuildFacts;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -17,6 +20,28 @@ class BuildAnalysisControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @Test
+    void acceptsOptionalOperationFactsAndKeepsOmittedFactsNull() throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+        BuildFacts supplied = objectMapper.readValue("""
+                {
+                  "operationFacts": [{
+                    "sourceType": "item",
+                    "sourceName": "Any Item",
+                    "action": "gain",
+                    "subject": "frenzy-charge",
+                    "effects": ["ChanceToGainFrenzyChargeOnHit"]
+                  }]
+                }
+                """, BuildFacts.class);
+        BuildFacts omitted = objectMapper.readValue("{}", BuildFacts.class);
+
+        assertThat(supplied.operationFacts()).singleElement()
+                .extracting(fact -> fact.sourceType(), fact -> fact.subject())
+                .containsExactly("item", "frenzy-charge");
+        assertThat(omitted.operationFacts()).isNull();
+    }
 
     @Test
     void combinesBuildFactsIntoMechanismNarratives() throws Exception {
@@ -45,8 +70,8 @@ class BuildAnalysisControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.returnObject.offence[0].title").value("공격 기재"))
                 .andExpect(jsonPath("$.returnObject.offence[0].explanation").value(org.hamcrest.Matchers.containsString("Righteous Fire")))
-                .andExpect(jsonPath("$.returnObject.offence[2].title").value("보조 공격 기재"))
-                .andExpect(jsonPath("$.returnObject.offence[2].explanation").value(org.hamcrest.Matchers.containsString("Fire Trap")))
+                .andExpect(jsonPath("$.returnObject.offence[1].title").value("공격 기재"))
+                .andExpect(jsonPath("$.returnObject.offence[1].explanation").value(org.hamcrest.Matchers.containsString("Fire Trap")))
                 .andExpect(jsonPath("$.returnObject.defence[0].title").value("생존 자원 기반 방어"))
                 .andExpect(jsonPath("$.returnObject.defence[0].explanation").value(org.hamcrest.Matchers.containsString("생명력")))
                 .andExpect(jsonPath("$.returnObject.defence[3].title").value("막기 기반 방어"));
@@ -172,14 +197,14 @@ class BuildAnalysisControllerTest {
     }
 
     @Test
-    void describesPersistentDamageAsAnAlwaysActiveAttack() throws Exception {
+    void doesNotClaimPersistentDamageIsAlwaysMaintained() throws Exception {
         mockMvc.perform(post("/api/analyses")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                                 {"gameVersion":"3.29","buildFacts":{"offence":[{"name":"Any Persistent Skill","role":"primary","delivery":"persistent","tags":["damage-over-time"]}]}}
                                 """))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.returnObject.offence[1].explanation").value(org.hamcrest.Matchers.containsString("상시 유지형 피해")));
+                .andExpect(jsonPath("$.returnObject.offence[0].explanation").value(org.hamcrest.Matchers.containsString("상세 메커니즘 설명을 생성하지 못했습니다")));
     }
 
     @Test

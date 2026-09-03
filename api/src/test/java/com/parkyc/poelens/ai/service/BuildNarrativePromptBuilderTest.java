@@ -7,6 +7,8 @@ import com.parkyc.poelens.build.domain.dto.BuildFacts;
 import com.parkyc.poelens.build.domain.dto.DefenceFact;
 import com.parkyc.poelens.build.domain.dto.ItemFact;
 import com.parkyc.poelens.build.domain.dto.OffenceFact;
+import com.parkyc.poelens.build.domain.dto.OperationFact;
+import com.parkyc.poelens.build.domain.dto.OperationFlow;
 import com.parkyc.poelens.build.domain.dto.PassiveFact;
 import com.parkyc.poelens.build.domain.dto.PerformanceFact;
 import com.parkyc.poelens.build.domain.dto.SkillFact;
@@ -20,7 +22,22 @@ import static org.assertj.core.api.Assertions.assertThat;
 class BuildNarrativePromptBuilderTest {
 
     @Test
-    void includesRelevantMechanicsAndExcludesRawEquipmentDetails() throws Exception {
+    void includesOperationFlowsAndTheirGrounds() throws Exception {
+        OperationFact consumesFrenzy = new OperationFact("skill", "Generic Attack", "consume", "frenzy-charge", List.of("Consumes a Frenzy Charge"));
+        OperationFact gainsFrenzy = new OperationFact("item", "Generic Item", "gain", "frenzy-charge", List.of("Gain a Frenzy Charge on Hit"));
+        BuildFacts facts = new BuildFacts(
+                List.of(new OffenceFact("Generic Attack", "primary", 1.0, "attack", List.of(), List.of())),
+                List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(),
+                List.of(consumesFrenzy, gainsFrenzy), new PerformanceFact(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
+        OperationFlow flow = new OperationFlow("frenzy-charge", List.of("frenzy-charge 소비", "frenzy-charge 획득", "연속 사용"), List.of(consumesFrenzy, gainsFrenzy));
+
+        String prompt = new BuildNarrativePromptBuilder().build(facts, List.of(flow));
+
+        assertThat(prompt).contains("operationFlows", "frenzy-charge", "Generic Attack", "Generic Item", "frenzy-charge 소비");
+    }
+
+    @Test
+    void includesMechanicsAndCrossSkillEquipmentEvidence() throws Exception {
         BuildFacts facts = new BuildFacts(
                 List.of(new OffenceFact("Fire Trap", "primary", 730_000.0, "trap", List.of("fire", "damage-over-time"),
                         List.of(new AppliedModifierFact("Fire Damage", "INC", "Passive", false)))),
@@ -39,11 +56,11 @@ class BuildNarrativePromptBuilderTest {
 
         String prompt = new BuildNarrativePromptBuilder().build(facts);
 
-        assertThat(prompt).contains("지속 피해", "덫", "방어도", "막기", "Fire Trap", "730000.0", "Fire Damage", "Supports any skill that deals damage.", "Determination", "Hinekora, Death's Fury");
+        assertThat(prompt).contains("지속 피해", "덫", "방어도", "막기", "Fire Trap", "Supports any skill that deals damage.", "Determination", "Hinekora, Death's Fury");
         assertThat(prompt).contains("buildSummary", "offenceSections", "core", "supports", "modifiers", "operation", "attackName", "defenceSections", "defenceKind", "buffSections", "buffName", "section", "evidence");
         assertThat(prompt).contains("주력 공격의 동작·운용 방식");
         assertThat(prompt).doesNotContain("mobility");
-        assertThat(prompt).doesNotContain("caution");
-        assertThat(prompt).doesNotContain("Secret Weapon", "62% increased Fire Damage");
+        assertThat(prompt).doesNotContain("caution", "730000.0", "combinedDps", "\"type\":\"INC\"");
+        assertThat(prompt).contains("Secret Weapon", "62% increased Fire Damage", "발동", "자기 피해", "조건", "DPS 순위", "effects");
     }
 }

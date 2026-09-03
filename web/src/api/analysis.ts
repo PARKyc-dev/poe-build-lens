@@ -28,6 +28,11 @@ export type BuildAnalysisResult = {
   evidence: Evidence[]
 }
 
+export type BuildAnalysisRequest = {
+  gameVersion: string
+  buildFacts: BrowserInspectResult['buildFacts']
+}
+
 type ApiResponse<T> = {
   code: string
   message: string
@@ -45,7 +50,7 @@ export async function analyzeBuild(result: BrowserInspectResult): Promise<BuildA
     body: JSON.stringify({
       gameVersion: normalizeGameVersion(result.tree.version),
       buildFacts: result.buildFacts,
-    }),
+    } satisfies BuildAnalysisRequest),
   })
   const payload = await response.json() as ApiResponse<BuildAnalysisResult>
 

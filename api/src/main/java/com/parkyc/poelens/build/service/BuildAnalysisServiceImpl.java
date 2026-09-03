@@ -6,6 +6,7 @@ import com.parkyc.poelens.build.domain.analysis.BuildSummaryGenerator;
 import com.parkyc.poelens.build.domain.analysis.DefenceMechanicAnalyzer;
 import com.parkyc.poelens.build.domain.analysis.EquipmentMechanicAnalyzer;
 import com.parkyc.poelens.build.domain.analysis.OffenceMechanicAnalyzer;
+import com.parkyc.poelens.build.domain.analysis.OperationFlowAnalyzer;
 import com.parkyc.poelens.build.domain.analysis.PassiveMechanicAnalyzer;
 import com.parkyc.poelens.build.domain.analysis.PerformanceMechanicAnalyzer;
 import com.parkyc.poelens.build.domain.dto.AnalysisResult;
@@ -13,6 +14,7 @@ import com.parkyc.poelens.build.domain.dto.BuildAnalysisRequest;
 import com.parkyc.poelens.build.domain.dto.BuildFacts;
 import com.parkyc.poelens.build.domain.dto.Mechanic;
 import com.parkyc.poelens.build.domain.dto.NarrativeResult;
+import com.parkyc.poelens.build.domain.dto.OperationFlow;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -29,19 +31,22 @@ public class BuildAnalysisServiceImpl implements BuildAnalysisService {
     private final PassiveMechanicAnalyzer passiveAnalyzer;
     private final EquipmentMechanicAnalyzer equipmentAnalyzer;
     private final PerformanceMechanicAnalyzer performanceAnalyzer;
+    private final OperationFlowAnalyzer operationFlowAnalyzer;
     private final BuildSummaryGenerator buildSummaryGenerator;
     private final NarrativeRefiner narrativeRefiner;
 
     public BuildAnalysisServiceImpl(OffenceMechanicAnalyzer offenceAnalyzer, DefenceMechanicAnalyzer defenceAnalyzer,
                                     BuffMechanicAnalyzer buffAnalyzer, PassiveMechanicAnalyzer passiveAnalyzer,
                                     EquipmentMechanicAnalyzer equipmentAnalyzer, PerformanceMechanicAnalyzer performanceAnalyzer,
-                                    BuildSummaryGenerator buildSummaryGenerator, NarrativeRefiner narrativeRefiner) {
+                                    OperationFlowAnalyzer operationFlowAnalyzer, BuildSummaryGenerator buildSummaryGenerator,
+                                    NarrativeRefiner narrativeRefiner) {
         this.offenceAnalyzer = offenceAnalyzer;
         this.defenceAnalyzer = defenceAnalyzer;
         this.buffAnalyzer = buffAnalyzer;
         this.passiveAnalyzer = passiveAnalyzer;
         this.equipmentAnalyzer = equipmentAnalyzer;
         this.performanceAnalyzer = performanceAnalyzer;
+        this.operationFlowAnalyzer = operationFlowAnalyzer;
         this.buildSummaryGenerator = buildSummaryGenerator;
         this.narrativeRefiner = narrativeRefiner;
     }
@@ -57,10 +62,11 @@ public class BuildAnalysisServiceImpl implements BuildAnalysisService {
         }
 
         log.info("빌드 분석 시작: 게임 버전={}, 공격 사실 수={}, 방어 사실 수={}", request.gameVersion(), size(facts.offence()), size(facts.defence()));
-        List<Mechanic> offence = new java.util.ArrayList<>(offenceAnalyzer.analyseNarrative(facts.offence(), facts.skills()));
+        List<Mechanic> offence = new java.util.ArrayList<>(offenceAnalyzer.analyseNarrative(facts.offence()));
         List<Mechanic> defence = defenceAnalyzer.analyse(facts.defence(), facts.passives(), facts.passiveTags(), facts.items());
         List<Mechanic> buffs = buffAnalyzer.analyse(facts.buffs());
-        NarrativeResult narrative = narrativeRefiner.refine(facts, buildSummaryGenerator.generate(facts.offence(), facts.defence(), facts.buffs()), offence, defence, buffs);
+        List<OperationFlow> operationFlows = operationFlowAnalyzer.analyse(facts.offence(), facts.operationFacts());
+        NarrativeResult narrative = narrativeRefiner.refine(facts, operationFlows, buildSummaryGenerator.generate(facts.offence(), facts.defence(), facts.buffs()), offence, defence, buffs);
         AnalysisResult result = new AnalysisResult(request.gameVersion(),
                 narrative.summary(), narrative.offence(), narrative.defence(), narrative.buffs(),
                 passiveAnalyzer.analyse(facts.passives(), facts.passiveTags()),

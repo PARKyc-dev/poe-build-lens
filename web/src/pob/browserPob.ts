@@ -39,6 +39,7 @@ export type BuildFactSupportGem = {
 }
 
 export type BuildFactSkill = {
+  effects?: string[]
   name: string
   level: number
   quality: number
@@ -105,7 +106,16 @@ export type BuildFactPerformance = {
   totalEhp?: number
 }
 
+export type OperationFact = {
+  sourceType: 'skill' | 'item' | 'passive' | 'ascendancy' | 'buff'
+  sourceName: string
+  action: 'consume' | 'gain' | 'trigger' | 'maintain' | 'reserve' | 'cooldown' | 'on-kill' | 'on-hit' | 'on-damaged' | 'convert' | 'enhance'
+  subject: string
+  effects: string[]
+}
+
 export type BuildFacts = {
+  conditions?: Record<string, boolean | number>
   offence: BuildFactOffence[]
   skills: BuildFactSkill[]
   defence: BuildFactDefence[]
@@ -116,6 +126,7 @@ export type BuildFacts = {
   passiveTags: string[]
   items: BuildFactItem[]
   jewels: BuildFactJewel[]
+  operationFacts: OperationFact[]
   performance: BuildFactPerformance
 }
 

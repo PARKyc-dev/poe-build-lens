@@ -3,6 +3,8 @@ import { createBuildInsight } from './buildInsight'
 import { EquipmentSection } from './EquipmentSection'
 import { PassiveSection } from './PassiveSection'
 import { SkillSections } from './SkillSections'
+import { SkillGemSection } from './SkillGemSection'
+import { HighlightedText } from './HighlightedText'
 import type { DetailTooltip } from './detailTooltip'
 import type { BuildAnalysisResult } from '../api/analysis'
 import type { BrowserInspectResult } from '../pob/browserPob'
@@ -27,6 +29,9 @@ export function BuildDetailPage({ result, analysis, onNewInspection }: {
   onNewInspection: () => void
 }) {
   const insight = createBuildInsight({ summary: result.summary })
+  const ascendancyHighlights = analysis.ascendancies.map((mechanic) => ({
+    name: mechanic.title.replace(/^전직 노드:\s*/, ''), details: [mechanic.explanation],
+  }))
   const [tooltip, setTooltip] = useState<DetailTooltip | null>(null)
   const showTooltip = (event: MouseEvent<HTMLButtonElement> | FocusEvent<HTMLButtonElement>, nextTooltip: Omit<DetailTooltip, 'rect'>) => setTooltip({ ...nextTooltip, rect: event.currentTarget.getBoundingClientRect() })
   const tooltipLeft = tooltip && tooltip.rect.right + 12 + 300 > window.innerWidth ? Math.max(12, tooltip.rect.left - 312) : (tooltip?.rect.right ?? 0) + 12
@@ -37,7 +42,7 @@ export function BuildDetailPage({ result, analysis, onNewInspection }: {
     <div className="detail-grid">
       <section className="insight-panel" aria-labelledby="insight-title">
         <p className="section-kicker">BUILD INSIGHT</p><h2 id="insight-title">빌드 메커니즘 요약</h2>
-        <p className="build-summary">{analysis.summary}</p>
+        <p className="build-summary"><HighlightedText text={analysis.summary} highlights={ascendancyHighlights} onShow={showTooltip} onHide={() => setTooltip(null)} /></p>
         <div className="analysis-sections"><SkillSections result={result} analysis={analysis} onShow={showTooltip} onHide={() => setTooltip(null)} /><PassiveSection analysis={analysis} onShow={showTooltip} onHide={() => setTooltip(null)} /></div>
         {analysis.unverified.length > 0 && <section className="analysis-section" aria-label="미검증 항목"><h3>미검증 항목</h3>{analysis.unverified.map((message) => <p className="analysis-empty" key={message}>{message}</p>)}</section>}
         <section className="analysis-section priorities-section" aria-label="강화 우선순위"><h3>강화 우선순위</h3><ol className="priority-list">{insight.priorities.map((item, index) => <li key={item.title}><span>{index + 1}</span><div><h4>{item.title}</h4><p>{item.description}</p></div></li>)}</ol></section>
@@ -45,6 +50,7 @@ export function BuildDetailPage({ result, analysis, onNewInspection }: {
       <aside className="build-sidebar" aria-label="빌드 구성"><section><p className="section-kicker">ACTIVE CONFIGURATION</p><h2>주요 수치</h2><dl aria-label="방어 수치">{result.buildFacts.defence.filter((fact) => activeConfigurationKinds.has(fact.kind)).map((fact) => { const detail = defenceLabels[fact.kind] ?? { label: fact.kind }; return <div key={fact.kind}><dt>{detail.label}</dt><dd>{formatNumber(fact.value)}{detail.unit}</dd></div> })}</dl></section></aside>
     </div>
     <EquipmentSection result={result} tooltip={tooltip} onShow={showTooltip} onHide={() => setTooltip(null)} />
-    {tooltip && <aside id="item-tooltip" className="detail-tooltip" style={{ position: 'fixed', left: tooltipLeft, top: tooltipTop }} role="tooltip" aria-label={`${tooltip.title} ${['공격', '방어', '버프', '패시브', '마스터리', '전직'].includes(tooltip.label) ? '상세 정보' : '장비 정보'}`}><small>{tooltip.label}</small><h3>{tooltip.title}</h3><div>{tooltip.details.length > 0 ? tooltip.details.map((detail) => <p key={detail}>{detail}</p>) : <p>표시할 핵심 메커니즘 옵션이 없습니다.</p>}</div></aside>}
+    <SkillGemSection result={result} />
+    {tooltip && <aside id="item-tooltip" className="detail-tooltip" style={{ position: 'fixed', left: tooltipLeft, top: tooltipTop }} role="tooltip" aria-label={`${tooltip.title} ${['공격', '방어', '버프', '저주/징표', '패시브', '마스터리', '전직'].includes(tooltip.label) ? '상세 정보' : '장비 정보'}`}><small>{tooltip.label}</small><h3>{tooltip.title}</h3><div>{tooltip.details.length > 0 ? tooltip.details.map((detail) => <p key={detail}>{detail}</p>) : <p>표시할 핵심 메커니즘 옵션이 없습니다.</p>}</div></aside>}
   </main>
 }

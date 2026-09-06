@@ -59,6 +59,10 @@ class BuildNarrativePromptBuilderTest {
         assertThat(prompt).contains("지속 피해", "덫", "방어도", "막기", "Fire Trap", "Supports any skill that deals damage.", "Determination", "Hinekora, Death's Fury");
         assertThat(prompt).contains("buildSummary", "offenceSections", "core", "supports", "modifiers", "operation", "attackName", "defenceSections", "defenceKind", "buffSections", "buffName", "section", "evidence");
         assertThat(prompt).contains("주력 공격의 동작·운용 방식");
+        assertThat(prompt).contains("buildSummary는 3~5문장", "숫자나 백분율을 쓰지 마", "상세 섹션으로 내려보내");
+        assertThat(prompt).contains("첫 문장에 결론", "서로 다른 주제는 줄바꿈으로 구분", "방어 수치·방어층·회복 조건은 defenceSections");
+        assertThat(prompt).contains("저항을 각각 별도 defenceSection으로 만들지 마", "defenceKind=resistances", "defenceKind=resistance-interaction");
+        assertThat(prompt).contains("쉼표 뒤 칭호까지 포함한 전체 이름", "모든 전직 노드는 축약하지 말고");
         assertThat(prompt).doesNotContain("mobility");
         assertThat(prompt).doesNotContain("caution", "730000.0", "combinedDps", "\"type\":\"INC\"");
         assertThat(prompt).contains("Secret Weapon", "62% increased Fire Damage", "발동", "자기 피해", "조건", "DPS 순위", "effects");

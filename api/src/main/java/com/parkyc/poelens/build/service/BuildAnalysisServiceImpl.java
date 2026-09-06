@@ -1,20 +1,17 @@
 package com.parkyc.poelens.build.service;
 
 import com.parkyc.poelens.build.application.NarrativeRefiner;
-import com.parkyc.poelens.build.domain.analysis.BuffMechanicAnalyzer;
-import com.parkyc.poelens.build.domain.analysis.BuildSummaryGenerator;
-import com.parkyc.poelens.build.domain.analysis.DefenceMechanicAnalyzer;
 import com.parkyc.poelens.build.domain.analysis.EquipmentMechanicAnalyzer;
-import com.parkyc.poelens.build.domain.analysis.OffenceMechanicAnalyzer;
 import com.parkyc.poelens.build.domain.analysis.OperationFlowAnalyzer;
 import com.parkyc.poelens.build.domain.analysis.PassiveMechanicAnalyzer;
 import com.parkyc.poelens.build.domain.analysis.PerformanceMechanicAnalyzer;
 import com.parkyc.poelens.build.domain.dto.AnalysisResult;
 import com.parkyc.poelens.build.domain.dto.BuildAnalysisRequest;
 import com.parkyc.poelens.build.domain.dto.BuildFacts;
-import com.parkyc.poelens.build.domain.dto.Mechanic;
 import com.parkyc.poelens.build.domain.dto.NarrativeResult;
 import com.parkyc.poelens.build.domain.dto.OperationFlow;
+import com.parkyc.poelens.common.code.ErrorCode;
+import com.parkyc.poelens.config.exception.PoeLensException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -25,29 +22,19 @@ import java.util.List;
 public class BuildAnalysisServiceImpl implements BuildAnalysisService {
     private static final Logger log = LogManager.getLogger(BuildAnalysisServiceImpl.class);
 
-    private final OffenceMechanicAnalyzer offenceAnalyzer;
-    private final DefenceMechanicAnalyzer defenceAnalyzer;
-    private final BuffMechanicAnalyzer buffAnalyzer;
     private final PassiveMechanicAnalyzer passiveAnalyzer;
     private final EquipmentMechanicAnalyzer equipmentAnalyzer;
     private final PerformanceMechanicAnalyzer performanceAnalyzer;
     private final OperationFlowAnalyzer operationFlowAnalyzer;
-    private final BuildSummaryGenerator buildSummaryGenerator;
     private final NarrativeRefiner narrativeRefiner;
 
-    public BuildAnalysisServiceImpl(OffenceMechanicAnalyzer offenceAnalyzer, DefenceMechanicAnalyzer defenceAnalyzer,
-                                    BuffMechanicAnalyzer buffAnalyzer, PassiveMechanicAnalyzer passiveAnalyzer,
+    public BuildAnalysisServiceImpl(PassiveMechanicAnalyzer passiveAnalyzer,
                                     EquipmentMechanicAnalyzer equipmentAnalyzer, PerformanceMechanicAnalyzer performanceAnalyzer,
-                                    OperationFlowAnalyzer operationFlowAnalyzer, BuildSummaryGenerator buildSummaryGenerator,
-                                    NarrativeRefiner narrativeRefiner) {
-        this.offenceAnalyzer = offenceAnalyzer;
-        this.defenceAnalyzer = defenceAnalyzer;
-        this.buffAnalyzer = buffAnalyzer;
+                                    OperationFlowAnalyzer operationFlowAnalyzer, NarrativeRefiner narrativeRefiner) {
         this.passiveAnalyzer = passiveAnalyzer;
         this.equipmentAnalyzer = equipmentAnalyzer;
         this.performanceAnalyzer = performanceAnalyzer;
         this.operationFlowAnalyzer = operationFlowAnalyzer;
-        this.buildSummaryGenerator = buildSummaryGenerator;
         this.narrativeRefiner = narrativeRefiner;
     }
 
@@ -57,16 +44,12 @@ public class BuildAnalysisServiceImpl implements BuildAnalysisService {
         BuildFacts facts = request.buildFacts();
         if (facts == null) {
             log.warn("빌드 사실이 없는 분석 요청: 게임 버전={}", request.gameVersion());
-            return new AnalysisResult(request.gameVersion(), "PoB 사실이 없어 빌드 요약을 만들 수 없습니다.", List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(), List.of(),
-                    List.of("No build facts are available for analysis."), List.of());
+            throw new PoeLensException(ErrorCode.MISSING_BUILD_INPUT);
         }
 
         log.info("빌드 분석 시작: 게임 버전={}, 공격 사실 수={}, 방어 사실 수={}", request.gameVersion(), size(facts.offence()), size(facts.defence()));
-        List<Mechanic> offence = new java.util.ArrayList<>(offenceAnalyzer.analyseNarrative(facts.offence()));
-        List<Mechanic> defence = defenceAnalyzer.analyse(facts.defence(), facts.passives(), facts.passiveTags(), facts.items());
-        List<Mechanic> buffs = buffAnalyzer.analyse(facts.buffs());
         List<OperationFlow> operationFlows = operationFlowAnalyzer.analyse(facts.offence(), facts.operationFacts());
-        NarrativeResult narrative = narrativeRefiner.refine(facts, operationFlows, buildSummaryGenerator.generate(facts.offence(), facts.defence(), facts.buffs()), offence, defence, buffs);
+        NarrativeResult narrative = narrativeRefiner.refine(facts, operationFlows);
         AnalysisResult result = new AnalysisResult(request.gameVersion(),
                 narrative.summary(), narrative.offence(), narrative.defence(), narrative.buffs(),
                 passiveAnalyzer.analyse(facts.passives(), facts.passiveTags()),

@@ -118,6 +118,19 @@ h1 span {
   display: block;
 }
 
+.ai-usage {
+  margin: -0.45rem 0 0;
+  color: #8fa1b5;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+}
+
+.ai-usage strong {
+  margin-left: 0.35rem;
+  color: #d9ad5a;
+  font-variant-numeric: tabular-nums;
+}
+
 .engine-status strong {
   color: #d5e5e2;
   font-size: 0.82rem;
@@ -438,9 +451,13 @@ em { margin-left: 0.35rem; color: #7fa9bc; font-family: Inter, ui-sans-serif, sa
 .passive-group { display: grid; gap: 0.45rem; }
 .passive-group-label { margin: 0; color: #91a3b4; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; }
 .mechanism-analysis { display: grid; gap: 0.35rem; padding: 0.7rem 0.85rem; border-left: 2px solid rgb(217 173 90 / 55%); color: #bfcbd1; background: rgb(9 24 39 / 52%); font-size: 0.82rem; line-height: 1.55; }
-.mechanism-analysis p { margin: 0; }
+.mechanism-analysis p { margin: 0; white-space: pre-line; }
 .compact-mechanic-list button { display: flex; gap: 0.4rem; align-items: center; padding: 0.48rem 0.65rem; border: 1px solid rgb(141 170 184 / 28%); color: #dce5e8; background: rgb(10 27 44 / 78%); font-size: 0.78rem; }
 .compact-mechanic-list button span { color: #d9ad5a; }
+.compact-mechanic-list button.is-ascendancy, .ascendancy-highlight { color: #ee9b4b; }
+.ascendancy-highlight { font-weight: 700; }
+.ascendancy-reference { display: inline; padding: 0; border: 0; border-radius: 0; color: #ee9b4b; background: transparent; box-shadow: none; font: inherit; font-weight: 700; text-align: inherit; text-decoration: underline; text-decoration-color: rgb(238 155 75 / 45%); text-underline-offset: 0.18em; }
+.ascendancy-reference:hover:not(:disabled), .ascendancy-reference:focus-visible { filter: brightness(1.18); transform: none; }
 .detail-tooltip { position: fixed; z-index: 3; width: min(18.75rem, calc(100vw - 1.5rem)); padding: 1rem; border: 1px solid #8a5b34; background: rgb(7 13 20 / 97%); box-shadow: 0 0 0 1px rgb(0 0 0 / 55%), 0 1.25rem 3rem rgb(0 0 0 / 38%); pointer-events: none; text-align: center; }
 .detail-tooltip small { display: block; margin-bottom: 0.55rem; color: #8294a7; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; }
 .detail-tooltip h3 { margin: 0; color: #d8a45e; font: 1.25rem Georgia, serif; }
@@ -455,6 +472,23 @@ em { margin-left: 0.35rem; color: #7fa9bc; font-family: Inter, ui-sans-serif, sa
 .equipment-details .rarity-unique strong { color: #d8a45e; }
 .equipment-details .rarity-rare strong { color: #e6d86b; }
 .equipment-details .rarity-magic strong { color: #8ebcf4; }
+.skill-gem-panel { margin-top: 1.5rem; padding: 1.65rem; }
+.skill-gem-panel h2 { margin-bottom: 1.35rem; color: #e9ecdf; font-size: 1.5rem; font-weight: 400; }
+.skill-gem-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1rem; }
+.skill-gem-group { padding: 1rem; border: 1px solid rgb(141 170 184 / 24%); background: rgb(10 27 44 / 68%); }
+.active-gem, .skill-gem-group li > div { display: grid; gap: 0.2rem; }
+.active-gem { padding: 0.8rem; border-left: 3px solid #3fa79e; background: rgb(28 69 75 / 28%); }
+.skill-gem-group small { color: #8294a7; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.07em; }
+.skill-gem-group small b { margin-left: 0.4rem; padding: 0.08rem 0.3rem; border: 1px solid #8a5b34; color: #ee9b4b; font-size: 0.58rem; }
+.skill-gem-group strong { color: #e5e4d7; font-size: 0.92rem; }
+.skill-gem-group span { color: #91a3b4; font-size: 0.7rem; }
+.skill-gem-group ul { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.skill-gem-group li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); align-items: center; min-height: 4rem; }
+.skill-gem-group .gem-link { display: grid; position: relative; place-items: center; align-self: stretch; color: #d9ad5a; font-size: 1rem; }
+.skill-gem-group .gem-link::before { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: rgb(217 173 90 / 38%); content: ''; }
+.skill-gem-group .gem-link { isolation: isolate; }
+.skill-gem-group .gem-link::after { position: absolute; z-index: -1; width: 1.35rem; height: 1.35rem; border: 1px solid rgb(217 173 90 / 45%); border-radius: 50%; background: #0a1b2c; content: ''; }
+.unlinked-gem, .skill-gem-empty { margin: 0.8rem 0 0; color: #8294a7; font-size: 0.78rem; }
 
 @media (max-width: 760px) {
   .build-detail { width: min(100% - 1.25rem, 38rem); padding-top: 1.5rem; }

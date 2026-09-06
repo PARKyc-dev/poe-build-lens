@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { BuildDetailPage } from './build/BuildDetailPage'
 import { BuildLoadingPage } from './build/BuildLoadingPage'
-import { analyzeBuild } from './api/analysis'
-import type { BuildAnalysisResult } from './api/analysis'
+import { analyzeBuild, getAiUsage } from './api/analysis'
+import type { AiUsage, BuildAnalysisResult } from './api/analysis'
 import { inspectBuildInBrowser } from './pob/browserPob'
 import type { BrowserInspectResult } from './pob/browserPob'
 import './styles.css'
@@ -28,7 +28,20 @@ export default function App() {
   const [analysisResult, setAnalysisResult] = useState<BuildAnalysisResult | null>(null)
   const [inspectError, setInspectError] = useState<string | null>(null)
   const [isInspecting, setIsInspecting] = useState(false)
+  const [aiUsage, setAiUsage] = useState<AiUsage | null>(null)
   const workerStatus: WorkerStatus = 'ready'
+
+  async function refreshAiUsage() {
+    try {
+      setAiUsage(await getAiUsage())
+    } catch {
+      setAiUsage(null)
+    }
+  }
+
+  useEffect(() => {
+    void refreshAiUsage()
+  }, [])
 
   async function inspect(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -43,6 +56,7 @@ export default function App() {
     } catch (reason) {
       setInspectError(reason instanceof Error ? reason.message : 'PoB 검사 워커에 연결할 수 없습니다.')
     } finally {
+      void refreshAiUsage()
       setIsInspecting(false)
     }
   }
@@ -73,6 +87,7 @@ export default function App() {
             <small>헤드리스 런타임 · v2.67.2</small>
           </div>
         </div>
+        {aiUsage && <p className="ai-usage" aria-label="오늘 AI 분석 사용량">AI 분석 사용량 <strong>{aiUsage.used}/{aiUsage.limit}</strong></p>}
       </header>
 
       <section className="inspect-search" aria-label="PoB 검사">

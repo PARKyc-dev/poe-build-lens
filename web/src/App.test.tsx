@@ -19,13 +19,40 @@ vi.mock('./pob/browserPob', () => ({
       { name: 'Tempest Shield', details: ['Tempest Shield grants spell block chance.'] },
       { name: 'Hatred', details: ['Hatred grants extra cold damage.'] },
       { name: 'Molten Shell', details: ['Molten Shell absorbs damage.'] },
+      { name: 'Flammability', details: ['Flammability lowers enemy Fire Resistance.'] },
+      { name: "Sniper's Mark", details: ["Sniper's Mark increases projectile damage taken."] },
     ],
     buildFacts: {
       offence: [
         { name: 'Fireball', role: 'primary', delivery: 'self-cast', tags: ['spell'] },
         { name: 'Flame Wall', role: 'secondary', delivery: 'self-cast', tags: ['spell'] },
       ],
-      skills: [],
+      skills: [{
+        name: 'Hatred', level: 20, quality: 0, qualityType: 'Default', enabled: true, awakened: false,
+        effects: [], supports: [],
+      }, {
+        name: 'Flammability', level: 20, quality: 0, qualityType: 'Default', enabled: true, awakened: false,
+        effects: [], supports: [],
+      }, {
+        name: 'Shield Charge', level: 1, quality: 0, qualityType: 'Default', enabled: true, awakened: false,
+        effects: [], supports: [],
+      }, {
+        name: 'Molten Shell', level: 10, quality: 0, qualityType: 'Default', enabled: true, awakened: false,
+        effects: [], supports: [],
+      }, {
+        name: 'Flame Wall', level: 20, quality: 0, qualityType: 'Default', enabled: true, awakened: false,
+        effects: [], supports: [],
+      }, {
+        name: 'Fireball', level: 20, quality: 20, qualityType: 'Default', enabled: true, awakened: false,
+        effects: ['Fireball fires a ball of fire that explodes.'],
+        supports: [{
+          name: 'Burning Damage', level: 20, quality: 20, qualityType: 'Default', enabled: true,
+          awakened: false, effects: ['Supports skills that deal damage by burning.'],
+        }, {
+          name: 'Awakened Elemental Focus', level: 5, quality: 20, qualityType: 'Default', enabled: true,
+          awakened: true, effects: [],
+        }],
+      }],
       defence: [
         { kind: 'life', value: 2800 },
         { kind: 'fire-resistance', value: 75 },
@@ -37,6 +64,8 @@ vi.mock('./pob/browserPob', () => ({
         { name: 'Hatred', kind: 'aura', appliesTo: 'player', tags: ['cold'] },
         { name: 'Determination', kind: 'buff', appliesTo: 'player', tags: [] },
         { name: 'Molten Shell', kind: 'guard', appliesTo: 'player', tags: [] },
+        { name: 'Flammability', kind: 'curse', appliesTo: 'enemy', tags: ['fire-resistance'] },
+        { name: "Sniper's Mark", kind: 'mark', appliesTo: 'enemy', tags: ['projectile'] },
       ],
       mobility: [{ name: 'Shield Charge' }],
       passives: [{ name: 'Tasalio, Cleansing Water', kind: 'notable', effects: ['+100% to Fire Resistance'], tags: ['fire-resistance'] }],
@@ -70,6 +99,7 @@ vi.mock('./pob/browserPob', () => ({
 }))
 
 vi.mock('./api/analysis', () => ({
+  getAiUsage: vi.fn(async () => ({ used: 1, limit: 37 })),
   analyzeBuild: vi.fn(async () => ({
     gameVersion: '3.29',
     summary: 'Fireball을 주력으로 사용하고 방어도와 막기로 생존력을 확보하며, 오라로 두 축을 강화하는 빌드입니다.',
@@ -80,10 +110,19 @@ vi.mock('./api/analysis', () => ({
     defence: [{
       title: '생명력·저항·막기 기반 방어',
       explanation: '생명력으로 피해를 견디고, 원소 저항으로 원소 피해를 줄이며, 막기로 적중 피해의 일부를 막는 방어 구조입니다.',
+    }, {
+      title: '저항 핵심 상호작용',
+      explanation: 'Tasalio, Cleansing Water가 화염 저항을 다른 원소 저항과 연결합니다.',
     }],
     buffs: [{
       title: '상태 이상·주문 방어 유틸리티',
       explanation: '감전 면역과 주문 막기 태그가 적용되어 상태 이상과 주문 적중을 함께 대응합니다.',
+    }, {
+      title: '유틸리티 버프: Flammability',
+      explanation: 'Flammability가 적의 화염 저항을 낮춥니다.',
+    }, {
+      title: "공격 버프: Sniper's Mark",
+      explanation: "Sniper's Mark가 대상이 받는 투사체 피해를 높입니다.",
     }],
     passives: [{
       title: '저항 핵심 패시브',
@@ -151,6 +190,24 @@ describe('build analysis', () => {
     expect(screen.queryByRole('button', { name: 'Analyze build' })).not.toBeInTheDocument()
   })
 
+  it('shows the current AI usage and server-configured limit', async () => {
+    render(<App />)
+
+    expect(await screen.findByLabelText('오늘 AI 분석 사용량')).toHaveTextContent('AI 분석 사용량 1/37')
+  })
+
+  it('shows an alert when the daily AI limit is reached', async () => {
+    vi.mocked(analyzeBuild).mockRejectedValueOnce(new Error('금일 AI 분석 리미트에 도달했습니다.'))
+    render(<App />)
+    const user = userEvent.setup()
+
+    await user.type(screen.getByLabelText('검사할 PoB 코드, pobb.in 또는 XML'), '<PathOfBuilding />')
+    await user.click(screen.getByRole('button', { name: 'PoB 검사' }))
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('금일 AI 분석 리미트에 도달했습니다.')
+    expect(screen.queryByRole('main', { name: '빌드 상세' })).not.toBeInTheDocument()
+  })
+
   it('sends a PoB export to the browser engine and changes to the insight detail view', async () => {
     render(<App />)
     const user = userEvent.setup()
@@ -164,11 +221,13 @@ describe('build analysis', () => {
     expect(screen.getByRole('heading', { name: '공격 기재' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '방어 기재' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '버프 기재' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '저주/징표 기재' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '패시브 트리' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: '분석 근거' })).not.toBeInTheDocument()
     const attack = screen.getByRole('region', { name: '공격 기재' })
     const defence = screen.getByRole('region', { name: '방어 기재' })
     const buffs = screen.getByRole('region', { name: '버프 기재' })
+    const curses = screen.getByRole('region', { name: '저주/징표 기재' })
     expect(within(attack).getByRole('button', { name: '공격: Fireball' })).toBeInTheDocument()
     expect(within(attack).getByRole('button', { name: '공격: Flame Wall' })).toBeInTheDocument()
     expect(within(defence).getByRole('button', { name: '방어: Determination' })).toBeInTheDocument()
@@ -176,16 +235,31 @@ describe('build analysis', () => {
     expect(within(defence).getByRole('button', { name: '방어: Molten Shell' })).toBeInTheDocument()
     expect(within(buffs).getByRole('button', { name: '버프: Hatred' })).toBeInTheDocument()
     expect(within(buffs).queryByRole('button', { name: '버프: Determination' })).not.toBeInTheDocument()
+    expect(within(curses).getByRole('button', { name: '저주/징표: Flammability' })).toBeInTheDocument()
+    expect(within(curses).getByRole('button', { name: "저주/징표: Sniper's Mark" })).toBeInTheDocument()
+    expect(within(curses).getByText('Flammability가 적의 화염 저항을 낮춥니다.')).toBeInTheDocument()
+    expect(within(curses).getByText("Sniper's Mark가 대상이 받는 투사체 피해를 높입니다.")).toBeInTheDocument()
+    expect(within(defence).queryByRole('button', { name: '방어: Flammability' })).not.toBeInTheDocument()
+    expect(within(buffs).queryByRole('button', { name: '버프: Flammability' })).not.toBeInTheDocument()
+    await user.hover(within(curses).getByRole('button', { name: '저주/징표: Flammability' }))
+    expect(screen.getByRole('tooltip', { name: 'Flammability 상세 정보' })).toHaveTextContent('Flammability lowers enemy Fire Resistance.')
+    await user.unhover(within(curses).getByRole('button', { name: '저주/징표: Flammability' }))
     expect(screen.queryByText('표시할 버프 기재가 없습니다.')).not.toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: '발사체 적중과 폭발' })).not.toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: '생명력·저항·막기 기반 방어' })).not.toBeInTheDocument()
     expect(within(attack).getByText('Fireball은 적중 지점에서 폭발 피해를 줍니다.')).toBeInTheDocument()
     expect(within(defence).getByText('생명력으로 피해를 견디고, 원소 저항으로 원소 피해를 줄이며, 막기로 적중 피해의 일부를 막는 방어 구조입니다.')).toBeInTheDocument()
+    expect(within(defence).getByText('Tasalio, Cleansing Water')).toHaveClass('ascendancy-highlight')
+    const ascendancyReference = within(defence).getByRole('button', { name: '전직 효과: Tasalio, Cleansing Water' })
+    await user.hover(ascendancyReference)
+    expect(screen.getByRole('tooltip', { name: 'Tasalio, Cleansing Water 상세 정보' })).toHaveTextContent('전직 노드에 표시됩니다.')
+    await user.unhover(ascendancyReference)
     expect(within(buffs).getByText('감전 면역과 주문 막기 태그가 적용되어 상태 이상과 주문 적중을 함께 대응합니다.')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '패시브: Growth and Decay' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '마스터리: Arcane Mastery' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '전직: Aspect of the Cat' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '전직: Tasalio, Cleansing Water' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '전직: Tasalio, Cleansing Water' })).toHaveClass('is-ascendancy')
     expect(screen.queryByRole('button', { name: '패시브: Tasalio, Cleansing Water' })).not.toBeInTheDocument()
     expect(screen.getByText('[패시브 트리]')).toBeInTheDocument()
     expect(screen.getByText('[마스터리]')).toBeInTheDocument()
@@ -207,6 +281,20 @@ describe('build analysis', () => {
     await user.unhover(within(buffs).getByRole('button', { name: '버프: Hatred' }))
     expect(screen.getByText('생명력 기반 방어를 먼저 보강하세요')).toBeInTheDocument()
     expect(screen.getByText('+90 to maximum Life')).toBeInTheDocument()
+    const gems = screen.getByRole('region', { name: '스킬젬 상세' })
+    expect(within(gems).getByRole('heading', { name: '스킬젬 상세' })).toBeInTheDocument()
+    expect(within(gems).getByRole('group', { name: 'Fireball 연결 그룹' })).toHaveTextContent('Fireball')
+    expect(within(gems).getByRole('list', { name: 'Fireball에 연결된 보조 젬' })).toHaveTextContent('Burning Damage')
+    expect(within(gems).getByText('Awakened Elemental Focus')).toBeInTheDocument()
+    expect(within(gems).getByText('각성')).toBeInTheDocument()
+    expect(within(gems).getAllByRole('group').map((group) => group.getAttribute('aria-label'))).toEqual([
+      'Fireball 연결 그룹',
+      'Flame Wall 연결 그룹',
+      'Molten Shell 연결 그룹',
+      'Hatred 연결 그룹',
+      'Shield Charge 연결 그룹',
+      'Flammability 연결 그룹',
+    ])
     expect(screen.queryByText('장비 상세 예시')).not.toBeInTheDocument()
     expect(screen.queryByLabelText('할당 패시브 트리 캔버스')).not.toBeInTheDocument()
 

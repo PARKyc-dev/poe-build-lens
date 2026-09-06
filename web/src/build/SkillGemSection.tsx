@@ -12,10 +12,11 @@ function skillPriority(skill: BuildFactSkill, result: BrowserInspectResult) {
   const offence = result.buildFacts.offence.find((entry) => entry.name === skill.name)
   if (offence) return offence.role === 'primary' ? 0 : 1
   const buff = result.buildFacts.buffs.find((entry) => entry.name === skill.name)
-  if (buff?.kind === 'guard' || (buff?.kind !== 'curse' && buff?.tags.some((tag) => defensiveTags.has(tag)))) return 2
-  if (buff && buff.kind !== 'curse') return 3
+  const isCurseOrMark = buff?.kind === 'curse' || buff?.kind === 'mark'
+  if (buff?.kind === 'guard' || (!isCurseOrMark && buff?.tags.some((tag) => defensiveTags.has(tag)))) return 2
+  if (buff && !isCurseOrMark) return 3
   if (result.buildFacts.mobility.some((entry) => entry.name === skill.name)) return 4
-  if (buff?.kind === 'curse') return 5
+  if (isCurseOrMark) return 5
   if (result.buildFacts.operationFacts?.some((entry) => entry.sourceName === skill.name && entry.action === 'trigger')) return 6
   return 5
 }

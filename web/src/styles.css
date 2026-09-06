@@ -448,6 +448,29 @@ em { margin-left: 0.35rem; color: #7fa9bc; font-family: Inter, ui-sans-serif, sa
 .flask-4 { grid-area: 6 / 4; }
 .flask-5 { grid-area: 6 / 5; }
 .analysis-section .compact-mechanic-list { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0; padding: 0; list-style: none; }
+.offence-analysis { gap: 0.85rem; }
+.offence-group { display: grid; gap: 0.8rem; }
+.offence-name { display: flex; justify-self: start; align-items: center; gap: 0.45rem; padding: 0.55rem 0.75rem; border: 1px solid rgb(141 170 184 / 34%); border-radius: 0.45rem; color: #e5e4d7; background: rgb(10 27 44 / 78%); font-size: 0.86rem; font-weight: 700; }
+.offence-name span { color: #d9ad5a; }
+.offence-section-list { display: grid; gap: 0.75rem; }
+.defence-section-list { display: grid; gap: 0.75rem; }
+.offence-detail-card { display: grid; gap: 0.8rem; padding: 1rem; border: 1px solid rgb(141 170 184 / 22%); border-radius: 0.45rem; background: rgb(9 24 39 / 62%); }
+.offence-detail-card > header small { display: block; margin-bottom: 0.18rem; color: #d9ad5a; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.15em; }
+.offence-detail-card > header h4 { margin: 0; color: #e9ecdf; font-size: 1rem; font-weight: 600; }
+.offence-flow { display: flex; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+.offence-flow li { display: grid; position: relative; flex: 1 1 0; align-content: start; gap: 0.25rem; min-width: 0; padding: 0.75rem; border: 1px solid rgb(217 173 90 / 42%); border-radius: 0.35rem; background: rgb(7 20 34 / 72%); text-align: center; }
+.offence-flow li:not(:last-child)::after { position: absolute; top: 50%; left: calc(100% + 0.38rem); color: #d9ad5a; content: '→'; font-size: 1rem; transform: translateY(-50%); }
+.offence-flow small { color: #d9ad5a; font-size: 0.6rem; font-weight: 800; }
+.offence-flow strong, .offence-interactions strong, .offence-conditions strong { color: #e8b45b; font-size: 0.78rem; }
+.offence-flow p, .offence-interactions p, .offence-conditions p { margin: 0; color: #bfcbd1; font-size: 0.72rem; line-height: 1.55; }
+.offence-interactions { display: grid; gap: 0.45rem; }
+.offence-interactions article { display: grid; grid-template-columns: minmax(8rem, 0.24fr) minmax(0, 1fr); align-items: center; border: 1px solid rgb(141 170 184 / 24%); border-radius: 0.35rem; background: rgb(7 20 34 / 58%); }
+.offence-interactions strong { align-self: stretch; display: flex; align-items: center; padding: 0.75rem; border-right: 1px solid rgb(141 170 184 / 18%); }
+.offence-interactions p { padding: 0.75rem; }
+.offence-conditions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 0.55rem; }
+.offence-conditions article { padding: 0.75rem; border: 1px solid rgb(141 170 184 / 24%); border-radius: 0.35rem; background: rgb(7 20 34 / 58%); text-align: center; }
+.offence-conditions strong { display: block; margin-bottom: 0.25rem; }
+.offence-section-summary { margin: 0; padding-top: 0.65rem; border-top: 1px solid rgb(175 194 211 / 12%); color: #aab9c6; font-size: 0.75rem; line-height: 1.6; white-space: pre-line; }
 .passive-group { display: grid; gap: 0.45rem; }
 .passive-group-label { margin: 0; color: #91a3b4; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; }
 .mechanism-analysis { display: grid; gap: 0.35rem; padding: 0.7rem 0.85rem; border-left: 2px solid rgb(217 173 90 / 55%); color: #bfcbd1; background: rgb(9 24 39 / 52%); font-size: 0.82rem; line-height: 1.55; }
@@ -502,6 +525,11 @@ em { margin-left: 0.35rem; color: #7fa9bc; font-family: Inter, ui-sans-serif, sa
   .detail-tooltip { display: none; }
   .equipment-details { display: grid; grid-template-columns: 1fr; }
   .jewel-groups { grid-template-columns: 1fr; }
+  .offence-flow { display: grid; gap: 1.25rem; }
+  .offence-flow li:not(:last-child)::after { top: calc(100% + 0.12rem); left: 50%; transform: translateX(-50%) rotate(90deg); }
+  .offence-interactions article { grid-template-columns: 1fr; }
+  .offence-interactions strong { padding-bottom: 0.35rem; border-right: 0; }
+  .offence-interactions p { padding-top: 0.35rem; }
 }
 
 @media (max-width: 760px) {

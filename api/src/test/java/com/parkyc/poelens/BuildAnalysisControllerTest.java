@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.parkyc.poelens.build.application.NarrativeRefiner;
 import com.parkyc.poelens.build.domain.dto.BuildFacts;
 import com.parkyc.poelens.build.domain.dto.Mechanic;
+import com.parkyc.poelens.build.domain.dto.MechanicDetail;
 import com.parkyc.poelens.build.domain.dto.NarrativeResult;
 import com.parkyc.poelens.common.code.ErrorCode;
 import com.parkyc.poelens.config.exception.PoeLensException;
@@ -41,7 +42,8 @@ class BuildAnalysisControllerTest {
     void useSuccessfulAiNarrative() {
         when(narrativeRefiner.refine(any(), anyList())).thenReturn(new NarrativeResult(
                 "AI가 생성한 빌드 요약입니다.",
-                List.of(new Mechanic("공격이 작동하는 과정: Fire Trap", "Fire Trap을 던져 적에게 피해를 줍니다.")),
+                List.of(new Mechanic("공격이 작동하는 과정: Fire Trap", "Fire Trap을 던져 적에게 피해를 줍니다.",
+                        List.of(new MechanicDetail("덫 투척", "적이 밟을 위치에 덫을 던집니다.", "step")))),
                 List.of(new Mechanic("피해 경감: armour", "방어도로 물리 피해를 줄입니다.")),
                 List.of(new Mechanic("방어 버프: Determination", "Determination으로 방어도를 높입니다."))));
     }
@@ -83,6 +85,8 @@ class BuildAnalysisControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.returnObject.summary").value("AI가 생성한 빌드 요약입니다."))
                 .andExpect(jsonPath("$.returnObject.offence[0].explanation").value("Fire Trap을 던져 적에게 피해를 줍니다."))
+                .andExpect(jsonPath("$.returnObject.offence[0].details[0].label").value("덫 투척"))
+                .andExpect(jsonPath("$.returnObject.offence[0].details[0].type").value("step"))
                 .andExpect(jsonPath("$.returnObject.passiveNodes[0].title").value("주요 패시브: Growth and Decay"))
                 .andExpect(jsonPath("$.returnObject.gear[0].title").value("장비: Weapon 1 · Doom Branch"));
     }

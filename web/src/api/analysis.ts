@@ -3,6 +3,13 @@ import type { BrowserInspectResult } from '../pob/browserPob'
 export type Mechanic = {
   title: string
   explanation: string
+  details?: MechanicDetail[]
+}
+
+export type MechanicDetail = {
+  label: string
+  explanation: string
+  type: 'step' | 'interaction' | 'condition'
 }
 
 export type Evidence = {

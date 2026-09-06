@@ -732,8 +732,9 @@ end
 
 local function buffKind(skill, buff)
   if buff.type == "Guard" then return "guard" end
+  if skill.skillTypes and skill.skillTypes[SkillType.Mark] then return "mark" end
+  if skill.skillTypes and skill.skillTypes[SkillType.Hex] then return "curse" end
   if skill.skillTypes and skill.skillTypes[SkillType.Aura] then return "aura" end
-  if skill.skillTypes and (skill.skillTypes[SkillType.Hex] or skill.skillTypes[SkillType.Mark]) then return "curse" end
   return "buff"
 end
 
@@ -754,10 +755,24 @@ local function buffFacts(env, output)
   local result = jsonArray()
   local seen = { }
   for _, skill in ipairs(env.player.activeSkillList or { }) do
+    local kind = buffKind(skill, { })
+    if kind == "curse" or kind == "mark" then
+      local grantedEffect = skill.activeEffect and skill.activeEffect.grantedEffect
+      if grantedEffect and grantedEffect.name then
+        addBuff(result, seen, grantedEffect.name, kind, "enemy", tagsFromModList(skill.skillModList))
+      end
+    end
     if skill.buffSkill then
       for _, buff in ipairs(skill.buffList or { }) do
-        if buff.name and not buff.applyNotPlayer then
-          addBuff(result, seen, buff.name, buffKind(skill, buff), "player", tagsFromModList(buff.modList))
+        if buff.name then
+          local buffType = buffKind(skill, buff)
+          if buff.applyNotPlayer then
+            if buffType == "curse" or buffType == "mark" then
+              addBuff(result, seen, buff.name, buffType, "enemy", tagsFromModList(buff.modList))
+            end
+          else
+            addBuff(result, seen, buff.name, buffType, "player", tagsFromModList(buff.modList))
+          end
         end
       end
     end

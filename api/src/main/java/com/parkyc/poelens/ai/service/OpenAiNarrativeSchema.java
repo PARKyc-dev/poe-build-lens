@@ -36,8 +36,8 @@ public class OpenAiNarrativeSchema {
                         "buildSummary", Map.of("type", "string", "description",
                                 "숫자와 세부 출처 나열 없이 핵심 공격·방어·버프 상호작용만 설명하는 3~5문장 요약"),
                         "offenceSections", offenceSections,
-                        "defenceSections", structuredSectionSchema("defenceKind", defenceKinds, List.of("resource", "mitigation", "avoidance", "recovery"), defenceSources),
-                        "buffSections", structuredSectionSchema("buffName", buffNames, List.of("offence", "defence", "utility"), buffSources)),
+                        "defenceSections", structuredSectionSchema("defenceKind", defenceKinds, List.of("resource", "mitigation", "avoidance", "recovery"), defenceSources, true),
+                        "buffSections", structuredSectionSchema("buffName", buffNames, List.of("offence", "defence", "utility"), buffSources, false)),
                 "required", List.of("buildSummary", "offenceSections", "defenceSections", "buffSections"),
                 "additionalProperties", false);
     }
@@ -47,11 +47,19 @@ public class OpenAiNarrativeSchema {
                 "attackName", namesSchema(attack == null ? List.of() : List.of(attack)),
                 "section", namesSchema(List.of("core", "supports", "modifiers", "operation")),
                 "explanation", Map.of("type", "string"),
+                "details", Map.of("type", "array", "minItems", 1, "items", Map.of(
+                        "type", "object",
+                        "properties", Map.of(
+                                "label", Map.of("type", "string"),
+                                "explanation", Map.of("type", "string"),
+                                "type", namesSchema(List.of("step", "interaction", "condition"))),
+                        "required", List.of("label", "explanation", "type"),
+                        "additionalProperties", false)),
                 "evidence", Map.of("type", "array", "items", namesSchema(sources)),
                 "flowSubjects", subjects.isEmpty()
                         ? Map.of("type", "array", "items", Map.of("type", "string"), "maxItems", 0)
                         : Map.of("type", "array", "items", namesSchema(subjects))),
-                "required", List.of("attackName", "section", "explanation", "evidence", "flowSubjects"),
+                "required", List.of("attackName", "section", "explanation", "details", "evidence", "flowSubjects"),
                 "additionalProperties", false);
     }
 
@@ -60,13 +68,30 @@ public class OpenAiNarrativeSchema {
     }
 
     private Map<String, Object> structuredSectionSchema(String subject, List<String> subjects, List<String> sectionKinds,
-                                                        List<String> evidenceNames) {
-        Map<String, Object> item = Map.of("type", "object", "properties", Map.of(
+                                                        List<String> evidenceNames, boolean includeDetails) {
+        Map<String, Object> properties = new java.util.HashMap<>(Map.of(
                 subject, namesSchema(subjects), "section", Map.of("type", "string", "enum", sectionKinds),
-                "explanation", Map.of("type", "string"), "evidence", Map.of("type", "array", "items", namesSchema(evidenceNames))),
-                "required", List.of(subject, "section", "explanation", "evidence"), "additionalProperties", false);
+                "explanation", Map.of("type", "string"), "evidence", Map.of("type", "array", "items", namesSchema(evidenceNames))));
+        List<String> required = new java.util.ArrayList<>(List.of(subject, "section", "explanation", "evidence"));
+        if (includeDetails) {
+            properties.put("details", detailArraySchema());
+            required.add("details");
+        }
+        Map<String, Object> item = Map.of("type", "object", "properties", properties,
+                "required", required, "additionalProperties", false);
         return subjects.isEmpty()
                 ? Map.of("type", "array", "maxItems", 0, "items", item)
                 : Map.of("type", "array", "items", item);
+    }
+
+    private Map<String, Object> detailArraySchema() {
+        return Map.of("type", "array", "minItems", 1, "items", Map.of(
+                "type", "object",
+                "properties", Map.of(
+                        "label", Map.of("type", "string"),
+                        "explanation", Map.of("type", "string"),
+                        "type", namesSchema(List.of("step", "interaction", "condition"))),
+                "required", List.of("label", "explanation", "type"),
+                "additionalProperties", false));
     }
 }

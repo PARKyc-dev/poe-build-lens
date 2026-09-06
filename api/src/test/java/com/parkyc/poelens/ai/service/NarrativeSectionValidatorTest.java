@@ -5,6 +5,7 @@ import com.parkyc.poelens.build.domain.dto.BuffFact;
 import com.parkyc.poelens.build.domain.dto.BuildFacts;
 import com.parkyc.poelens.build.domain.dto.DefenceFact;
 import com.parkyc.poelens.build.domain.dto.Mechanic;
+import com.parkyc.poelens.build.domain.dto.MechanicDetail;
 import com.parkyc.poelens.build.domain.dto.OffenceFact;
 import com.parkyc.poelens.build.domain.dto.OperationFact;
 import com.parkyc.poelens.build.domain.dto.OperationFlow;
@@ -27,8 +28,10 @@ class NarrativeSectionValidatorTest {
         var result = validator.validate(validNarrative(), facts());
 
         assertThat(result.summary()).isEqualTo("AI가 생성한 빌드 요약입니다.");
-        assertThat(result.offence()).containsExactly(new Mechanic("보조젬 연결: Fire Trap", "Burning Damage로 피해를 강화합니다."));
-        assertThat(result.defence()).containsExactly(new Mechanic("피해 경감: armour", "방어도로 물리 피해를 줄입니다."));
+        assertThat(result.offence()).containsExactly(new Mechanic("보조젬 연결: Fire Trap", "Burning Damage로 피해를 강화합니다.",
+                List.of(new MechanicDetail("Burning Damage", "화상 피해를 강화합니다.", "step"))));
+        assertThat(result.defence()).containsExactly(new Mechanic("피해 경감: armour", "방어도로 물리 피해를 줄입니다.",
+                List.of(new MechanicDetail("방어도", "방어 구조를 설명합니다.", "interaction"))));
         assertThat(result.buffs()).containsExactly(new Mechanic("방어 버프: Determination", "방어도를 높입니다."));
     }
 
@@ -46,10 +49,24 @@ class NarrativeSectionValidatorTest {
         Map<String, Object> narrative = new java.util.HashMap<>(validNarrative());
         narrative.put("offenceSections", List.of(Map.of(
                 "attackName", "Fire Trap", "section", "modifiers", "explanation", "근거 없는 설명",
+                "details", List.of(Map.of("label", "Unknown Modifier", "explanation", "근거가 없습니다.", "type", "interaction")),
                 "evidence", List.of("Unknown Modifier"), "flowSubjects", List.of())));
 
         assertThatThrownBy(() -> validator.validate(narrative, facts()))
                 .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    void rejectsASectionWithTheWrongDetailType() {
+        Map<String, Object> narrative = new java.util.HashMap<>(validNarrative());
+        narrative.put("offenceSections", List.of(Map.of(
+                "attackName", "Fire Trap", "section", "supports", "explanation", "보조젬 설명",
+                "details", List.of(Map.of("label", "Burning Damage", "explanation", "화상 피해를 강화합니다.", "type", "condition")),
+                "evidence", List.of("Burning Damage"), "flowSubjects", List.of())));
+
+        assertThatThrownBy(() -> validator.validate(narrative, facts()))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("OpenAI 분석 응답 검증에 실패했습니다.");
     }
 
     @Test
@@ -63,10 +80,12 @@ class NarrativeSectionValidatorTest {
         Map<String, Object> narrative = new java.util.HashMap<>(validNarrative());
         narrative.put("defenceSections", List.of(Map.of(
                 "defenceKind", "life", "section", "resource", "explanation", "생명력을 다른 자원과 함께 설명합니다.",
+                "details", List.of(defenceDetail("생명력과 에너지 보호막")),
                 "evidence", List.of("energy-shield", "mana", "recovery", "Determination"))));
 
         assertThat(validator.validate(narrative, withMana).defence())
-                .containsExactly(new Mechanic("방어 자원: life", "생명력을 다른 자원과 함께 설명합니다."));
+                .containsExactly(new Mechanic("방어 자원: life", "생명력을 다른 자원과 함께 설명합니다.",
+                        List.of(new MechanicDetail("생명력과 에너지 보호막", "방어 구조를 설명합니다.", "interaction"))));
         var schema = new com.fasterxml.jackson.databind.ObjectMapper().valueToTree(new OpenAiNarrativeSchema().create(withMana, List.of()));
         assertThat(schema.path("properties").path("defenceSections").path("items").path("properties")
                 .path("evidence").path("items").path("enum").toString())
@@ -87,17 +106,23 @@ class NarrativeSectionValidatorTest {
         Map<String, Object> narrative = new java.util.HashMap<>(validNarrative());
         narrative.put("defenceSections", List.of(
                 Map.of("defenceKind", "resistances", "section", "mitigation", "explanation", "저항 수치를 통합해 설명합니다.",
+                        "details", List.of(defenceDetail("원소 저항")),
                         "evidence", List.of("resistances", "fire-resistance", "cold-resistance", "lightning-resistance", "chaos-resistance")),
                 Map.of("defenceKind", "resistance-interaction", "section", "mitigation", "explanation", valako + "가 최대 저항을 연결합니다.",
+                        "details", List.of(defenceDetail(valako)),
                         "evidence", List.of("resistance-interaction", valako)),
                 Map.of("defenceKind", "resistance-interaction", "section", "mitigation", "explanation", "받는 피해의 속성을 전환합니다.",
+                        "details", List.of(defenceDetail("피해 전환")),
                         "evidence", List.of("resistance-interaction", valako)),
                 Map.of("defenceKind", "resistances", "section", "recovery", "explanation", "점화 피해를 별도로 대응합니다.",
+                        "details", List.of(defenceDetail("점화 대응")),
                         "evidence", List.of("resistances", valako))));
 
         assertThat(validator.validate(narrative, resistanceFacts).defence()).containsExactly(
-                new Mechanic("저항 체계", "저항 수치를 통합해 설명합니다.\n\n점화 피해를 별도로 대응합니다."),
-                new Mechanic("저항 핵심 상호작용", valako + "가 최대 저항을 연결합니다.\n\n받는 피해의 속성을 전환합니다."));
+                new Mechanic("저항 체계", "저항 수치를 통합해 설명합니다.\n\n점화 피해를 별도로 대응합니다.",
+                        List.of(new MechanicDetail("원소 저항", "방어 구조를 설명합니다.", "interaction"), new MechanicDetail("점화 대응", "방어 구조를 설명합니다.", "interaction"))),
+                new Mechanic("저항 핵심 상호작용", valako + "가 최대 저항을 연결합니다.\n\n받는 피해의 속성을 전환합니다.",
+                        List.of(new MechanicDetail(valako, "방어 구조를 설명합니다.", "interaction"), new MechanicDetail("피해 전환", "방어 구조를 설명합니다.", "interaction"))));
         var schema = new com.fasterxml.jackson.databind.ObjectMapper().valueToTree(new OpenAiNarrativeSchema().create(resistanceFacts, List.of()));
         assertThat(schema.path("properties").path("defenceSections").path("items").path("properties")
                 .path("defenceKind").path("enum").toString())
@@ -115,11 +140,13 @@ class NarrativeSectionValidatorTest {
         Map<String, Object> narrative = new java.util.HashMap<>(validNarrative());
         narrative.put("offenceSections", List.of(Map.of(
                 "attackName", "Fire Trap", "section", "operation", "explanation", "격분 충전을 소비합니다.",
+                "details", List.of(Map.of("label", "충전 소비", "explanation", "격분 충전을 소비합니다.", "type", "step")),
                 "evidence", List.of("Fire Trap"), "flowSubjects", List.of("frenzy-charge"))));
 
         var result = validator.validate(narrative, facts(), List.of(flow));
 
-        assertThat(result.offence()).containsExactly(new Mechanic("운용 방식: Fire Trap", "격분 충전을 소비합니다."));
+        assertThat(result.offence()).containsExactly(new Mechanic("운용 방식: Fire Trap", "격분 충전을 소비합니다.",
+                List.of(new MechanicDetail("충전 소비", "격분 충전을 소비합니다.", "step"))));
     }
 
     @Test
@@ -143,6 +170,7 @@ class NarrativeSectionValidatorTest {
         Map<String, Object> narrative = new java.util.HashMap<>(validNarrative());
         narrative.put("defenceSections", List.of(Map.of(
                 "defenceKind", "armour", "section", "mitigation", "explanation", "방어도로 물리 피해를 줄입니다.",
+                "details", List.of(defenceDetail("방어도")),
                 "evidence", List.of("armour"))));
         narrative.put("buffSections", List.of());
 
@@ -176,7 +204,8 @@ class NarrativeSectionValidatorTest {
                 facts.passiveTags(), facts.items(), facts.jewels(), facts.performance());
 
         assertThat(validator.validate(validNarrative(), withAnotherAttack).offence())
-                .containsExactly(new Mechanic("보조젬 연결: Fire Trap", "Burning Damage로 피해를 강화합니다."));
+                .containsExactly(new Mechanic("보조젬 연결: Fire Trap", "Burning Damage로 피해를 강화합니다.",
+                        List.of(new MechanicDetail("Burning Damage", "화상 피해를 강화합니다.", "step"))));
     }
 
     @Test
@@ -191,7 +220,7 @@ class NarrativeSectionValidatorTest {
         var offenceSections = schema.path("properties").path("offenceSections");
         assertThat(offenceSections.path("maxItems").asInt(-1)).isZero();
         assertThat(offenceSections.path("items").path("additionalProperties").asBoolean()).isFalse();
-        assertThat(offenceSections.path("items").path("required").size()).isEqualTo(5);
+        assertThat(offenceSections.path("items").path("required").size()).isEqualTo(6);
     }
 
     private Map<String, Object> validNarrative() {
@@ -199,13 +228,19 @@ class NarrativeSectionValidatorTest {
                 "buildSummary", "AI가 생성한 빌드 요약입니다.",
                 "offenceSections", List.of(Map.of(
                         "attackName", "Fire Trap", "section", "supports", "explanation", "Burning Damage로 피해를 강화합니다.",
+                        "details", List.of(Map.of("label", "Burning Damage", "explanation", "화상 피해를 강화합니다.", "type", "step")),
                         "evidence", List.of("Burning Damage"), "flowSubjects", List.of())),
                 "defenceSections", List.of(Map.of(
                         "defenceKind", "armour", "section", "mitigation", "explanation", "방어도로 물리 피해를 줄입니다.",
+                        "details", List.of(defenceDetail("방어도")),
                         "evidence", List.of("armour", "Determination"))),
                 "buffSections", List.of(Map.of(
                         "buffName", "Determination", "section", "defence", "explanation", "방어도를 높입니다.",
                         "evidence", List.of("Determination"))));
+    }
+
+    private Map<String, Object> defenceDetail(String label) {
+        return Map.of("label", label, "explanation", "방어 구조를 설명합니다.", "type", "interaction");
     }
 
     private BuildFacts facts() {

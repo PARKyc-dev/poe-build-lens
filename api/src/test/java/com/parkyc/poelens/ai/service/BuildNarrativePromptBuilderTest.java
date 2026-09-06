@@ -57,7 +57,7 @@ class BuildNarrativePromptBuilderTest {
         String prompt = new BuildNarrativePromptBuilder().build(facts);
 
         assertThat(prompt).contains("지속 피해", "덫", "방어도", "막기", "Fire Trap", "Supports any skill that deals damage.", "Determination", "Hinekora, Death's Fury");
-        assertThat(prompt).contains("buildSummary", "offenceSections", "core", "supports", "modifiers", "operation", "attackName", "defenceSections", "defenceKind", "buffSections", "buffName", "section", "evidence");
+        assertThat(prompt).contains("buildSummary", "offenceSections", "core", "supports", "modifiers", "operation", "attackName", "defenceSections", "defenceKind", "buffSections", "buffName", "section", "evidence", "details", "type=step", "type=interaction", "type=condition");
         assertThat(prompt).contains("주력 공격의 동작·운용 방식");
         assertThat(prompt).contains("buildSummary는 3~5문장", "숫자나 백분율을 쓰지 마", "상세 섹션으로 내려보내");
         assertThat(prompt).contains("첫 문장에 결론", "서로 다른 주제는 줄바꿈으로 구분", "방어 수치·방어층·회복 조건은 defenceSections");

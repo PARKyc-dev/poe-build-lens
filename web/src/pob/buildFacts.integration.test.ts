@@ -116,6 +116,17 @@ describe('PoB BuildFacts bridge', () => {
     expect(result.buildFacts.performance).toMatchObject({ life: expect.any(Number), totalDps: expect.any(Number) })
   }, 30_000)
 
+  it('extracts marks applied to enemies', async () => {
+    const result = await inspectFixture('Dual Wield Cospris CoC')
+
+    expect(result.buildFacts.skills).toEqual(expect.arrayContaining([
+      expect.objectContaining({ name: "Assassin's Mark" }),
+    ]))
+    expect(result.buildFacts.buffs).toEqual(expect.arrayContaining([
+      expect.objectContaining({ name: "Assassin's Mark", kind: 'mark', appliesTo: 'enemy' }),
+    ]))
+  }, 30_000)
+
   it('extracts generic operation facts while excluding basic defensive stats', async () => {
     const result = await inspectFixture('Mirage Archer Toxic Rain')
 

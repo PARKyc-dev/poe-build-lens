@@ -34,6 +34,9 @@ vi.mock('./pob/browserPob', () => ({
         name: 'Flammability', level: 20, quality: 0, qualityType: 'Default', enabled: true, awakened: false,
         effects: [], supports: [],
       }, {
+        name: "Sniper's Mark", level: 20, quality: 0, qualityType: 'Default', enabled: true, awakened: false,
+        effects: [], supports: [],
+      }, {
         name: 'Shield Charge', level: 1, quality: 0, qualityType: 'Default', enabled: true, awakened: false,
         effects: [], supports: [],
       }, {
@@ -104,15 +107,40 @@ vi.mock('./api/analysis', () => ({
     gameVersion: '3.29',
     summary: 'Fireball을 주력으로 사용하고 방어도와 막기로 생존력을 확보하며, 오라로 두 축을 강화하는 빌드입니다.',
     offence: [{
-      title: '발사체 적중과 폭발',
+      title: '공격이 작동하는 과정: Fireball',
       explanation: 'Fireball은 적중 지점에서 폭발 피해를 줍니다.',
+      details: [
+        { label: '투사체 발사', explanation: '적을 향해 화염 투사체를 발사합니다.', type: 'step' },
+        { label: '적중 후 폭발', explanation: '적중 지점에서 폭발 피해가 발생합니다.', type: 'step' },
+      ],
+    }, {
+      title: '핵심 상호작용: Fireball',
+      explanation: '화염 피해와 저항 감소가 결합됩니다.',
+      details: [{ label: 'Flammability', explanation: '적의 화염 저항을 낮춰 Fireball의 피해를 돕습니다.', type: 'interaction' }],
+    }, {
+      title: '보조젬 연결: Fireball',
+      explanation: '연결된 보조젬이 화상 피해를 강화합니다.',
+      details: [{ label: 'Burning Damage', explanation: '화상 피해를 강화합니다.', type: 'step' }],
+    }, {
+      title: '운용 방식: Fireball',
+      explanation: '저주를 적용한 뒤 Fireball을 반복 사용합니다.',
+      details: [
+        { label: '교전 시작', explanation: 'Flammability를 먼저 적용합니다.', type: 'step' },
+        { label: '공격 유지', explanation: 'Fireball을 반복 사용합니다.', type: 'step' },
+        { label: '저주 만료 시', explanation: 'Flammability를 다시 적용합니다.', type: 'condition' },
+      ],
     }],
     defence: [{
-      title: '생명력·저항·막기 기반 방어',
+      title: '방어 자원: life',
       explanation: '생명력으로 피해를 견디고, 원소 저항으로 원소 피해를 줄이며, 막기로 적중 피해의 일부를 막는 방어 구조입니다.',
+      details: [
+        { label: '생명력', explanation: '생명력이 피해를 받아내는 기본 방어 자원입니다.', type: 'interaction' },
+        { label: '낮은 생명력 시', explanation: '큰 피해에 취약해지므로 회복이 필요합니다.', type: 'condition' },
+      ],
     }, {
       title: '저항 핵심 상호작용',
       explanation: 'Tasalio, Cleansing Water가 화염 저항을 다른 원소 저항과 연결합니다.',
+      details: [{ label: 'Tasalio, Cleansing Water', explanation: '화염 저항을 다른 원소 저항과 연결합니다.', type: 'interaction' }],
     }],
     buffs: [{
       title: '상태 이상·주문 방어 유틸리티',
@@ -248,8 +276,21 @@ describe('build analysis', () => {
     expect(screen.queryByRole('heading', { name: '발사체 적중과 폭발' })).not.toBeInTheDocument()
     expect(screen.queryByRole('heading', { name: '생명력·저항·막기 기반 방어' })).not.toBeInTheDocument()
     expect(within(attack).getByText('Fireball은 적중 지점에서 폭발 피해를 줍니다.')).toBeInTheDocument()
+    const operation = within(attack).getByRole('region', { name: 'Fireball 작동 과정' })
+    expect(operation).toHaveTextContent('투사체 발사')
+    expect(operation).toHaveTextContent('적중 후 폭발')
+    expect(within(attack).getByRole('region', { name: 'Fireball 핵심 상호작용' })).toHaveTextContent('Flammability')
+    expect(within(attack).getByRole('region', { name: 'Fireball 보조젬 연결' })).toHaveTextContent('Burning Damage')
+    const usage = within(attack).getByRole('region', { name: 'Fireball 운용 방식' })
+    expect(usage).toHaveTextContent('교전 시작')
+    expect(usage).toHaveTextContent('공격 유지')
+    expect(usage).toHaveTextContent('저주 만료 시')
     expect(within(defence).getByText('생명력으로 피해를 견디고, 원소 저항으로 원소 피해를 줄이며, 막기로 적중 피해의 일부를 막는 방어 구조입니다.')).toBeInTheDocument()
-    expect(within(defence).getByText('Tasalio, Cleansing Water')).toHaveClass('ascendancy-highlight')
+    const lifeDefence = within(defence).getByRole('region', { name: '방어 자원 · 생명력' })
+    expect(lifeDefence).toHaveTextContent('생명력이 피해를 받아내는 기본 방어 자원')
+    expect(lifeDefence).toHaveTextContent('낮은 생명력 시')
+    expect(within(defence).getByRole('region', { name: '저항 핵심 상호작용' })).toHaveTextContent('Tasalio, Cleansing Water')
+    expect(within(defence).getAllByText('Tasalio, Cleansing Water').some((element) => element.classList.contains('ascendancy-highlight'))).toBe(true)
     const ascendancyReference = within(defence).getByRole('button', { name: '전직 효과: Tasalio, Cleansing Water' })
     await user.hover(ascendancyReference)
     expect(screen.getByRole('tooltip', { name: 'Tasalio, Cleansing Water 상세 정보' })).toHaveTextContent('전직 노드에 표시됩니다.')
@@ -294,6 +335,7 @@ describe('build analysis', () => {
       'Hatred 연결 그룹',
       'Shield Charge 연결 그룹',
       'Flammability 연결 그룹',
+      "Sniper's Mark 연결 그룹",
     ])
     expect(screen.queryByText('장비 상세 예시')).not.toBeInTheDocument()
     expect(screen.queryByLabelText('할당 패시브 트리 캔버스')).not.toBeInTheDocument()

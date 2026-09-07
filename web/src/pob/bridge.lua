@@ -134,7 +134,7 @@ local function activateEquippedFlasks()
 end
 
 local function equipmentFromActiveSet()
-  local result = { }
+  local result = jsonArray()
   local itemSet = build.itemsTab.activeItemSet
   for _, slotName in ipairs(equipmentSlots) do
     local slot = itemSet[slotName]
@@ -159,7 +159,7 @@ local function equipmentFromActiveSet()
 end
 
 local function jewelsFromActiveSpec()
-  local result = { }
+  local result = jsonArray()
   for socketId, itemId in pairs(build.spec.jewels or { }) do
     local item = build.itemsTab.items[itemId]
     if item then
@@ -550,6 +550,9 @@ local function offenceFacts(env)
   for _, candidate in pairs(candidates) do
     if candidate.combinedDps > 0 or candidate.isMain then table.insert(ranked, candidate) end
   end
+  if #ranked == 0 then
+    for _, candidate in pairs(candidates) do table.insert(ranked, candidate) end
+  end
   table.sort(ranked, function(left, right)
     if left.isMain ~= right.isMain then return left.isMain end
     if left.combinedDps == right.combinedDps then return left.name < right.name end
@@ -892,8 +895,8 @@ function inspectBuild(xmlText, specId)
   end
   local spec = build.spec
   local tree = spec.tree
-  local nodes = { }
-  local links = { }
+  local nodes = jsonArray()
+  local links = jsonArray()
   for id, node in pairs(spec.allocNodes) do
     table.insert(nodes, {
       id = tostring(id),
@@ -909,18 +912,31 @@ function inspectBuild(xmlText, specId)
       end
     end
   end
-  local specs = { }
+  local specs = jsonArray()
   for id, candidate in ipairs(build.treeTab.specList) do
     table.insert(specs, { id = id, title = titleOrDefault(candidate.title) })
   end
   local function entries(ids, values)
-    local results = { }
+    local results = jsonArray()
     for _, id in ipairs(ids) do table.insert(results, { id = id, title = titleOrDefault(values[id].title) }) end
     return results
   end
   local output = build.calcsTab.mainOutput or { }
   local mainEnv = build.calcsTab.mainEnv
   local mainSkill = mainEnv and mainEnv.player and mainEnv.player.mainSkill
+  local facts = mainEnv and buildFacts(mainEnv, output, spec) or { offence = jsonArray(), skills = jsonArray(), defence = jsonArray(), buffs = jsonArray(), mobility = jsonArray(), passives = jsonArray(), ascendancies = jsonArray(), passiveTags = jsonArray(), items = jsonArray(), jewels = jsonArray(), operationFacts = jsonArray(), performance = { } }
+  local displayedSkill = mainSkill
+  local primaryOffence = facts.offence and facts.offence[1]
+  local mainSkillName = mainSkill and mainSkill.activeEffect and mainSkill.activeEffect.grantedEffect and mainSkill.activeEffect.grantedEffect.name
+  if primaryOffence and primaryOffence.name ~= mainSkillName then
+    for _, skill in ipairs(mainEnv.player.activeSkillList or { }) do
+      local grantedEffect = skill.activeEffect and skill.activeEffect.grantedEffect
+      if grantedEffect and grantedEffect.name == primaryOffence.name then
+        displayedSkill = skill
+        break
+      end
+    end
+  end
   return jsonEncode({
     specs = specs,
     skillSets = entries(build.skillsTab.skillSetOrderList, build.skillsTab.skillSets),
@@ -928,10 +944,10 @@ function inspectBuild(xmlText, specId)
     activeSpec = build.treeTab.activeSpec,
     activeSkillSet = build.skillsTab.activeSkillSetId,
     activeItemSet = build.itemsTab.activeItemSetId,
-    activeSkillName = mainSkill and mainSkill.activeEffect and mainSkill.activeEffect.grantedEffect and mainSkill.activeEffect.grantedEffect.name or nil,
-    mainSkillFlags = flagsFromMainSkill(mainSkill),
+    activeSkillName = displayedSkill and displayedSkill.activeEffect and displayedSkill.activeEffect.grantedEffect and displayedSkill.activeEffect.grantedEffect.name or nil,
+    mainSkillFlags = flagsFromMainSkill(displayedSkill),
     skillTooltips = mainEnv and skillTooltipFacts(mainEnv) or { },
-    buildFacts = mainEnv and buildFacts(mainEnv, output, spec) or { offence = { }, skills = { }, defence = { }, buffs = { }, mobility = { }, passives = { }, ascendancies = { }, passiveTags = { }, items = { }, jewels = { }, operationFacts = jsonArray(), performance = { } },
+    buildFacts = facts,
     summary = {
       totalDps = output.TotalDPS,
       combinedDps = output.CombinedDPS,

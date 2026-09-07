@@ -80,6 +80,15 @@ describe('analyzeBuild', () => {
     await expect(analyzeBuild(inspectedFireball)).rejects.toThrow('금일 AI 분석 리미트에 도달했습니다.')
   })
 
+  it('reports a server or proxy problem when the analysis endpoint returns HTML', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('<!DOCTYPE html><html><body>Server error</body></html>', {
+      status: 502,
+      headers: { 'Content-Type': 'text/html' },
+    })))
+
+    await expect(analyzeBuild(inspectedFireball)).rejects.toThrow('분석 API가 JSON이 아닌 응답을 반환했습니다. API 서버와 프록시 상태를 확인해 주세요. (HTTP 502)')
+  })
+
   it('gets the actual AI usage and configured limit', async () => {
     const fetchMock = vi.fn().mockResolvedValue(new Response(JSON.stringify({
       code: 'OK', message: 'SUCCESS', returnObject: { used: 1, limit: 37 },

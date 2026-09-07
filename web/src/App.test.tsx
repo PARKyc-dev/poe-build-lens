@@ -199,6 +199,16 @@ afterEach(() => {
 })
 
 describe('build analysis', () => {
+  it('shows the unofficial non-commercial Grinding Gear Games notice', () => {
+    render(<App />)
+
+    const footer = screen.getByRole('contentinfo')
+    expect(footer).toHaveTextContent('비상업적 비공식 팬 프로젝트')
+    expect(footer).toHaveTextContent("This product isn't affiliated with or endorsed by Grinding Gear Games in any way.")
+    expect(within(footer).getByRole('link', { name: 'Path of Exile 이용약관' })).toHaveAttribute('href', 'https://www.pathofexile.com/legal/terms-of-use-and-privacy-policy')
+    expect(within(footer).getByRole('link', { name: 'GitHub 저장소' })).toHaveAttribute('href', 'https://github.com/PARKyc-dev/poe-build-lens')
+  })
+
   it('shows the browser PoB engine as ready without a worker HTTP request', () => {
     render(<App />)
 

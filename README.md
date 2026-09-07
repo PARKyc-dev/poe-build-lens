@@ -91,3 +91,15 @@ PoB 원본 버전과 자산을 고정하고, 브라우저에서 같은 입력을
 - 게임 데이터는 버전 의존적이므로, 카탈로그 항목을 추가하거나 갱신할 때 근거와 검토 상태를 함께 관리해야 합니다.
 
 앞으로는 검토된 메커니즘 카탈로그를 확장하고, 빌드의 방어·자원 유지·아이템·패시브 트리 상호작용을 단계적으로 분석할 예정입니다.
+
+## 저작권 및 비공식 프로젝트 안내
+
+Path of Exile 및 관련 게임 데이터·이미지·상표의 권리는 **Grinding Gear Games**에 있습니다.
+
+PoE Lens는 비상업적으로 운영되는 비공식 팬 프로젝트이며, Grinding Gear Games와 제휴·승인·후원 관계가 없습니다.
+
+> This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
+
+게임 관련 콘텐츠를 사용할 때는 [Path of Exile 이용약관](https://www.pathofexile.com/legal/terms-of-use-and-privacy-policy)을 확인해 주세요. 분석 결과는 참고용이며 게임 업데이트에 따라 달라질 수 있습니다.
+
+프로젝트에 포함된 Path of Building 관련 자산에는 해당 프로젝트의 별도 라이선스가 적용됩니다. 자세한 내용은 [PoB 라이선스](web/public/pob/LICENSE.md)를 확인해 주세요.

@@ -22,6 +22,19 @@ const workerStatusDescription: Record<WorkerStatus, string> = {
   unavailable: '사용할 수 없음',
 }
 
+function SiteFooter() {
+  return <footer className="site-footer">
+    <p>Path of Exile 및 관련 게임 데이터·이미지·상표의 권리는 <strong>Grinding Gear Games</strong>에 있습니다.</p>
+    <p>PoE Lens는 비상업적 비공식 팬 프로젝트이며, Grinding Gear Games와 제휴·승인·후원 관계가 없습니다.</p>
+    <p lang="en">This product isn't affiliated with or endorsed by Grinding Gear Games in any way.</p>
+    <p>분석 결과는 참고용이며 게임 업데이트에 따라 달라질 수 있습니다. <a href="https://www.pathofexile.com/legal/terms-of-use-and-privacy-policy" target="_blank" rel="noreferrer">Path of Exile 이용약관</a> <span aria-hidden="true">·</span> <a href="https://github.com/PARKyc-dev/poe-build-lens" target="_blank" rel="noreferrer">GitHub 저장소</a></p>
+  </footer>
+}
+
+function AppLayout({ children }: { children: React.ReactNode }) {
+  return <div className="site-layout">{children}<SiteFooter /></div>
+}
+
 export default function App() {
   const [inspectInput, setInspectInput] = useState('')
   const [inspectResult, setInspectResult] = useState<BrowserInspectResult | null>(null)
@@ -62,18 +75,18 @@ export default function App() {
   }
 
   if (inspectResult && analysisResult) {
-    return <BuildDetailPage result={inspectResult} analysis={analysisResult} onNewInspection={() => {
+    return <AppLayout><BuildDetailPage result={inspectResult} analysis={analysisResult} onNewInspection={() => {
       setInspectResult(null)
       setAnalysisResult(null)
-    }} />
+    }} /></AppLayout>
   }
 
   if (isInspecting) {
-    return <BuildLoadingPage />
+    return <AppLayout><BuildLoadingPage /></AppLayout>
   }
 
   return (
-    <main className="app-shell">
+    <AppLayout><main className="app-shell">
       <header className="hero">
         <div className="hero-content">
           <p className="eyebrow">PATH OF BUILDING WORKBENCH</p>
@@ -105,6 +118,6 @@ export default function App() {
           {inspectError && <p role="alert">{inspectError}</p>}
         </div>
       </section>
-    </main>
+    </main></AppLayout>
   )
 }

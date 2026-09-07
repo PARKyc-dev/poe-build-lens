@@ -151,6 +151,16 @@ describe('PoB BuildFacts bridge', () => {
     expect(attacks[0].name).toBe(result.activeSkillName)
   }, 30_000)
 
+  it('uses an offensive skill when the selected socket group contains only utility skills', async () => {
+    const result = await inspectFixture('OccVortex', (xml) => xml.replace('mainSocketGroup="5"', 'mainSocketGroup="1"'))
+
+    expect(result.specs).toEqual(expect.any(Array))
+    expect(result.skillSets).toEqual(expect.any(Array))
+    expect(result.itemSets).toEqual(expect.any(Array))
+    expect(result.activeSkillName).toBe('Vortex')
+    expect(result.buildFacts.offence[0]).toMatchObject({ name: 'Vortex', role: 'primary' })
+  }, 30_000)
+
   it('treats Flicker Strike as an attack instead of a movement skill', async () => {
     const result = await inspectFixture('Generals Perforate Zerker', (xml) => xml
       .replace('slot="Body Armour" mainActiveSkill="2"', 'slot="Body Armour" mainActiveSkill="7"')

@@ -154,11 +154,30 @@ class NarrativeSectionValidatorTest {
         var schema = new com.fasterxml.jackson.databind.ObjectMapper().valueToTree(new OpenAiNarrativeSchema().create(facts(), List.of()));
         var properties = schema.path("properties").path("offenceSections").path("items").path("anyOf").get(0).path("properties");
 
+        assertThat(schema.path("properties").path("offenceSections").path("minItems").asInt()).isEqualTo(1);
+        assertThat(schema.path("properties").path("defenceSections").path("minItems").asInt()).isEqualTo(1);
+        assertThat(schema.path("properties").path("buffSections").path("minItems").asInt()).isEqualTo(1);
         assertThat(properties.path("attackName").path("enum").toString()).isEqualTo("[\"Fire Trap\"]");
         assertThat(properties.path("evidence").path("items").path("enum").toString())
                 .contains("Fire Trap", "Burning Damage", "Determination");
         assertThat(schema.path("properties").path("defenceSections").path("items").path("properties")
                 .path("defenceKind").path("enum").toString()).isEqualTo("[\"armour\"]");
+    }
+
+    @Test
+    void schemaRestrictsDetailTypesForEachOffenceSection() {
+        var schema = new com.fasterxml.jackson.databind.ObjectMapper().valueToTree(new OpenAiNarrativeSchema().create(facts(), List.of()));
+        var alternatives = schema.path("properties").path("offenceSections").path("items").path("anyOf");
+
+        assertThat(alternatives).hasSize(4);
+        assertThat(alternatives.get(0).path("properties").path("section").path("enum").toString()).isEqualTo("[\"core\"]");
+        assertThat(alternatives.get(0).path("properties").path("details").path("items").path("properties").path("type").path("enum").toString()).isEqualTo("[\"step\"]");
+        assertThat(alternatives.get(1).path("properties").path("section").path("enum").toString()).isEqualTo("[\"supports\"]");
+        assertThat(alternatives.get(1).path("properties").path("details").path("items").path("properties").path("type").path("enum").toString()).isEqualTo("[\"step\"]");
+        assertThat(alternatives.get(2).path("properties").path("section").path("enum").toString()).isEqualTo("[\"modifiers\"]");
+        assertThat(alternatives.get(2).path("properties").path("details").path("items").path("properties").path("type").path("enum").toString()).isEqualTo("[\"interaction\"]");
+        assertThat(alternatives.get(3).path("properties").path("section").path("enum").toString()).isEqualTo("[\"operation\"]");
+        assertThat(alternatives.get(3).path("properties").path("details").path("items").path("properties").path("type").path("enum").toString()).isEqualTo("[\"step\",\"condition\"]");
     }
 
     @Test

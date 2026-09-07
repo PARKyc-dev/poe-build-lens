@@ -8,6 +8,7 @@ import type { BuildSummary } from '../build/buildInsight'
 import type { MainSkillFlags } from '../build/offenceClassification'
 import type { PassiveTree } from './passiveTree'
 import type { BrowserJewelItem, BrowserSkillTooltip, BuildFacts } from './browserPob'
+import { resolvePobInput } from './pobInput'
 
 type InspectEntry = { id: number; title: string }
 type EquipmentItem = { slot: string; name: string; baseName: string | null; rarity: string; modifiers: string[]; imageUrl?: string | null }
@@ -38,12 +39,7 @@ const enginePromises = new Map<string, Promise<Awaited<ReturnType<LuaFactory['cr
 let manifestPromise: Promise<Manifest> | undefined
 
 async function decodeInput(input: string): Promise<string> {
-  const value = input.trim()
-  if (value.startsWith('https://pobb.in/')) {
-    const response = await fetch(value)
-    if (!response.ok) throw new Error('pobb.in 빌드 코드를 불러올 수 없습니다.')
-    return decodeInput(await response.text())
-  }
+  const value = await resolvePobInput(input)
   if (value.startsWith('<')) return value
   const padded = value.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - value.length % 4) % 4)
   const binary = Uint8Array.from(atob(padded), (character) => character.charCodeAt(0))

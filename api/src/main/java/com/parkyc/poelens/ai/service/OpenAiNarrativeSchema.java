@@ -4,6 +4,7 @@ import com.parkyc.poelens.build.domain.dto.BuildFacts;
 import com.parkyc.poelens.build.domain.dto.OperationFlow;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -23,13 +24,17 @@ public class OpenAiNarrativeSchema {
                 : facts.buffs().stream().filter(value -> value.tags() != null && !value.tags().isEmpty())
                 .map(value -> value.name()).distinct().sorted().toList();
         List<String> buffSources = facts == null ? List.of() : NarrativeSectionValidator.buffEvidenceNames(facts).stream().sorted().toList();
+        List<Map<String, Object>> offenceAlternatives = new ArrayList<>();
+        for (String attack : attacks) {
+            List<String> subjects = flows == null ? List.of() : flows.stream()
+                    .filter(flow -> attack.equals(flow.subject()) || (flow.grounds() != null && flow.grounds().stream()
+                            .anyMatch(ground -> attack.equals(ground.sourceName()))))
+                    .map(OperationFlow::subject).distinct().sorted().toList();
+            offenceAlternatives.addAll(offenceSections(attack, sources, subjects));
+        }
         Map<String, Object> offenceSections = attacks.isEmpty()
-                ? Map.of("type", "array", "maxItems", 0, "items", offenceSection(null, sources, List.of()))
-                : Map.of("type", "array", "items", Map.of("anyOf", attacks.stream().map(attack -> offenceSection(attack, sources,
-                        flows == null ? List.of() : flows.stream()
-                                .filter(flow -> attack.equals(flow.subject()) || (flow.grounds() != null && flow.grounds().stream()
-                                        .anyMatch(ground -> attack.equals(ground.sourceName()))))
-                                .map(OperationFlow::subject).distinct().sorted().toList())).toList()));
+                ? Map.of("type", "array", "maxItems", 0, "items", offenceSection(null, "core", sources, List.of(), List.of("step")))
+                : Map.of("type", "array", "minItems", 1, "items", Map.of("anyOf", offenceAlternatives));
         return Map.of(
                 "type", "object",
                 "properties", Map.of(
@@ -42,17 +47,26 @@ public class OpenAiNarrativeSchema {
                 "additionalProperties", false);
     }
 
-    private Map<String, Object> offenceSection(String attack, List<String> sources, List<String> subjects) {
+    private List<Map<String, Object>> offenceSections(String attack, List<String> sources, List<String> subjects) {
+        return List.of(
+                offenceSection(attack, "core", sources, subjects, List.of("step")),
+                offenceSection(attack, "supports", sources, subjects, List.of("step")),
+                offenceSection(attack, "modifiers", sources, subjects, List.of("interaction")),
+                offenceSection(attack, "operation", sources, subjects, List.of("step", "condition")));
+    }
+
+    private Map<String, Object> offenceSection(String attack, String section, List<String> sources,
+                                               List<String> subjects, List<String> detailTypes) {
         return Map.of("type", "object", "properties", Map.of(
                 "attackName", namesSchema(attack == null ? List.of() : List.of(attack)),
-                "section", namesSchema(List.of("core", "supports", "modifiers", "operation")),
+                "section", namesSchema(List.of(section)),
                 "explanation", Map.of("type", "string"),
                 "details", Map.of("type", "array", "minItems", 1, "items", Map.of(
                         "type", "object",
                         "properties", Map.of(
                                 "label", Map.of("type", "string"),
                                 "explanation", Map.of("type", "string"),
-                                "type", namesSchema(List.of("step", "interaction", "condition"))),
+                                "type", namesSchema(detailTypes)),
                         "required", List.of("label", "explanation", "type"),
                         "additionalProperties", false)),
                 "evidence", Map.of("type", "array", "items", namesSchema(sources)),
@@ -81,7 +95,7 @@ public class OpenAiNarrativeSchema {
                 "required", required, "additionalProperties", false);
         return subjects.isEmpty()
                 ? Map.of("type", "array", "maxItems", 0, "items", item)
-                : Map.of("type", "array", "items", item);
+                : Map.of("type", "array", "minItems", 1, "items", item);
     }
 
     private Map<String, Object> detailArraySchema() {

@@ -25,6 +25,13 @@ body::before {
   mask-image: linear-gradient(to bottom, black, transparent 78%);
 }
 
+.site-layout { display: grid; min-height: 100vh; grid-template-rows: 1fr auto; }
+.site-footer { width: min(1180px, calc(100% - 2rem)); margin: 0 auto; padding: 1.4rem 0 2rem; border-top: 1px solid rgb(175 194 211 / 15%); color: #8294a7; font-size: 0.68rem; line-height: 1.55; text-align: center; }
+.site-footer p { margin: 0.2rem 0; }
+.site-footer strong { color: #aab9c6; font-weight: 650; }
+.site-footer a { color: #8fcfc8; text-underline-offset: 0.18em; }
+.site-footer a:hover, .site-footer a:focus-visible { color: #b0e2dc; }
+
 .app-shell {
   width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;

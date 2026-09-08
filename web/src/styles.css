@@ -424,6 +424,7 @@ em { margin-left: 0.35rem; color: #7fa9bc; font-family: Inter, ui-sans-serif, sa
 .jewel-list { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 0; padding: 0; list-style: none; }
 .jewel-list li { min-width: 6.5rem; border: 1px solid rgb(141 170 184 / 28%); background: rgb(35 52 68 / 55%); }
 .jewel-list button { display: grid; gap: 0.2rem; width: 100%; min-height: 5rem; padding: 0.6rem; border: 0; background: transparent; text-align: center; }
+.jewel-list img { width: 3.25rem; height: 3.25rem; margin: 0 auto; object-fit: contain; }
 .jewel-list button:focus-visible { outline: 2px solid #8fcfc8; outline-offset: -3px; }
 .jewel-list strong { color: #e5e4d7; font-size: 0.78rem; }
 .jewel-list span { color: #8d9eae; font-size: 0.68rem; }

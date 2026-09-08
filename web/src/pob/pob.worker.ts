@@ -9,6 +9,7 @@ import type { MainSkillFlags } from '../build/offenceClassification'
 import type { PassiveTree } from './passiveTree'
 import type { BrowserJewelItem, BrowserSkillTooltip, BuildFacts } from './browserPob'
 import { resolvePobInput } from './pobInput'
+import { resolveItemImage } from './itemAssetResolver'
 
 type InspectEntry = { id: number; title: string }
 type EquipmentItem = { slot: string; name: string; baseName: string | null; rarity: string; modifiers: string[]; imageUrl?: string | null }
@@ -100,7 +101,10 @@ async function inspect(input: string): Promise<BrowserInspectResult> {
   if (!xml.includes('<PathOfBuilding')) throw new Error('유효한 PoB 코드 또는 XML을 입력하세요.')
   const runtime = await engine(treeVersionFromXml(xml))
   const load = runtime.global.get('inspectBuild') as (xml: string) => string
-  return JSON.parse(await load(xml)) as BrowserInspectResult
+  const result = JSON.parse(await load(xml)) as BrowserInspectResult
+  result.equipment = result.equipment.map((item) => ({ ...item, imageUrl: resolveItemImage(item) }))
+  result.jewels = result.jewels.map((item) => ({ ...item, imageUrl: resolveItemImage(item) }))
+  return result
 }
 
 self.onmessage = async ({ data }: MessageEvent<Request>) => {

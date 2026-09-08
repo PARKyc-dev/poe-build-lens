@@ -158,9 +158,12 @@ local function equipmentFromActiveSet()
   return result
 end
 
-local function jewelsFromActiveSpec()
+local function jewelsFromActiveSpec(xmlJewels)
   local result = jsonArray()
-  for socketId, itemId in pairs(build.spec.jewels or { }) do
+  local jewels = { }
+  for socketId, itemId in pairs(build.spec.jewels or { }) do jewels[socketId] = itemId end
+  for socketId, itemId in pairs(xmlJewels or { }) do jewels[socketId] = itemId end
+  for socketId, itemId in pairs(jewels) do
     local item = build.itemsTab.items[itemId]
     if item then
       local modifiers = { }
@@ -809,9 +812,12 @@ local function itemFacts()
   return result
 end
 
-local function jewelFacts(spec)
+local function jewelFacts(spec, xmlJewels)
   local result = jsonArray()
-  for socketId, itemId in pairs(spec.jewels or { }) do
+  local jewels = { }
+  for socketId, itemId in pairs(spec.jewels or { }) do jewels[socketId] = itemId end
+  for socketId, itemId in pairs(xmlJewels or { }) do jewels[socketId] = itemId end
+  for socketId, itemId in pairs(jewels) do
     local item = build.itemsTab.items[itemId]
     if item then
       local modifiers = jsonArray()
@@ -848,7 +854,7 @@ local function performanceFact(output)
   }
 end
 
-local function buildFacts(env, output, spec)
+local function buildFacts(env, output, spec, xmlJewels)
   local conditions = { }
   for name, value in pairs(build.configTab.input or { }) do
     if name:match("^condition") or name:match("^buff") or name:match("^use.*Charges$") then
@@ -866,7 +872,7 @@ local function buildFacts(env, output, spec)
     ascendancies = ascendancyFacts(spec),
     passiveTags = allPassiveTags(spec),
     items = itemFacts(),
-    jewels = jewelFacts(spec),
+    jewels = jewelFacts(spec, xmlJewels),
     operationFacts = operationFacts(env, spec),
     performance = performanceFact(output),
   }
@@ -878,6 +884,27 @@ local function qualityTypesFromXml(xmlText)
     local gemId = attributes:match('gemId="([^"]+)"')
     local qualityId = attributes:match('qualityId="([^"]+)"')
     if gemId and qualityId then result[gemId] = qualityId end
+  end
+  return result
+end
+
+local function activeJewelsFromXml(xmlText, requestedSpecId)
+  local result = { }
+  local treeAttributes, treeBody = xmlText:match("<Tree%s+([^>]-)>(.-)</Tree>")
+  if not treeBody then return result end
+  local activeSpecId = tonumber(requestedSpecId) or tonumber(treeAttributes:match('activeSpec="(%d+)"')) or 1
+  local index = 0
+  for attributes, body in treeBody:gmatch("<Spec%s*([^>]*)>(.-)</Spec>") do
+    index = index + 1
+    local id = tonumber(attributes:match('id="(%d+)"')) or index
+    if id == activeSpecId then
+      for socketAttributes in body:gmatch("<Socket%s+([^>]-)/>") do
+        local itemId = tonumber(socketAttributes:match('itemId="(%d+)"'))
+        local nodeId = socketAttributes:match('nodeId="(%d+)"')
+        if itemId and nodeId then result[nodeId] = itemId end
+      end
+      break
+    end
   end
   return result
 end
@@ -924,7 +951,8 @@ function inspectBuild(xmlText, specId)
   local output = build.calcsTab.mainOutput or { }
   local mainEnv = build.calcsTab.mainEnv
   local mainSkill = mainEnv and mainEnv.player and mainEnv.player.mainSkill
-  local facts = mainEnv and buildFacts(mainEnv, output, spec) or { offence = jsonArray(), skills = jsonArray(), defence = jsonArray(), buffs = jsonArray(), mobility = jsonArray(), passives = jsonArray(), ascendancies = jsonArray(), passiveTags = jsonArray(), items = jsonArray(), jewels = jsonArray(), operationFacts = jsonArray(), performance = { } }
+  local xmlJewels = activeJewelsFromXml(xmlText, specId)
+  local facts = mainEnv and buildFacts(mainEnv, output, spec, xmlJewels) or { offence = jsonArray(), skills = jsonArray(), defence = jsonArray(), buffs = jsonArray(), mobility = jsonArray(), passives = jsonArray(), ascendancies = jsonArray(), passiveTags = jsonArray(), items = jsonArray(), jewels = jsonArray(), operationFacts = jsonArray(), performance = { } }
   local displayedSkill = mainSkill
   local primaryOffence = facts.offence and facts.offence[1]
   local mainSkillName = mainSkill and mainSkill.activeEffect and mainSkill.activeEffect.grantedEffect and mainSkill.activeEffect.grantedEffect.name
@@ -959,7 +987,7 @@ function inspectBuild(xmlText, specId)
       totalEhp = output.TotalEHP,
     },
     equipment = equipmentFromActiveSet(),
-    jewels = jewelsFromActiveSpec(),
+    jewels = jewelsFromActiveSpec(xmlJewels),
     tree = {
       version = spec.treeVersion,
       nodes = nodes,

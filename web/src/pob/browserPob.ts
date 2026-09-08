@@ -18,6 +18,7 @@ export type BrowserJewelItem = {
   rarity: string
   modifiers: string[]
   kind: 'jewel' | 'cluster'
+  imageUrl?: string | null
 }
 export type BuildFactOffence = {
   name: string

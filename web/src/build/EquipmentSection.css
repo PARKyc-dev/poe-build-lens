@@ -20,7 +20,7 @@
 .equipment-slot button:focus-visible { outline: 2px solid #8fcfc8; outline-offset: -3px; }
 .equipment-slot img { width: 100%; height: 100%; object-fit: contain; }
 .weapon-1 img, .weapon-2 img { width: auto; height: auto; max-width: 82%; max-height: 82%; }
-.equipment-slot[class*='flask-'] img { width: auto; height: auto; max-width: 76%; max-height: 82%; }
+.equipment-slot[class*='flask-'] img { justify-self: start; width: auto; height: 82%; max-width: none; max-height: none; object-fit: initial; }
 .equipment-slot-label { color: #8d9eae; font-size: 0.68rem; }
 .equipment-slot strong { position: absolute; right: 0.35rem; bottom: 0.3rem; left: 0.35rem; overflow: hidden; color: #e5e4d7; font-size: 0.68rem; text-overflow: ellipsis; text-shadow: 0 1px 3px #000; white-space: nowrap; }
 .equipment-slot.rarity-unique { border-color: #8a5b34; }

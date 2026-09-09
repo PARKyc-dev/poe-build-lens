@@ -13,7 +13,7 @@ function previewItem(slot: string, name: string, baseName: string, rarity: strin
 }
 
 const previewEquipment = [
-  previewItem('Weapon 1', 'Woe Chant', 'Kinetic Wand', 'RARE'),
+  previewItem('Weapon 1', 'Woe Chant', 'Imbued Wand', 'RARE'),
   previewItem('Weapon 2', 'Dawnbreaker', 'Colossal Tower Shield', 'UNIQUE'),
   previewItem('Helmet', 'Fate Star', 'Divine Crown', 'RARE'),
   previewItem('Body Armour', 'Foulborn The Iron Fortress', 'Crusader Plate', 'UNIQUE'),

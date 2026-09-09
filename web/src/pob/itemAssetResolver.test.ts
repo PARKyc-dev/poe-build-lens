@@ -4,16 +4,21 @@ import { resolveItemImage } from './itemAssetResolver'
 
 describe('resolveItemImage', () => {
   it('resolves a rare item through its base name', () => {
-    expect(resolveItemImage({ name: 'Woe Chant', baseName: 'Kinetic Wand', rarity: 'RARE' }))
-      .toBe('https://assets.pobb.in/1/Kinetic%20Wand.webp')
+    expect(resolveItemImage({ name: 'Woe Chant', baseName: 'Imbued Wand' }))
+      .toBe('https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand3.png')
   })
 
-  it('resolves a unique through its unique name', () => {
-    expect(resolveItemImage({ name: 'Dawnbreaker', baseName: 'Colossal Tower Shield', rarity: 'UNIQUE' }))
-      .toBe('https://assets.pobb.in/1/Dawnbreaker.webp')
+  it('resolves a unique item through its base name', () => {
+    expect(resolveItemImage({ name: 'Dawnbreaker', baseName: 'Colossal Tower Shield' }))
+      .toBe('https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr6.png')
   })
 
-  it('returns null for an item outside the generated catalog', () => {
-    expect(resolveItemImage({ name: 'Unknown', baseName: 'Unknown Base', rarity: 'RARE' })).toBeNull()
+  it('falls back to the item name when no base name is available', () => {
+    expect(resolveItemImage({ name: 'Crimson Jewel', baseName: null }))
+      .toBe('https://web.poecdn.com/image/Art/2DItems/Jewels/basicstr.png')
+  })
+
+  it('returns null for an item outside the asset catalogs', () => {
+    expect(resolveItemImage({ name: 'Unknown', baseName: 'Unknown Base' })).toBeNull()
   })
 })

@@ -2,7 +2,7 @@
 
 # PoE Lens
 
-**AI는 복잡한 게임 메커니즘을 어디까지 정확하게 설명할 수 있을까?**
+**AI는 복잡한 게임 메커니즘을 어디까지 정확하게 설명할 수 있을까, 그리고 신뢰할 수 있는 설명을 위해 시스템을 어떻게 설계해야 할까?**
 
 ![Java](https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.0-6DB33F?logo=springboot&logoColor=white)

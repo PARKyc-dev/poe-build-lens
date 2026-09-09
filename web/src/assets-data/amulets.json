@@ -1,0 +1,380 @@
+{
+  "Agate Amulet": {
+    "nameEn": "Agate Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/AgateAmulet.png",
+    "source": "pob-export + repoe"
+  },
+  "Amber Amulet": {
+    "nameEn": "Amber Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/Amulet3.png",
+    "source": "pob-export + repoe"
+  },
+  "Ashscale Talisman": {
+    "nameEn": "Ashscale Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanWhite8.png",
+    "source": "pob-export + repoe"
+  },
+  "Astrolabe Amulet": {
+    "nameEn": "Astrolabe Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/AmuletE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/HeistAmulet1.png",
+    "source": "pob-export + repoe"
+  },
+  "Avian Twins Talisman": {
+    "nameEn": "Avian Twins Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_6_6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanBlack2.png",
+    "source": "pob-export + repoe"
+  },
+  "Avian Twins Talisman (Cold-To-Fire)": {
+    "nameEn": "Avian Twins Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_6_4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanBlack2.png",
+    "source": "pob-export + repoe"
+  },
+  "Avian Twins Talisman (Cold-To-Lightning)": {
+    "nameEn": "Avian Twins Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_6_3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanBlack2.png",
+    "source": "pob-export + repoe"
+  },
+  "Avian Twins Talisman (Fire-To-Cold)": {
+    "nameEn": "Avian Twins Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_6_1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanBlack2.png",
+    "source": "pob-export + repoe"
+  },
+  "Avian Twins Talisman (Fire-To-Lightning)": {
+    "nameEn": "Avian Twins Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_6_2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanBlack2.png",
+    "source": "pob-export + repoe"
+  },
+  "Avian Twins Talisman (Lightning-To-Cold)": {
+    "nameEn": "Avian Twins Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_6_5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanBlack2.png",
+    "source": "pob-export + repoe"
+  },
+  "Black Maw Talisman": {
+    "nameEn": "Black Maw Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanWhite3.png",
+    "source": "pob-export + repoe"
+  },
+  "Blue Pearl Amulet": {
+    "nameEn": "Blue Pearl Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulet/AmuletAtlas1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/BluePearlAmulet.png",
+    "source": "pob-export + repoe"
+  },
+  "Bonespire Talisman": {
+    "nameEn": "Bonespire Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanWhite7.png",
+    "source": "pob-export + repoe"
+  },
+  "Breakrib Talisman": {
+    "nameEn": "Breakrib Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanWhite1.png",
+    "source": "pob-export + repoe"
+  },
+  "Chrysalis Talisman": {
+    "nameEn": "Chrysalis Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/NewTalisman2.png",
+    "source": "pob-export + repoe"
+  },
+  "Citrine Amulet": {
+    "nameEn": "Citrine Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/CitrineAmulet.png",
+    "source": "pob-export + repoe"
+  },
+  "Clutching Talisman": {
+    "nameEn": "Clutching Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanBlack3.png",
+    "source": "pob-export + repoe"
+  },
+  "Coral Amulet": {
+    "nameEn": "Coral Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/Amulet2.png",
+    "source": "pob-export + repoe"
+  },
+  "Deadhand Talisman": {
+    "nameEn": "Deadhand Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanWhite4.png",
+    "source": "pob-export + repoe"
+  },
+  "Deep One Talisman": {
+    "nameEn": "Deep One Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanWhite5.png",
+    "source": "pob-export + repoe"
+  },
+  "Fangjaw Talisman": {
+    "nameEn": "Fangjaw Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanBlack5.png",
+    "source": "pob-export + repoe"
+  },
+  "Focused Amulet": {
+    "nameEn": "Focused Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/AmuletE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/HeistAmulet1Silver.png",
+    "source": "pob-export + repoe"
+  },
+  "Gold Amulet": {
+    "nameEn": "Gold Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/Amulet6.png",
+    "source": "pob-export + repoe"
+  },
+  "Greatwolf Talisman": {
+    "nameEn": "Greatwolf Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/T4Talisman.png",
+    "source": "pob-export + repoe"
+  },
+  "Hexclaw Talisman": {
+    "nameEn": "Hexclaw Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanBlack6.png",
+    "source": "pob-export + repoe"
+  },
+  "Horned Talisman": {
+    "nameEn": "Horned Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/NewTalisman7.png",
+    "source": "pob-export + repoe"
+  },
+  "Jade Amulet": {
+    "nameEn": "Jade Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/Amulet4.png",
+    "source": "pob-export + repoe"
+  },
+  "Jet Amulet": {
+    "nameEn": "Jet Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulet/AmuletVictor1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanoftheVictor.png",
+    "source": "pob-export + repoe"
+  },
+  "Lapis Amulet": {
+    "nameEn": "Lapis Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/Amulet5.png",
+    "source": "pob-export + repoe"
+  },
+  "Lone Antler Talisman": {
+    "nameEn": "Lone Antler Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanWhite2.png",
+    "source": "pob-export + repoe"
+  },
+  "Longtooth Talisman": {
+    "nameEn": "Longtooth Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman3_4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanRed4.png",
+    "source": "pob-export + repoe"
+  },
+  "Mandible Talisman": {
+    "nameEn": "Mandible Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/NewTalisman.png",
+    "source": "pob-export + repoe"
+  },
+  "Marble Amulet": {
+    "nameEn": "Marble Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulet/AmuletAtlas2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/MarbleAmulet.png",
+    "source": "pob-export + repoe"
+  },
+  "Monkey Paw Talisman": {
+    "nameEn": "Monkey Paw Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman3_6_3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/MonkeyPawTalisman.png",
+    "source": "pob-export + repoe"
+  },
+  "Monkey Paw Talisman (Frenzy)": {
+    "nameEn": "Monkey Paw Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman3_6_2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/MonkeyPawTalisman.png",
+    "source": "pob-export + repoe"
+  },
+  "Monkey Paw Talisman (Power)": {
+    "nameEn": "Monkey Paw Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman3_6_1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/MonkeyPawTalisman.png",
+    "source": "pob-export + repoe"
+  },
+  "Monkey Twins Talisman": {
+    "nameEn": "Monkey Twins Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman3_3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanRed6.png",
+    "source": "pob-export + repoe"
+  },
+  "Onyx Amulet": {
+    "nameEn": "Onyx Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/Amulet7.png",
+    "source": "pob-export + repoe"
+  },
+  "Paua Amulet": {
+    "nameEn": "Paua Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/Amulet1.png",
+    "source": "pob-export + repoe"
+  },
+  "Primal Skull Talisman": {
+    "nameEn": "Primal Skull Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanBlack7.png",
+    "source": "pob-export + repoe"
+  },
+  "Rot Head Talisman": {
+    "nameEn": "Rot Head Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/FishTalisman.png",
+    "source": "pob-export + repoe"
+  },
+  "Rotfeather Talisman": {
+    "nameEn": "Rotfeather Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman3_5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanRed1.png",
+    "source": "pob-export + repoe"
+  },
+  "Ruby Amulet": {
+    "nameEn": "Ruby Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/RubyAmulet.png",
+    "source": "pob-export + repoe"
+  },
+  "Seaglass Amulet": {
+    "nameEn": "Seaglass Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulet/AmuletAtlas3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/CrescentAmulet.png",
+    "source": "pob-export + repoe"
+  },
+  "Simplex Amulet": {
+    "nameEn": "Simplex Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/AmuletE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/HeistAmulet2.png",
+    "source": "pob-export + repoe"
+  },
+  "Spinefuse Talisman": {
+    "nameEn": "Spinefuse Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman3_1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanRed3.png",
+    "source": "pob-export + repoe"
+  },
+  "Splitnewt Talisman": {
+    "nameEn": "Splitnewt Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanBlack4.png",
+    "source": "pob-export + repoe"
+  },
+  "Three Hands Talisman": {
+    "nameEn": "Three Hands Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman3_7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanRed8.png",
+    "source": "pob-export + repoe"
+  },
+  "Three Rat Talisman": {
+    "nameEn": "Three Rat Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman3_2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanRed7.png",
+    "source": "pob-export + repoe"
+  },
+  "Turquoise Amulet": {
+    "nameEn": "Turquoise Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TurquoiseAmulet.png",
+    "source": "pob-export + repoe"
+  },
+  "Undying Flesh Talisman": {
+    "nameEn": "Undying Flesh Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanWhite6.png",
+    "source": "pob-export + repoe"
+  },
+  "Unset Amulet": {
+    "nameEn": "Unset Amulet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Amulet12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/UnsetAmulet.png",
+    "source": "pob-export + repoe"
+  },
+  "Wereclaw Talisman": {
+    "nameEn": "Wereclaw Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman2_3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/DireClawTalisman.png",
+    "source": "pob-export + repoe"
+  },
+  "Writhing Talisman": {
+    "nameEn": "Writhing Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/Talisman1_12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/NewTalisman3.png",
+    "source": "pob-export + repoe"
+  }
+}

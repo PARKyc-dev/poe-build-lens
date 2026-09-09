@@ -1,0 +1,174 @@
+{
+  "Artillery Quiver": {
+    "nameEn": "Artillery Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/QuiverAtlas1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/ChiselQuiver.png",
+    "source": "pob-export + repoe"
+  },
+  "Blazing Arrow Quiver": {
+    "nameEn": "Blazing Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/QuiverNew9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/QuiverFire.png",
+    "source": "pob-export + repoe"
+  },
+  "Blunt Arrow Quiver": {
+    "nameEn": "Blunt Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/QuiverBlunt.png",
+    "source": "pob-export + repoe",
+    "metadataIds": [
+      "Metadata/Items/Quivers/Quiver9",
+      "Metadata/Items/Quivers/QuiverNew6"
+    ]
+  },
+  "Broadhead Arrow Quiver": {
+    "nameEn": "Broadhead Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/QuiverBroadhead.png",
+    "source": "pob-export + repoe",
+    "metadataIds": [
+      "Metadata/Items/Quivers/Quiver11",
+      "Metadata/Items/Quivers/QuiverNew10"
+    ]
+  },
+  "Conductive Quiver": {
+    "nameEn": "Conductive Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/Quiver3.png",
+    "source": "pob-export + repoe"
+  },
+  "Cured Quiver": {
+    "nameEn": "Cured Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/Quiver1.png",
+    "source": "pob-export + repoe"
+  },
+  "Feathered Arrow Quiver": {
+    "nameEn": "Feathered Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/QuiverNew4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/FeatheredArrowQuiver.png",
+    "source": "pob-export + repoe"
+  },
+  "Fire Arrow Quiver": {
+    "nameEn": "Fire Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/QuiverFire.png",
+    "source": "pob-export + repoe",
+    "metadataIds": [
+      "Metadata/Items/Quivers/Quiver10",
+      "Metadata/Items/Quivers/QuiverNew2"
+    ]
+  },
+  "Heavy Arrow Quiver": {
+    "nameEn": "Heavy Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/QuiverNew12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/QuiverBlunt.png",
+    "source": "pob-export + repoe"
+  },
+  "Heavy Quiver": {
+    "nameEn": "Heavy Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/Quiver4.png",
+    "source": "pob-export + repoe"
+  },
+  "Light Quiver": {
+    "nameEn": "Light Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/Quiver5.png",
+    "source": "pob-export + repoe"
+  },
+  "Ornate Quiver": {
+    "nameEn": "Ornate Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/TriggerQuiverUnique.png",
+    "source": "pob-export + repoe"
+  },
+  "Penetrating Arrow Quiver": {
+    "nameEn": "Penetrating Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/QuiverPenetrating.png",
+    "source": "pob-export + repoe",
+    "metadataIds": [
+      "Metadata/Items/Quivers/Quiver12",
+      "Metadata/Items/Quivers/QuiverNew5"
+    ]
+  },
+  "Primal Arrow Quiver": {
+    "nameEn": "Primal Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/QuiverNew13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/RikerRinQuiver.png",
+    "source": "pob-export + repoe"
+  },
+  "Rugged Quiver": {
+    "nameEn": "Rugged Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/Quiver2.png",
+    "source": "pob-export + repoe"
+  },
+  "Serrated Arrow Quiver": {
+    "nameEn": "Serrated Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/QuiverSerrated.png",
+    "source": "pob-export + repoe",
+    "metadataIds": [
+      "Metadata/Items/Quivers/Quiver6",
+      "Metadata/Items/Quivers/QuiverNew1"
+    ]
+  },
+  "Sharktooth Arrow Quiver": {
+    "nameEn": "Sharktooth Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/QuiverSharktooth.png",
+    "source": "pob-export + repoe",
+    "metadataIds": [
+      "Metadata/Items/Quivers/Quiver8",
+      "Metadata/Items/Quivers/QuiverNew3"
+    ]
+  },
+  "Spike-Point Arrow Quiver": {
+    "nameEn": "Spike-Point Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/QuiverSpike-Point.png",
+    "source": "pob-export + repoe",
+    "metadataIds": [
+      "Metadata/Items/Quivers/Quiver13",
+      "Metadata/Items/Quivers/QuiverNew8"
+    ]
+  },
+  "Two-Point Arrow Quiver": {
+    "nameEn": "Two-Point Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/Quiver7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/QuiverTwo-Point.png",
+    "source": "pob-export + repoe",
+    "metadataIds": [
+      "Metadata/Items/Quivers/Quiver7",
+      "Metadata/Items/Quivers/QuiverNew7"
+    ]
+  },
+  "Vile Arrow Quiver": {
+    "nameEn": "Vile Arrow Quiver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Quivers/QuiverNew11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Quivers/VileArrowQuiver.png",
+    "source": "pob-export + repoe"
+  }
+}

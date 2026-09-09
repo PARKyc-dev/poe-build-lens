@@ -1,3 +1,6 @@
+import './BuildPage.css'
+import './BuildLoadingPage.css'
+
 export function BuildLoadingPage() {
   return (
     <main className="build-detail build-loading" aria-label="빌드 분석 중" aria-live="polite">

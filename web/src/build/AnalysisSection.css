@@ -1,0 +1,9 @@
+.analysis-section { display: grid; gap: 0.7rem; }
+.analysis-section > h3 { margin: 0; color: #c9d5dd; font-size: 1rem; font-weight: 400; }
+.analysis-empty { margin: 0; color: #8294a7; font-size: 0.85rem; line-height: 1.6; }
+.analysis-section ul { display: grid; gap: 0.45rem; margin: 0; padding-left: 1.2rem; }
+.analysis-section a { color: #8fcfc8; }
+.analysis-section .compact-mechanic-list { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0; padding: 0; list-style: none; }
+.compact-mechanic-list button { display: flex; gap: 0.4rem; align-items: center; padding: 0.48rem 0.65rem; border: 1px solid rgb(141 170 184 / 28%); color: #dce5e8; background: rgb(10 27 44 / 78%); font-size: 0.78rem; }
+.compact-mechanic-list button span { color: #d9ad5a; }
+.compact-mechanic-list button.is-ascendancy { color: #ee9b4b; }

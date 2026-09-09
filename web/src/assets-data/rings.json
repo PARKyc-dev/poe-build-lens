@@ -1,0 +1,266 @@
+{
+  "Amethyst Ring": {
+    "nameEn": "Amethyst Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/AmethystRing.png",
+    "source": "pob-export + repoe"
+  },
+  "Bone Ring": {
+    "nameEn": "Bone Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/BoneRing.png",
+    "source": "pob-export + repoe"
+  },
+  "Breach Ring": {
+    "nameEn": "Breach Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/BreachRing",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/BreachRing.png",
+    "source": "pob-export + repoe"
+  },
+  "Cerulean Ring": {
+    "nameEn": "Cerulean Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingAtlas4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/CeruleanRing.png",
+    "source": "pob-export + repoe"
+  },
+  "Cogwork Ring": {
+    "nameEn": "Cogwork Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/HeistRing1.png",
+    "source": "pob-export + repoe"
+  },
+  "Composite Ring": {
+    "nameEn": "Composite Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/HeistRing2Silver.png",
+    "source": "pob-export + repoe"
+  },
+  "Coral Ring": {
+    "nameEn": "Coral Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/Ring2.png",
+    "source": "pob-export + repoe"
+  },
+  "Diamond Ring": {
+    "nameEn": "Diamond Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/DiamondRing.png",
+    "source": "pob-export + repoe"
+  },
+  "Dusk Ring": {
+    "nameEn": "Dusk Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingK1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/LakeRing1.png",
+    "source": "pob-export + repoe"
+  },
+  "Geodesic Ring": {
+    "nameEn": "Geodesic Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/HeistRing2.png",
+    "source": "pob-export + repoe"
+  },
+  "Gloam Ring": {
+    "nameEn": "Gloam Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingK3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/LakeRing3.png",
+    "source": "pob-export + repoe"
+  },
+  "Gold Ring": {
+    "nameEn": "Gold Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/Ring4.png",
+    "source": "pob-export + repoe"
+  },
+  "Golden Hoop": {
+    "nameEn": "Golden Hoop",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingDemigods1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/DemigodsBand.png",
+    "source": "pob-export + repoe"
+  },
+  "Helical Ring": {
+    "nameEn": "Helical Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingE6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/HeistRing1Dark.png",
+    "source": "pob-export + repoe"
+  },
+  "Iolite Ring": {
+    "nameEn": "Iolite Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingAtlas5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/ChaosDmgRing.png",
+    "source": "pob-export + repoe"
+  },
+  "Iron Ring": {
+    "nameEn": "Iron Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/Ring1.png",
+    "source": "pob-export + repoe"
+  },
+  "Jet Ring": {
+    "nameEn": "Jet Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingVictor1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/RingoftheVictor.png",
+    "source": "pob-export + repoe"
+  },
+  "Manifold Ring": {
+    "nameEn": "Manifold Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingE4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/HeistRing2Dark.png",
+    "source": "pob-export + repoe"
+  },
+  "Moonstone Ring": {
+    "nameEn": "Moonstone Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/MoonstoneRing.png",
+    "source": "pob-export + repoe"
+  },
+  "Nameless Ring": {
+    "nameEn": "Nameless Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingR1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/RitualRing.png",
+    "source": "pob-export + repoe"
+  },
+  "Opal Ring": {
+    "nameEn": "Opal Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingAtlas2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/OpalRing.png",
+    "source": "pob-export + repoe"
+  },
+  "Paua Ring": {
+    "nameEn": "Paua Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/Ring3.png",
+    "source": "pob-export + repoe"
+  },
+  "Penumbra Ring": {
+    "nameEn": "Penumbra Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingK2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/LakeRing2.png",
+    "source": "pob-export + repoe"
+  },
+  "Prismatic Ring": {
+    "nameEn": "Prismatic Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/Ring12.png",
+    "source": "pob-export + repoe"
+  },
+  "Ratcheting Ring": {
+    "nameEn": "Ratcheting Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingE5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/HeistRing1Silver.png",
+    "source": "pob-export + repoe"
+  },
+  "Ring": {
+    "nameEn": "Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/MirrorRing",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/MirrorRing.png",
+    "source": "pob-export + repoe"
+  },
+  "Ruby Ring": {
+    "nameEn": "Ruby Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/Ring7.png",
+    "source": "pob-export + repoe"
+  },
+  "Sapphire Ring": {
+    "nameEn": "Sapphire Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/Ring6.png",
+    "source": "pob-export + repoe"
+  },
+  "Shadowed Ring": {
+    "nameEn": "Shadowed Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingK5a",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/LakeRing5.png",
+    "source": "pob-export + repoe",
+    "metadataIds": [
+      "Metadata/Items/Rings/RingK5a",
+      "Metadata/Items/Rings/RingK5b",
+      "Metadata/Items/Rings/RingK5c"
+    ]
+  },
+  "Steel Ring": {
+    "nameEn": "Steel Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingAtlas1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/AdamantineRing.png",
+    "source": "pob-export + repoe"
+  },
+  "Tenebrous Ring": {
+    "nameEn": "Tenebrous Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingK4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/LakeRing4.png",
+    "source": "pob-export + repoe"
+  },
+  "Topaz Ring": {
+    "nameEn": "Topaz Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/Ring5.png",
+    "source": "pob-export + repoe"
+  },
+  "Two-Stone Ring (Cold/Lightning)": {
+    "nameEn": "Two-Stone Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/TopazSapphire.png",
+    "source": "pob-export + repoe"
+  },
+  "Two-Stone Ring (Fire/Cold)": {
+    "nameEn": "Two-Stone Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/SapphireRuby.png",
+    "source": "pob-export + repoe"
+  },
+  "Two-Stone Ring (Fire/Lightning)": {
+    "nameEn": "Two-Stone Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/TopazRuby.png",
+    "source": "pob-export + repoe"
+  },
+  "Unset Ring": {
+    "nameEn": "Unset Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/Ring15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/Empty-Socket.png",
+    "source": "pob-export + repoe"
+  },
+  "Vermillion Ring": {
+    "nameEn": "Vermillion Ring",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Rings/RingAtlas3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/VermillionRing.png",
+    "source": "pob-export + repoe"
+  }
+}

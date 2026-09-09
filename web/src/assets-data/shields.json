@@ -1,0 +1,688 @@
+{
+  "Alder Spiked Shield": {
+    "nameEn": "Alder Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Alloyed Spiked Shield": {
+    "nameEn": "Alloyed Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Ancient Spirit Shield": {
+    "nameEn": "Ancient Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Angelic Kite Shield": {
+    "nameEn": "Angelic Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Archon Kite Shield": {
+    "nameEn": "Archon Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Baroque Round Shield": {
+    "nameEn": "Baroque Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex5.png",
+    "source": "pob-export + repoe"
+  },
+  "Battle Buckler": {
+    "nameEn": "Battle Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex5.png",
+    "source": "pob-export + repoe"
+  },
+  "Bone Spirit Shield": {
+    "nameEn": "Bone Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Branded Kite Shield": {
+    "nameEn": "Branded Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Brass Spirit Shield": {
+    "nameEn": "Brass Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt6.png",
+    "source": "pob-export + repoe"
+  },
+  "Bronze Tower Shield": {
+    "nameEn": "Bronze Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr5.png",
+    "source": "pob-export + repoe"
+  },
+  "Buckskin Tower Shield": {
+    "nameEn": "Buckskin Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Burnished Spiked Shield": {
+    "nameEn": "Burnished Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Cardinal Round Shield": {
+    "nameEn": "Cardinal Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Cedar Tower Shield": {
+    "nameEn": "Cedar Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Ceremonial Kite Shield": {
+    "nameEn": "Ceremonial Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Champion Kite Shield": {
+    "nameEn": "Champion Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Chiming Spirit Shield": {
+    "nameEn": "Chiming Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Cold-attuned Buckler": {
+    "nameEn": "Cold-attuned Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/DexHeistShield.png",
+    "source": "pob-export + repoe"
+  },
+  "Colossal Tower Shield": {
+    "nameEn": "Colossal Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr6.png",
+    "source": "pob-export + repoe"
+  },
+  "Compound Spiked Shield": {
+    "nameEn": "Compound Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Copper Tower Shield": {
+    "nameEn": "Copper Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr5.png",
+    "source": "pob-export + repoe"
+  },
+  "Corroded Tower Shield": {
+    "nameEn": "Corroded Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr2.png",
+    "source": "pob-export + repoe"
+  },
+  "Corrugated Buckler": {
+    "nameEn": "Corrugated Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Crested Tower Shield": {
+    "nameEn": "Crested Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr7.png",
+    "source": "pob-export + repoe"
+  },
+  "Crimson Round Shield": {
+    "nameEn": "Crimson Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Crusader Buckler": {
+    "nameEn": "Crusader Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex5.png",
+    "source": "pob-export + repoe"
+  },
+  "Driftwood Spiked Shield": {
+    "nameEn": "Driftwood Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Ebony Tower Shield": {
+    "nameEn": "Ebony Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Elegant Round Shield": {
+    "nameEn": "Elegant Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex5.png",
+    "source": "pob-export + repoe"
+  },
+  "Enameled Buckler": {
+    "nameEn": "Enameled Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Endothermic Buckler": {
+    "nameEn": "Endothermic Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/DexHeistShield.png",
+    "source": "pob-export + repoe"
+  },
+  "Etched Kite Shield": {
+    "nameEn": "Etched Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Exhausting Spirit Shield": {
+    "nameEn": "Exhausting Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldIntE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/IntHeistShield.png",
+    "source": "pob-export + repoe"
+  },
+  "Exothermic Tower Shield": {
+    "nameEn": "Exothermic Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/HeistShield.png",
+    "source": "pob-export + repoe"
+  },
+  "Ezomyte Spiked Shield": {
+    "nameEn": "Ezomyte Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Ezomyte Tower Shield": {
+    "nameEn": "Ezomyte Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr5.png",
+    "source": "pob-export + repoe"
+  },
+  "Fir Round Shield": {
+    "nameEn": "Fir Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Fossilised Spirit Shield": {
+    "nameEn": "Fossilised Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Gilded Buckler": {
+    "nameEn": "Gilded Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex6.png",
+    "source": "pob-export + repoe"
+  },
+  "Girded Tower Shield": {
+    "nameEn": "Girded Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr6.png",
+    "source": "pob-export + repoe"
+  },
+  "Goathide Buckler": {
+    "nameEn": "Goathide Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex1.png",
+    "source": "pob-export + repoe"
+  },
+  "Golden Buckler": {
+    "nameEn": "Golden Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex6.png",
+    "source": "pob-export + repoe"
+  },
+  "Golden Flame": {
+    "nameEn": "Golden Flame",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDemigods",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/DemigodsShield.png",
+    "source": "pob-export + repoe"
+  },
+  "Hammered Buckler": {
+    "nameEn": "Hammered Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Harmonic Spirit Shield": {
+    "nameEn": "Harmonic Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Heat-attuned Tower Shield": {
+    "nameEn": "Heat-attuned Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/HeistShield.png",
+    "source": "pob-export + repoe"
+  },
+  "Imperial Buckler": {
+    "nameEn": "Imperial Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex6.png",
+    "source": "pob-export + repoe"
+  },
+  "Ironwood Buckler": {
+    "nameEn": "Ironwood Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Ivory Spirit Shield": {
+    "nameEn": "Ivory Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Jingling Spirit Shield": {
+    "nameEn": "Jingling Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Lacewood Spirit Shield": {
+    "nameEn": "Lacewood Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Lacquered Buckler": {
+    "nameEn": "Lacquered Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Laminated Kite Shield": {
+    "nameEn": "Laminated Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Layered Kite Shield": {
+    "nameEn": "Layered Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Linden Kite Shield": {
+    "nameEn": "Linden Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Magmatic Tower Shield": {
+    "nameEn": "Magmatic Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/HeistShield.png",
+    "source": "pob-export + repoe"
+  },
+  "Mahogany Tower Shield": {
+    "nameEn": "Mahogany Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Maple Round Shield": {
+    "nameEn": "Maple Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Mirrored Spiked Shield": {
+    "nameEn": "Mirrored Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Mosaic Kite Shield": {
+    "nameEn": "Mosaic Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Oak Buckler": {
+    "nameEn": "Oak Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Ornate Spiked Shield": {
+    "nameEn": "Ornate Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Painted Buckler": {
+    "nameEn": "Painted Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Painted Tower Shield": {
+    "nameEn": "Painted Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr7.png",
+    "source": "pob-export + repoe"
+  },
+  "Pine Buckler": {
+    "nameEn": "Pine Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Pinnacle Tower Shield": {
+    "nameEn": "Pinnacle Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr7.png",
+    "source": "pob-export + repoe"
+  },
+  "Plank Kite Shield": {
+    "nameEn": "Plank Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Polar Buckler": {
+    "nameEn": "Polar Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/DexHeistShield.png",
+    "source": "pob-export + repoe"
+  },
+  "Polished Spiked Shield": {
+    "nameEn": "Polished Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Rawhide Tower Shield": {
+    "nameEn": "Rawhide Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Redwood Spiked Shield": {
+    "nameEn": "Redwood Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Reinforced Kite Shield": {
+    "nameEn": "Reinforced Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Reinforced Tower Shield": {
+    "nameEn": "Reinforced Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr6.png",
+    "source": "pob-export + repoe"
+  },
+  "Rotted Round Shield": {
+    "nameEn": "Rotted Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex1.png",
+    "source": "pob-export + repoe"
+  },
+  "Scarlet Round Shield": {
+    "nameEn": "Scarlet Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Shagreen Tower Shield": {
+    "nameEn": "Shagreen Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Sovereign Spiked Shield": {
+    "nameEn": "Sovereign Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Spiked Bundle": {
+    "nameEn": "Spiked Bundle",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Spiked Round Shield": {
+    "nameEn": "Spiked Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Spiny Round Shield": {
+    "nameEn": "Spiny Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Splendid Round Shield": {
+    "nameEn": "Splendid Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex5.png",
+    "source": "pob-export + repoe"
+  },
+  "Splintered Tower Shield": {
+    "nameEn": "Splintered Tower Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStr1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr1.png",
+    "source": "pob-export + repoe"
+  },
+  "Steel Kite Shield": {
+    "nameEn": "Steel Kite Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Studded Round Shield": {
+    "nameEn": "Studded Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Subsuming Spirit Shield": {
+    "nameEn": "Subsuming Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldIntE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/IntHeistShield.png",
+    "source": "pob-export + repoe"
+  },
+  "Supreme Spiked Shield": {
+    "nameEn": "Supreme Spiked Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDexInt13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDexInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Tarnished Spirit Shield": {
+    "nameEn": "Tarnished Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Teak Round Shield": {
+    "nameEn": "Teak Round Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldStrDex10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Thorium Spirit Shield": {
+    "nameEn": "Thorium Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt6.png",
+    "source": "pob-export + repoe"
+  },
+  "Titanium Spirit Shield": {
+    "nameEn": "Titanium Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt6.png",
+    "source": "pob-export + repoe"
+  },
+  "Transfer-attuned Spirit Shield": {
+    "nameEn": "Transfer-attuned Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldIntE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/IntHeistShield.png",
+    "source": "pob-export + repoe"
+  },
+  "Twig Spirit Shield": {
+    "nameEn": "Twig Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Buckler": {
+    "nameEn": "Vaal Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Spirit Shield": {
+    "nameEn": "Vaal Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Walnut Spirit Shield": {
+    "nameEn": "Walnut Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "War Buckler": {
+    "nameEn": "War Buckler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldDex5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldDex5.png",
+    "source": "pob-export + repoe"
+  },
+  "Yew Spirit Shield": {
+    "nameEn": "Yew Spirit Shield",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Shields/ShieldInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldInt2.png",
+    "source": "pob-export + repoe"
+  }
+}

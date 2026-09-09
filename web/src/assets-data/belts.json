@@ -1,0 +1,93 @@
+{
+  "Chain Belt": {
+    "nameEn": "Chain Belt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/Belt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/Belt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Cloth Belt": {
+    "nameEn": "Cloth Belt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/Belt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/Belt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Crystal Belt": {
+    "nameEn": "Crystal Belt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/BeltAtlas2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/CrystalBelt.png",
+    "source": "pob-export + repoe"
+  },
+  "Golden Obi": {
+    "nameEn": "Golden Obi",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/BeltDemigods1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/Demibelt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Heavy Belt": {
+    "nameEn": "Heavy Belt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/Belt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/Belt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Leather Belt": {
+    "nameEn": "Leather Belt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/Belt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/Belt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Mechalarm Belt": {
+    "nameEn": "Mechalarm Belt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/BeltE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/HeistBelt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Mechanical Belt": {
+    "nameEn": "Mechanical Belt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/BeltE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/HeistBelt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Micro-Distillery Belt": {
+    "nameEn": "Micro-Distillery Belt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/BeltE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/HeistBelt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Rustic Sash": {
+    "nameEn": "Rustic Sash",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/Belt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/Belt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Studded Belt": {
+    "nameEn": "Studded Belt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/Belt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/Belt6.png",
+    "source": "pob-export + repoe"
+  },
+  "Stygian Vise": {
+    "nameEn": "Stygian Vise",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/BeltAbyss",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/AbyssBelt.png",
+    "source": "pob-export + repoe"
+  },
+  "Vanguard Belt": {
+    "nameEn": "Vanguard Belt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Belts/BeltAtlas1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/Belt7.png",
+    "source": "pob-export + repoe"
+  }
+}

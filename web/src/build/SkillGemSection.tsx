@@ -1,4 +1,5 @@
 import type { BuildFactSkill, BuildFactSupportGem, BrowserInspectResult } from '../pob/browserPob'
+import './SkillGemSection.css'
 
 function gemMeta(gem: Pick<BuildFactSkill | BuildFactSupportGem, 'level' | 'quality' | 'qualityType'>) {
   const quality = gem.quality > 0 ? ` · 퀄리티 ${gem.quality}%` : ''

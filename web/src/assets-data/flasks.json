@@ -1,0 +1,338 @@
+{
+  "Amethyst Flask": {
+    "nameEn": "Amethyst Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/Amethyst.png",
+    "source": "pob-export + repoe"
+  },
+  "Aquamarine Flask": {
+    "nameEn": "Aquamarine Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/aquamarine.png",
+    "source": "pob-export + repoe"
+  },
+  "Basalt Flask": {
+    "nameEn": "Basalt Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/stone.png",
+    "source": "pob-export + repoe"
+  },
+  "Bismuth Flask": {
+    "nameEn": "Bismuth Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/bismuth.png",
+    "source": "pob-export + repoe"
+  },
+  "Colossal Hybrid Flask": {
+    "nameEn": "Colossal Hybrid Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskHybrid4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/hybridflask1.png",
+    "source": "pob-export + repoe"
+  },
+  "Colossal Life Flask": {
+    "nameEn": "Colossal Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask7.png",
+    "source": "pob-export + repoe"
+  },
+  "Colossal Mana Flask": {
+    "nameEn": "Colossal Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask7.png",
+    "source": "pob-export + repoe"
+  },
+  "Corundum Flask": {
+    "nameEn": "Corundum Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/AntiStunFlask.png",
+    "source": "pob-export + repoe"
+  },
+  "Diamond Flask": {
+    "nameEn": "Diamond Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/diamond.png",
+    "source": "pob-export + repoe"
+  },
+  "Divine Life Flask": {
+    "nameEn": "Divine Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask11.png",
+    "source": "pob-export + repoe"
+  },
+  "Divine Mana Flask": {
+    "nameEn": "Divine Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask11.png",
+    "source": "pob-export + repoe"
+  },
+  "Eternal Life Flask": {
+    "nameEn": "Eternal Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask12.png",
+    "source": "pob-export + repoe"
+  },
+  "Eternal Mana Flask": {
+    "nameEn": "Eternal Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask12.png",
+    "source": "pob-export + repoe"
+  },
+  "Giant Life Flask": {
+    "nameEn": "Giant Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask6.png",
+    "source": "pob-export + repoe"
+  },
+  "Giant Mana Flask": {
+    "nameEn": "Giant Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask6.png",
+    "source": "pob-export + repoe"
+  },
+  "Gold Flask": {
+    "nameEn": "Gold Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/GoldFlask.png",
+    "source": "pob-export + repoe"
+  },
+  "Grand Life Flask": {
+    "nameEn": "Grand Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask5.png",
+    "source": "pob-export + repoe"
+  },
+  "Grand Mana Flask": {
+    "nameEn": "Grand Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask5.png",
+    "source": "pob-export + repoe"
+  },
+  "Granite Flask": {
+    "nameEn": "Granite Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/granite.png",
+    "source": "pob-export + repoe"
+  },
+  "Greater Life Flask": {
+    "nameEn": "Greater Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask4.png",
+    "source": "pob-export + repoe"
+  },
+  "Greater Mana Flask": {
+    "nameEn": "Greater Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask4.png",
+    "source": "pob-export + repoe"
+  },
+  "Hallowed Hybrid Flask": {
+    "nameEn": "Hallowed Hybrid Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskHybrid6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/hybridflask4.png",
+    "source": "pob-export + repoe"
+  },
+  "Hallowed Life Flask": {
+    "nameEn": "Hallowed Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask9.png",
+    "source": "pob-export + repoe"
+  },
+  "Hallowed Mana Flask": {
+    "nameEn": "Hallowed Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask9.png",
+    "source": "pob-export + repoe"
+  },
+  "Iron Flask": {
+    "nameEn": "Iron Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/Wardflask01.png",
+    "source": "pob-export + repoe"
+  },
+  "Jade Flask": {
+    "nameEn": "Jade Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/evasionflask01.png",
+    "source": "pob-export + repoe"
+  },
+  "Large Hybrid Flask": {
+    "nameEn": "Large Hybrid Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskHybrid3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/hybridflask4.png",
+    "source": "pob-export + repoe"
+  },
+  "Large Life Flask": {
+    "nameEn": "Large Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask3.png",
+    "source": "pob-export + repoe"
+  },
+  "Large Mana Flask": {
+    "nameEn": "Large Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask3.png",
+    "source": "pob-export + repoe"
+  },
+  "Medium Hybrid Flask": {
+    "nameEn": "Medium Hybrid Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskHybrid2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/hybridflask2.png",
+    "source": "pob-export + repoe"
+  },
+  "Medium Life Flask": {
+    "nameEn": "Medium Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask2.png",
+    "source": "pob-export + repoe"
+  },
+  "Medium Mana Flask": {
+    "nameEn": "Medium Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask2.png",
+    "source": "pob-export + repoe"
+  },
+  "Quartz Flask": {
+    "nameEn": "Quartz Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/phaseflask01.png",
+    "source": "pob-export + repoe"
+  },
+  "Quicksilver Flask": {
+    "nameEn": "Quicksilver Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/sprint.png",
+    "source": "pob-export + repoe"
+  },
+  "Ruby Flask": {
+    "nameEn": "Ruby Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/ruby.png",
+    "source": "pob-export + repoe"
+  },
+  "Sacred Hybrid Flask": {
+    "nameEn": "Sacred Hybrid Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskHybrid5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/hybridflask2.png",
+    "source": "pob-export + repoe"
+  },
+  "Sacred Life Flask": {
+    "nameEn": "Sacred Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask8.png",
+    "source": "pob-export + repoe"
+  },
+  "Sacred Mana Flask": {
+    "nameEn": "Sacred Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask8.png",
+    "source": "pob-export + repoe"
+  },
+  "Sanctified Life Flask": {
+    "nameEn": "Sanctified Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask10.png",
+    "source": "pob-export + repoe"
+  },
+  "Sanctified Mana Flask": {
+    "nameEn": "Sanctified Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask10.png",
+    "source": "pob-export + repoe"
+  },
+  "Sapphire Flask": {
+    "nameEn": "Sapphire Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/sapphire.png",
+    "source": "pob-export + repoe"
+  },
+  "Silver Flask": {
+    "nameEn": "Silver Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/silver.png",
+    "source": "pob-export + repoe"
+  },
+  "Small Hybrid Flask": {
+    "nameEn": "Small Hybrid Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskHybrid1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/hybridflask1.png",
+    "source": "pob-export + repoe"
+  },
+  "Small Life Flask": {
+    "nameEn": "Small Life Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskLife1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/lifeflask1.png",
+    "source": "pob-export + repoe"
+  },
+  "Small Mana Flask": {
+    "nameEn": "Small Mana Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskMana1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/manaflask1.png",
+    "source": "pob-export + repoe"
+  },
+  "Stibnite Flask": {
+    "nameEn": "Stibnite Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/stibnite.png",
+    "source": "pob-export + repoe"
+  },
+  "Sulphur Flask": {
+    "nameEn": "Sulphur Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/gold.png",
+    "source": "pob-export + repoe"
+  },
+  "Topaz Flask": {
+    "nameEn": "Topaz Flask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Flasks/FlaskUtility4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/topaz.png",
+    "source": "pob-export + repoe"
+  }
+}

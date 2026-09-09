@@ -1,0 +1,2508 @@
+{
+  "Abyssal Axe": {
+    "nameEn": "Abyssal Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe7.png",
+    "source": "pob-export + repoe"
+  },
+  "Abyssal Sceptre": {
+    "nameEn": "Abyssal Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter8.png",
+    "source": "pob-export + repoe"
+  },
+  "Accumulator Wand": {
+    "nameEn": "Accumulator Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/HeistWand.png",
+    "source": "pob-export + repoe"
+  },
+  "Alternating Sceptre": {
+    "nameEn": "Alternating Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/HeistSceptreElemental.png",
+    "source": "pob-export + repoe"
+  },
+  "Ambusher": {
+    "nameEn": "Ambusher",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger4.png",
+    "source": "pob-export + repoe"
+  },
+  "Anarchic Spiritblade": {
+    "nameEn": "Anarchic Spiritblade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/HeistOneHandSword.png",
+    "source": "pob-export + repoe"
+  },
+  "Ancestral Club": {
+    "nameEn": "Ancestral Club",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace2.png",
+    "source": "pob-export + repoe"
+  },
+  "Ancient Sword": {
+    "nameEn": "Ancient Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword6.png",
+    "source": "pob-export + repoe"
+  },
+  "Antique Rapier": {
+    "nameEn": "Antique Rapier",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier6.png",
+    "source": "pob-export + repoe"
+  },
+  "Apex Cleaver": {
+    "nameEn": "Apex Cleaver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/HeistTwoHandAxe.png",
+    "source": "pob-export + repoe"
+  },
+  "Apex Rapier": {
+    "nameEn": "Apex Rapier",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier8.png",
+    "source": "pob-export + repoe"
+  },
+  "Arming Axe": {
+    "nameEn": "Arming Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe6.png",
+    "source": "pob-export + repoe"
+  },
+  "Assassin Bow": {
+    "nameEn": "Assassin Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow5.png",
+    "source": "pob-export + repoe"
+  },
+  "Assembler Wand": {
+    "nameEn": "Assembler Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/HeistWand.png",
+    "source": "pob-export + repoe"
+  },
+  "Auric Mace": {
+    "nameEn": "Auric Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace21",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace7.png",
+    "source": "pob-export + repoe"
+  },
+  "Awl": {
+    "nameEn": "Awl",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw3.png",
+    "source": "pob-export + repoe"
+  },
+  "Banishing Blade": {
+    "nameEn": "Banishing Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/HeistTwoHandSword.png",
+    "source": "pob-export + repoe"
+  },
+  "Barbed Club": {
+    "nameEn": "Barbed Club",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace3.png",
+    "source": "pob-export + repoe"
+  },
+  "Baselard": {
+    "nameEn": "Baselard",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword4.png",
+    "source": "pob-export + repoe"
+  },
+  "Basket Rapier": {
+    "nameEn": "Basket Rapier",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier4.png",
+    "source": "pob-export + repoe"
+  },
+  "Bastard Sword": {
+    "nameEn": "Bastard Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword3.png",
+    "source": "pob-export + repoe"
+  },
+  "Battered Foil": {
+    "nameEn": "Battered Foil",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier3.png",
+    "source": "pob-export + repoe"
+  },
+  "Battery Staff": {
+    "nameEn": "Battery Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistStaff.png",
+    "source": "pob-export + repoe"
+  },
+  "Battle Hammer": {
+    "nameEn": "Battle Hammer",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace5.png",
+    "source": "pob-export + repoe"
+  },
+  "Battle Sword": {
+    "nameEn": "Battle Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword5.png",
+    "source": "pob-export + repoe"
+  },
+  "Behemoth Mace": {
+    "nameEn": "Behemoth Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace9.png",
+    "source": "pob-export + repoe"
+  },
+  "Bladed Mace": {
+    "nameEn": "Bladed Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace6.png",
+    "source": "pob-export + repoe"
+  },
+  "Blasting Blade": {
+    "nameEn": "Blasting Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/HeistTwoHandSword.png",
+    "source": "pob-export + repoe"
+  },
+  "Blinder": {
+    "nameEn": "Blinder",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw5.png",
+    "source": "pob-export + repoe"
+  },
+  "Blood Sceptre": {
+    "nameEn": "Blood Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter6.png",
+    "source": "pob-export + repoe"
+  },
+  "Blunt Force Condenser": {
+    "nameEn": "Blunt Force Condenser",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/HeistTwoHandMace.png",
+    "source": "pob-export + repoe"
+  },
+  "Boarding Axe": {
+    "nameEn": "Boarding Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe3.png",
+    "source": "pob-export + repoe"
+  },
+  "Bone Bow": {
+    "nameEn": "Bone Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow6.png",
+    "source": "pob-export + repoe"
+  },
+  "Boom Mace": {
+    "nameEn": "Boom Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/HeistOneHandMace.png",
+    "source": "pob-export + repoe"
+  },
+  "Boot Blade": {
+    "nameEn": "Boot Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger5.png",
+    "source": "pob-export + repoe"
+  },
+  "Boot Knife": {
+    "nameEn": "Boot Knife",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger5.png",
+    "source": "pob-export + repoe"
+  },
+  "Brass Maul": {
+    "nameEn": "Brass Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace6.png",
+    "source": "pob-export + repoe"
+  },
+  "Broad Axe": {
+    "nameEn": "Broad Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe5.png",
+    "source": "pob-export + repoe"
+  },
+  "Broad Sword": {
+    "nameEn": "Broad Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword4.png",
+    "source": "pob-export + repoe"
+  },
+  "Bronze Sceptre": {
+    "nameEn": "Bronze Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter3.png",
+    "source": "pob-export + repoe"
+  },
+  "Burnished Foil": {
+    "nameEn": "Burnished Foil",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier3.png",
+    "source": "pob-export + repoe"
+  },
+  "Butcher Axe": {
+    "nameEn": "Butcher Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe5.png",
+    "source": "pob-export + repoe"
+  },
+  "Butcher Knife": {
+    "nameEn": "Butcher Knife",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger3.png",
+    "source": "pob-export + repoe"
+  },
+  "Butcher Sword": {
+    "nameEn": "Butcher Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword2.png",
+    "source": "pob-export + repoe"
+  },
+  "Calling Wand": {
+    "nameEn": "Calling Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandMinion1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/ConvokingWand.png",
+    "source": "pob-export + repoe"
+  },
+  "Capacity Rod": {
+    "nameEn": "Capacity Rod",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/WarstaffE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistWarStaff.png",
+    "source": "pob-export + repoe"
+  },
+  "Capricious Spiritblade": {
+    "nameEn": "Capricious Spiritblade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/HeistOneHandSword.png",
+    "source": "pob-export + repoe"
+  },
+  "Carnal Sceptre": {
+    "nameEn": "Carnal Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre21",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter7.png",
+    "source": "pob-export + repoe"
+  },
+  "Carved Wand": {
+    "nameEn": "Carved Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand3.png",
+    "source": "pob-export + repoe"
+  },
+  "Carving Knife": {
+    "nameEn": "Carving Knife",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger3.png",
+    "source": "pob-export + repoe"
+  },
+  "Cat's Paw": {
+    "nameEn": "Cat's Paw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw4.png",
+    "source": "pob-export + repoe"
+  },
+  "Ceremonial Axe": {
+    "nameEn": "Ceremonial Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe7.png",
+    "source": "pob-export + repoe"
+  },
+  "Ceremonial Mace": {
+    "nameEn": "Ceremonial Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace7.png",
+    "source": "pob-export + repoe"
+  },
+  "Charan's Sword": {
+    "nameEn": "Charan's Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordC",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/TheGoddessUnleashed.png",
+    "source": "pob-export + repoe"
+  },
+  "Chest Splitter": {
+    "nameEn": "Chest Splitter",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe6.png",
+    "source": "pob-export + repoe"
+  },
+  "Citadel Bow": {
+    "nameEn": "Citadel Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow3.png",
+    "source": "pob-export + repoe"
+  },
+  "Cleaver": {
+    "nameEn": "Cleaver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe4.png",
+    "source": "pob-export + repoe"
+  },
+  "Coiled Staff": {
+    "nameEn": "Coiled Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff5.png",
+    "source": "pob-export + repoe"
+  },
+  "Coiled Wand": {
+    "nameEn": "Coiled Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand5.png",
+    "source": "pob-export + repoe"
+  },
+  "Colossus Mallet": {
+    "nameEn": "Colossus Mallet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace3.png",
+    "source": "pob-export + repoe"
+  },
+  "Composite Bow": {
+    "nameEn": "Composite Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow4.png",
+    "source": "pob-export + repoe"
+  },
+  "Compound Bow": {
+    "nameEn": "Compound Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow4.png",
+    "source": "pob-export + repoe"
+  },
+  "Congregator Wand": {
+    "nameEn": "Congregator Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/HeistWand.png",
+    "source": "pob-export + repoe"
+  },
+  "Convening Wand": {
+    "nameEn": "Convening Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandMinion2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/ConvokingWand.png",
+    "source": "pob-export + repoe"
+  },
+  "Convoking Wand": {
+    "nameEn": "Convoking Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandAtlas1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/ConvokingWand.png",
+    "source": "pob-export + repoe"
+  },
+  "Copper Kris": {
+    "nameEn": "Copper Kris",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger6.png",
+    "source": "pob-export + repoe"
+  },
+  "Copper Sword": {
+    "nameEn": "Copper Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword2.png",
+    "source": "pob-export + repoe"
+  },
+  "Coronal Maul": {
+    "nameEn": "Coronal Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace8.png",
+    "source": "pob-export + repoe"
+  },
+  "Corroded Blade": {
+    "nameEn": "Corroded Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword1.png",
+    "source": "pob-export + repoe"
+  },
+  "Corsair Sword": {
+    "nameEn": "Corsair Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword3.png",
+    "source": "pob-export + repoe"
+  },
+  "Courtesan Sword": {
+    "nameEn": "Courtesan Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/RapierM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier9.png",
+    "source": "pob-export + repoe"
+  },
+  "Crack Mace": {
+    "nameEn": "Crack Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/HeistOneHandMace.png",
+    "source": "pob-export + repoe"
+  },
+  "Crescent Staff": {
+    "nameEn": "Crescent Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff8.png",
+    "source": "pob-export + repoe"
+  },
+  "Crude Bow": {
+    "nameEn": "Crude Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow1.png",
+    "source": "pob-export + repoe"
+  },
+  "Crushing Force Magnifier": {
+    "nameEn": "Crushing Force Magnifier",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/HeistTwoHandMace.png",
+    "source": "pob-export + repoe"
+  },
+  "Crystal Sceptre": {
+    "nameEn": "Crystal Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter4.png",
+    "source": "pob-export + repoe"
+  },
+  "Crystal Wand": {
+    "nameEn": "Crystal Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand4.png",
+    "source": "pob-export + repoe"
+  },
+  "Curved Blade": {
+    "nameEn": "Curved Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword8.png",
+    "source": "pob-export + repoe"
+  },
+  "Cutlass": {
+    "nameEn": "Cutlass",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword3.png",
+    "source": "pob-export + repoe"
+  },
+  "Dagger Axe": {
+    "nameEn": "Dagger Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe8.png",
+    "source": "pob-export + repoe"
+  },
+  "Darkwood Sceptre": {
+    "nameEn": "Darkwood Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter2.png",
+    "source": "pob-export + repoe"
+  },
+  "Death Bow": {
+    "nameEn": "Death Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow8.png",
+    "source": "pob-export + repoe"
+  },
+  "Decimation Bow": {
+    "nameEn": "Decimation Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow8.png",
+    "source": "pob-export + repoe"
+  },
+  "Decorative Axe": {
+    "nameEn": "Decorative Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe7.png",
+    "source": "pob-export + repoe"
+  },
+  "Decurve Bow": {
+    "nameEn": "Decurve Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow3.png",
+    "source": "pob-export + repoe"
+  },
+  "Demon Dagger": {
+    "nameEn": "Demon Dagger",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger22",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger8.png",
+    "source": "pob-export + repoe"
+  },
+  "Demon's Horn": {
+    "nameEn": "Demon's Horn",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand2.png",
+    "source": "pob-export + repoe"
+  },
+  "Despot Axe": {
+    "nameEn": "Despot Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe6.png",
+    "source": "pob-export + repoe"
+  },
+  "Disapprobation Axe": {
+    "nameEn": "Disapprobation Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/HeistOnehandAxe.png",
+    "source": "pob-export + repoe"
+  },
+  "Double Axe": {
+    "nameEn": "Double Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe5.png",
+    "source": "pob-export + repoe"
+  },
+  "Double Claw": {
+    "nameEn": "Double Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw9.png",
+    "source": "pob-export + repoe"
+  },
+  "Dragon Mace": {
+    "nameEn": "Dragon Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace9.png",
+    "source": "pob-export + repoe"
+  },
+  "Dragonbone Rapier": {
+    "nameEn": "Dragonbone Rapier",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier2.png",
+    "source": "pob-export + repoe"
+  },
+  "Dragoon Sword": {
+    "nameEn": "Dragoon Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/RapierM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier9.png",
+    "source": "pob-export + repoe"
+  },
+  "Dread Maul": {
+    "nameEn": "Dread Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace7.png",
+    "source": "pob-export + repoe"
+  },
+  "Dream Mace": {
+    "nameEn": "Dream Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace8.png",
+    "source": "pob-export + repoe"
+  },
+  "Driftwood Club": {
+    "nameEn": "Driftwood Club",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace1.png",
+    "source": "pob-export + repoe"
+  },
+  "Driftwood Maul": {
+    "nameEn": "Driftwood Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace1.png",
+    "source": "pob-export + repoe"
+  },
+  "Driftwood Sceptre": {
+    "nameEn": "Driftwood Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter1.png",
+    "source": "pob-export + repoe"
+  },
+  "Driftwood Wand": {
+    "nameEn": "Driftwood Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand1.png",
+    "source": "pob-export + repoe"
+  },
+  "Dusk Blade": {
+    "nameEn": "Dusk Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword8.png",
+    "source": "pob-export + repoe"
+  },
+  "Eagle Claw": {
+    "nameEn": "Eagle Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw8.png",
+    "source": "pob-export + repoe"
+  },
+  "Eclipse Staff": {
+    "nameEn": "Eclipse Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff8.png",
+    "source": "pob-export + repoe"
+  },
+  "Elder Sword": {
+    "nameEn": "Elder Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword6.png",
+    "source": "pob-export + repoe"
+  },
+  "Elegant Foil": {
+    "nameEn": "Elegant Foil",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier7.png",
+    "source": "pob-export + repoe"
+  },
+  "Elegant Sword": {
+    "nameEn": "Elegant Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword7.png",
+    "source": "pob-export + repoe"
+  },
+  "Energy Blade One Handed": {
+    "nameEn": "Energy Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/StormBladeOneHand",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordStormBlade.png",
+    "source": "pob-export + repoe"
+  },
+  "Energy Blade Two Handed": {
+    "nameEn": "Energy Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/StormBladeTwoHand",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordStormBlade.png",
+    "source": "pob-export + repoe"
+  },
+  "Engraved Greatsword": {
+    "nameEn": "Engraved Greatsword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword5.png",
+    "source": "pob-export + repoe"
+  },
+  "Engraved Hatchet": {
+    "nameEn": "Engraved Hatchet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe9.png",
+    "source": "pob-export + repoe"
+  },
+  "Engraved Wand": {
+    "nameEn": "Engraved Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand3.png",
+    "source": "pob-export + repoe"
+  },
+  "Estoc": {
+    "nameEn": "Estoc",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier4.png",
+    "source": "pob-export + repoe"
+  },
+  "Etched Greatsword": {
+    "nameEn": "Etched Greatsword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword5.png",
+    "source": "pob-export + repoe"
+  },
+  "Etched Hatchet": {
+    "nameEn": "Etched Hatchet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe9.png",
+    "source": "pob-export + repoe"
+  },
+  "Eternal Sword": {
+    "nameEn": "Eternal Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword21",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword7.png",
+    "source": "pob-export + repoe"
+  },
+  "Ethereal Blade": {
+    "nameEn": "Ethereal Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/EtherealBlade1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger1.png",
+    "source": "pob-export + repoe"
+  },
+  "Ethereal Bow": {
+    "nameEn": "Ethereal Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/EtherealBow1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow6.png",
+    "source": "pob-export + repoe"
+  },
+  "Eventuality Rod": {
+    "nameEn": "Eventuality Rod",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/WarstaffE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistWarStaff.png",
+    "source": "pob-export + repoe"
+  },
+  "Exquisite Blade": {
+    "nameEn": "Exquisite Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword8.png",
+    "source": "pob-export + repoe"
+  },
+  "Eye Gouger": {
+    "nameEn": "Eye Gouger",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw5.png",
+    "source": "pob-export + repoe"
+  },
+  "Ezomyte Axe": {
+    "nameEn": "Ezomyte Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe4.png",
+    "source": "pob-export + repoe"
+  },
+  "Ezomyte Blade": {
+    "nameEn": "Ezomyte Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword4.png",
+    "source": "pob-export + repoe"
+  },
+  "Ezomyte Dagger": {
+    "nameEn": "Ezomyte Dagger",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger5.png",
+    "source": "pob-export + repoe"
+  },
+  "Ezomyte Staff": {
+    "nameEn": "Ezomyte Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff4.png",
+    "source": "pob-export + repoe"
+  },
+  "Fancy Foil": {
+    "nameEn": "Fancy Foil",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier7.png",
+    "source": "pob-export + repoe"
+  },
+  "Faun's Horn": {
+    "nameEn": "Faun's Horn",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand2.png",
+    "source": "pob-export + repoe"
+  },
+  "Fickle Spiritblade": {
+    "nameEn": "Fickle Spiritblade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/HeistOneHandSword.png",
+    "source": "pob-export + repoe"
+  },
+  "Fiend Dagger": {
+    "nameEn": "Fiend Dagger",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger8.png",
+    "source": "pob-export + repoe"
+  },
+  "Flanged Mace": {
+    "nameEn": "Flanged Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace6.png",
+    "source": "pob-export + repoe"
+  },
+  "Flare Mace": {
+    "nameEn": "Flare Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/HeistOneHandMace.png",
+    "source": "pob-export + repoe"
+  },
+  "Flashfire Blade": {
+    "nameEn": "Flashfire Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/RuneDaggerE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistRuneDagger.png",
+    "source": "pob-export + repoe"
+  },
+  "Flaying Knife": {
+    "nameEn": "Flaying Knife",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger2.png",
+    "source": "pob-export + repoe"
+  },
+  "Fleshripper": {
+    "nameEn": "Fleshripper",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe8.png",
+    "source": "pob-export + repoe"
+  },
+  "Flickerflame Blade": {
+    "nameEn": "Flickerflame Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/RuneDaggerE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistRuneDagger.png",
+    "source": "pob-export + repoe"
+  },
+  "Footman Sword": {
+    "nameEn": "Footman Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword3.png",
+    "source": "pob-export + repoe"
+  },
+  "Foul Staff": {
+    "nameEn": "Foul Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff7.png",
+    "source": "pob-export + repoe"
+  },
+  "Foundry Bow": {
+    "nameEn": "Foundry Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/HeistBowFire.png",
+    "source": "pob-export + repoe"
+  },
+  "Fright Claw": {
+    "nameEn": "Fright Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw8.png",
+    "source": "pob-export + repoe"
+  },
+  "Fright Maul": {
+    "nameEn": "Fright Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace7.png",
+    "source": "pob-export + repoe"
+  },
+  "Gavel": {
+    "nameEn": "Gavel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace4.png",
+    "source": "pob-export + repoe"
+  },
+  "Gemini Claw": {
+    "nameEn": "Gemini Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw9.png",
+    "source": "pob-export + repoe"
+  },
+  "Gemstone Sword": {
+    "nameEn": "Gemstone Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword2.png",
+    "source": "pob-export + repoe"
+  },
+  "Gilded Axe": {
+    "nameEn": "Gilded Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe6.png",
+    "source": "pob-export + repoe"
+  },
+  "Gladius": {
+    "nameEn": "Gladius",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword4.png",
+    "source": "pob-export + repoe"
+  },
+  "Glass Shank": {
+    "nameEn": "Glass Shank",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger1.png",
+    "source": "pob-export + repoe"
+  },
+  "Gnarled Branch": {
+    "nameEn": "Gnarled Branch",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff1.png",
+    "source": "pob-export + repoe"
+  },
+  "Goat's Horn": {
+    "nameEn": "Goat's Horn",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand2.png",
+    "source": "pob-export + repoe"
+  },
+  "Golden Kris": {
+    "nameEn": "Golden Kris",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger6.png",
+    "source": "pob-export + repoe"
+  },
+  "Gouger": {
+    "nameEn": "Gouger",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw3.png",
+    "source": "pob-export + repoe"
+  },
+  "Graceful Sword": {
+    "nameEn": "Graceful Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword7.png",
+    "source": "pob-export + repoe"
+  },
+  "Grappler": {
+    "nameEn": "Grappler",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword9.png",
+    "source": "pob-export + repoe"
+  },
+  "Great Mallet": {
+    "nameEn": "Great Mallet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace3.png",
+    "source": "pob-export + repoe"
+  },
+  "Great White Claw": {
+    "nameEn": "Great White Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw2.png",
+    "source": "pob-export + repoe"
+  },
+  "Grinning Fetish": {
+    "nameEn": "Grinning Fetish",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter2.png",
+    "source": "pob-export + repoe"
+  },
+  "Grove Bow": {
+    "nameEn": "Grove Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow2.png",
+    "source": "pob-export + repoe"
+  },
+  "Gut Ripper": {
+    "nameEn": "Gut Ripper",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw5.png",
+    "source": "pob-export + repoe"
+  },
+  "Gutting Knife": {
+    "nameEn": "Gutting Knife",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger2.png",
+    "source": "pob-export + repoe"
+  },
+  "Harbinger Bow": {
+    "nameEn": "Harbinger Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow22",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow8.png",
+    "source": "pob-export + repoe"
+  },
+  "Harpy Rapier": {
+    "nameEn": "Harpy Rapier",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier22",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier8.png",
+    "source": "pob-export + repoe"
+  },
+  "Headman's Sword": {
+    "nameEn": "Headman's Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword2.png",
+    "source": "pob-export + repoe"
+  },
+  "Headsman Axe": {
+    "nameEn": "Headsman Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe4.png",
+    "source": "pob-export + repoe"
+  },
+  "Heathen Wand": {
+    "nameEn": "Heathen Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand7.png",
+    "source": "pob-export + repoe"
+  },
+  "Hedron Bow": {
+    "nameEn": "Hedron Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/HeistBowFire.png",
+    "source": "pob-export + repoe"
+  },
+  "Hellion's Paw": {
+    "nameEn": "Hellion's Paw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw4.png",
+    "source": "pob-export + repoe"
+  },
+  "Highborn Bow": {
+    "nameEn": "Highborn Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow7.png",
+    "source": "pob-export + repoe"
+  },
+  "Highborn Staff": {
+    "nameEn": "Highborn Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff6.png",
+    "source": "pob-export + repoe"
+  },
+  "Highland Blade": {
+    "nameEn": "Highland Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword4.png",
+    "source": "pob-export + repoe"
+  },
+  "Hollowpoint Dagger": {
+    "nameEn": "Hollowpoint Dagger",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistDagger.png",
+    "source": "pob-export + repoe"
+  },
+  "Honed Cleaver": {
+    "nameEn": "Honed Cleaver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/HeistTwoHandAxe.png",
+    "source": "pob-export + repoe"
+  },
+  "Hook Sword": {
+    "nameEn": "Hook Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword9.png",
+    "source": "pob-export + repoe"
+  },
+  "Horned Sceptre": {
+    "nameEn": "Horned Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter9.png",
+    "source": "pob-export + repoe"
+  },
+  "Imbued Wand": {
+    "nameEn": "Imbued Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand3.png",
+    "source": "pob-export + repoe"
+  },
+  "Imp Dagger": {
+    "nameEn": "Imp Dagger",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger8.png",
+    "source": "pob-export + repoe"
+  },
+  "Impact Force Propagator": {
+    "nameEn": "Impact Force Propagator",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/HeistTwoHandMace.png",
+    "source": "pob-export + repoe"
+  },
+  "Imperial Bow": {
+    "nameEn": "Imperial Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow21",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow7.png",
+    "source": "pob-export + repoe"
+  },
+  "Imperial Claw": {
+    "nameEn": "Imperial Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw21",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw7.png",
+    "source": "pob-export + repoe"
+  },
+  "Imperial Maul": {
+    "nameEn": "Imperial Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace6.png",
+    "source": "pob-export + repoe"
+  },
+  "Imperial Skean": {
+    "nameEn": "Imperial Skean",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger21",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger7.png",
+    "source": "pob-export + repoe"
+  },
+  "Imperial Staff": {
+    "nameEn": "Imperial Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff6.png",
+    "source": "pob-export + repoe"
+  },
+  "Infernal Axe": {
+    "nameEn": "Infernal Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe22",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe8.png",
+    "source": "pob-export + repoe"
+  },
+  "Infernal Blade": {
+    "nameEn": "Infernal Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/RuneDaggerE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistRuneDagger.png",
+    "source": "pob-export + repoe"
+  },
+  "Infernal Sword": {
+    "nameEn": "Infernal Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword7.png",
+    "source": "pob-export + repoe"
+  },
+  "Iron Sceptre": {
+    "nameEn": "Iron Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter5.png",
+    "source": "pob-export + repoe"
+  },
+  "Iron Staff": {
+    "nameEn": "Iron Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff4.png",
+    "source": "pob-export + repoe"
+  },
+  "Ivory Bow": {
+    "nameEn": "Ivory Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow6.png",
+    "source": "pob-export + repoe"
+  },
+  "Jade Chopper": {
+    "nameEn": "Jade Chopper",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe2.png",
+    "source": "pob-export + repoe"
+  },
+  "Jade Hatchet": {
+    "nameEn": "Jade Hatchet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe2.png",
+    "source": "pob-export + repoe"
+  },
+  "Jagged Foil": {
+    "nameEn": "Jagged Foil",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier5.png",
+    "source": "pob-export + repoe"
+  },
+  "Jagged Maul": {
+    "nameEn": "Jagged Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace5.png",
+    "source": "pob-export + repoe"
+  },
+  "Jasper Axe": {
+    "nameEn": "Jasper Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe2.png",
+    "source": "pob-export + repoe"
+  },
+  "Jasper Chopper": {
+    "nameEn": "Jasper Chopper",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe2.png",
+    "source": "pob-export + repoe"
+  },
+  "Jewelled Foil": {
+    "nameEn": "Jewelled Foil",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier21",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier7.png",
+    "source": "pob-export + repoe"
+  },
+  "Judgement Staff": {
+    "nameEn": "Judgement Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff7.png",
+    "source": "pob-export + repoe"
+  },
+  "Karui Axe": {
+    "nameEn": "Karui Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe2.png",
+    "source": "pob-export + repoe"
+  },
+  "Karui Chopper": {
+    "nameEn": "Karui Chopper",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe2.png",
+    "source": "pob-export + repoe"
+  },
+  "Karui Maul": {
+    "nameEn": "Karui Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace2.png",
+    "source": "pob-export + repoe"
+  },
+  "Karui Sceptre": {
+    "nameEn": "Karui Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter2.png",
+    "source": "pob-export + repoe"
+  },
+  "Keyblade": {
+    "nameEn": "Keyblade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordDev",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword1.png",
+    "source": "pob-export + repoe"
+  },
+  "Labrys": {
+    "nameEn": "Labrys",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe5.png",
+    "source": "pob-export + repoe"
+  },
+  "Lathi": {
+    "nameEn": "Lathi",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff3.png",
+    "source": "pob-export + repoe"
+  },
+  "Lead Sceptre": {
+    "nameEn": "Lead Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter5.png",
+    "source": "pob-export + repoe"
+  },
+  "Legion Hammer": {
+    "nameEn": "Legion Hammer",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace5.png",
+    "source": "pob-export + repoe"
+  },
+  "Legion Sword": {
+    "nameEn": "Legion Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword5.png",
+    "source": "pob-export + repoe"
+  },
+  "Lion Sword": {
+    "nameEn": "Lion Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword6.png",
+    "source": "pob-export + repoe"
+  },
+  "Lithe Blade": {
+    "nameEn": "Lithe Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword8.png",
+    "source": "pob-export + repoe"
+  },
+  "Long Bow": {
+    "nameEn": "Long Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow3.png",
+    "source": "pob-export + repoe"
+  },
+  "Long Staff": {
+    "nameEn": "Long Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff3.png",
+    "source": "pob-export + repoe"
+  },
+  "Longsword": {
+    "nameEn": "Longsword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword2.png",
+    "source": "pob-export + repoe"
+  },
+  "Maelström Staff": {
+    "nameEn": "Maelström Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff5.png",
+    "source": "pob-export + repoe"
+  },
+  "Malign Fangs": {
+    "nameEn": "Malign Fangs",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/HeistClaw.png",
+    "source": "pob-export + repoe"
+  },
+  "Mallet": {
+    "nameEn": "Mallet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace3.png",
+    "source": "pob-export + repoe"
+  },
+  "Maltreatment Axe": {
+    "nameEn": "Maltreatment Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/HeistOnehandAxe.png",
+    "source": "pob-export + repoe"
+  },
+  "Maraketh Bow": {
+    "nameEn": "Maraketh Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow9.png",
+    "source": "pob-export + repoe"
+  },
+  "Meatgrinder": {
+    "nameEn": "Meatgrinder",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace5.png",
+    "source": "pob-export + repoe"
+  },
+  "Midnight Blade": {
+    "nameEn": "Midnight Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword22",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword8.png",
+    "source": "pob-export + repoe"
+  },
+  "Military Staff": {
+    "nameEn": "Military Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff4.png",
+    "source": "pob-export + repoe"
+  },
+  "Moon Staff": {
+    "nameEn": "Moon Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff8.png",
+    "source": "pob-export + repoe"
+  },
+  "Morning Star": {
+    "nameEn": "Morning Star",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace8.png",
+    "source": "pob-export + repoe"
+  },
+  "Nailed Fist": {
+    "nameEn": "Nailed Fist",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw1.png",
+    "source": "pob-export + repoe"
+  },
+  "Nightmare Mace": {
+    "nameEn": "Nightmare Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace22",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace8.png",
+    "source": "pob-export + repoe"
+  },
+  "Noble Axe": {
+    "nameEn": "Noble Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe6.png",
+    "source": "pob-export + repoe"
+  },
+  "Noble Claw": {
+    "nameEn": "Noble Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw7.png",
+    "source": "pob-export + repoe"
+  },
+  "Ochre Sceptre": {
+    "nameEn": "Ochre Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter6.png",
+    "source": "pob-export + repoe"
+  },
+  "Omen Wand": {
+    "nameEn": "Omen Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand6.png",
+    "source": "pob-export + repoe"
+  },
+  "Opal Sceptre": {
+    "nameEn": "Opal Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter4.png",
+    "source": "pob-export + repoe"
+  },
+  "Opal Wand": {
+    "nameEn": "Opal Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand4.png",
+    "source": "pob-export + repoe"
+  },
+  "Ornate Mace": {
+    "nameEn": "Ornate Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace7.png",
+    "source": "pob-export + repoe"
+  },
+  "Ornate Sword": {
+    "nameEn": "Ornate Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword6.png",
+    "source": "pob-export + repoe"
+  },
+  "Oscillating Sceptre": {
+    "nameEn": "Oscillating Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/HeistSceptreElemental.png",
+    "source": "pob-export + repoe"
+  },
+  "Pagan Wand": {
+    "nameEn": "Pagan Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand7.png",
+    "source": "pob-export + repoe"
+  },
+  "Pecoraro": {
+    "nameEn": "Pecoraro",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier4.png",
+    "source": "pob-export + repoe"
+  },
+  "Pernach": {
+    "nameEn": "Pernach",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace6.png",
+    "source": "pob-export + repoe"
+  },
+  "Petrified Club": {
+    "nameEn": "Petrified Club",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace2.png",
+    "source": "pob-export + repoe"
+  },
+  "Phantom Mace": {
+    "nameEn": "Phantom Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace8.png",
+    "source": "pob-export + repoe"
+  },
+  "Piledriver": {
+    "nameEn": "Piledriver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace4.png",
+    "source": "pob-export + repoe"
+  },
+  "Plated Maul": {
+    "nameEn": "Plated Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace6.png",
+    "source": "pob-export + repoe"
+  },
+  "Platinum Kris": {
+    "nameEn": "Platinum Kris",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger6.png",
+    "source": "pob-export + repoe"
+  },
+  "Platinum Sceptre": {
+    "nameEn": "Platinum Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter5.png",
+    "source": "pob-export + repoe"
+  },
+  "Pneumatic Dagger": {
+    "nameEn": "Pneumatic Dagger",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistDagger.png",
+    "source": "pob-export + repoe"
+  },
+  "Poignard": {
+    "nameEn": "Poignard",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger4.png",
+    "source": "pob-export + repoe"
+  },
+  "Poleaxe": {
+    "nameEn": "Poleaxe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe4.png",
+    "source": "pob-export + repoe"
+  },
+  "Potentiality Rod": {
+    "nameEn": "Potentiality Rod",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/WarstaffE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistWarStaff.png",
+    "source": "pob-export + repoe"
+  },
+  "Prehistoric Claw": {
+    "nameEn": "Prehistoric Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw6.png",
+    "source": "pob-export + repoe"
+  },
+  "Pressurised Dagger": {
+    "nameEn": "Pressurised Dagger",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/HeistDagger.png",
+    "source": "pob-export + repoe"
+  },
+  "Prime Cleaver": {
+    "nameEn": "Prime Cleaver",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/HeistTwoHandAxe.png",
+    "source": "pob-export + repoe"
+  },
+  "Primeval Rapier": {
+    "nameEn": "Primeval Rapier",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier6.png",
+    "source": "pob-export + repoe"
+  },
+  "Primitive Staff": {
+    "nameEn": "Primitive Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff2.png",
+    "source": "pob-export + repoe"
+  },
+  "Primordial Staff": {
+    "nameEn": "Primordial Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff2.png",
+    "source": "pob-export + repoe"
+  },
+  "Profane Wand": {
+    "nameEn": "Profane Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand7.png",
+    "source": "pob-export + repoe"
+  },
+  "Prong Dagger": {
+    "nameEn": "Prong Dagger",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger9.png",
+    "source": "pob-export + repoe"
+  },
+  "Prophecy Wand": {
+    "nameEn": "Prophecy Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand6.png",
+    "source": "pob-export + repoe"
+  },
+  "Psychotic Axe": {
+    "nameEn": "Psychotic Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/HeistOnehandAxe.png",
+    "source": "pob-export + repoe"
+  },
+  "Quarterstaff": {
+    "nameEn": "Quarterstaff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff3.png",
+    "source": "pob-export + repoe"
+  },
+  "Quartz Sceptre": {
+    "nameEn": "Quartz Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter4.png",
+    "source": "pob-export + repoe"
+  },
+  "Quartz Wand": {
+    "nameEn": "Quartz Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand4.png",
+    "source": "pob-export + repoe"
+  },
+  "Ranger Bow": {
+    "nameEn": "Ranger Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow4.png",
+    "source": "pob-export + repoe"
+  },
+  "Reaver Axe": {
+    "nameEn": "Reaver Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe4.png",
+    "source": "pob-export + repoe"
+  },
+  "Reaver Sword": {
+    "nameEn": "Reaver Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword3.png",
+    "source": "pob-export + repoe"
+  },
+  "Rebuking Blade": {
+    "nameEn": "Rebuking Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSwordE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/HeistTwoHandSword.png",
+    "source": "pob-export + repoe"
+  },
+  "Reciprocation Staff": {
+    "nameEn": "Reciprocation Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistStaff.png",
+    "source": "pob-export + repoe"
+  },
+  "Recurve Bow": {
+    "nameEn": "Recurve Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow5.png",
+    "source": "pob-export + repoe"
+  },
+  "Reflex Bow": {
+    "nameEn": "Reflex Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow9.png",
+    "source": "pob-export + repoe"
+  },
+  "Ritual Sceptre": {
+    "nameEn": "Ritual Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter7.png",
+    "source": "pob-export + repoe"
+  },
+  "Rock Breaker": {
+    "nameEn": "Rock Breaker",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace4.png",
+    "source": "pob-export + repoe"
+  },
+  "Royal Axe": {
+    "nameEn": "Royal Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe21",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe7.png",
+    "source": "pob-export + repoe"
+  },
+  "Royal Bow": {
+    "nameEn": "Royal Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow7.png",
+    "source": "pob-export + repoe"
+  },
+  "Royal Sceptre": {
+    "nameEn": "Royal Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter7.png",
+    "source": "pob-export + repoe"
+  },
+  "Royal Skean": {
+    "nameEn": "Royal Skean",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger7.png",
+    "source": "pob-export + repoe"
+  },
+  "Royal Staff": {
+    "nameEn": "Royal Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff6.png",
+    "source": "pob-export + repoe"
+  },
+  "Runic Hatchet": {
+    "nameEn": "Runic Hatchet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxeM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe9.png",
+    "source": "pob-export + repoe"
+  },
+  "Rusted Hatchet": {
+    "nameEn": "Rusted Hatchet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe1.png",
+    "source": "pob-export + repoe"
+  },
+  "Rusted Spike": {
+    "nameEn": "Rusted Spike",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier1.png",
+    "source": "pob-export + repoe"
+  },
+  "Rusted Sword": {
+    "nameEn": "Rusted Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword1.png",
+    "source": "pob-export + repoe"
+  },
+  "Sabre": {
+    "nameEn": "Sabre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword3.png",
+    "source": "pob-export + repoe"
+  },
+  "Sage Wand": {
+    "nameEn": "Sage Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand6.png",
+    "source": "pob-export + repoe"
+  },
+  "Sai": {
+    "nameEn": "Sai",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger9.png",
+    "source": "pob-export + repoe"
+  },
+  "Sambar Sceptre": {
+    "nameEn": "Sambar Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter9.png",
+    "source": "pob-export + repoe"
+  },
+  "Sekhem": {
+    "nameEn": "Sekhem",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter3.png",
+    "source": "pob-export + repoe"
+  },
+  "Serpentine Staff": {
+    "nameEn": "Serpentine Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff5.png",
+    "source": "pob-export + repoe"
+  },
+  "Serrated Foil": {
+    "nameEn": "Serrated Foil",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier5.png",
+    "source": "pob-export + repoe"
+  },
+  "Shadow Axe": {
+    "nameEn": "Shadow Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe7.png",
+    "source": "pob-export + repoe"
+  },
+  "Shadow Fangs": {
+    "nameEn": "Shadow Fangs",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/HeistClaw.png",
+    "source": "pob-export + repoe"
+  },
+  "Shadow Sceptre": {
+    "nameEn": "Shadow Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter8.png",
+    "source": "pob-export + repoe"
+  },
+  "Sharktooth Claw": {
+    "nameEn": "Sharktooth Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw2.png",
+    "source": "pob-export + repoe"
+  },
+  "Short Bow": {
+    "nameEn": "Short Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow2.png",
+    "source": "pob-export + repoe"
+  },
+  "Siege Axe": {
+    "nameEn": "Siege Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe3.png",
+    "source": "pob-export + repoe"
+  },
+  "Skean": {
+    "nameEn": "Skean",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger7.png",
+    "source": "pob-export + repoe"
+  },
+  "Skinning Knife": {
+    "nameEn": "Skinning Knife",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger2.png",
+    "source": "pob-export + repoe"
+  },
+  "Slaughter Knife": {
+    "nameEn": "Slaughter Knife",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger3.png",
+    "source": "pob-export + repoe"
+  },
+  "Sledgehammer": {
+    "nameEn": "Sledgehammer",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace4.png",
+    "source": "pob-export + repoe"
+  },
+  "Smallsword": {
+    "nameEn": "Smallsword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/RapierM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier9.png",
+    "source": "pob-export + repoe"
+  },
+  "Sniper Bow": {
+    "nameEn": "Sniper Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow5.png",
+    "source": "pob-export + repoe"
+  },
+  "Solar Maul": {
+    "nameEn": "Solar Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMaceM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace8.png",
+    "source": "pob-export + repoe"
+  },
+  "Solarine Bow": {
+    "nameEn": "Solarine Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/HeistBowFire.png",
+    "source": "pob-export + repoe"
+  },
+  "Sparkling Claw": {
+    "nameEn": "Sparkling Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw7.png",
+    "source": "pob-export + repoe"
+  },
+  "Spectral Axe": {
+    "nameEn": "Spectral Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe8.png",
+    "source": "pob-export + repoe"
+  },
+  "Spectral Sword": {
+    "nameEn": "Spectral Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword7.png",
+    "source": "pob-export + repoe"
+  },
+  "Spiked Club": {
+    "nameEn": "Spiked Club",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace3.png",
+    "source": "pob-export + repoe"
+  },
+  "Spine Bow": {
+    "nameEn": "Spine Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow6.png",
+    "source": "pob-export + repoe"
+  },
+  "Spiny Maul": {
+    "nameEn": "Spiny Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace5.png",
+    "source": "pob-export + repoe"
+  },
+  "Spiraled Foil": {
+    "nameEn": "Spiraled Foil",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier5.png",
+    "source": "pob-export + repoe"
+  },
+  "Spiraled Wand": {
+    "nameEn": "Spiraled Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand5.png",
+    "source": "pob-export + repoe"
+  },
+  "Stabilising Sceptre": {
+    "nameEn": "Stabilising Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreE2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/HeistSceptreElemental.png",
+    "source": "pob-export + repoe"
+  },
+  "Stag Sceptre": {
+    "nameEn": "Stag Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/SceptreM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter9.png",
+    "source": "pob-export + repoe"
+  },
+  "Steelhead": {
+    "nameEn": "Steelhead",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace4.png",
+    "source": "pob-export + repoe"
+  },
+  "Steelwood Bow": {
+    "nameEn": "Steelwood Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/BowM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow9.png",
+    "source": "pob-export + repoe"
+  },
+  "Stiletto": {
+    "nameEn": "Stiletto",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger4.png",
+    "source": "pob-export + repoe"
+  },
+  "Stone Axe": {
+    "nameEn": "Stone Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe1.png",
+    "source": "pob-export + repoe"
+  },
+  "Stone Hammer": {
+    "nameEn": "Stone Hammer",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace4.png",
+    "source": "pob-export + repoe"
+  },
+  "Sundering Axe": {
+    "nameEn": "Sundering Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe3.png",
+    "source": "pob-export + repoe"
+  },
+  "Talon Axe": {
+    "nameEn": "Talon Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxeM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe8.png",
+    "source": "pob-export + repoe"
+  },
+  "Tempered Foil": {
+    "nameEn": "Tempered Foil",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier3.png",
+    "source": "pob-export + repoe"
+  },
+  "Tenderizer": {
+    "nameEn": "Tenderizer",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace3.png",
+    "source": "pob-export + repoe"
+  },
+  "Terror Claw": {
+    "nameEn": "Terror Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw22",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw8.png",
+    "source": "pob-export + repoe"
+  },
+  "Terror Maul": {
+    "nameEn": "Terror Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace7.png",
+    "source": "pob-export + repoe"
+  },
+  "Thicket Bow": {
+    "nameEn": "Thicket Bow",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Bows/Bow2.png",
+    "source": "pob-export + repoe"
+  },
+  "Thorn Rapier": {
+    "nameEn": "Thorn Rapier",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier8.png",
+    "source": "pob-export + repoe"
+  },
+  "Thresher Claw": {
+    "nameEn": "Thresher Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw2.png",
+    "source": "pob-export + repoe"
+  },
+  "Throat Stabber": {
+    "nameEn": "Throat Stabber",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw3.png",
+    "source": "pob-export + repoe"
+  },
+  "Tiger Hook": {
+    "nameEn": "Tiger Hook",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSwordM3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword9.png",
+    "source": "pob-export + repoe"
+  },
+  "Tiger Sword": {
+    "nameEn": "Tiger Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword6.png",
+    "source": "pob-export + repoe"
+  },
+  "Tiger's Paw": {
+    "nameEn": "Tiger's Paw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw4.png",
+    "source": "pob-export + repoe"
+  },
+  "Timber Axe": {
+    "nameEn": "Timber Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe3.png",
+    "source": "pob-export + repoe"
+  },
+  "Timeworn Claw": {
+    "nameEn": "Timeworn Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw6.png",
+    "source": "pob-export + repoe"
+  },
+  "Tomahawk": {
+    "nameEn": "Tomahawk",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe3.png",
+    "source": "pob-export + repoe"
+  },
+  "Tornado Wand": {
+    "nameEn": "Tornado Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand5.png",
+    "source": "pob-export + repoe"
+  },
+  "Totemic Maul": {
+    "nameEn": "Totemic Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace2.png",
+    "source": "pob-export + repoe"
+  },
+  "Transformer Staff": {
+    "nameEn": "Transformer Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/StaffE1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/HeistStaff.png",
+    "source": "pob-export + repoe"
+  },
+  "Tribal Club": {
+    "nameEn": "Tribal Club",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace2.png",
+    "source": "pob-export + repoe"
+  },
+  "Tribal Maul": {
+    "nameEn": "Tribal Maul",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace2.png",
+    "source": "pob-export + repoe"
+  },
+  "Trisula": {
+    "nameEn": "Trisula",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Daggers/DaggerM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Daggers/Dagger9.png",
+    "source": "pob-export + repoe"
+  },
+  "Twilight Blade": {
+    "nameEn": "Twilight Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword8.png",
+    "source": "pob-export + repoe"
+  },
+  "Twin Claw": {
+    "nameEn": "Twin Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawM2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw9.png",
+    "source": "pob-export + repoe"
+  },
+  "Two-Handed Sword": {
+    "nameEn": "Two-Handed Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword4.png",
+    "source": "pob-export + repoe"
+  },
+  "Tyrant's Sekhem": {
+    "nameEn": "Tyrant's Sekhem",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter3.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Axe": {
+    "nameEn": "Vaal Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe5.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Blade": {
+    "nameEn": "Vaal Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword6.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Claw": {
+    "nameEn": "Vaal Claw",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/Claw6.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Greatsword": {
+    "nameEn": "Vaal Greatsword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword5.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Hatchet": {
+    "nameEn": "Vaal Hatchet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe6.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Rapier": {
+    "nameEn": "Vaal Rapier",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier6.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Sceptre": {
+    "nameEn": "Vaal Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter6.png",
+    "source": "pob-export + repoe"
+  },
+  "Variscite Blade": {
+    "nameEn": "Variscite Blade",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword2.png",
+    "source": "pob-export + repoe"
+  },
+  "Vile Staff": {
+    "nameEn": "Vile Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff7.png",
+    "source": "pob-export + repoe"
+  },
+  "Void Axe": {
+    "nameEn": "Void Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe7.png",
+    "source": "pob-export + repoe"
+  },
+  "Void Fangs": {
+    "nameEn": "Void Fangs",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Claws/ClawE3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Claws/HeistClaw.png",
+    "source": "pob-export + repoe"
+  },
+  "Void Sceptre": {
+    "nameEn": "Void Sceptre",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre22",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Scepters/scepter8.png",
+    "source": "pob-export + repoe"
+  },
+  "War Axe": {
+    "nameEn": "War Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe5.png",
+    "source": "pob-export + repoe"
+  },
+  "War Hammer": {
+    "nameEn": "War Hammer",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace5.png",
+    "source": "pob-export + repoe"
+  },
+  "War Sword": {
+    "nameEn": "War Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandSwords/OneHandSword5.png",
+    "source": "pob-export + repoe"
+  },
+  "Whalebone Rapier": {
+    "nameEn": "Whalebone Rapier",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier2.png",
+    "source": "pob-export + repoe"
+  },
+  "Woodful Staff": {
+    "nameEn": "Woodful Staff",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/Staves/Staff2.png",
+    "source": "pob-export + repoe"
+  },
+  "Woodsplitter": {
+    "nameEn": "Woodsplitter",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe3.png",
+    "source": "pob-export + repoe"
+  },
+  "Wraith Axe": {
+    "nameEn": "Wraith Axe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe8.png",
+    "source": "pob-export + repoe"
+  },
+  "Wraith Sword": {
+    "nameEn": "Wraith Sword",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword7.png",
+    "source": "pob-export + repoe"
+  },
+  "Wrist Chopper": {
+    "nameEn": "Wrist Chopper",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe4.png",
+    "source": "pob-export + repoe"
+  },
+  "Wyrm Mace": {
+    "nameEn": "Wyrm Mace",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMaceM1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/OneHandMaces/OneHandMace9.png",
+    "source": "pob-export + repoe"
+  },
+  "Wyrmbone Rapier": {
+    "nameEn": "Wyrmbone Rapier",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Rapiers/Rapier2.png",
+    "source": "pob-export + repoe"
+  }
+}

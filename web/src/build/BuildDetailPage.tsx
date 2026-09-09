@@ -8,6 +8,8 @@ import { HighlightedText } from './HighlightedText'
 import type { DetailTooltip } from './detailTooltip'
 import type { BuildAnalysisResult } from '../api/analysis'
 import type { BrowserInspectResult } from '../pob/browserPob'
+import './BuildPage.css'
+import './BuildDetailPage.css'
 
 const defenceLabels: Record<string, { label: string; unit?: string }> = {
   life: { label: '생명력' }, 'energy-shield': { label: '에너지 보호막' }, mana: { label: '마나' }, armour: { label: '방어도' }, evasion: { label: '회피' }, 'fire-resistance': { label: '화염 저항', unit: '%' }, 'cold-resistance': { label: '냉기 저항', unit: '%' }, 'lightning-resistance': { label: '번개 저항', unit: '%' }, 'chaos-resistance': { label: '카오스 저항', unit: '%' }, block: { label: '막기 확률', unit: '%' }, 'spell-block': { label: '주문 막기 확률', unit: '%' }, 'spell-suppression': { label: '주문 억제 확률', unit: '%' }, guard: { label: '가드 활성화' }, ward: { label: '와드' }, 'attack-dodge': { label: '공격 회피 확률', unit: '%' }, 'spell-dodge': { label: '주문 회피 확률', unit: '%' }, 'damage-avoidance': { label: '피해 회피 확률', unit: '%' },

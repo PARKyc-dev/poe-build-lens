@@ -1,0 +1,9 @@
+{
+  "Fishing Rod": {
+    "nameEn": "Fishing Rod",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/TwoHandWeapon/FishingRods/FishingRod1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/TwoHandWeapons/FishingRods/FishingRod1.png",
+    "source": "pob-export + repoe"
+  }
+}

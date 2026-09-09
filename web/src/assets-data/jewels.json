@@ -1,0 +1,86 @@
+{
+  "Cobalt Jewel": {
+    "nameEn": "Cobalt Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelInt",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/basicint.png",
+    "source": "pob-export + repoe"
+  },
+  "Corvine Charm": {
+    "nameEn": "Corvine Charm",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/AnimalCharms/IntAnimalCharm",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Currency/Azmeri/AnimalCharmsCatInt.png",
+    "source": "pob-export + repoe"
+  },
+  "Crimson Jewel": {
+    "nameEn": "Crimson Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelStr",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/basicstr.png",
+    "source": "pob-export + repoe"
+  },
+  "Ghastly Eye Jewel": {
+    "nameEn": "Ghastly Eye Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelAbyssSummoner",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/GhastlyEye.png",
+    "source": "pob-export + repoe"
+  },
+  "Hypnotic Eye Jewel": {
+    "nameEn": "Hypnotic Eye Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelAbyssCaster",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/RivetedEye.png",
+    "source": "pob-export + repoe"
+  },
+  "Lupine Charm": {
+    "nameEn": "Lupine Charm",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/AnimalCharms/DexAnimalCharm",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Currency/Azmeri/AnimalCharmsWolfDex.png",
+    "source": "pob-export + repoe"
+  },
+  "Murderous Eye Jewel": {
+    "nameEn": "Murderous Eye Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelAbyssMelee",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/MurderousEye.png",
+    "source": "pob-export + repoe"
+  },
+  "Prismatic Jewel": {
+    "nameEn": "Prismatic Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelPrismatic",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/Mastery.png",
+    "source": "pob-export + repoe"
+  },
+  "Searching Eye Jewel": {
+    "nameEn": "Searching Eye Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelAbyssRanged",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/SearchingEye.png",
+    "source": "pob-export + repoe"
+  },
+  "Timeless Jewel": {
+    "nameEn": "Timeless Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelTimeless",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/Timeless.png",
+    "source": "pob-export + repoe"
+  },
+  "Ursine Charm": {
+    "nameEn": "Ursine Charm",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/AnimalCharms/StrAnimalCharm",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Currency/Azmeri/AnimalCharmsBearStr.png",
+    "source": "pob-export + repoe"
+  },
+  "Viridian Jewel": {
+    "nameEn": "Viridian Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelDex",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/basicdex.png",
+    "source": "pob-export + repoe"
+  }
+}

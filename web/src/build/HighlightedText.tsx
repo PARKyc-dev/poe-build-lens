@@ -1,5 +1,6 @@
 import type { FocusEvent, MouseEvent } from 'react'
 import type { ShowDetailTooltip } from './detailTooltip'
+import './HighlightedText.css'
 
 export type TextHighlight = { name: string; details: string[] }
 

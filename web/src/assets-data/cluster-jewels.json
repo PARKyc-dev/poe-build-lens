@@ -1,0 +1,23 @@
+{
+  "Large Cluster Jewel": {
+    "nameEn": "Large Cluster Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelPassiveTreeExpansionLarge",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/NewGemBase3.png",
+    "source": "pob-export + repoe"
+  },
+  "Medium Cluster Jewel": {
+    "nameEn": "Medium Cluster Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelPassiveTreeExpansionMedium",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/NewGemBase2.png",
+    "source": "pob-export + repoe"
+  },
+  "Small Cluster Jewel": {
+    "nameEn": "Small Cluster Jewel",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Jewels/JewelPassiveTreeExpansionSmall",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/NewGemBase1.png",
+    "source": "pob-export + repoe"
+  }
+}

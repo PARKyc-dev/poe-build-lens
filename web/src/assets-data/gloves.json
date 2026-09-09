@@ -1,0 +1,562 @@
+{
+  "Aetherwind Gloves": {
+    "nameEn": "Aetherwind Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesIntRitual2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualIntGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Ambush Mitts": {
+    "nameEn": "Ambush Mitts",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Ancient Gauntlets": {
+    "nameEn": "Ancient Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStr6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Antique Gauntlets": {
+    "nameEn": "Antique Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStr5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr2.png",
+    "source": "pob-export + repoe"
+  },
+  "Apothecary's Gloves": {
+    "nameEn": "Apothecary's Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesAtlasStrInt",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/ChemistGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Apprentice Gloves": {
+    "nameEn": "Apprentice Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexRitual2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualDexGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Arcanist Gloves": {
+    "nameEn": "Arcanist Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Assassin's Mitts": {
+    "nameEn": "Assassin's Mitts",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Bronze Gauntlets": {
+    "nameEn": "Bronze Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStr3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Bronzescale Gauntlets": {
+    "nameEn": "Bronzescale Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrDex3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Carnal Mitts": {
+    "nameEn": "Carnal Mitts",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Chain Gloves": {
+    "nameEn": "Chain Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Chimerascale Gauntlets": {
+    "nameEn": "Chimerascale Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrDex9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Clasped Mitts": {
+    "nameEn": "Clasped Mitts",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Conjurer Gloves": {
+    "nameEn": "Conjurer Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Crusader Gloves": {
+    "nameEn": "Crusader Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Deerskin Gloves": {
+    "nameEn": "Deerskin Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDex3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Dragonscale Gauntlets": {
+    "nameEn": "Dragonscale Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrDex8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Eelskin Gloves": {
+    "nameEn": "Eelskin Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDex5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Embroidered Gloves": {
+    "nameEn": "Embroidered Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Fingerless Silk Gloves": {
+    "nameEn": "Fingerless Silk Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesAtlasInt",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/FingerlessSilkGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Fishscale Gauntlets": {
+    "nameEn": "Fishscale Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrDex1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrDex1.png",
+    "source": "pob-export + repoe"
+  },
+  "Goathide Gloves": {
+    "nameEn": "Goathide Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDex2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Golden Bracers": {
+    "nameEn": "Golden Bracers",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDemigods1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/DemigodsTouch.png",
+    "source": "pob-export + repoe"
+  },
+  "Goliath Gauntlets": {
+    "nameEn": "Goliath Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStr7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Gripped Gloves": {
+    "nameEn": "Gripped Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesAtlasDex",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GripGlovesBaseType.png",
+    "source": "pob-export + repoe"
+  },
+  "Guarding Gauntlets": {
+    "nameEn": "Guarding Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrRitual2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualStrGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Harpyskin Gloves": {
+    "nameEn": "Harpyskin Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDex10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Hydrascale Gauntlets": {
+    "nameEn": "Hydrascale Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrDex7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Infiltrator Mitts": {
+    "nameEn": "Infiltrator Mitts",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Iron Gauntlets": {
+    "nameEn": "Iron Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStr1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr1.png",
+    "source": "pob-export + repoe"
+  },
+  "Ironscale Gauntlets": {
+    "nameEn": "Ironscale Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrDex2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Legion Gloves": {
+    "nameEn": "Legion Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Leviathan Gauntlets": {
+    "nameEn": "Leviathan Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStr11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Leyline Gloves": {
+    "nameEn": "Leyline Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesIntRitual1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualIntGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Martyr Gloves": {
+    "nameEn": "Martyr Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Mesh Gloves": {
+    "nameEn": "Mesh Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Murder Mitts": {
+    "nameEn": "Murder Mitts",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Nexus Gloves": {
+    "nameEn": "Nexus Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesIntRitual3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualIntGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Nubuck Gloves": {
+    "nameEn": "Nubuck Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDex4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Paladin Gloves": {
+    "nameEn": "Paladin Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Phantom Mitts": {
+    "nameEn": "Phantom Mitts",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Plated Gauntlets": {
+    "nameEn": "Plated Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStr2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr2.png",
+    "source": "pob-export + repoe"
+  },
+  "Precursor Gauntlets": {
+    "nameEn": "Precursor Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStr10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Preserving Gauntlets": {
+    "nameEn": "Preserving Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrRitual1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualStrGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Rawhide Gloves": {
+    "nameEn": "Rawhide Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDex1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDex1.png",
+    "source": "pob-export + repoe"
+  },
+  "Ringmail Gloves": {
+    "nameEn": "Ringmail Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Riveted Gloves": {
+    "nameEn": "Riveted Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Runic Gages": {
+    "nameEn": "Runic Gages",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesExpedition2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/SpiritGlovesBaseType.png",
+    "source": "pob-export + repoe"
+  },
+  "Runic Gauntlets": {
+    "nameEn": "Runic Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesExpedition3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/SpiritGlovesBaseType.png",
+    "source": "pob-export + repoe"
+  },
+  "Runic Gloves": {
+    "nameEn": "Runic Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesExpedition1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/SpiritGlovesBaseType.png",
+    "source": "pob-export + repoe"
+  },
+  "Sage Gloves": {
+    "nameEn": "Sage Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Samite Gloves": {
+    "nameEn": "Samite Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Satin Gloves": {
+    "nameEn": "Satin Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Serpentscale Gauntlets": {
+    "nameEn": "Serpentscale Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrDex5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Shagreen Gloves": {
+    "nameEn": "Shagreen Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDex7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Sharkskin Gloves": {
+    "nameEn": "Sharkskin Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDex6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Silk Gloves": {
+    "nameEn": "Silk Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Slink Gloves": {
+    "nameEn": "Slink Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDex9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Soldier Gloves": {
+    "nameEn": "Soldier Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Sorcerer Gloves": {
+    "nameEn": "Sorcerer Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Spiked Gloves": {
+    "nameEn": "Spiked Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesAtlasStr",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/SpikedGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Stealth Gloves": {
+    "nameEn": "Stealth Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDex8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Steel Gauntlets": {
+    "nameEn": "Steel Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStr4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Steelscale Gauntlets": {
+    "nameEn": "Steelscale Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrDex4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrDex1.png",
+    "source": "pob-export + repoe"
+  },
+  "Strapped Mitts": {
+    "nameEn": "Strapped Mitts",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Thwarting Gauntlets": {
+    "nameEn": "Thwarting Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrRitual3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualStrGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Tinker Gloves": {
+    "nameEn": "Tinker Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexRitual1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualDexGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Titan Gauntlets": {
+    "nameEn": "Titan Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStr9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Trapper Mitts": {
+    "nameEn": "Trapper Mitts",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Trapsetter Gloves": {
+    "nameEn": "Trapsetter Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexRitual3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/RitualDexGloves.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Gauntlets": {
+    "nameEn": "Vaal Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStr8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Velour Gloves": {
+    "nameEn": "Velour Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDex11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Velvet Gloves": {
+    "nameEn": "Velvet Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Warlock Gloves": {
+    "nameEn": "Warlock Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Wool Gloves": {
+    "nameEn": "Wool Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Wrapped Mitts": {
+    "nameEn": "Wrapped Mitts",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesDexInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesDexInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Wyrmscale Gauntlets": {
+    "nameEn": "Wyrmscale Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrDex6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Wyvernscale Gauntlets": {
+    "nameEn": "Wyvernscale Gauntlets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrDex10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Zealot Gloves": {
+    "nameEn": "Zealot Gloves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Gloves/GlovesStrInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStrInt2.png",
+    "source": "pob-export + repoe"
+  }
+}

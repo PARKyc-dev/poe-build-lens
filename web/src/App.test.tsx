@@ -191,14 +191,37 @@ vi.mock('./api/analysis', () => ({
 
 import App from './App'
 import { inspectBuildInBrowser } from './pob/browserPob'
-import { analyzeBuild } from './api/analysis'
+import { analyzeBuild, getAiUsage } from './api/analysis'
 
 afterEach(() => {
   cleanup()
+  window.history.replaceState({}, '', '/')
   vi.unstubAllGlobals()
 })
 
 describe('build analysis', () => {
+  it('shows the equipment design preview without running PoB or API analysis', () => {
+    window.history.replaceState({}, '', '/equipment-preview')
+    vi.mocked(getAiUsage).mockClear()
+    render(<App />)
+
+    expect(screen.getByRole('main', { name: '장비 디자인 미리보기' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '장비 디자인 미리보기' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /부츠 슬롯:/ })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /플라스크 5 슬롯:/ })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '주얼' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '군 주얼' })).toBeInTheDocument()
+    const equipment = screen.getByRole('region', { name: '장비 상세' })
+    const jewelImages = Array.from(equipment.querySelectorAll<HTMLElement>('.jewel-list img'))
+    expect(jewelImages).toHaveLength(6)
+    expect(new Set(jewelImages.map((image) => getComputedStyle(image).width)).size).toBe(1)
+    expect(new Set(jewelImages.map((image) => getComputedStyle(image).height)).size).toBe(1)
+    expect(screen.queryByRole('button', { name: 'PoB 검사' })).not.toBeInTheDocument()
+    expect(inspectBuildInBrowser).not.toHaveBeenCalled()
+    expect(analyzeBuild).not.toHaveBeenCalled()
+    expect(getAiUsage).not.toHaveBeenCalled()
+  })
+
   it('shows the unofficial non-commercial Grinding Gear Games notice', () => {
     render(<App />)
 
@@ -223,6 +246,7 @@ describe('build analysis', () => {
     expect(screen.getByText('PoB 엔진 준비 완료')).toBeInTheDocument()
     expect(screen.getByLabelText('검사할 PoB 코드, pobb.in 또는 XML')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'PoB 검사' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '장비 디자인 미리보기' })).toHaveAttribute('href', '/equipment-preview')
     expect(screen.queryByRole('heading', { name: 'PoB headless inspect' })).not.toBeInTheDocument()
     expect(screen.queryByRole('region', { name: 'Build analysis' })).not.toBeInTheDocument()
     expect(screen.queryByRole('button', { name: 'Analyze build' })).not.toBeInTheDocument()

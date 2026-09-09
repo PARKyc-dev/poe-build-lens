@@ -2,6 +2,8 @@ import type { FocusEvent, MouseEvent } from 'react'
 import type { BuildAnalysisResult } from '../api/analysis'
 import type { BrowserInspectResult } from '../pob/browserPob'
 import type { ShowDetailTooltip } from './detailTooltip'
+import './AnalysisSection.css'
+import './SkillSections.css'
 import { HighlightedText, type TextHighlight } from './HighlightedText'
 
 const offenceSections = [

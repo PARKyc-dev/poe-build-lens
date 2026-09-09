@@ -1,6 +1,8 @@
 import type { FocusEvent, MouseEvent } from 'react'
 import type { BuildAnalysisResult } from '../api/analysis'
 import type { ShowDetailTooltip } from './detailTooltip'
+import './AnalysisSection.css'
+import './PassiveSection.css'
 
 function mechanicName(title: string) { return title.replace(/^(주요 패시브|마스터리|전직 노드):\s*/, '') }
 function uniqueMechanics(mechanics: BuildAnalysisResult['offence'], claimed: Set<string>) {

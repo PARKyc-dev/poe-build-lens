@@ -1,11 +1,12 @@
 import type { BrowserInspectResult } from '../pob/browserPob'
 import type { DetailTooltip, ShowDetailTooltip } from './detailTooltip'
+import './EquipmentSection.css'
 
 const labels: Record<string, string> = { 'Weapon 1': '주무기', 'Weapon 2': '보조 무기', Helmet: '투구', 'Body Armour': '갑옷', Gloves: '장갑', Boots: '부츠', Amulet: '목걸이', 'Ring 1': '반지 1', 'Ring 2': '반지 2', Belt: '허리띠', 'Flask 1': '플라스크 1', 'Flask 2': '플라스크 2', 'Flask 3': '플라스크 3', 'Flask 4': '플라스크 4', 'Flask 5': '플라스크 5' }
 const slots = Object.keys(labels)
 const classes: Record<string, string> = { 'Weapon 1': 'weapon-1', 'Weapon 2': 'weapon-2', Helmet: 'helmet', 'Body Armour': 'body-armour', Gloves: 'gloves', Boots: 'boots', Amulet: 'amulet', 'Ring 1': 'ring-1', 'Ring 2': 'ring-2', Belt: 'belt', 'Flask 1': 'flask-1', 'Flask 2': 'flask-2', 'Flask 3': 'flask-3', 'Flask 4': 'flask-4', 'Flask 5': 'flask-5' }
 
-export function EquipmentSection({ result, tooltip, onShow, onHide }: { result: BrowserInspectResult; tooltip: DetailTooltip | null; onShow: ShowDetailTooltip; onHide: () => void }) {
+export function EquipmentSection({ result, tooltip, onShow, onHide }: { result: Pick<BrowserInspectResult, 'equipment' | 'jewels'>; tooltip: DetailTooltip | null; onShow: ShowDetailTooltip; onHide: () => void }) {
   const bySlot = new Map(result.equipment.map((item) => [item.slot, item]))
   const jewels = result.jewels.filter((item) => item.kind === 'jewel')
   const clusterJewels = result.jewels.filter((item) => item.kind === 'cluster')

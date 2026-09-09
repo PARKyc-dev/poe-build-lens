@@ -1,0 +1,54 @@
+.equipment-panel { margin-top: 1.5rem; padding: 1.65rem; border: 1px solid rgb(109 160 166 / 26%); background: rgb(4 15 27 / 72%); }
+.equipment-panel h2 { margin-bottom: 1.35rem; color: #e9ecdf; font-size: 1.5rem; font-weight: 400; }
+.equipment-stage { position: relative; }
+.equipment-layout { display: grid; grid-template-columns: repeat(10, minmax(2.8rem, 4.5rem)); grid-template-rows: repeat(8, minmax(2.8rem, 4.5rem)); justify-content: center; gap: 0.55rem; margin: 0; padding: 0; list-style: none; }
+.jewel-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+.jewel-groups h3 { margin: 0 0 0.55rem; color: #aab9c6; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.jewel-list { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 0; padding: 0; list-style: none; }
+.jewel-list li { flex: 0 0 4.6875rem; width: 4.6875rem; min-width: 0; border: 1px solid rgb(141 170 184 / 28%); background: rgb(35 52 68 / 55%); }
+.jewel-list button { display: grid; align-content: start; gap: 0.15rem; box-sizing: border-box; width: 100%; height: 6rem; padding: 0.45rem; border: 0; background: transparent; text-align: center; }
+.jewel-list img { width: 3.75rem; height: 3.75rem; margin: 0 auto; object-fit: contain; }
+.jewel-list button:focus-visible { outline: 2px solid #8fcfc8; outline-offset: -3px; }
+.jewel-list strong, .jewel-list span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.jewel-list strong { color: #e5e4d7; font-size: 0.65rem; }
+.jewel-list span { color: #8d9eae; font-size: 0.57rem; }
+.jewel-list .rarity-rare { border-color: #81722f; }
+.jewel-list .rarity-magic { border-color: #416da4; }
+.equipment-slot { display: grid; position: relative; overflow: hidden; place-items: center; min-width: 0; padding: 0.45rem; border: 1px solid rgb(141 170 184 / 28%); background: rgb(35 52 68 / 55%); text-align: center; }
+.equipment-slot.empty { color: #6e8191; background: rgb(19 35 49 / 38%); }
+.equipment-slot button { display: grid; position: absolute; inset: 0; place-items: center; box-sizing: border-box; width: 100%; height: 100%; padding: 0.45rem; border: 0; background: transparent; }
+.equipment-slot button:focus-visible { outline: 2px solid #8fcfc8; outline-offset: -3px; }
+.equipment-slot img { width: 100%; height: 100%; object-fit: contain; }
+.weapon-1 img, .weapon-2 img { width: auto; height: auto; max-width: 82%; max-height: 82%; }
+.equipment-slot[class*='flask-'] img { width: auto; height: auto; max-width: 76%; max-height: 82%; }
+.equipment-slot-label { color: #8d9eae; font-size: 0.68rem; }
+.equipment-slot strong { position: absolute; right: 0.35rem; bottom: 0.3rem; left: 0.35rem; overflow: hidden; color: #e5e4d7; font-size: 0.68rem; text-overflow: ellipsis; text-shadow: 0 1px 3px #000; white-space: nowrap; }
+.equipment-slot.rarity-unique { border-color: #8a5b34; }
+.equipment-slot.rarity-rare { border-color: #81722f; }
+.equipment-slot.rarity-magic { border-color: #416da4; }
+.weapon-1 { grid-area: 1 / 1 / 5 / 3; }
+.weapon-2 { grid-area: 1 / 9 / 5 / 11; }
+.helmet { grid-area: 1 / 5 / 3 / 7; }
+.body-armour { grid-area: 3 / 5 / 6 / 7; }
+.gloves { grid-area: 5 / 3 / 7 / 5; }
+.boots { grid-area: 5 / 7 / 7 / 9; }
+.amulet { grid-area: 3 / 7 / 4 / 8; }
+.ring-1 { grid-area: 4 / 4 / 5 / 5; }
+.ring-2 { grid-area: 4 / 7 / 5 / 8; }
+.belt { grid-area: 6 / 5 / 7 / 7; }
+.flask-1 { grid-area: 7 / 3 / 9 / 4; }
+.flask-2 { grid-area: 7 / 4 / 9 / 5; }
+.flask-3 { grid-area: 7 / 5 / 9 / 6; }
+.flask-4 { grid-area: 7 / 6 / 9 / 7; }
+.flask-5 { grid-area: 7 / 7 / 9 / 8; }
+.equipment-slot[class*='flask-'] { left: calc(50% + 0.275rem); }
+.equipment-details { display: none; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: 0.7rem; margin: 1.35rem 0 0; padding: 0; list-style: none; }
+.equipment-details li { display: grid; gap: 0.2rem; min-width: 0; padding: 0.75rem; border: 1px solid rgb(175 194 211 / 12%); background: rgb(10 27 44 / 68%); }
+.equipment-details small { color: #8294a7; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; }
+.equipment-details strong { color: #e5e4d7; font-size: 0.9rem; }
+.equipment-details span { color: #9aacb9; font-size: 0.75rem; }
+.equipment-details em { margin: 0; color: #a8c9d3; font-size: 0.72rem; font-weight: 500; }
+.equipment-details .rarity-unique strong { color: #d8a45e; }
+.equipment-details .rarity-rare strong { color: #e6d86b; }
+.equipment-details .rarity-magic strong { color: #8ebcf4; }
+@media (max-width: 760px) { .equipment-stage { display: none; } .equipment-layout { grid-template-columns: 1fr; grid-template-rows: none; } .equipment-slot { grid-area: auto; aspect-ratio: 1; } .equipment-details { display: grid; grid-template-columns: 1fr; } .jewel-groups { grid-template-columns: 1fr; } }

@@ -1,0 +1,72 @@
+{
+  "Ashbark Tincture": {
+    "nameEn": "Ashbark Tincture",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Tinctures/Tincture4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/IgniteSap.png",
+    "source": "pob-export + repoe"
+  },
+  "Blood Sap Tincture": {
+    "nameEn": "Blood Sap Tincture",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Tinctures/Tincture8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/BleedSap.png",
+    "source": "pob-export + repoe"
+  },
+  "Borealwood Tincture": {
+    "nameEn": "Borealwood Tincture",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Tinctures/Tincture5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/FreezeSap.png",
+    "source": "pob-export + repoe"
+  },
+  "Fulgurite Tincture": {
+    "nameEn": "Fulgurite Tincture",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Tinctures/Tincture6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/ShockSap.png",
+    "source": "pob-export + repoe"
+  },
+  "Ironwood Tincture": {
+    "nameEn": "Ironwood Tincture",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Tinctures/Tincture3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/StunSap.png",
+    "source": "pob-export + repoe"
+  },
+  "Oakbranch Tincture": {
+    "nameEn": "Oakbranch Tincture",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Tinctures/Tincture9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/CriticalStrikeSap.png",
+    "source": "pob-export + repoe"
+  },
+  "Poisonberry Tincture": {
+    "nameEn": "Poisonberry Tincture",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Tinctures/Tincture7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/PoisonSap.png",
+    "source": "pob-export + repoe"
+  },
+  "Prismatic Tincture": {
+    "nameEn": "Prismatic Tincture",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Tinctures/Tincture1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/PrismaticSap.png",
+    "source": "pob-export + repoe"
+  },
+  "Rosethorn Tincture": {
+    "nameEn": "Rosethorn Tincture",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Tinctures/Tincture2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/CullingStrikeSap.png",
+    "source": "pob-export + repoe"
+  },
+  "Sporebloom Tincture": {
+    "nameEn": "Sporebloom Tincture",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Tinctures/Tincture10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/SporebloomSap.png",
+    "source": "pob-export + repoe"
+  }
+}

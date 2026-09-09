@@ -1,0 +1,863 @@
+{
+  "Arcane Vestment": {
+    "nameEn": "Arcane Vestment",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Arena Plate": {
+    "nameEn": "Arena Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Assassin's Garb": {
+    "nameEn": "Assassin's Garb",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Astral Leather": {
+    "nameEn": "Astral Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex3C.png",
+    "source": "pob-export + repoe"
+  },
+  "Astral Plate": {
+    "nameEn": "Astral Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Battle Lamellar": {
+    "nameEn": "Battle Lamellar",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr4A.png",
+    "source": "pob-export + repoe"
+  },
+  "Battle Plate": {
+    "nameEn": "Battle Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Blood Raiment": {
+    "nameEn": "Blood Raiment",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Bone Armour": {
+    "nameEn": "Bone Armour",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt4C.png",
+    "source": "pob-export + repoe"
+  },
+  "Bronze Plate": {
+    "nameEn": "Bronze Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Buckskin Tunic": {
+    "nameEn": "Buckskin Tunic",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Cabalist Regalia": {
+    "nameEn": "Cabalist Regalia",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDexInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Carnal Armour": {
+    "nameEn": "Carnal Armour",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt4C.png",
+    "source": "pob-export + repoe"
+  },
+  "Chain Hauberk": {
+    "nameEn": "Chain Hauberk",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Chainmail Doublet": {
+    "nameEn": "Chainmail Doublet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Chainmail Tunic": {
+    "nameEn": "Chainmail Tunic",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt2A.png",
+    "source": "pob-export + repoe"
+  },
+  "Chainmail Vest": {
+    "nameEn": "Chainmail Vest",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt1A.png",
+    "source": "pob-export + repoe"
+  },
+  "Chestplate": {
+    "nameEn": "Chestplate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr2A.png",
+    "source": "pob-export + repoe"
+  },
+  "Colosseum Plate": {
+    "nameEn": "Colosseum Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Commander's Brigandine": {
+    "nameEn": "Commander's Brigandine",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Conjurer's Vestment": {
+    "nameEn": "Conjurer's Vestment",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Conquest Chainmail": {
+    "nameEn": "Conquest Chainmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Conquest Lamellar": {
+    "nameEn": "Conquest Lamellar",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr4A.png",
+    "source": "pob-export + repoe"
+  },
+  "Copper Plate": {
+    "nameEn": "Copper Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Coronal Leather": {
+    "nameEn": "Coronal Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex3C.png",
+    "source": "pob-export + repoe"
+  },
+  "Crimson Raiment": {
+    "nameEn": "Crimson Raiment",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Crusader Chainmail": {
+    "nameEn": "Crusader Chainmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Crusader Plate": {
+    "nameEn": "Crusader Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Crypt Armour": {
+    "nameEn": "Crypt Armour",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt4C.png",
+    "source": "pob-export + repoe"
+  },
+  "Cutthroat's Garb": {
+    "nameEn": "Cutthroat's Garb",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Desert Brigandine": {
+    "nameEn": "Desert Brigandine",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Destiny Leather": {
+    "nameEn": "Destiny Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex3B.png",
+    "source": "pob-export + repoe"
+  },
+  "Destroyer Regalia": {
+    "nameEn": "Destroyer Regalia",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDexInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Devout Chainmail": {
+    "nameEn": "Devout Chainmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt3C.png",
+    "source": "pob-export + repoe"
+  },
+  "Dragonscale Doublet": {
+    "nameEn": "Dragonscale Doublet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Eelskin Tunic": {
+    "nameEn": "Eelskin Tunic",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Elegant Ringmail": {
+    "nameEn": "Elegant Ringmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Exquisite Leather": {
+    "nameEn": "Exquisite Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Field Lamellar": {
+    "nameEn": "Field Lamellar",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr4A.png",
+    "source": "pob-export + repoe"
+  },
+  "Frontier Leather": {
+    "nameEn": "Frontier Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex3B.png",
+    "source": "pob-export + repoe"
+  },
+  "Full Chainmail": {
+    "nameEn": "Full Chainmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Full Dragonscale": {
+    "nameEn": "Full Dragonscale",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Full Leather": {
+    "nameEn": "Full Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Full Plate": {
+    "nameEn": "Full Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Full Ringmail": {
+    "nameEn": "Full Ringmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Full Scale Armour": {
+    "nameEn": "Full Scale Armour",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Full Wyrmscale": {
+    "nameEn": "Full Wyrmscale",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Full Wyvernscale": {
+    "nameEn": "Full Wyvernscale",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex1C.png",
+    "source": "pob-export + repoe"
+  },
+  "General's Brigandine": {
+    "nameEn": "General's Brigandine",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Gladiator Plate": {
+    "nameEn": "Gladiator Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Glorious Leather": {
+    "nameEn": "Glorious Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Glorious Plate": {
+    "nameEn": "Glorious Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr3C.png",
+    "source": "pob-export + repoe"
+  },
+  "Golden Mantle": {
+    "nameEn": "Golden Mantle",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDemigods1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/DemigodsArmour.png",
+    "source": "pob-export + repoe"
+  },
+  "Golden Plate": {
+    "nameEn": "Golden Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Grand Ringmail": {
+    "nameEn": "Grand Ringmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Grasping Mail": {
+    "nameEn": "Grasping Mail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDexInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/GraspingMail.png",
+    "source": "pob-export + repoe"
+  },
+  "Holy Chainmail": {
+    "nameEn": "Holy Chainmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt3C.png",
+    "source": "pob-export + repoe"
+  },
+  "Hussar Brigandine": {
+    "nameEn": "Hussar Brigandine",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Infantry Brigandine": {
+    "nameEn": "Infantry Brigandine",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Lacquered Garb": {
+    "nameEn": "Lacquered Garb",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Latticed Ringmail": {
+    "nameEn": "Latticed Ringmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Legion Plate": {
+    "nameEn": "Legion Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Light Brigandine": {
+    "nameEn": "Light Brigandine",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex2A.png",
+    "source": "pob-export + repoe"
+  },
+  "Lordly Plate": {
+    "nameEn": "Lordly Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr3C.png",
+    "source": "pob-export + repoe"
+  },
+  "Loricated Ringmail": {
+    "nameEn": "Loricated Ringmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Mage's Vestment": {
+    "nameEn": "Mage's Vestment",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Majestic Plate": {
+    "nameEn": "Majestic Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr3C.png",
+    "source": "pob-export + repoe"
+  },
+  "Marshall's Brigandine": {
+    "nameEn": "Marshall's Brigandine",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Necromancer Silks": {
+    "nameEn": "Necromancer Silks",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Necrotic Armour": {
+    "nameEn": "Necrotic Armour",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt4C.png",
+    "source": "pob-export + repoe"
+  },
+  "Nightweave Robe": {
+    "nameEn": "Nightweave Robe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Occultist's Vestment": {
+    "nameEn": "Occultist's Vestment",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt15",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Oiled Coat": {
+    "nameEn": "Oiled Coat",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Oiled Vest": {
+    "nameEn": "Oiled Vest",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt2A.png",
+    "source": "pob-export + repoe"
+  },
+  "Ornate Ringmail": {
+    "nameEn": "Ornate Ringmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Padded Jacket": {
+    "nameEn": "Padded Jacket",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Padded Vest": {
+    "nameEn": "Padded Vest",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt1A.png",
+    "source": "pob-export + repoe"
+  },
+  "Paladin's Hauberk": {
+    "nameEn": "Paladin's Hauberk",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Plate Vest": {
+    "nameEn": "Plate Vest",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr1A.png",
+    "source": "pob-export + repoe"
+  },
+  "Quilted Jacket": {
+    "nameEn": "Quilted Jacket",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Ringmail Coat": {
+    "nameEn": "Ringmail Coat",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Royal Plate": {
+    "nameEn": "Royal Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr3C.png",
+    "source": "pob-export + repoe"
+  },
+  "Sacred Chainmail": {
+    "nameEn": "Sacred Chainmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt3C.png",
+    "source": "pob-export + repoe"
+  },
+  "Sacrificial Garb": {
+    "nameEn": "Sacrificial Garb",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDexInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/SacrificialGarb.png",
+    "source": "pob-export + repoe"
+  },
+  "Sadist Garb": {
+    "nameEn": "Sadist Garb",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Sage's Robe": {
+    "nameEn": "Sage's Robe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Saint's Hauberk": {
+    "nameEn": "Saint's Hauberk",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Saintly Chainmail": {
+    "nameEn": "Saintly Chainmail",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrInt17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrInt3C.png",
+    "source": "pob-export + repoe"
+  },
+  "Sanguine Raiment": {
+    "nameEn": "Sanguine Raiment",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Savant's Robe": {
+    "nameEn": "Savant's Robe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Scale Doublet": {
+    "nameEn": "Scale Doublet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Scale Vest": {
+    "nameEn": "Scale Vest",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex1A.png",
+    "source": "pob-export + repoe"
+  },
+  "Scarlet Raiment": {
+    "nameEn": "Scarlet Raiment",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Scholar's Robe": {
+    "nameEn": "Scholar's Robe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Sentinel Jacket": {
+    "nameEn": "Sentinel Jacket",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Shabby Jerkin": {
+    "nameEn": "Shabby Jerkin",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex1A.png",
+    "source": "pob-export + repoe"
+  },
+  "Sharkskin Tunic": {
+    "nameEn": "Sharkskin Tunic",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Silk Robe": {
+    "nameEn": "Silk Robe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Silken Garb": {
+    "nameEn": "Silken Garb",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Silken Vest": {
+    "nameEn": "Silken Vest",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt2A.png",
+    "source": "pob-export + repoe"
+  },
+  "Silken Wrap": {
+    "nameEn": "Silken Wrap",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Simple Robe": {
+    "nameEn": "Simple Robe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt1A.png",
+    "source": "pob-export + repoe"
+  },
+  "Sleek Coat": {
+    "nameEn": "Sleek Coat",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Soldier's Brigandine": {
+    "nameEn": "Soldier's Brigandine",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Spidersilk Robe": {
+    "nameEn": "Spidersilk Robe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Strapped Leather": {
+    "nameEn": "Strapped Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex3A.png",
+    "source": "pob-export + repoe"
+  },
+  "Sun Leather": {
+    "nameEn": "Sun Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex3C.png",
+    "source": "pob-export + repoe"
+  },
+  "Sun Plate": {
+    "nameEn": "Sun Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Supreme Leather": {
+    "nameEn": "Supreme Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Syndicate's Garb": {
+    "nameEn": "Syndicate's Garb",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Thief's Garb": {
+    "nameEn": "Thief's Garb",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Titan Plate": {
+    "nameEn": "Titan Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr18",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Torturer Garb": {
+    "nameEn": "Torturer Garb",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt19",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Triumphant Lamellar": {
+    "nameEn": "Triumphant Lamellar",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr4A.png",
+    "source": "pob-export + repoe"
+  },
+  "Twilight Regalia": {
+    "nameEn": "Twilight Regalia",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt20",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDexInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Regalia": {
+    "nameEn": "Vaal Regalia",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt17",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDexInt1C.png",
+    "source": "pob-export + repoe"
+  },
+  "Varnished Coat": {
+    "nameEn": "Varnished Coat",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt2B.png",
+    "source": "pob-export + repoe"
+  },
+  "War Plate": {
+    "nameEn": "War Plate",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStr4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Waxed Garb": {
+    "nameEn": "Waxed Garb",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDexInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDexInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Widowsilk Robe": {
+    "nameEn": "Widowsilk Robe",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyInt16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyInt2C.png",
+    "source": "pob-export + repoe"
+  },
+  "Wild Leather": {
+    "nameEn": "Wild Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex3B.png",
+    "source": "pob-export + repoe"
+  },
+  "Wyrmscale Doublet": {
+    "nameEn": "Wyrmscale Doublet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyStrDex8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStrDex1B.png",
+    "source": "pob-export + repoe"
+  },
+  "Zodiac Leather": {
+    "nameEn": "Zodiac Leather",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/BodyArmours/BodyDex16",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyDex3C.png",
+    "source": "pob-export + repoe"
+  }
+}

@@ -1,0 +1,569 @@
+{
+  "Ambush Boots": {
+    "nameEn": "Ambush Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Ancient Greaves": {
+    "nameEn": "Ancient Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStr6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Antique Greaves": {
+    "nameEn": "Antique Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStr5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr2.png",
+    "source": "pob-export + repoe"
+  },
+  "Arcanist Slippers": {
+    "nameEn": "Arcanist Slippers",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Assassin's Boots": {
+    "nameEn": "Assassin's Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Basemetal Treads": {
+    "nameEn": "Basemetal Treads",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrRitual1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualStrBoots.png",
+    "source": "pob-export + repoe"
+  },
+  "Brimstone Treads": {
+    "nameEn": "Brimstone Treads",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrRitual3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualStrBoots.png",
+    "source": "pob-export + repoe"
+  },
+  "Bronzescale Boots": {
+    "nameEn": "Bronzescale Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrDex3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Carnal Boots": {
+    "nameEn": "Carnal Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Chain Boots": {
+    "nameEn": "Chain Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Chimerascale Boots": {
+    "nameEn": "Chimerascale Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrDex9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Clasped Boots": {
+    "nameEn": "Clasped Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Cloudwhisper Boots": {
+    "nameEn": "Cloudwhisper Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexRitual1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualDexBoots.png",
+    "source": "pob-export + repoe"
+  },
+  "Conjurer Boots": {
+    "nameEn": "Conjurer Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Crusader Boots": {
+    "nameEn": "Crusader Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Darksteel Treads": {
+    "nameEn": "Darksteel Treads",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrRitual2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualStrBoots.png",
+    "source": "pob-export + repoe"
+  },
+  "Deerskin Boots": {
+    "nameEn": "Deerskin Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDex3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Dragonscale Boots": {
+    "nameEn": "Dragonscale Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrDex8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Dreamquest Slippers": {
+    "nameEn": "Dreamquest Slippers",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsIntRitual3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualIntBoots.png",
+    "source": "pob-export + repoe"
+  },
+  "Duskwalk Slippers": {
+    "nameEn": "Duskwalk Slippers",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsIntRitual1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualIntBoots.png",
+    "source": "pob-export + repoe"
+  },
+  "Eelskin Boots": {
+    "nameEn": "Eelskin Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDex5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Fugitive Boots": {
+    "nameEn": "Fugitive Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsAtlas4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/HalfTonedBoots.png",
+    "source": "pob-export + repoe"
+  },
+  "Goathide Boots": {
+    "nameEn": "Goathide Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDex2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Golden Caligae": {
+    "nameEn": "Golden Caligae",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDemigods1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/DemigodsStride.png",
+    "source": "pob-export + repoe"
+  },
+  "Goliath Greaves": {
+    "nameEn": "Goliath Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStr7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Harpyskin Boots": {
+    "nameEn": "Harpyskin Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDex10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Hydrascale Boots": {
+    "nameEn": "Hydrascale Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrDex7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Infiltrator Boots": {
+    "nameEn": "Infiltrator Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Iron Greaves": {
+    "nameEn": "Iron Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStr1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr1.png",
+    "source": "pob-export + repoe"
+  },
+  "Ironscale Boots": {
+    "nameEn": "Ironscale Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrDex2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Leatherscale Boots": {
+    "nameEn": "Leatherscale Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrDex1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex1.png",
+    "source": "pob-export + repoe"
+  },
+  "Legion Boots": {
+    "nameEn": "Legion Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Leviathan Greaves": {
+    "nameEn": "Leviathan Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStr11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Martyr Boots": {
+    "nameEn": "Martyr Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Mesh Boots": {
+    "nameEn": "Mesh Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Murder Boots": {
+    "nameEn": "Murder Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Nightwind Slippers": {
+    "nameEn": "Nightwind Slippers",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsIntRitual2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualIntBoots.png",
+    "source": "pob-export + repoe"
+  },
+  "Nubuck Boots": {
+    "nameEn": "Nubuck Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDex4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Paladin Boots": {
+    "nameEn": "Paladin Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Phantom Boots": {
+    "nameEn": "Phantom Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Plated Greaves": {
+    "nameEn": "Plated Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStr3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Precursor Greaves": {
+    "nameEn": "Precursor Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStr10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Rawhide Boots": {
+    "nameEn": "Rawhide Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDex1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex1.png",
+    "source": "pob-export + repoe"
+  },
+  "Reinforced Greaves": {
+    "nameEn": "Reinforced Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStr4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Ringmail Boots": {
+    "nameEn": "Ringmail Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Riveted Boots": {
+    "nameEn": "Riveted Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Runic Greaves": {
+    "nameEn": "Runic Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsExpedition1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/SpiritBootsBaseType.png",
+    "source": "pob-export + repoe"
+  },
+  "Runic Sabatons": {
+    "nameEn": "Runic Sabatons",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsExpedition3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/SpiritBootsBaseType.png",
+    "source": "pob-export + repoe"
+  },
+  "Runic Sollerets": {
+    "nameEn": "Runic Sollerets",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsExpedition2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/SpiritBootsBaseType.png",
+    "source": "pob-export + repoe"
+  },
+  "Sage Slippers": {
+    "nameEn": "Sage Slippers",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Samite Slippers": {
+    "nameEn": "Samite Slippers",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Satin Slippers": {
+    "nameEn": "Satin Slippers",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Scholar Boots": {
+    "nameEn": "Scholar Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Serpentscale Boots": {
+    "nameEn": "Serpentscale Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrDex5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Shackled Boots": {
+    "nameEn": "Shackled Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Shagreen Boots": {
+    "nameEn": "Shagreen Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDex7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Sharkskin Boots": {
+    "nameEn": "Sharkskin Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDex6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Silk Slippers": {
+    "nameEn": "Silk Slippers",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Slink Boots": {
+    "nameEn": "Slink Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDex9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Soldier Boots": {
+    "nameEn": "Soldier Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Sorcerer Boots": {
+    "nameEn": "Sorcerer Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Stealth Boots": {
+    "nameEn": "Stealth Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDex8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Steel Greaves": {
+    "nameEn": "Steel Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStr2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr2.png",
+    "source": "pob-export + repoe"
+  },
+  "Steelscale Boots": {
+    "nameEn": "Steelscale Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrDex4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex1.png",
+    "source": "pob-export + repoe"
+  },
+  "Stormrider Boots": {
+    "nameEn": "Stormrider Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexRitual3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualDexBoots.png",
+    "source": "pob-export + repoe"
+  },
+  "Strapped Boots": {
+    "nameEn": "Strapped Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Titan Greaves": {
+    "nameEn": "Titan Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStr9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Trapper Boots": {
+    "nameEn": "Trapper Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Two-Toned Boots (Armour/Energy Shield)": {
+    "nameEn": "Two-Toned Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsAtlas3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/TwoTonedBoots3B.png",
+    "source": "pob-export + repoe"
+  },
+  "Two-Toned Boots (Armour/Evasion)": {
+    "nameEn": "Two-Toned Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsAtlas2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/TwoTonedBoots2B.png",
+    "source": "pob-export + repoe"
+  },
+  "Two-Toned Boots (Evasion/Energy Shield)": {
+    "nameEn": "Two-Toned Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsAtlas1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/TwoTonedBoots.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Greaves": {
+    "nameEn": "Vaal Greaves",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStr8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Velour Boots": {
+    "nameEn": "Velour Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDex11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Velvet Slippers": {
+    "nameEn": "Velvet Slippers",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Warlock Boots": {
+    "nameEn": "Warlock Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Windbreak Boots": {
+    "nameEn": "Windbreak Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexRitual2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/RitualDexBoots.png",
+    "source": "pob-export + repoe"
+  },
+  "Wool Shoes": {
+    "nameEn": "Wool Shoes",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Wrapped Boots": {
+    "nameEn": "Wrapped Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsDexInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsDexInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Wyrmscale Boots": {
+    "nameEn": "Wyrmscale Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrDex6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Wyvernscale Boots": {
+    "nameEn": "Wyvernscale Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrDex10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Zealot Boots": {
+    "nameEn": "Zealot Boots",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Boots/BootsStrInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt2.png",
+    "source": "pob-export + repoe"
+  }
+}

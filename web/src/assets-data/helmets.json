@@ -1,0 +1,667 @@
+{
+  "Ancient Mask": {
+    "nameEn": "Ancient Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt10.png",
+    "source": "pob-export + repoe"
+  },
+  "Archdemon Crown": {
+    "nameEn": "Archdemon Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrIntRitual3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/MaskCrown.png",
+    "source": "pob-export + repoe"
+  },
+  "Atonement Mask": {
+    "nameEn": "Atonement Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDexRitual2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDexR.png",
+    "source": "pob-export + repoe"
+  },
+  "Aventail Helmet": {
+    "nameEn": "Aventail Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Barbute Helmet": {
+    "nameEn": "Barbute Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr3.png",
+    "source": "pob-export + repoe"
+  },
+  "Battered Helm": {
+    "nameEn": "Battered Helm",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex1.png",
+    "source": "pob-export + repoe"
+  },
+  "Blizzard Crown": {
+    "nameEn": "Blizzard Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexIntRitual3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexIntR.png",
+    "source": "pob-export + repoe"
+  },
+  "Bone Circlet": {
+    "nameEn": "Bone Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Bone Helmet": {
+    "nameEn": "Bone Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetAtlas1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/BoneHelm.png",
+    "source": "pob-export + repoe"
+  },
+  "Callous Mask": {
+    "nameEn": "Callous Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt7.png",
+    "source": "pob-export + repoe"
+  },
+  "Close Helmet": {
+    "nameEn": "Close Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr4.png",
+    "source": "pob-export + repoe"
+  },
+  "Cone Helmet": {
+    "nameEn": "Cone Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr2.png",
+    "source": "pob-export + repoe"
+  },
+  "Conqueror's Helmet": {
+    "nameEn": "Conqueror's Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr10.png",
+    "source": "pob-export + repoe"
+  },
+  "Conquest Helmet": {
+    "nameEn": "Conquest Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex7.png",
+    "source": "pob-export + repoe"
+  },
+  "Crusader Helmet": {
+    "nameEn": "Crusader Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Deicide Mask": {
+    "nameEn": "Deicide Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt11.png",
+    "source": "pob-export + repoe"
+  },
+  "Demon Crown": {
+    "nameEn": "Demon Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrIntRitual2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/MaskCrown.png",
+    "source": "pob-export + repoe"
+  },
+  "Dire Pelt": {
+    "nameEn": "Dire Pelt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Divine Crown": {
+    "nameEn": "Divine Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt9.png",
+    "source": "pob-export + repoe"
+  },
+  "Eternal Burgonet": {
+    "nameEn": "Eternal Burgonet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr11.png",
+    "source": "pob-export + repoe"
+  },
+  "Ezomyte Burgonet": {
+    "nameEn": "Ezomyte Burgonet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr9.png",
+    "source": "pob-export + repoe"
+  },
+  "Faithful Helmet": {
+    "nameEn": "Faithful Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Fencer Helm": {
+    "nameEn": "Fencer Helm",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex6.png",
+    "source": "pob-export + repoe"
+  },
+  "Festival Mask": {
+    "nameEn": "Festival Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Fluted Bascinet": {
+    "nameEn": "Fluted Bascinet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex8.png",
+    "source": "pob-export + repoe"
+  },
+  "Gale Crown": {
+    "nameEn": "Gale Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexIntRitual1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexIntR.png",
+    "source": "pob-export + repoe"
+  },
+  "General's Helmet": {
+    "nameEn": "General's Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr9.png",
+    "source": "pob-export + repoe"
+  },
+  "Giantslayer Helmet": {
+    "nameEn": "Giantslayer Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr11.png",
+    "source": "pob-export + repoe"
+  },
+  "Gilded Sallet": {
+    "nameEn": "Gilded Sallet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Gladiator Helmet": {
+    "nameEn": "Gladiator Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr5.png",
+    "source": "pob-export + repoe"
+  },
+  "Golden Mask": {
+    "nameEn": "Golden Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt5.png",
+    "source": "pob-export + repoe"
+  },
+  "Golden Wreath": {
+    "nameEn": "Golden Wreath",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetWreath1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/Demigodstriumph.png",
+    "source": "pob-export + repoe"
+  },
+  "Great Crown": {
+    "nameEn": "Great Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt7.png",
+    "source": "pob-export + repoe"
+  },
+  "Great Helmet": {
+    "nameEn": "Great Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Grizzly Pelt": {
+    "nameEn": "Grizzly Pelt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex7.png",
+    "source": "pob-export + repoe"
+  },
+  "Harlequin Mask": {
+    "nameEn": "Harlequin Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt9.png",
+    "source": "pob-export + repoe"
+  },
+  "Haunted Bascinet": {
+    "nameEn": "Haunted Bascinet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex10.png",
+    "source": "pob-export + repoe"
+  },
+  "Hubris Circlet": {
+    "nameEn": "Hubris Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt11.png",
+    "source": "pob-export + repoe"
+  },
+  "Hunter Hood": {
+    "nameEn": "Hunter Hood",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex5.png",
+    "source": "pob-export + repoe"
+  },
+  "Imp Crown": {
+    "nameEn": "Imp Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrIntRitual1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/MaskCrown.png",
+    "source": "pob-export + repoe"
+  },
+  "Iron Circlet": {
+    "nameEn": "Iron Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Iron Hat": {
+    "nameEn": "Iron Hat",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr1.png",
+    "source": "pob-export + repoe"
+  },
+  "Iron Mask": {
+    "nameEn": "Iron Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Jester Mask": {
+    "nameEn": "Jester Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt9.png",
+    "source": "pob-export + repoe"
+  },
+  "Knight Helm": {
+    "nameEn": "Knight Helm",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex11",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex6.png",
+    "source": "pob-export + repoe"
+  },
+  "Lacquered Helmet": {
+    "nameEn": "Lacquered Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex7.png",
+    "source": "pob-export + repoe"
+  },
+  "Leather Cap": {
+    "nameEn": "Leather Cap",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex1.png",
+    "source": "pob-export + repoe"
+  },
+  "Leather Hood": {
+    "nameEn": "Leather Hood",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Lich's Circlet": {
+    "nameEn": "Lich's Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt8.png",
+    "source": "pob-export + repoe"
+  },
+  "Lion Pelt": {
+    "nameEn": "Lion Pelt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex10.png",
+    "source": "pob-export + repoe"
+  },
+  "Lunaris Circlet": {
+    "nameEn": "Lunaris Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt6.png",
+    "source": "pob-export + repoe"
+  },
+  "Magistrate Crown": {
+    "nameEn": "Magistrate Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt8.png",
+    "source": "pob-export + repoe"
+  },
+  "Majestic Pelt": {
+    "nameEn": "Majestic Pelt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex10.png",
+    "source": "pob-export + repoe"
+  },
+  "Mind Cage": {
+    "nameEn": "Mind Cage",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt10.png",
+    "source": "pob-export + repoe"
+  },
+  "Moonlit Circlet": {
+    "nameEn": "Moonlit Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt6.png",
+    "source": "pob-export + repoe"
+  },
+  "Necromancer Circlet": {
+    "nameEn": "Necromancer Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt8.png",
+    "source": "pob-export + repoe"
+  },
+  "Nightmare Bascinet": {
+    "nameEn": "Nightmare Bascinet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex10.png",
+    "source": "pob-export + repoe"
+  },
+  "Noble Tricorne": {
+    "nameEn": "Noble Tricorne",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex6.png",
+    "source": "pob-export + repoe"
+  },
+  "Paladin Crown": {
+    "nameEn": "Paladin Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt12",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt7.png",
+    "source": "pob-export + repoe"
+  },
+  "Penitent Mask": {
+    "nameEn": "Penitent Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDexRitual3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDexR.png",
+    "source": "pob-export + repoe"
+  },
+  "Pig-Faced Bascinet": {
+    "nameEn": "Pig-Faced Bascinet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex9.png",
+    "source": "pob-export + repoe"
+  },
+  "Plague Mask": {
+    "nameEn": "Plague Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Praetor Crown": {
+    "nameEn": "Praetor Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt10.png",
+    "source": "pob-export + repoe"
+  },
+  "Prophet Crown": {
+    "nameEn": "Prophet Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt9.png",
+    "source": "pob-export + repoe"
+  },
+  "Raven Mask": {
+    "nameEn": "Raven Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt6.png",
+    "source": "pob-export + repoe"
+  },
+  "Reaver Helmet": {
+    "nameEn": "Reaver Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr6.png",
+    "source": "pob-export + repoe"
+  },
+  "Regicide Mask": {
+    "nameEn": "Regicide Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt8.png",
+    "source": "pob-export + repoe"
+  },
+  "Royal Burgonet": {
+    "nameEn": "Royal Burgonet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr10.png",
+    "source": "pob-export + repoe"
+  },
+  "Runic Crest": {
+    "nameEn": "Runic Crest",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetExpedition2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/SpiritHelmetBaseType.png",
+    "source": "pob-export + repoe"
+  },
+  "Runic Crown": {
+    "nameEn": "Runic Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetExpedition3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/SpiritHelmetBaseType.png",
+    "source": "pob-export + repoe"
+  },
+  "Runic Helm": {
+    "nameEn": "Runic Helm",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetExpedition1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/SpiritHelmetBaseType.png",
+    "source": "pob-export + repoe"
+  },
+  "Rusted Coif": {
+    "nameEn": "Rusted Coif",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Sallet": {
+    "nameEn": "Sallet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Samnite Helmet": {
+    "nameEn": "Samnite Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr8.png",
+    "source": "pob-export + repoe"
+  },
+  "Scare Mask": {
+    "nameEn": "Scare Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Secutor Helm": {
+    "nameEn": "Secutor Helm",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex5",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex5.png",
+    "source": "pob-export + repoe"
+  },
+  "Siege Helmet": {
+    "nameEn": "Siege Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStr7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStr7.png",
+    "source": "pob-export + repoe"
+  },
+  "Silken Hood": {
+    "nameEn": "Silken Hood",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex8",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex8.png",
+    "source": "pob-export + repoe"
+  },
+  "Sinner Tricorne": {
+    "nameEn": "Sinner Tricorne",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex9.png",
+    "source": "pob-export + repoe"
+  },
+  "Solaris Circlet": {
+    "nameEn": "Solaris Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt9",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt9.png",
+    "source": "pob-export + repoe"
+  },
+  "Soldier Helmet": {
+    "nameEn": "Soldier Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt2.png",
+    "source": "pob-export + repoe"
+  },
+  "Sorrow Mask": {
+    "nameEn": "Sorrow Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDexRitual1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDexR.png",
+    "source": "pob-export + repoe"
+  },
+  "Steel Circlet": {
+    "nameEn": "Steel Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt7.png",
+    "source": "pob-export + repoe"
+  },
+  "Sunfire Circlet": {
+    "nameEn": "Sunfire Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt13",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt9.png",
+    "source": "pob-export + repoe"
+  },
+  "Torture Cage": {
+    "nameEn": "Torture Cage",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt3.png",
+    "source": "pob-export + repoe"
+  },
+  "Torturer's Mask": {
+    "nameEn": "Torturer's Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt14",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt11.png",
+    "source": "pob-export + repoe"
+  },
+  "Tribal Circlet": {
+    "nameEn": "Tribal Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt4.png",
+    "source": "pob-export + repoe"
+  },
+  "Tricorne": {
+    "nameEn": "Tricorne",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex2.png",
+    "source": "pob-export + repoe"
+  },
+  "Ursine Pelt": {
+    "nameEn": "Ursine Pelt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex7",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex7.png",
+    "source": "pob-export + repoe"
+  },
+  "Vaal Mask": {
+    "nameEn": "Vaal Mask",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexInt10",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexInt10.png",
+    "source": "pob-export + repoe"
+  },
+  "Vine Circlet": {
+    "nameEn": "Vine Circlet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetInt1",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetInt1.png",
+    "source": "pob-export + repoe"
+  },
+  "Visored Sallet": {
+    "nameEn": "Visored Sallet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrDex3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrDex3.png",
+    "source": "pob-export + repoe"
+  },
+  "Winter Crown": {
+    "nameEn": "Winter Crown",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDexIntRitual2",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDexIntR.png",
+    "source": "pob-export + repoe"
+  },
+  "Wolf Pelt": {
+    "nameEn": "Wolf Pelt",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetDex4",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetDex4.png",
+    "source": "pob-export + repoe"
+  },
+  "Zealot Helmet": {
+    "nameEn": "Zealot Helmet",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Armours/Helmets/HelmetStrInt6",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt6.png",
+    "source": "pob-export + repoe"
+  }
+}

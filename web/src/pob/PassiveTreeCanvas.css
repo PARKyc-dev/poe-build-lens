@@ -1,0 +1,4 @@
+.passive-tree { margin-top: 2rem; padding: 1.25rem; border: 1px solid rgb(109 160 166 / 30%); border-radius: 0.5rem; background: rgb(3 12 22 / 58%); }
+.passive-tree h2 { margin-bottom: 1rem; color: #dce5e8; font-size: 1.25rem; font-weight: 400; }
+.passive-tree h2 small { color: #a6b5c4; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; }
+.passive-tree canvas { display: block; width: 100%; height: auto; border-radius: 0.3rem; background: radial-gradient(circle at center, #152942, #07101d 68%); }

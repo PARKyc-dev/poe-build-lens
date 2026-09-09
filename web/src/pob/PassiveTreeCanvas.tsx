@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 import { createPassiveTreeDrawModel, type PassiveTree } from './passiveTree'
+import './PassiveTreeCanvas.css'
 
 const width = 720
 const height = 520

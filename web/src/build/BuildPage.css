@@ -1,0 +1,11 @@
+.build-detail { width: min(1220px, calc(100% - 2rem)); margin: 0 auto; padding: 2.5rem 0 5rem; }
+.detail-header { display: flex; align-items: end; justify-content: space-between; gap: 1.5rem; padding-bottom: 2rem; border-bottom: 1px solid rgb(175 194 211 / 15%); }
+.detail-header h1 { margin-bottom: 0.55rem; font-size: clamp(2.4rem, 5vw, 4.4rem); }
+.detail-subtitle { margin: 0; color: #9eafc0; }
+.section-kicker { margin-bottom: 0.55rem; color: #d9ad5a; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.16em; }
+.detail-tooltip { position: fixed; z-index: 3; width: min(18.75rem, calc(100vw - 1.5rem)); padding: 1rem; border: 1px solid #8a5b34; background: rgb(7 13 20 / 97%); box-shadow: 0 0 0 1px rgb(0 0 0 / 55%), 0 1.25rem 3rem rgb(0 0 0 / 38%); pointer-events: none; text-align: center; }
+.detail-tooltip small { display: block; margin-bottom: 0.55rem; color: #8294a7; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; }
+.detail-tooltip h3 { margin: 0; color: #d8a45e; font: 1.25rem Georgia, serif; }
+.detail-tooltip > div { display: grid; gap: 0.65rem; margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid rgb(175 194 211 / 14%); }
+.detail-tooltip > div p { margin: 0; color: #a9a5ff; font-size: 0.88rem; line-height: 1.5; }
+@media (max-width: 760px) { .build-detail { width: min(100% - 1.25rem, 38rem); padding-top: 1.5rem; } .detail-header { display: grid; grid-template-columns: 1fr; } .secondary-button { justify-self: start; } .detail-tooltip { display: none; } }

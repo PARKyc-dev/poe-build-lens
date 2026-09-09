@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react'
 
 import { BuildDetailPage } from './build/BuildDetailPage'
 import { BuildLoadingPage } from './build/BuildLoadingPage'
+import { EquipmentPreviewPage } from './build/EquipmentPreviewPage'
 import { analyzeBuild, getAiUsage } from './api/analysis'
 import type { AiUsage, BuildAnalysisResult } from './api/analysis'
 import { inspectBuildInBrowser } from './pob/browserPob'
 import type { BrowserInspectResult } from './pob/browserPob'
 import './styles.css'
+import './App.css'
 
 type WorkerStatus = 'checking' | 'ready' | 'unavailable'
 
@@ -35,7 +37,7 @@ function AppLayout({ children }: { children: React.ReactNode }) {
   return <div className="site-layout">{children}<SiteFooter /></div>
 }
 
-export default function App() {
+function BuildAnalysisApp() {
   const [inspectInput, setInspectInput] = useState('')
   const [inspectResult, setInspectResult] = useState<BrowserInspectResult | null>(null)
   const [analysisResult, setAnalysisResult] = useState<BuildAnalysisResult | null>(null)
@@ -112,7 +114,10 @@ export default function App() {
             onChange={(event) => setInspectInput(event.target.value)}
             placeholder="eN... · https://pobb.in/... · <PathOfBuilding>...</PathOfBuilding>"
           />
-          <button type="submit" disabled={isInspecting}>{isInspecting ? '검사 중…' : 'PoB 검사'}</button>
+          <div className="inspect-actions">
+            <button type="submit" disabled={isInspecting}>{isInspecting ? '검사 중…' : 'PoB 검사'}</button>
+            <a className="secondary-button" href="/equipment-preview">장비 디자인 미리보기</a>
+          </div>
         </form>
         <div aria-live="polite">
           {inspectError && <p role="alert">{inspectError}</p>}
@@ -120,4 +125,12 @@ export default function App() {
       </section>
     </main></AppLayout>
   )
+}
+
+export default function App() {
+  if (window.location.pathname === '/equipment-preview') {
+    return <AppLayout><EquipmentPreviewPage /></AppLayout>
+  }
+
+  return <BuildAnalysisApp />
 }

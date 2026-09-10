@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { BuildDetailPage } from './build/BuildDetailPage'
 import { BuildLoadingPage } from './build/BuildLoadingPage'
-import { EquipmentPreviewPage } from './build/EquipmentPreviewPage'
+import { AnalysisPreviewPage } from './build/AnalysisPreviewPage'
 import { analyzeBuild, getAiUsage } from './api/analysis'
 import type { AiUsage, BuildAnalysisResult } from './api/analysis'
 import { inspectBuildInBrowser } from './pob/browserPob'
@@ -116,7 +116,7 @@ function BuildAnalysisApp() {
           />
           <div className="inspect-actions">
             <button type="submit" disabled={isInspecting}>{isInspecting ? '검사 중…' : 'PoB 검사'}</button>
-            <a className="secondary-button" href="/equipment-preview">장비 디자인 미리보기</a>
+            <a className="secondary-button" href="/equipment-preview">분석 미리보기</a>
           </div>
         </form>
         <div aria-live="polite">
@@ -129,7 +129,7 @@ function BuildAnalysisApp() {
 
 export default function App() {
   if (window.location.pathname === '/equipment-preview') {
-    return <AppLayout><EquipmentPreviewPage /></AppLayout>
+    return <AppLayout><AnalysisPreviewPage /></AppLayout>
   }
 
   return <BuildAnalysisApp />

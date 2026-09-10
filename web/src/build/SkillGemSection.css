@@ -1,15 +1,20 @@
 .skill-gem-panel { margin-top: 1.5rem; padding: 1.65rem; }
 .skill-gem-panel h2 { margin-bottom: 1.35rem; color: #e9ecdf; font-size: 1.5rem; font-weight: 400; }
 .skill-gem-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1rem; }
-.skill-gem-group { padding: 1rem; border: 1px solid rgb(141 170 184 / 24%); background: rgb(10 27 44 / 68%); }
-.active-gem, .skill-gem-group li > div { display: grid; gap: 0.2rem; }
+.skill-gem-group { --gem-icon-size: 2.7rem; padding: 1rem; border: 1px solid rgb(141 170 184 / 24%); background: rgb(10 27 44 / 68%); }
+.active-gem, .skill-gem-group li { display: grid; grid-template-columns: var(--gem-icon-size) minmax(0, 1fr); align-items: center; gap: 0.65rem; }
 .active-gem { padding: 0.8rem; border-left: 3px solid #3fa79e; background: rgb(28 69 75 / 28%); }
+.active-gem > div, .gem-copy { display: grid; gap: 0.2rem; }
+.skill-gem-group img { display: block; width: var(--gem-icon-size); height: var(--gem-icon-size); object-fit: contain; }
+.gem-icon { display: block; width: var(--gem-icon-size); height: var(--gem-icon-size); overflow: hidden; }
+.skill-gem-group .gem-icon img { width: auto; max-width: none; height: 100%; object-fit: initial; }
+.skill-gem-group .active-gem-icon img { height: 118%; transform: translate(-0.24rem, -0.24rem); }
 .skill-gem-group small { color: #8294a7; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.07em; }
 .skill-gem-group small b { margin-left: 0.4rem; padding: 0.08rem 0.3rem; border: 1px solid #8a5b34; color: #ee9b4b; font-size: 0.58rem; }
 .skill-gem-group strong { color: #e5e4d7; font-size: 0.92rem; }
 .skill-gem-group span { color: #91a3b4; font-size: 0.7rem; }
 .skill-gem-group ul { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
-.skill-gem-group li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); align-items: center; min-height: 4rem; }
+.skill-gem-group li { grid-template-columns: 2rem var(--gem-icon-size) minmax(0, 1fr); min-height: 4rem; }
 .skill-gem-group .gem-link { display: grid; position: relative; place-items: center; align-self: stretch; color: #d9ad5a; font-size: 1rem; isolation: isolate; }
 .skill-gem-group .gem-link::before { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: rgb(217 173 90 / 38%); content: ''; }
 .skill-gem-group .gem-link::after { position: absolute; z-index: -1; width: 1.35rem; height: 1.35rem; border: 1px solid rgb(217 173 90 / 45%); border-radius: 50%; background: #0a1b2c; content: ''; }

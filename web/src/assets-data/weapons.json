@@ -1203,6 +1203,13 @@
     "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand3.png",
     "source": "pob-export + repoe"
   },
+  "Kinetic Wand": {
+    "nameEn": "Kinetic Wand",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Weapons/OneHandWeapons/Wands/WandK3",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand3.png",
+    "source": "poedb"
+  },
   "Imp Dagger": {
     "nameEn": "Imp Dagger",
     "nameKo": null,

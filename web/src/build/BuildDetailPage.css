@@ -17,11 +17,6 @@
 .caution-card { padding: 1rem; border-left: 3px solid #cf806a; }
 .caution-card h4 { margin: 0 0 0.3rem; color: #e3e7e1; font-size: 0.9rem; }
 .caution-card p { margin: 0; }
-.priority-list h4 { margin: 0 0 0.3rem; color: #e3e7e1; font-size: 0.9rem; }
-.priority-list p { margin: 0; }
-.priority-list { display: grid; gap: 0.7rem; margin: 0; padding: 0; list-style: none; }
-.priority-list li { display: flex; gap: 0.7rem; padding: 0.9rem; border: 1px solid rgb(148 175 191 / 18%); background: rgb(10 27 44 / 78%); }
-.priority-list li > span { display: grid; flex: none; place-items: center; width: 1.45rem; height: 1.45rem; border-radius: 50%; color: #111b23; background: #d9ad5a; font-size: 0.75rem; font-weight: 800; }
 .build-sidebar { display: grid; align-content: start; gap: 1.5rem; }
 .build-sidebar > section { padding: 1.3rem; }
 .build-sidebar h2 { font-size: 1.15rem; }
@@ -34,5 +29,4 @@
 .configuration-section h3 { margin: 0 0 0.7rem; color: #c9d5dd; font-size: 0.9rem; font-weight: 400; }
 .configuration-section ul { display: grid; gap: 0.45rem; margin: 0; padding: 0; list-style: none; color: #dce5e8; font-size: 0.82rem; line-height: 1.45; }
 .configuration-section dl { gap: 0.65rem; }
-.priorities-section { margin-top: 1.35rem; }
 @media (max-width: 760px) { .detail-grid { display: grid; grid-template-columns: 1fr; } .build-summary { grid-template-columns: repeat(2, 1fr); } .insight-columns { grid-template-columns: 1fr; } }

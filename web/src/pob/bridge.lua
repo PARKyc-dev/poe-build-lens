@@ -124,6 +124,75 @@ end
 
 local equipmentSlots = { "Weapon 1", "Weapon 2", "Helmet", "Body Armour", "Gloves", "Boots", "Amulet", "Ring 1", "Ring 2", "Belt", "Flask 1", "Flask 2", "Flask 3", "Flask 4", "Flask 5" }
 
+local function modLines(lines)
+  local result = jsonArray()
+  for _, mod in ipairs(lines or { }) do
+    local line = mod.line or mod.extra
+    local kinds = { }
+    if mod.fractured then table.insert(kinds, "Fractured") end
+    if mod.crafted then table.insert(kinds, "Crafted") end
+    if mod.unveiled then table.insert(kinds, "Unveiled") end
+    if mod.scourge then table.insert(kinds, "Scourged") end
+    if mod.crucible then table.insert(kinds, "Crucible") end
+    if mod.mutated then table.insert(kinds, "Mutated") end
+    if mod.disabled then table.insert(kinds, "Disabled") end
+    if line then table.insert(result, #kinds > 0 and line .. " (" .. jsonConcat(kinds, ", ") .. ")" or line) end
+  end
+  return result
+end
+
+local function addItemDetails(entry, item)
+  local properties = jsonArray()
+  if item.quality then table.insert(properties, "Quality: " .. item.quality .. "%") end
+  if item.catalystQuality then table.insert(properties, "Catalyst Quality: " .. item.catalystQuality .. "%") end
+  if item.intangibility then table.insert(properties, "Intangibility: " .. item.intangibility .. "%") end
+  if item.itemLevel then table.insert(properties, "Item Level: " .. item.itemLevel) end
+  if item.sockets and #item.sockets > 0 then
+    local socketGroups = { }
+    for index, socket in ipairs(item.sockets) do
+      table.insert(socketGroups, socket.color .. (item.sockets[index + 1] and (socket.group == item.sockets[index + 1].group and "-" or " ") or ""))
+    end
+    table.insert(properties, "Sockets: " .. jsonConcat(socketGroups, ""))
+  end
+  if item.jewelRadiusLabel then table.insert(properties, "Radius: " .. item.jewelRadiusLabel) end
+  if item.limit then table.insert(properties, "Limited to: " .. item.limit) end
+  for _, key in ipairs({ "Armour", "Evasion", "EnergyShield", "Ward" }) do
+    if item.armourData and item.armourData[key] and item.armourData[key] > 0 then
+      table.insert(properties, key:gsub("EnergyShield", "Energy Shield") .. ": " .. item.armourData[key])
+    end
+  end
+  if item.weaponData then
+    if item.weaponData.PhysicalDPS then table.insert(properties, "Physical DPS: " .. item.weaponData.PhysicalDPS) end
+    if item.weaponData.ElementalDPS then table.insert(properties, "Elemental DPS: " .. item.weaponData.ElementalDPS) end
+    if item.weaponData.ChaosDPS then table.insert(properties, "Chaos DPS: " .. item.weaponData.ChaosDPS) end
+    if item.weaponData.CritChance then table.insert(properties, "Critical Strike Chance: " .. item.weaponData.CritChance .. "%") end
+    if item.weaponData.AttackRate then table.insert(properties, "Attacks per Second: " .. item.weaponData.AttackRate) end
+  end
+  local requirements = jsonArray()
+  if item.requirements then
+    if item.requirements.level then table.insert(requirements, "Level " .. item.requirements.level) end
+    if item.requirements.str and item.requirements.str > 0 then table.insert(requirements, "Strength " .. item.requirements.str) end
+    if item.requirements.dex and item.requirements.dex > 0 then table.insert(requirements, "Dexterity " .. item.requirements.dex) end
+    if item.requirements.int and item.requirements.int > 0 then table.insert(requirements, "Intelligence " .. item.requirements.int) end
+  end
+  if item.classRestriction then table.insert(requirements, "Class " .. item.classRestriction) end
+  local influences = jsonArray()
+  for _, info in ipairs(itemLib.influenceInfo.all or { }) do
+    if item[info.key] then table.insert(influences, info.display) end
+  end
+  local status = jsonArray()
+  for _, flag in ipairs({ { "corrupted", "Corrupted" }, { "fractured", "Fractured Item" }, { "synthesised", "Synthesised Item" }, { "split", "Split" }, { "mirrored", "Mirrored" }, { "foulborn", "Foulborn" }, { "vestigial", "Vestigial" } }) do
+    if item[flag[1]] then table.insert(status, flag[2]) end
+  end
+  entry.properties = properties
+  entry.requirements = requirements
+  entry.enchantModifiers = modLines(item.enchantModLines)
+  entry.implicitModifiers = modLines(item.implicitModLines)
+  entry.explicitModifiers = modLines(item.explicitModLines)
+  entry.influences = influences
+  entry.status = status
+end
+
 local function activateEquippedFlasks()
   for _, slot in ipairs(build.itemsTab.orderedSlots or { }) do
     if slot.slotName:match("^Flask") and slot.selItemId then
@@ -146,13 +215,15 @@ local function equipmentFromActiveSet()
           table.insert(modifiers, mod.line or mod.extra)
         end
       end
-      table.insert(result, {
+      local entry = {
         slot = slotName,
         name = item.title or item.name or item.baseName,
         baseName = item.baseName,
         rarity = item.rarity,
         modifiers = modifiers,
-      })
+      }
+      addItemDetails(entry, item)
+      table.insert(result, entry)
     end
   end
   return result
@@ -173,14 +244,16 @@ local function jewelsFromActiveSpec(xmlJewels)
         end
       end
       local baseName = item.baseName
-      table.insert(result, {
+      local entry = {
         socket = tostring(socketId),
         name = item.title or item.name or baseName,
         baseName = baseName,
         rarity = item.rarity,
         modifiers = modifiers,
         kind = baseName and string.find(baseName, "Cluster Jewel", 1, true) and "cluster" or "jewel",
-      })
+      }
+      addItemDetails(entry, item)
+      table.insert(result, entry)
     end
   end
   table.sort(result, function(left, right) return left.socket < right.socket end)
@@ -605,6 +678,7 @@ local function skillFacts(env)
           local source = support.srcInstance or { }
           table.insert(supports, {
             name = support.grantedEffect.name,
+            metadataId = source.gemData and source.gemData.gameId,
             level = support.level,
             quality = support.quality,
             qualityType = qualityType(source),
@@ -616,6 +690,7 @@ local function skillFacts(env)
       end
       table.insert(result, {
         name = grantedEffect.name,
+        metadataId = gem.gemData and gem.gemData.gameId,
         level = effect.level,
         quality = effect.quality,
         qualityType = qualityType(gem),

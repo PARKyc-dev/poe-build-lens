@@ -1,0 +1,487 @@
+{
+  "gameVersion": "3.29",
+  "summary": "Kinetic Fusillade는 완드 공격으로 공중에 투사체를 만든 뒤 적에게 발사해 명중 시 범위 피해와 연쇄를 일으키며, 반복 사용으로 떠 있는 투사체의 발사 흐름을 다시 정리합니다. Sacred Wisps는 이 공격의 명중을 계기로 소환되어 같은 공격을 따라 사용하고, Sniper's Mark는 희귀·고유 적에게 명중했을 때 투사체 분할과 추가 피해 연결을 제공합니다. Replica Alberon's Warpath 때문에 공격은 비카오스 피해를 사용할 수 없고, 힘 기반 장비와 완드의 카오스 공격 피해가 주력 피해 구조를 이룹니다. 방어는 방어도·막기·저항·Steelskin을 겹치고, 정지 중에는 Arctic Armour가 물리·화염 명중 완화를 제공하며 Purity of Fire가 화염 저항 층을 보강하는 구조입니다.",
+  "offence": [
+    {
+      "title": "공격이 작동하는 과정: Kinetic Fusillade",
+      "explanation": "Kinetic Fusillade는 먼저 공중 투사체를 만들고, 지속된 뒤 적에게 발사되어 범위 명중과 연쇄 피해를 냅니다. 다시 사용하면 기존에 떠 있는 투사체의 발사 지속 흐름이 초기화됩니다.",
+      "details": [
+        {
+          "label": "공중 투사체 생성",
+          "explanation": "Kinetic Fusillade를 사용하면 적을 향해 바로 맞는 대신 공중에 떠 있는 운동 투사체가 생성됩니다.",
+          "type": "step"
+        },
+        {
+          "label": "발사와 범위 명중",
+          "explanation": "투사체가 짧은 대기 후 적에게 발사되어 충돌 지점에 범위 피해를 주고, 이후 추가 대상에게 연쇄합니다.",
+          "type": "step"
+        },
+        {
+          "label": "반복 사용",
+          "explanation": "공격을 다시 사용하면 떠 있는 투사체들의 발사 지속이 재설정되므로, 여러 투사체를 쌓아 발사 흐름을 이어갈 수 있습니다.",
+          "type": "step"
+        }
+      ]
+    },
+    {
+      "title": "보조젬 연결: Kinetic Fusillade",
+      "explanation": "보조젬은 투사체 수와 발사 위치를 늘리고 공중 대기 흐름을 빠르게 하며, Sacred Wisps를 통한 사용과 피해 범위를 바꿉니다. Volatility는 최소·최대 공격 피해의 편차를 크게 만들고, 치명타 보조는 치명타 배율을 보강합니다.",
+      "details": [
+        {
+          "label": "Greater Volley",
+          "explanation": "Greater Volley가 추가 투사체와 여러 발사 위치를 부여하므로 한 번의 Kinetic Fusillade 사용에서 더 많은 투사체 흐름이 만들어집니다. 대신 투사체 피해에 감소 효과도 함께 적용됩니다.",
+          "type": "step"
+        },
+        {
+          "label": "Less Duration",
+          "explanation": "Less Duration은 Kinetic Fusillade의 공중 투사체 지속을 줄이는 대신 피해를 보강합니다. 지속이 짧아지는 만큼 반복 사용으로 투사체 흐름을 이어가는 운용과 직접 연결됩니다.",
+          "type": "step"
+        },
+        {
+          "label": "Sacred Wisps 연결",
+          "explanation": "Sacred Wisps 보조는 Kinetic Fusillade가 명중할 때 Summon Sacred Wisps를 발동하게 합니다. 소환된 위습은 일정 조건에서 발동을 일으킨 공격을 사용하지만, 위습이 사용하는 공격에는 별도의 피해 감소가 적용됩니다.",
+          "type": "step"
+        },
+        {
+          "label": "Volatility와 치명타",
+          "explanation": "Volatility는 Kinetic Fusillade의 최대 공격 피해를 강화하는 대신 최소 공격 피해를 낮춥니다. Increased Critical Damage는 공격이 치명타로 명중했을 때 치명타 배율을 높입니다.",
+          "type": "step"
+        }
+      ]
+    },
+    {
+      "title": "핵심 상호작용: Kinetic Fusillade",
+      "explanation": "Replica Alberon's Warpath가 비카오스 피해를 막으므로 공격의 피해 결합은 카오스 공격 피해와 힘·완드 기반 보정에 집중됩니다. 장비의 공격 속도·투사체·치명타·명중 시 회복은 Kinetic Fusillade의 명중 흐름을 보조하지만, 각각 독립적인 추가 발동으로 취급됩니다.",
+      "details": [
+        {
+          "label": "Replica Alberon's Warpath",
+          "explanation": "Replica Alberon's Warpath의 비카오스 피해 불가 조건 때문에 Kinetic Fusillade의 공격 피해는 카오스 피해 중심으로 성립합니다. 같은 장비의 힘 기반 공격 카오스 피해가 이 제한 안에서 주력 공격에 연결됩니다.",
+          "type": "interaction"
+        },
+        {
+          "label": "Woe Chant",
+          "explanation": "Woe Chant는 완드 공격에 카오스 피해를 추가하고 공격 속도·치명타 관련 보정을 제공하며, 무기 공격이 카오스 저항을 관통하도록 합니다. 따라서 Kinetic Fusillade의 완드 명중 결과에 직접 연결됩니다.",
+          "type": "interaction"
+        },
+        {
+          "label": "힘 기반 장비",
+          "explanation": "Phoenix Clutches, Agony Gorget, Armageddon Clasp와 기타 힘 장비는 힘을 누적해 공격 피해와 치명타·공격 관련 기반을 보강합니다. 이는 별도 발동이 아니라 Kinetic Fusillade가 사용될 때 적용되는 공격 보정입니다.",
+          "type": "interaction"
+        },
+        {
+          "label": "명중 시 회복",
+          "explanation": "Horror Band는 Kinetic Fusillade가 적을 명중할 때 생명력을 회복하게 하므로, 공격의 명중 과정과 방어 회복이 직접 연결됩니다. 적을 처치해야 하는 효과가 아니므로 단독 대상에게도 명중이 발생하면 연결됩니다.",
+          "type": "interaction"
+        }
+      ]
+    },
+    {
+      "title": "운용 방식: Kinetic Fusillade",
+      "explanation": "일반 적에게는 Kinetic Fusillade의 범위·연쇄가 기본 처리를 담당하고, 희귀·고유 적에게 명중하면 Mark On Hit가 Sniper's Mark를 발동해 투사체 분할을 추가합니다. 공격 명중은 Sacred Wisps 소환도 촉발하지만, 위습의 추가 사용과 표식 발동은 각각 명시된 조건을 만족해야 합니다.",
+      "details": [
+        {
+          "label": "공격 명중",
+          "explanation": "Kinetic Fusillade가 적에게 명중하면 Sacred Wisps 보조가 Summon Sacred Wisps를 발동합니다. 이 발동은 공격을 사용했다는 사실이 아니라 명중에 연결되어 있습니다.",
+          "type": "step"
+        },
+        {
+          "label": "위습의 공격 사용",
+          "explanation": "소환된 Sacred Wisps는 해당 공격으로 투사체를 발사할 때 정해진 확률로 발동을 일으킨 공격을 사용하며, 희귀·고유 적이 주변에 있으면 그 사용 조건이 강화됩니다.",
+          "type": "step"
+        },
+        {
+          "label": "희귀·고유 적 표식",
+          "explanation": "Mark On Hit는 공격으로 희귀·고유 적을 명중했을 때 Sniper's Mark를 발동합니다. 표식이 붙은 적에게 투사체가 명중하면 주변 대상에게 분할되어 추가 대상 처리로 이어집니다.",
+          "type": "step"
+        },
+        {
+          "label": "단독 대상과 처치 흐름",
+          "explanation": "Sniper's Mark와 Sacred Wisps의 희귀·고유 적 조건은 단독 보스 상황에서도 적용될 수 있지만, 주변 대상이 없으면 분할 투사체의 추가 대상 혜택은 제한됩니다. 제공된 사실에는 처치 후 폭발이나 처치 후 추가 피해가 명시되어 있지 않습니다.",
+          "type": "condition"
+        }
+      ]
+    }
+  ],
+  "defence": [
+    {
+      "title": "방어 자원: life",
+      "explanation": "이 빌드는 생명력과 소량의 에너지 보호막을 함께 사용하며, 마나 재생과 비용 감소로 비채널링 스킬 운용을 보조합니다.",
+      "details": [
+        {
+          "label": "생명력·에너지 보호막",
+          "explanation": "생명력과 에너지 보호막이 피격 후 남는 기본 자원층을 담당합니다. Blood Rage의 지속적인 자기 물리 피해가 있으므로, 이 효과가 켜진 동안 자원 손실이 함께 발생합니다.",
+          "type": "interaction"
+        },
+        {
+          "label": "마나 유지",
+          "explanation": "Clarity가 마나 재생을 제공하고, Agony Gorget와 Rune Whorl의 비채널링 스킬 마나 비용 감소가 공격과 이동기의 자원 부담을 낮춥니다. Watcher's Eye는 Clarity 영향을 받는 동안 해당 비용 감소를 추가로 연결합니다.",
+          "type": "interaction"
+        }
+      ]
+    },
+    {
+      "title": "피해 경감: armour",
+      "explanation": "물리 명중에는 방어도가 우선적인 완화 수단으로 작동합니다.",
+      "details": [
+        {
+          "label": "방어도",
+          "explanation": "방어도는 물리 피해를 받는 명중의 피해를 줄이는 층입니다. Dawnbreaker, Foulborn The Iron Fortress, Bramble Scar와 방어 관련 주얼·장비가 이 방어 기반을 구성합니다.",
+          "type": "interaction"
+        }
+      ]
+    },
+    {
+      "title": "피해 경감: block",
+      "explanation": "공격과 주문에 대해 별도의 막기 층을 두어 명중 자체를 차단합니다.",
+      "details": [
+        {
+          "label": "막기",
+          "explanation": "Dawnbreaker의 공격 막기와 Foulborn The Iron Fortress의 주문 막기 관련 효과가 각각 해당 명중을 막을 기회를 제공합니다. 막기에 성공한 명중은 게임 규칙에 따라 피해가 막기 층에서 차단됩니다.",
+          "type": "interaction"
+        }
+      ]
+    },
+    {
+      "title": "저항 체계",
+      "explanation": "저항은 화염·번개·카오스 중심으로 구성되며, Purity of Fire와 Dawnbreaker가 일부 피해의 저항 적용 방식을 보강하거나 바꿉니다.",
+      "details": [
+        {
+          "label": "원소·카오스 저항",
+          "explanation": "Purity of Fire가 플레이어와 주변 아군의 화염 저항 및 최대 화염 저항을 보강합니다. 장비와 주얼은 화염·번개·카오스 저항을 제공하고, Bound By Destiny는 특정 아이템 조건에서 원소 피해 일부를 카오스 피해로 받게 하므로 저항 적용 대상이 달라질 수 있습니다.",
+          "type": "interaction"
+        },
+        {
+          "label": "Dawnbreaker의 피해 전환",
+          "explanation": "Dawnbreaker는 냉기·번개·물리 피해 일부를 화염 피해로 받게 하므로, 해당 전환이 적용되는 피해에는 화염 저항이 연결됩니다. 이는 모든 피해가 자동으로 전환된다는 뜻이 아니라 장비 효과에 적힌 피해 유형에 한정됩니다.",
+          "type": "condition"
+        }
+      ]
+    },
+    {
+      "title": "회피·막기: evasion",
+      "explanation": "상태 이상 회피와 동결 면역으로 명중 이후의 행동 방해를 줄이는 보조 방어층을 사용합니다.",
+      "details": [
+        {
+          "label": "원소 상태 이상 회피",
+          "explanation": "Stormshroud는 감전 회피 관련 수치를 모든 원소 상태 이상 회피에 적용하도록 확장합니다. Whispering Portent는 감전 회피를 제공하고 Specialist's Silver Flask of Tenaciousness는 플라스크 효과 동안 기절 회피를 제공합니다.",
+          "type": "interaction"
+        },
+        {
+          "label": "동결 면역",
+          "explanation": "Arctic Armour가 동결 면역을 부여하므로 동결 자체가 방어 운용을 끊는 조건이 되지 않습니다. 이 효과는 Arctic Armour가 실제로 적용 중일 때만 유효합니다.",
+          "type": "interaction"
+        }
+      ]
+    },
+    {
+      "title": "회복: life",
+      "explanation": "공격 명중과 공격 피해는 생명력 회복을 제공하고, 피격은 특정 플라스크 충전을 만들어 회복 수단의 재사용을 돕습니다.",
+      "details": [
+        {
+          "label": "명중 회복",
+          "explanation": "Horror Band는 공격으로 적을 명중할 때 생명력을 회복하게 하므로, 실제 적을 공격해 명중하는 동안 회복이 발생합니다. 이 효과는 명중 자체에 연결되며 처치가 필요하지 않습니다.",
+          "type": "interaction"
+        },
+        {
+          "label": "공격 피해 생명력 흡수",
+          "explanation": "Blood Rage는 공격 물리 피해의 일부를 생명력으로 흡수하게 합니다. 동시에 최대 생명력과 에너지 보호막을 기반으로 한 지속 물리 피해를 받으므로, 흡수와 자기 피해는 별개의 효과입니다.",
+          "type": "interaction"
+        },
+        {
+          "label": "피격 후 플라스크 충전",
+          "explanation": "Flagellant's Ruby Flask of the Lynx는 적에게 피격될 때 플라스크 충전을 얻습니다. 피격이 충전을 만들 뿐이며, 플라스크 효과가 항상 유지된다는 뜻은 아닙니다.",
+          "type": "interaction"
+        }
+      ]
+    }
+  ],
+  "buffs": [
+    {
+      "title": "방어 버프: Arctic Armour",
+      "explanation": "Arctic Armour는 적용 중 동결 면역을 제공하고, 플레이어가 정지해 있을 때 물리·화염 명중 피해를 줄입니다. 이동 중에는 정지 조건의 피해 완화가 적용되지 않으며, 피격한 적은 잠시 냉각됩니다.",
+      "details": []
+    },
+    {
+      "title": "방어 버프: Purity of Fire",
+      "explanation": "Purity of Fire는 플레이어와 주변 아군에게 화염 저항과 최대 화염 저항을 제공하는 오라입니다. 오라 범위를 벗어나거나 오라가 비활성화되면 아군에게 제공되는 효과는 유지된다고 볼 수 없습니다.",
+      "details": []
+    }
+  ],
+  "passives": [],
+  "passiveNodes": [
+    {
+      "title": "주요 패시브: Multishot",
+      "explanation": "적용 효과: Attacks fire an additional Projectile"
+    },
+    {
+      "title": "주요 패시브: Bloodless",
+      "explanation": "적용 효과: 10% increased maximum Life · Enemies Cannot Leech Life From you"
+    },
+    {
+      "title": "주요 패시브: Lethality",
+      "explanation": "적용 효과: Projectile Attack Skills have 50% increased Critical Strike Chance · Projectile Attack Skills have +30% to Critical Strike Multiplier"
+    },
+    {
+      "title": "주요 패시브: Golem's Blood",
+      "explanation": "적용 효과: 10% increased maximum Life · Regenerate 1.6% of Life per second"
+    },
+    {
+      "title": "주요 패시브: As The Mountain",
+      "explanation": "적용 효과: +12% Chance to Block Attack Damage while Dual Wielding or holding a Shield · +3% to maximum Chance to Block Attack Damage"
+    },
+    {
+      "title": "주요 패시브: Barbarism",
+      "explanation": "적용 효과: 8% increased maximum Life · +1% to maximum Fire Resistance · +8% to Fire Resistance"
+    },
+    {
+      "title": "주요 패시브: Nomadic Teachings",
+      "explanation": "적용 효과: +2% to all maximum Elemental Resistances"
+    },
+    {
+      "title": "주요 패시브: Window of Opportunity",
+      "explanation": "적용 효과: 15% reduced Skill Effect Duration · Debuffs on you expire 15% faster"
+    },
+    {
+      "title": "주요 패시브: Heartseeker",
+      "explanation": "적용 효과: +30% to Critical Strike Multiplier"
+    },
+    {
+      "title": "주요 패시브: Point Blank",
+      "explanation": "적용 효과: Projectile Attack Hits deal up to 30% more Damage to targets at the start of their movement, dealing less Damage to targets as the projectile travels farther"
+    },
+    {
+      "title": "주요 패시브: Utmost Might",
+      "explanation": "적용 효과: +40 to Strength · 8% increased Strength"
+    },
+    {
+      "title": "주요 패시브: Sentinel",
+      "explanation": "적용 효과: 24% increased Evasion Rating and Armour · +10% to all Elemental Resistances"
+    },
+    {
+      "title": "주요 패시브: Deflection",
+      "explanation": "적용 효과: +8% Chance to Block Attack Damage while holding a Shield · 25% chance to gain an Endurance Charge when you Block"
+    },
+    {
+      "title": "주요 패시브: Constitution",
+      "explanation": "적용 효과: +20 to maximum Life · 10% increased maximum Life"
+    },
+    {
+      "title": "주요 패시브: Thrill of Battle",
+      "explanation": "적용 효과: Gain 2 Mana per Enemy Hit with Attacks · 25% increased Cost Efficiency of Attacks"
+    },
+    {
+      "title": "주요 패시브: Iron Grip",
+      "explanation": "적용 효과: Strength's Damage bonus applies to Projectile Attack Damage as well as Melee Damage"
+    },
+    {
+      "title": "주요 패시브: Path of the Warrior",
+      "explanation": "적용 효과: +50 to Armour · +20 to Strength · 16% increased Physical Damage"
+    },
+    {
+      "title": "주요 패시브: Iron Will",
+      "explanation": "적용 효과: Strength's Damage bonus applies to all Spell Damage as well"
+    },
+    {
+      "title": "마스터리: Life Mastery",
+      "explanation": "적용 효과: 15% increased maximum Life if there are no Life Modifiers on Equipped Body Armour"
+    },
+    {
+      "title": "마스터리: Life Mastery",
+      "explanation": "적용 효과: You count as on Low Life while at 55% of maximum Life or below"
+    },
+    {
+      "title": "마스터리: Life Mastery",
+      "explanation": "적용 효과: +30 to maximum Life"
+    },
+    {
+      "title": "마스터리: Duration Mastery",
+      "explanation": "적용 효과: 10% less Skill Effect Duration"
+    },
+    {
+      "title": "마스터리: Mana Mastery",
+      "explanation": "적용 효과: 15% increased Mana Cost Efficiency"
+    },
+    {
+      "title": "마스터리: Block Mastery",
+      "explanation": "적용 효과: +1% Chance to Block Spell Damage per 5% Chance to Block Attack Damage"
+    },
+    {
+      "title": "마스터리: Protection Mastery",
+      "explanation": "적용 효과: Corrupted Blood cannot be inflicted on you"
+    },
+    {
+      "title": "마스터리: Critical Mastery",
+      "explanation": "적용 효과: You take 30% reduced Extra Damage from Critical Strikes"
+    },
+    {
+      "title": "마스터리: Attributes Mastery",
+      "explanation": "적용 효과: +5 to Strength per Allocated Mastery Passive Skill"
+    }
+  ],
+  "ascendancies": [
+    {
+      "title": "전직 노드: Dawnbreaker",
+      "explanation": "적용 효과: 25% of Cold Damage taken as Fire Damage · 25% of Lightning Damage taken as Fire Damage · 25% of Physical Damage taken as Fire Damage"
+    },
+    {
+      "title": "전직 노드: The Shattered Divinity",
+      "explanation": "적용 효과: Grants Summon Greater Harbinger of Directions Skill · +40 to Strength and Dexterity"
+    },
+    {
+      "title": "전직 노드: Kaom's Binding",
+      "explanation": "적용 효과: Nearby Enemies Convert 25% of their Physical Damage to Fire · 15% increased Strength"
+    }
+  ],
+  "gear": [
+    {
+      "title": "장비: Weapon 1 · Woe Chant",
+      "explanation": "옵션: Cannot roll Caster Modifiers · Adds 16 to 28 Chaos Damage · 19% increased Attack Speed · 37% increased Critical Strike Chance · +38% to Global Critical Strike Multiplier · Attacks with this Weapon Penetrate 22% Chaos Resistance · 66% increased Spell Damage",
+      "details": []
+    },
+    {
+      "title": "장비: Weapon 2 · Dawnbreaker",
+      "explanation": "옵션: +2 to Level of Socketed AoE Gems · +1% to maximum Chance to Block Attack Damage · 179% increased Armour · +23% Chance to Block · -1% Chance to Block Attack Damage for every 200 Fire Damage taken from Hits Recently · 17% of Cold Damage taken as Fire Damage · 16% of Lightning Damage taken as Fire Damage · 20% of Physical Damage taken as Fire Damage · Scorch Enemies in Close Range when you Block",
+      "details": []
+    },
+    {
+      "title": "장비: Helmet · Fate Star",
+      "explanation": "옵션: +49 to Strength · +83 to Armour · +24 to maximum Energy Shield · +143 to maximum Life · 1% increased Critical Strike Chance per 10 Strength · Gain Accuracy Rating equal to your Strength · Nearby Enemies have -12% to Chaos Resistance · 71% increased Armour and Energy Shield",
+      "details": []
+    },
+    {
+      "title": "장비: Body Armour · Foulborn The Iron Fortress",
+      "explanation": "옵션: Chance to Block Spell Damage is Unlucky · +118 to Strength · 90% increased Armour · 10% reduced Movement Speed · Strength's Damage Bonus instead grants 3% increased Melee\nPhysical Damage per 10 Strength · +1% Chance to Block Spell Damage per 50 Strength",
+      "details": []
+    },
+    {
+      "title": "장비: Gloves · Phoenix Clutches",
+      "explanation": "옵션: 3% increased Damage per 100 Strength · Gain 1 Rage on Attack Hit · +55 to Strength · 15% increased Attack Speed · +82 to Armour · +55 to maximum Life · Regenerate 5.3 Mana per second · +33% to Chaos Resistance · 19% increased Projectile Speed · 16% increased Projectile Damage",
+      "details": []
+    },
+    {
+      "title": "장비: Boots · Replica Alberon's Warpath",
+      "explanation": "옵션: 18% increased Strength · +188 to Armour · +17% to Chaos Resistance · 25% increased Movement Speed · Cannot deal non-Chaos Damage · Adds 1 to 80 Chaos Damage to Attacks per 80 Strength",
+      "details": []
+    },
+    {
+      "title": "장비: Amulet · Agony Gorget",
+      "explanation": "옵션: +37 to all Attributes · 10% increased Attributes · 14% increased Strength · 24% increased Rarity of Items found · 1% increased Damage per 15 Strength · Non-Channelling Skills have -7 to Total Mana Cost",
+      "details": []
+    },
+    {
+      "title": "장비: Ring 1 · Horror Band",
+      "explanation": "옵션: -1 Prefix Modifier allowed · +1 Suffix Modifier allowed · Implicit Modifiers Cannot Be Changed · 25% increased Suffix Modifier magnitudes · +78 to Strength · Adds 8 to 13 Physical Damage to Attacks · +31% to Global Critical Strike Multiplier · +42% to Chaos Resistance · Gain 20 Life per Enemy Hit with Attacks · +18 to all Attributes",
+      "details": []
+    },
+    {
+      "title": "장비: Ring 2 · Rune Whorl",
+      "explanation": "옵션: -1 Prefix Modifier allowed · +1 Suffix Modifier allowed · Implicit Modifiers Cannot Be Changed · 25% increased Suffix Modifier magnitudes · +79 to Strength · +96 to maximum Life · +60% to Fire Resistance · +18% to Chaos Resistance · Non-Channelling Skills have -7 to Total Mana Cost · +28% to Global Critical Strike Multiplier",
+      "details": []
+    },
+    {
+      "title": "장비: Belt · Armageddon Clasp",
+      "explanation": "옵션: Has 1 Abyssal Socket · +69 to Strength · 14% increased Attributes · +79 to maximum Life · 10% increased maximum Life · +33% to Chaos Resistance · 17% increased Damage",
+      "details": []
+    },
+    {
+      "title": "장비: Flask 1 · Stormblood",
+      "explanation": "옵션: 34% chance to gain a Flask Charge when you deal a Critical Strike · All Damage from Critical Strikes can apply Lightning Ailments during effect · 50% reduced Duration",
+      "details": []
+    },
+    {
+      "title": "장비: Flask 2 · Physician's Diamond Flask of Incision",
+      "explanation": "옵션: 16% chance to gain a Flask Charge when you deal a Critical Strike · 53% increased Critical Strike Chance during Effect",
+      "details": []
+    },
+    {
+      "title": "장비: Flask 3 · Flagellant's Ruby Flask of the Lynx",
+      "explanation": "옵션: Gain 3 Charges when you are Hit by an Enemy · 9% increased Movement Speed during Effect",
+      "details": []
+    },
+    {
+      "title": "장비: Flask 4 · Specialist's Silver Flask of Tenaciousness",
+      "explanation": "옵션: 29% chance to gain a Flask Charge when you deal a Critical Strike · 54% Chance to Avoid being Stunned during Effect",
+      "details": []
+    },
+    {
+      "title": "장비: Flask 5 · Medic's Quicksilver Flask of the Lynx",
+      "explanation": "옵션: 13% chance to gain a Flask Charge when you deal a Critical Strike · 10% increased Movement Speed during Effect",
+      "details": []
+    },
+    {
+      "title": "주얼: Forbidden Flame",
+      "explanation": "옵션: Allocates Deadeye if you have the matching modifier on Forbidden Flesh",
+      "details": []
+    },
+    {
+      "title": "주얼: Bound By Destiny",
+      "explanation": "옵션: 15% increased Strength if 2 Warlord Items are Equipped · 10% of Elemental Damage taken as Chaos Damage if 4 Hunter Items are Equipped · +1 to Level of all Cold Skill Gems if 6 Redeemer Items are Equipped",
+      "details": []
+    },
+    {
+      "title": "주얼: Watcher's Eye",
+      "explanation": "옵션: 6% increased maximum Energy Shield · 6% increased maximum Life · 4% increased maximum Mana · +26% to Critical Strike Multiplier while affected by Precision · Non-Channelling Skills have -8 to Total Mana Cost while affected by Clarity · Unaffected by Temporal Chains while affected by Haste",
+      "details": []
+    },
+    {
+      "title": "주얼: Whispering Portent",
+      "explanation": "옵션: +14 to Strength · +50 to Evasion Rating · +23 to maximum Life · Regenerate 9.5 Life per second · 50% chance to Avoid being Shocked",
+      "details": []
+    },
+    {
+      "title": "주얼: Unnatural Instinct",
+      "explanation": "옵션: You cannot be Maimed · Allocated Small Passive Skills in Radius grant nothing · Grants all bonuses of Unallocated Small Passive Skills in Radius",
+      "details": []
+    },
+    {
+      "title": "주얼: Lethal Pride",
+      "explanation": "옵션: Commanded leadership over 10665 warriors under Rakiata · Passives in radius are Conquered by the Karui · Historic",
+      "details": []
+    },
+    {
+      "title": "주얼: Stormshroud",
+      "explanation": "옵션: +13% to Lightning Resistance · Modifiers to Chance to Avoid being Shocked apply to all Elemental Ailments",
+      "details": []
+    },
+    {
+      "title": "군 주얼: Honour Curio",
+      "explanation": "옵션: Added Small Passive Skills also grant: +4% to Fire Resistance · 1 Added Passive Skill is Overwhelming Malice · 1 Added Passive Skill is Touch of Cruelty · 1 Added Passive Skill is Unholy Grace",
+      "details": []
+    },
+    {
+      "title": "주얼: Emperor's Mastery",
+      "explanation": "옵션: 7% increased Attributes · 4% increased maximum Life · 3% increased Character Size · 5% increased Global Defences",
+      "details": []
+    },
+    {
+      "title": "주얼: Split Personality",
+      "explanation": "옵션: This Jewel's Socket has 25% increased effect per Allocated Passive Skill between\nit and your Class' starting location · +5 to Strength · +5 to maximum Life",
+      "details": []
+    },
+    {
+      "title": "주얼: Forbidden Flesh",
+      "explanation": "옵션: Allocates Deadeye if you have the matching modifier on Forbidden Flame",
+      "details": []
+    },
+    {
+      "title": "군 주얼: Bramble Scar",
+      "explanation": "옵션: Added Small Passive Skills also grant: +4 to All Attributes · Added Small Passive Skills also grant: +13 to Armour · Added Small Passive Skills also grant: +8 to Strength · Added Small Passive Skills have 35% increased Effect",
+      "details": []
+    },
+    {
+      "title": "주얼: Split Personality",
+      "explanation": "옵션: This Jewel's Socket has 25% increased effect per Allocated Passive Skill between\nit and your Class' starting location · +5 to Strength · +5 to maximum Life",
+      "details": []
+    }
+  ],
+  "performance": [
+    {
+      "title": "PoB 계산 수치",
+      "explanation": "주력 DPS 0 · 합산 DPS 0 · 생명력 1,891 · 에너지 보호막 161 · 마나 670 · 방어도 2,858 · 회피 17 · 총 EHP 7,081",
+      "details": []
+    }
+  ],
+  "overrides": [],
+  "unverified": [],
+  "evidence": []
+}

@@ -7,6 +7,11 @@ function gemMeta(gem: Pick<BuildFactSkill | BuildFactSupportGem, 'level' | 'qual
   return `레벨 ${gem.level}${quality}${qualityType}`
 }
 
+function GemImage({ gem, active = false }: { gem: Pick<BuildFactSkill | BuildFactSupportGem, 'name' | 'imageUrl'>, active?: boolean }) {
+  if (!gem.imageUrl) return null
+  return <span className={`gem-icon${active ? ' active-gem-icon' : ''}`}><img src={gem.imageUrl} alt={gem.name} /></span>
+}
+
 const defensiveTags = new Set(['life', 'energy-shield', 'life-regeneration', 'energy-shield-recovery', 'armour', 'evasion', 'ward', 'physical-mitigation', 'fire-resistance', 'cold-resistance', 'lightning-resistance', 'chaos-resistance', 'block', 'spell-block', 'spell-suppression', 'attack-dodge', 'spell-dodge', 'damage-avoidance', 'shock-immunity', 'shock-avoidance', 'freeze-immunity', 'chill-immunity', 'ignite-immunity'])
 
 function skillPriority(skill: BuildFactSkill, result: BrowserInspectResult) {
@@ -36,13 +41,13 @@ export function SkillGemSection({ result }: { result: BrowserInspectResult }) {
       const supports = skill.supports.filter((support) => support.enabled)
       return <article className="skill-gem-group" role="group" aria-label={`${skill.name} 연결 그룹`} key={`${skill.name}-${index}`}>
         <div className="active-gem">
-          <small>활성 스킬</small>
-          <strong>{skill.name}</strong>
-          <span>{gemMeta(skill)}</span>
+          <GemImage gem={skill} active />
+          <div><small>활성 스킬</small><strong>{skill.name}</strong><span>{gemMeta(skill)}</span></div>
         </div>
         {supports.length > 0 ? <ul aria-label={`${skill.name}에 연결된 보조 젬`}>{supports.map((support, supportIndex) => <li key={`${support.name}-${supportIndex}`}>
           <span className="gem-link" aria-hidden="true">＋</span>
-          <div>
+          <GemImage gem={support} />
+          <div className="gem-copy">
             <small>보조 젬{support.awakened && <b>각성</b>}</small>
             <strong>{support.name}</strong>
             <span>{gemMeta(support)}</span>

@@ -9,6 +9,13 @@ export type BrowserEquipmentItem = {
   baseName: string | null
   rarity: string
   modifiers: string[]
+  properties?: string[]
+  requirements?: string[]
+  enchantModifiers?: string[]
+  implicitModifiers?: string[]
+  explicitModifiers?: string[]
+  influences?: string[]
+  status?: string[]
   imageUrl?: string | null
 }
 export type BrowserJewelItem = {
@@ -17,6 +24,13 @@ export type BrowserJewelItem = {
   baseName: string | null
   rarity: string
   modifiers: string[]
+  properties?: string[]
+  requirements?: string[]
+  enchantModifiers?: string[]
+  implicitModifiers?: string[]
+  explicitModifiers?: string[]
+  influences?: string[]
+  status?: string[]
   kind: 'jewel' | 'cluster'
   imageUrl?: string | null
 }
@@ -31,23 +45,27 @@ export type BuildFactOffence = {
 
 export type BuildFactSupportGem = {
   name: string
+  metadataId?: string
   level: number
   quality: number
   qualityType: string
   enabled: boolean
   awakened: boolean
   effects: string[]
+  imageUrl?: string | null
 }
 
 export type BuildFactSkill = {
   effects?: string[]
   name: string
+  metadataId?: string
   level: number
   quality: number
   qualityType: string
   enabled: boolean
   awakened: boolean
   supports: BuildFactSupportGem[]
+  imageUrl?: string | null
 }
 
 export type BuildFactPassive = {

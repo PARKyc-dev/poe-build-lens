@@ -3,6 +3,7 @@ import { useState, type FocusEvent, type MouseEvent } from 'react'
 import type { BrowserEquipmentItem, BrowserJewelItem } from '../pob/browserPob'
 import { resolveItemImage } from '../pob/itemAssetResolver'
 import type { DetailTooltip } from './detailTooltip'
+import { DetailTooltipCard } from './DetailTooltipCard'
 import { EquipmentSection } from './EquipmentSection'
 import './BuildPage.css'
 import './EquipmentPreviewPage.css'
@@ -56,6 +57,6 @@ export function EquipmentPreviewPage() {
       <a className="secondary-button" href="/">PoB 검사로 돌아가기</a>
     </header>
     <EquipmentSection result={{ equipment: previewEquipment, jewels: previewJewels }} tooltip={tooltip} onShow={showTooltip} onHide={() => setTooltip(null)} />
-    {tooltip && <aside id="item-tooltip" className="detail-tooltip" style={{ position: 'fixed', left: tooltipLeft, top: tooltipTop }} role="tooltip" aria-label={`${tooltip.title} 장비 정보`}><small>{tooltip.label}</small><h3>{tooltip.title}</h3><div>{tooltip.details.map((detail) => <p key={detail}>{detail}</p>)}</div></aside>}
+    {tooltip && <DetailTooltipCard tooltip={tooltip} style={{ position: 'fixed', left: tooltipLeft, top: tooltipTop, maxHeight: `calc(100vh - ${tooltipTop + 12}px)` }} ariaLabel={`${tooltip.title} 장비 정보`} />}
   </main>
 }

@@ -1,4 +1,4 @@
-import type { BrowserInspectResult } from '../pob/browserPob'
+import type { BrowserEquipmentItem, BrowserInspectResult, BrowserJewelItem } from '../pob/browserPob'
 import type { DetailTooltip, ShowDetailTooltip } from './detailTooltip'
 import './EquipmentSection.css'
 
@@ -6,10 +6,26 @@ const labels: Record<string, string> = { 'Weapon 1': '주무기', 'Weapon 2': '�
 const slots = Object.keys(labels)
 const classes: Record<string, string> = { 'Weapon 1': 'weapon-1', 'Weapon 2': 'weapon-2', Helmet: 'helmet', 'Body Armour': 'body-armour', Gloves: 'gloves', Boots: 'boots', Amulet: 'amulet', 'Ring 1': 'ring-1', 'Ring 2': 'ring-2', Belt: 'belt', 'Flask 1': 'flask-1', 'Flask 2': 'flask-2', 'Flask 3': 'flask-3', 'Flask 4': 'flask-4', 'Flask 5': 'flask-5' }
 
+function itemTooltip(item: BrowserEquipmentItem | BrowserJewelItem, label: string, id: string) {
+  const hasSeparatedModifiers = item.enchantModifiers || item.implicitModifiers || item.explicitModifiers
+  return {
+    id, label, title: item.name, baseName: item.baseName, details: item.modifiers,
+    sections: [
+      { label: '기본 정보', details: item.properties ?? [] },
+      { label: '요구사항', details: item.requirements ?? [] },
+      { label: '인챈트', details: item.enchantModifiers ?? [] },
+      { label: '고정 속성', details: item.implicitModifiers ?? [] },
+      { label: '일반 속성', details: item.explicitModifiers ?? (hasSeparatedModifiers ? [] : item.modifiers) },
+      { label: '영향력', details: item.influences ?? [] },
+      { label: '상태', details: item.status ?? [] },
+    ],
+  }
+}
+
 export function EquipmentSection({ result, tooltip, onShow, onHide }: { result: Pick<BrowserInspectResult, 'equipment' | 'jewels'>; tooltip: DetailTooltip | null; onShow: ShowDetailTooltip; onHide: () => void }) {
   const bySlot = new Map(result.equipment.map((item) => [item.slot, item]))
   const jewels = result.jewels.filter((item) => item.kind === 'jewel')
   const clusterJewels = result.jewels.filter((item) => item.kind === 'cluster')
-  const tooltipFor = (item: Pick<BrowserInspectResult['equipment'][number], 'name' | 'modifiers'>, label: string, id: string) => ({ id, label, title: item.name, details: item.modifiers })
+  const tooltipFor = itemTooltip
   return <section className="equipment-panel" aria-label="장비 상세"><p className="section-kicker">EQUIPMENT</p><h2>장비 상세</h2>{result.equipment.length === 0 && result.jewels.length === 0 ? <p>활성 장비 세트와 패시브 트리에 장착된 아이템이 없습니다.</p> : <><div className="equipment-stage"><ul className="equipment-layout">{slots.map((slot) => { const item = bySlot.get(slot); const label = labels[slot]; return <li key={slot} className={`equipment-slot ${classes[slot]} ${item ? `rarity-${item.rarity.toLowerCase()}` : 'empty'}`}>{item ? <button type="button" aria-label={`${label} 슬롯: ${item.name}`} aria-describedby={tooltip?.id === `equipment:${slot}` ? 'item-tooltip' : undefined} onMouseEnter={(event) => onShow(event, tooltipFor(item, label, `equipment:${slot}`))} onMouseLeave={onHide} onFocus={(event) => onShow(event, tooltipFor(item, label, `equipment:${slot}`))} onBlur={onHide}>{item.imageUrl ? <img src={item.imageUrl} alt="" /> : <span className="equipment-slot-label">{label}</span>}<strong>{item.name}</strong></button> : <span aria-label={`${label} 슬롯`} className="equipment-slot-label">{label}</span>}</li> })}</ul>{result.jewels.length > 0 && <div className="jewel-groups">{jewels.length > 0 && <section aria-label="주얼"><h3>주얼</h3><ul className="jewel-list">{jewels.map((item, index) => { const id = `jewel:${item.socket}:${item.kind}:${item.name}:${index}`; return <li key={id} className={`rarity-${item.rarity.toLowerCase()}`}><button type="button" aria-label={`주얼: ${item.name}`} aria-describedby={tooltip?.id === id ? 'item-tooltip' : undefined} onMouseEnter={(event) => onShow(event, tooltipFor(item, '주얼', id))} onMouseLeave={onHide} onFocus={(event) => onShow(event, tooltipFor(item, '주얼', id))} onBlur={onHide}>{item.imageUrl && <img src={item.imageUrl} alt="" />}<strong>{item.name}</strong><span>{item.baseName}</span></button></li> })}</ul></section>}{clusterJewels.length > 0 && <section aria-label="군 주얼"><h3>군 주얼</h3><ul className="jewel-list">{clusterJewels.map((item, index) => { const id = `jewel:${item.socket}:${item.kind}:${item.name}:${index}`; return <li key={id} className={`rarity-${item.rarity.toLowerCase()}`}><button type="button" aria-label={`군 주얼: ${item.name}`} aria-describedby={tooltip?.id === id ? 'item-tooltip' : undefined} onMouseEnter={(event) => onShow(event, tooltipFor(item, '군 주얼', id))} onMouseLeave={onHide} onFocus={(event) => onShow(event, tooltipFor(item, '군 주얼', id))} onBlur={onHide}>{item.imageUrl && <img src={item.imageUrl} alt="" />}<strong>{item.name}</strong><span>{item.baseName}</span></button></li> })}</ul></section>}</div>}</div><ul className="equipment-details">{result.equipment.map((item) => <li key={`equipment:${item.slot}`} className={`rarity-${item.rarity.toLowerCase()}`}><small>{labels[item.slot] ?? item.slot}</small><strong>{item.name}</strong>{item.baseName && <span>{item.baseName}</span>}{item.modifiers.map((modifier, index) => <em key={`${modifier}:${index}`}>{modifier}</em>)}</li>)}{result.jewels.map((item, index) => <li key={`jewel-detail:${item.socket}:${item.kind}:${item.name}:${index}`} className={`rarity-${item.rarity.toLowerCase()}`}><small>{item.kind === 'cluster' ? '군 주얼' : '주얼'}</small><strong>{item.name}</strong>{item.baseName && <span>{item.baseName}</span>}{item.modifiers.map((modifier, modifierIndex) => <em key={`${modifier}:${modifierIndex}`}>{modifier}</em>)}</li>)}</ul></>}</section>
 }

@@ -10,6 +10,7 @@ import type { PassiveTree } from './passiveTree'
 import type { BrowserJewelItem, BrowserSkillTooltip, BuildFacts } from './browserPob'
 import { resolvePobInput } from './pobInput'
 import { resolveItemImage } from './itemAssetResolver'
+import { resolveGemImage } from './gemAssetResolver'
 
 type InspectEntry = { id: number; title: string }
 type EquipmentItem = { slot: string; name: string; baseName: string | null; rarity: string; modifiers: string[]; imageUrl?: string | null }
@@ -104,6 +105,11 @@ async function inspect(input: string): Promise<BrowserInspectResult> {
   const result = JSON.parse(await load(xml)) as BrowserInspectResult
   result.equipment = result.equipment.map((item) => ({ ...item, imageUrl: resolveItemImage(item) }))
   result.jewels = result.jewels.map((item) => ({ ...item, imageUrl: resolveItemImage(item) }))
+  result.buildFacts.skills = result.buildFacts.skills.map((skill) => ({
+    ...skill,
+    imageUrl: resolveGemImage(skill.metadataId),
+    supports: skill.supports.map((support) => ({ ...support, imageUrl: resolveGemImage(support.metadataId) })),
+  }))
   return result
 }
 

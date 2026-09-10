@@ -160,6 +160,13 @@
     "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/Amulet6.png",
     "source": "pob-export + repoe"
   },
+  "Great Maw Talisman": {
+    "nameEn": "Great Maw Talisman",
+    "nameKo": null,
+    "metadataId": "Metadata/Items/Amulets/Talismans/TalismanFrog",
+    "iconUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanRed7.png",
+    "source": "poedb"
+  },
   "Greatwolf Talisman": {
     "nameEn": "Greatwolf Talisman",
     "nameKo": null,

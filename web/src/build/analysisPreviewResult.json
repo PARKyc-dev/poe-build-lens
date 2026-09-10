@@ -1,0 +1,3027 @@
+{
+  "skillTooltips": [
+    {
+      "details": [
+        "Casts an aura that grants fire resistance to you and your allies.",
+        "+2 metres to radius",
+        "You and nearby allies gain 57% additional Fire Resistance",
+        "You and nearby allies gain 4% additional maximum Fire Resistance"
+      ],
+      "name": "Purity of Fire"
+    },
+    {
+      "details": [
+        "Casts an aura that increases the movement speed, attack speed and cast speed of you and your allies.",
+        "+2 metres to radius",
+        "You and nearby allies gain 16% increased Movement Speed",
+        "You and nearby allies gain 25% increased Attack Speed",
+        "You and nearby allies gain 25% increased Cast Speed"
+      ],
+      "name": "Haste"
+    },
+    {
+      "details": [
+        "Applies a buff which can take some of the damage from hits for you before being depleted. Shares a cooldown with other Guard skills.",
+        "Base duration is 1.5 seconds",
+        "15% increased Cooldown Recovery Rate",
+        "This Skill's Cooldown does not recover during its effect",
+        "70% of Damage from Hits is taken from the Buff before Life or Energy Shield\nBuff can take 2209 Damage",
+        "Buff grants Immunity to Bleeding"
+      ],
+      "name": "Steelskin"
+    },
+    {
+      "details": [
+        "While this skill is active, supported spells will be repeatedly triggered.",
+        "Each Supported Spell will Trigger when its Cooldown is over"
+      ],
+      "name": "Automation"
+    },
+    {
+      "details": [
+        "Adds a buff that deals Physical Damage over time, while increasing Attack Speed and Life Leech. Killing an enemy while this buff is active refreshes the buff duration, and can grant a Frenzy Charge.",
+        "Base duration is 10.8 seconds",
+        "Grants 22% increased Attack Speed",
+        "1.2% of Attack Physical Damage Leeched as Life",
+        "You take 4% of your Maximum Life per second as Physical Damage",
+        "You take 4% of your Maximum Energy Shield per second as Physical Damage",
+        "25% chance to gain a Frenzy Charge on Kill"
+      ],
+      "name": "Blood Rage"
+    },
+    {
+      "details": [
+        "This skill is triggered by supported skills to summon Sacred Wisps which use the triggering skill when you do.",
+        "Base duration is 10 seconds",
+        "Summons 2 Sacred Wisps\nMaximum 2 Sacred Wisps",
+        "Sacred Wisps have 25% chance to use the Triggering Skill when you fire a\nProjectile with that Skill",
+        "Sacred Wisps have +25% chance to use the Triggering Skill when you fire a Projectile with that Skill while a Rare or Unique Enemy is in your Presence"
+      ],
+      "name": "Summon Sacred Wisps"
+    },
+    {
+      "details": [
+        "Wave your wand to create a hovering kinetic projectile. After a short duration, the projectile is fired at an enemy, dealing area damage on impact and chaining to further targets. Using this attack again will reset the duration for all hovering projectiles. Multiple projectiles fired in sequence will attempt to target different enemies. Cannot be directly used by traps or mines.",
+        "150% Arcane Might",
+        "Base duration is 0.5 seconds",
+        "Chains +3 Times",
+        "Base radius is 1.2 metres",
+        "Projectiles deal 14% more Damage per previous Projectile fired in sequence",
+        "Maximum 12 hovering Projectiles"
+      ],
+      "name": "Kinetic Fusillade"
+    },
+    {
+      "details": [
+        "Waits for a duration before teleporting to a targeted destination, with the duration based on the distance and your movement speed. When the teleport occurs, lightning damage is dealt to the area around both where the player was and where they teleported to. Casting again will queue up multiple teleportations to occur in sequence.",
+        "Deals 57 to 1077 Lightning Damage",
+        "30% increased Cast Speed",
+        "+0.5 metres to radius",
+        "Can queue up to 50 uses",
+        "50% reduced Duration"
+      ],
+      "name": "Lightning Warp"
+    },
+    {
+      "details": [
+        "Curses a single enemy, increasing the damage they take from projectiles, and making projectiles split when hitting them, to hit other targets around them. You can only have one Mark at a time.",
+        "Cursed enemies take 37% increased Damage from Projectile Hits",
+        "Projectiles which Hit Cursed Enemies Split towards 2 additional targets"
+      ],
+      "name": "Sniper's Mark"
+    },
+    {
+      "details": [
+        "Casts an aura that grants mana regeneration to you and your allies.",
+        "20% increased Area of Effect",
+        "You and nearby Allies Regenerate 2.9 Mana per second"
+      ],
+      "name": "Clarity"
+    },
+    {
+      "details": [
+        "Conjures an icy barrier that chills enemies when they hit you. You drop chilled ground while moving, and take less Fire and Physical damage while stationary.",
+        "Base duration is 4.5 seconds",
+        "30% increased Skill Effect Duration",
+        "Buff grants 21% less Physical Damage taken from Hits while stationary",
+        "Buff grants 21% less Fire Damage taken from Hits while stationary",
+        "Chill Enemy for 0.5 seconds when Hit, reducing their Action Speed by 30%",
+        "Buff grants Immunity to Freeze"
+      ],
+      "name": "Arctic Armour"
+    },
+    {
+      "details": [
+        "Casts an aura that grants accuracy and critical strike chance to you and your allies.",
+        "You and nearby allies gain 20% increased Critical Strike Chance",
+        "You and nearby allies gain +93 to Accuracy Rating"
+      ],
+      "name": "Precision"
+    }
+  ],
+  "equipment": [
+    {
+      "modifiers": [
+        "Cannot roll Caster Modifiers",
+        "Adds 16 to 28 Chaos Damage",
+        "19% increased Attack Speed",
+        "37% increased Critical Strike Chance",
+        "+38% to Global Critical Strike Multiplier",
+        "Attacks with this Weapon Penetrate 22% Chaos Resistance",
+        "66% increased Spell Damage"
+      ],
+      "explicitModifiers": [
+        "Adds 16 to 28 Chaos Damage",
+        "19% increased Attack Speed",
+        "37% increased Critical Strike Chance",
+        "+38% to Global Critical Strike Multiplier",
+        "Attacks with this Weapon Penetrate 22% Chaos Resistance",
+        "66% increased Spell Damage (Crafted)"
+      ],
+      "enchantModifiers": [
+        "Quality does not increase Physical Damage (Crafted)",
+        "1% increased Critical Strike Chance per 4% Quality (Crafted)"
+      ],
+      "implicitModifiers": [
+        "Cannot roll Caster Modifiers"
+      ],
+      "slot": "Weapon 1",
+      "requirements": [
+        "Level 59",
+        "Intelligence 188"
+      ],
+      "rarity": "RARE",
+      "influences": [
+        "Hunter"
+      ],
+      "status": [],
+      "properties": [
+        "Quality: 20%",
+        "Intangibility: 20%",
+        "Item Level: 85",
+        "Sockets: G-R-B"
+      ],
+      "name": "Woe Chant",
+      "baseName": "Kinetic Wand",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Weapons/OneHandWeapons/Wands/Wand3.png"
+    },
+    {
+      "modifiers": [
+        "+2 to Level of Socketed AoE Gems",
+        "+1% to maximum Chance to Block Attack Damage",
+        "179% increased Armour",
+        "+23% Chance to Block",
+        "-1% Chance to Block Attack Damage for every 200 Fire Damage taken from Hits Recently",
+        "17% of Cold Damage taken as Fire Damage",
+        "16% of Lightning Damage taken as Fire Damage",
+        "20% of Physical Damage taken as Fire Damage",
+        "Scorch Enemies in Close Range when you Block"
+      ],
+      "explicitModifiers": [
+        "179% increased Armour",
+        "+23% Chance to Block",
+        "-1% Chance to Block Attack Damage for every 200 Fire Damage taken from Hits Recently",
+        "17% of Cold Damage taken as Fire Damage",
+        "16% of Lightning Damage taken as Fire Damage",
+        "20% of Physical Damage taken as Fire Damage",
+        "Scorch Enemies in Close Range when you Block"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [
+        "+2 to Level of Socketed AoE Gems",
+        "+1% to maximum Chance to Block Attack Damage"
+      ],
+      "slot": "Weapon 2",
+      "requirements": [
+        "Level 67",
+        "Strength 159"
+      ],
+      "rarity": "UNIQUE",
+      "influences": [],
+      "status": [
+        "Corrupted"
+      ],
+      "properties": [
+        "Quality: 20%",
+        "Item Level: 85",
+        "Sockets: R-R-B",
+        "Armour: 670"
+      ],
+      "name": "Dawnbreaker",
+      "baseName": "Colossal Tower Shield",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Shields/ShieldStr6.png"
+    },
+    {
+      "modifiers": [
+        "+49 to Strength",
+        "+83 to Armour",
+        "+24 to maximum Energy Shield",
+        "+143 to maximum Life",
+        "1% increased Critical Strike Chance per 10 Strength",
+        "Gain Accuracy Rating equal to your Strength",
+        "Nearby Enemies have -12% to Chaos Resistance",
+        "71% increased Armour and Energy Shield"
+      ],
+      "explicitModifiers": [
+        "+49 to Strength",
+        "+83 to Armour",
+        "+24 to maximum Energy Shield",
+        "+143 to maximum Life",
+        "1% increased Critical Strike Chance per 10 Strength",
+        "Gain Accuracy Rating equal to your Strength",
+        "Nearby Enemies have -12% to Chaos Resistance",
+        "71% increased Armour and Energy Shield (Crafted)"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "slot": "Helmet",
+      "requirements": [
+        "Level 84",
+        "Strength 132",
+        "Intelligence 132"
+      ],
+      "rarity": "RARE",
+      "influences": [
+        "Warlord",
+        "Hunter"
+      ],
+      "status": [],
+      "properties": [
+        "Quality: 20%",
+        "Intangibility: 29%",
+        "Item Level: 85",
+        "Sockets: B-G-R-B",
+        "Armour: 587",
+        "Energy Shield: 126"
+      ],
+      "name": "Fate Star",
+      "baseName": "Divine Crown",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Helmets/HelmetStrInt9.png"
+    },
+    {
+      "modifiers": [
+        "Chance to Block Spell Damage is Unlucky",
+        "+118 to Strength",
+        "90% increased Armour",
+        "10% reduced Movement Speed",
+        "Strength's Damage Bonus instead grants 3% increased Melee\nPhysical Damage per 10 Strength",
+        "+1% Chance to Block Spell Damage per 50 Strength"
+      ],
+      "explicitModifiers": [
+        "Chance to Block Spell Damage is Unlucky",
+        "+118 to Strength",
+        "90% increased Armour",
+        "10% reduced Movement Speed",
+        "Strength's Damage Bonus instead grants 3% increased Melee\nPhysical Damage per 10 Strength",
+        "+1% Chance to Block Spell Damage per 50 Strength (Mutated)"
+      ],
+      "enchantModifiers": [
+        "Quality does not increase Defences (Crafted)",
+        "Grants +1 to Strength per 2% Quality (Crafted)"
+      ],
+      "implicitModifiers": [],
+      "slot": "Body Armour",
+      "requirements": [
+        "Level 59",
+        "Strength 160"
+      ],
+      "rarity": "UNIQUE",
+      "influences": [],
+      "status": [
+        "Foulborn"
+      ],
+      "properties": [
+        "Quality: 20%",
+        "Intangibility: 21%",
+        "Item Level: 83",
+        "Sockets: G-R-W-W-B-B",
+        "Armour: 682"
+      ],
+      "name": "Foulborn The Iron Fortress",
+      "baseName": "Crusader Plate",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/BodyArmours/BodyStr2B.png"
+    },
+    {
+      "modifiers": [
+        "3% increased Damage per 100 Strength",
+        "Gain 1 Rage on Attack Hit",
+        "+55 to Strength",
+        "15% increased Attack Speed",
+        "+82 to Armour",
+        "+55 to maximum Life",
+        "Regenerate 5.3 Mana per second",
+        "+33% to Chaos Resistance",
+        "19% increased Projectile Speed",
+        "16% increased Projectile Damage"
+      ],
+      "explicitModifiers": [
+        "+55 to Strength",
+        "15% increased Attack Speed",
+        "+82 to Armour",
+        "+55 to maximum Life",
+        "Regenerate 5.3 Mana per second",
+        "+33% to Chaos Resistance",
+        "19% increased Projectile Speed (Crafted)",
+        "16% increased Projectile Damage (Crafted)"
+      ],
+      "enchantModifiers": [
+        "-1 to maximum Sockets (Crafted)",
+        "1.5% of Attack Damage Leeched as Life (Crafted)"
+      ],
+      "implicitModifiers": [
+        "3% increased Damage per 100 Strength",
+        "Gain 1 Rage on Attack Hit"
+      ],
+      "slot": "Gloves",
+      "requirements": [
+        "Level 84",
+        "Strength 144"
+      ],
+      "rarity": "RARE",
+      "influences": [
+        "Searing Exarch",
+        "Eater of Worlds"
+      ],
+      "status": [],
+      "properties": [
+        "Quality: 20%",
+        "Intangibility: 56%",
+        "Item Level: 86",
+        "Sockets: R-G-B",
+        "Armour: 582"
+      ],
+      "name": "Phoenix Clutches",
+      "baseName": "Leviathan Gauntlets",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Gloves/GlovesStr4.png"
+    },
+    {
+      "modifiers": [
+        "18% increased Strength",
+        "+188 to Armour",
+        "+17% to Chaos Resistance",
+        "25% increased Movement Speed",
+        "Cannot deal non-Chaos Damage",
+        "Adds 1 to 80 Chaos Damage to Attacks per 80 Strength"
+      ],
+      "explicitModifiers": [
+        "18% increased Strength",
+        "+188 to Armour",
+        "+17% to Chaos Resistance",
+        "25% increased Movement Speed",
+        "Cannot deal non-Chaos Damage",
+        "Adds 1 to 80 Chaos Damage to Attacks per 80 Strength"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "slot": "Boots",
+      "requirements": [
+        "Level 49",
+        "Strength 47",
+        "Intelligence 47"
+      ],
+      "rarity": "RELIC",
+      "influences": [],
+      "status": [],
+      "properties": [
+        "Quality: 20%",
+        "Item Level: 84",
+        "Sockets: R-B-G-B",
+        "Armour: 337",
+        "Energy Shield: 23"
+      ],
+      "name": "Replica Alberon's Warpath",
+      "baseName": "Soldier Boots",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Armours/Boots/BootsStrInt3.png"
+    },
+    {
+      "modifiers": [
+        "+37 to all Attributes",
+        "10% increased Attributes",
+        "14% increased Strength",
+        "24% increased Rarity of Items found",
+        "1% increased Damage per 15 Strength",
+        "Non-Channelling Skills have -7 to Total Mana Cost"
+      ],
+      "explicitModifiers": [
+        "+37 to all Attributes",
+        "10% increased Attributes",
+        "14% increased Strength",
+        "24% increased Rarity of Items found",
+        "1% increased Damage per 15 Strength",
+        "Non-Channelling Skills have -7 to Total Mana Cost (Crafted)"
+      ],
+      "enchantModifiers": [
+        "15% increased Attributes (Crafted)"
+      ],
+      "implicitModifiers": [],
+      "slot": "Amulet",
+      "requirements": [
+        "Level 64"
+      ],
+      "rarity": "RARE",
+      "influences": [
+        "Shaper",
+        "Warlord"
+      ],
+      "status": [],
+      "properties": [
+        "Catalyst Quality: 20%",
+        "Item Level: 85"
+      ],
+      "name": "Agony Gorget",
+      "baseName": "Great Maw Talisman",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Amulets/TalismanRed7.png"
+    },
+    {
+      "modifiers": [
+        "-1 Prefix Modifier allowed",
+        "+1 Suffix Modifier allowed",
+        "Implicit Modifiers Cannot Be Changed",
+        "25% increased Suffix Modifier magnitudes",
+        "+78 to Strength",
+        "Adds 8 to 13 Physical Damage to Attacks",
+        "+31% to Global Critical Strike Multiplier",
+        "+42% to Chaos Resistance",
+        "Gain 20 Life per Enemy Hit with Attacks",
+        "+18 to all Attributes"
+      ],
+      "explicitModifiers": [
+        "+78 to Strength",
+        "Adds 8 to 13 Physical Damage to Attacks",
+        "+31% to Global Critical Strike Multiplier",
+        "+42% to Chaos Resistance",
+        "Gain 20 Life per Enemy Hit with Attacks",
+        "+18 to all Attributes (Crafted)"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [
+        "-1 Prefix Modifier allowed",
+        "+1 Suffix Modifier allowed",
+        "Implicit Modifiers Cannot Be Changed",
+        "25% increased Suffix Modifier magnitudes"
+      ],
+      "slot": "Ring 1",
+      "requirements": [
+        "Level 65"
+      ],
+      "rarity": "RARE",
+      "influences": [
+        "Hunter"
+      ],
+      "status": [],
+      "properties": [
+        "Catalyst Quality: 20%",
+        "Intangibility: 14%",
+        "Item Level: 86"
+      ],
+      "name": "Horror Band",
+      "baseName": "Cogwork Ring",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/HeistRing1.png"
+    },
+    {
+      "modifiers": [
+        "-1 Prefix Modifier allowed",
+        "+1 Suffix Modifier allowed",
+        "Implicit Modifiers Cannot Be Changed",
+        "25% increased Suffix Modifier magnitudes",
+        "+79 to Strength",
+        "+96 to maximum Life",
+        "+60% to Fire Resistance",
+        "+18% to Chaos Resistance",
+        "Non-Channelling Skills have -7 to Total Mana Cost",
+        "+28% to Global Critical Strike Multiplier"
+      ],
+      "explicitModifiers": [
+        "+79 to Strength",
+        "+96 to maximum Life",
+        "+60% to Fire Resistance",
+        "+18% to Chaos Resistance",
+        "Non-Channelling Skills have -7 to Total Mana Cost (Crafted)",
+        "+28% to Global Critical Strike Multiplier (Fractured)"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [
+        "-1 Prefix Modifier allowed",
+        "+1 Suffix Modifier allowed",
+        "Implicit Modifiers Cannot Be Changed",
+        "25% increased Suffix Modifier magnitudes"
+      ],
+      "slot": "Ring 2",
+      "requirements": [
+        "Level 67"
+      ],
+      "rarity": "RARE",
+      "influences": [],
+      "status": [
+        "Fractured Item"
+      ],
+      "properties": [
+        "Catalyst Quality: 20%",
+        "Intangibility: 11%",
+        "Item Level: 85"
+      ],
+      "name": "Rune Whorl",
+      "baseName": "Cogwork Ring",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Rings/HeistRing1.png"
+    },
+    {
+      "modifiers": [
+        "Has 1 Abyssal Socket",
+        "+69 to Strength",
+        "14% increased Attributes",
+        "+79 to maximum Life",
+        "10% increased maximum Life",
+        "+33% to Chaos Resistance",
+        "17% increased Damage"
+      ],
+      "explicitModifiers": [
+        "+69 to Strength",
+        "14% increased Attributes",
+        "+79 to maximum Life",
+        "10% increased maximum Life",
+        "+33% to Chaos Resistance",
+        "17% increased Damage (Crafted)"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [
+        "Has 1 Abyssal Socket"
+      ],
+      "slot": "Belt",
+      "requirements": [],
+      "rarity": "RARE",
+      "influences": [
+        "Hunter"
+      ],
+      "status": [],
+      "properties": [
+        "Catalyst Quality: 20%",
+        "Intangibility: 32%",
+        "Item Level: 86",
+        "Sockets: A"
+      ],
+      "name": "Armageddon Clasp",
+      "baseName": "Stygian Vise",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Belts/AbyssBelt.png"
+    },
+    {
+      "modifiers": [
+        "34% chance to gain a Flask Charge when you deal a Critical Strike",
+        "All Damage from Critical Strikes can apply Lightning Ailments during effect",
+        "50% reduced Duration"
+      ],
+      "explicitModifiers": [
+        "34% chance to gain a Flask Charge when you deal a Critical Strike",
+        "All Damage from Critical Strikes can apply Lightning Ailments during effect",
+        "50% reduced Duration"
+      ],
+      "enchantModifiers": [
+        "Used when Charges reach full (Crafted)"
+      ],
+      "implicitModifiers": [],
+      "slot": "Flask 1",
+      "requirements": [
+        "Level 36"
+      ],
+      "rarity": "UNIQUE",
+      "influences": [],
+      "status": [],
+      "properties": [
+        "Quality: 20%",
+        "Item Level: 85"
+      ],
+      "name": "Stormblood",
+      "baseName": "Topaz Flask",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/topaz.png"
+    },
+    {
+      "modifiers": [
+        "16% chance to gain a Flask Charge when you deal a Critical Strike",
+        "53% increased Critical Strike Chance during Effect"
+      ],
+      "explicitModifiers": [
+        "16% chance to gain a Flask Charge when you deal a Critical Strike",
+        "53% increased Critical Strike Chance during Effect"
+      ],
+      "enchantModifiers": [
+        "Used when Charges reach full (Crafted)"
+      ],
+      "implicitModifiers": [],
+      "slot": "Flask 2",
+      "requirements": [
+        "Level 65"
+      ],
+      "rarity": "MAGIC",
+      "influences": [],
+      "status": [],
+      "properties": [
+        "Quality: 20%",
+        "Item Level: 83"
+      ],
+      "name": "Physician's Diamond Flask of Incision",
+      "baseName": "Diamond Flask",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/diamond.png"
+    },
+    {
+      "modifiers": [
+        "Gain 3 Charges when you are Hit by an Enemy",
+        "9% increased Movement Speed during Effect"
+      ],
+      "explicitModifiers": [
+        "Gain 3 Charges when you are Hit by an Enemy",
+        "9% increased Movement Speed during Effect"
+      ],
+      "enchantModifiers": [
+        "Used when Charges reach full (Crafted)"
+      ],
+      "implicitModifiers": [],
+      "slot": "Flask 3",
+      "requirements": [
+        "Level 64"
+      ],
+      "rarity": "MAGIC",
+      "influences": [],
+      "status": [],
+      "properties": [
+        "Quality: 20%",
+        "Item Level: 83"
+      ],
+      "name": "Flagellant's Ruby Flask of the Lynx",
+      "baseName": "Ruby Flask",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/ruby.png"
+    },
+    {
+      "modifiers": [
+        "29% chance to gain a Flask Charge when you deal a Critical Strike",
+        "54% Chance to Avoid being Stunned during Effect"
+      ],
+      "explicitModifiers": [
+        "29% chance to gain a Flask Charge when you deal a Critical Strike",
+        "54% Chance to Avoid being Stunned during Effect"
+      ],
+      "enchantModifiers": [
+        "Used when Charges reach full (Crafted)"
+      ],
+      "implicitModifiers": [],
+      "slot": "Flask 4",
+      "requirements": [
+        "Level 64"
+      ],
+      "rarity": "MAGIC",
+      "influences": [],
+      "status": [],
+      "properties": [
+        "Quality: 20%",
+        "Item Level: 82"
+      ],
+      "name": "Specialist's Silver Flask of Tenaciousness",
+      "baseName": "Silver Flask",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/silver.png"
+    },
+    {
+      "modifiers": [
+        "13% chance to gain a Flask Charge when you deal a Critical Strike",
+        "10% increased Movement Speed during Effect"
+      ],
+      "explicitModifiers": [
+        "13% chance to gain a Flask Charge when you deal a Critical Strike",
+        "10% increased Movement Speed during Effect"
+      ],
+      "enchantModifiers": [
+        "Used when Charges reach full (Crafted)"
+      ],
+      "implicitModifiers": [],
+      "slot": "Flask 5",
+      "requirements": [
+        "Level 52"
+      ],
+      "rarity": "MAGIC",
+      "influences": [],
+      "status": [],
+      "properties": [
+        "Quality: 20%",
+        "Item Level: 83"
+      ],
+      "name": "Medic's Quicksilver Flask of the Lynx",
+      "baseName": "Quicksilver Flask",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Flasks/sprint.png"
+    }
+  ],
+  "mainSkillFlags": {
+    "isSelfCast": true,
+    "isMinion": false,
+    "isAttack": true,
+    "isMine": false,
+    "isTriggered": false,
+    "isBrand": false,
+    "isTrap": false,
+    "isTotem": false
+  },
+  "tree": {
+    "nodes": [
+      {
+        "allocated": true,
+        "id": "58833",
+        "x": 3.435,
+        "y": 6.815
+      }
+    ],
+    "version": "3_29",
+    "links": []
+  },
+  "activeSpec": 1,
+  "jewels": [
+    {
+      "modifiers": [
+        "Allocates Deadeye if you have the matching modifier on Forbidden Flame"
+      ],
+      "explicitModifiers": [
+        "Allocates Deadeye if you have the matching modifier on Forbidden Flame"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "status": [
+        "Corrupted"
+      ],
+      "requirements": [
+        "Class Scion"
+      ],
+      "rarity": "UNIQUE",
+      "influences": [],
+      "kind": "jewel",
+      "socket": "22994",
+      "properties": [
+        "Item Level: 86",
+        "Limited to: 1"
+      ],
+      "name": "Forbidden Flesh",
+      "baseName": "Cobalt Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/basicint.png"
+    },
+    {
+      "modifiers": [
+        "+13% to Lightning Resistance",
+        "Modifiers to Chance to Avoid being Shocked apply to all Elemental Ailments"
+      ],
+      "explicitModifiers": [
+        "+13% to Lightning Resistance",
+        "Modifiers to Chance to Avoid being Shocked apply to all Elemental Ailments"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "status": [
+        "Corrupted"
+      ],
+      "requirements": [],
+      "rarity": "UNIQUE",
+      "influences": [],
+      "kind": "jewel",
+      "socket": "26725",
+      "properties": [
+        "Item Level: 85"
+      ],
+      "name": "Stormshroud",
+      "baseName": "Viridian Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/basicdex.png"
+    },
+    {
+      "modifiers": [
+        "+14 to Strength",
+        "+50 to Evasion Rating",
+        "+23 to maximum Life",
+        "Regenerate 9.5 Life per second",
+        "50% chance to Avoid being Shocked"
+      ],
+      "explicitModifiers": [
+        "+14 to Strength",
+        "+50 to Evasion Rating",
+        "+23 to maximum Life",
+        "Regenerate 9.5 Life per second",
+        "50% chance to Avoid being Shocked"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "status": [
+        "Corrupted"
+      ],
+      "requirements": [
+        "Level 56"
+      ],
+      "rarity": "RARE",
+      "influences": [],
+      "kind": "jewel",
+      "socket": "28475",
+      "properties": [
+        "Intangibility: 32%",
+        "Item Level: 85"
+      ],
+      "name": "Whispering Portent",
+      "baseName": "Ghastly Eye Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/GhastlyEye.png"
+    },
+    {
+      "modifiers": [
+        "Commanded leadership over 10665 warriors under Rakiata",
+        "Passives in radius are Conquered by the Karui",
+        "Historic"
+      ],
+      "explicitModifiers": [
+        "Commanded leadership over 10665 warriors under Rakiata",
+        "Passives in radius are Conquered by the Karui",
+        "Historic"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "status": [],
+      "requirements": [],
+      "rarity": "UNIQUE",
+      "influences": [],
+      "kind": "jewel",
+      "socket": "31683",
+      "properties": [
+        "Item Level: 83",
+        "Radius: Large"
+      ],
+      "name": "Lethal Pride",
+      "baseName": "Timeless Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/Timeless.png"
+    },
+    {
+      "modifiers": [
+        "Added Small Passive Skills also grant: +4 to All Attributes",
+        "Added Small Passive Skills also grant: +13 to Armour",
+        "Added Small Passive Skills also grant: +8 to Strength",
+        "Added Small Passive Skills have 35% increased Effect"
+      ],
+      "explicitModifiers": [
+        "Added Small Passive Skills also grant: +4 to All Attributes",
+        "Added Small Passive Skills also grant: +13 to Armour",
+        "Added Small Passive Skills also grant: +8 to Strength",
+        "Added Small Passive Skills have 35% increased Effect (Fractured)"
+      ],
+      "enchantModifiers": [
+        "Adds 12 Passive Skills (Crafted)",
+        "2 Added Passive Skills are Jewel Sockets (Crafted)",
+        "Added Small Passive Skills grant: 10% increased Spell Damage (Crafted)"
+      ],
+      "implicitModifiers": [],
+      "status": [
+        "Fractured Item"
+      ],
+      "requirements": [
+        "Level 67"
+      ],
+      "rarity": "RARE",
+      "influences": [],
+      "kind": "cluster",
+      "socket": "32763",
+      "properties": [
+        "Intangibility: 12%",
+        "Item Level: 84"
+      ],
+      "name": "Bramble Scar",
+      "baseName": "Large Cluster Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/NewGemBase3.png"
+    },
+    {
+      "modifiers": [
+        "6% increased maximum Energy Shield",
+        "6% increased maximum Life",
+        "4% increased maximum Mana",
+        "+26% to Critical Strike Multiplier while affected by Precision",
+        "Non-Channelling Skills have -8 to Total Mana Cost while affected by Clarity",
+        "Unaffected by Temporal Chains while affected by Haste"
+      ],
+      "explicitModifiers": [
+        "6% increased maximum Energy Shield",
+        "6% increased maximum Life",
+        "4% increased maximum Mana",
+        "+26% to Critical Strike Multiplier while affected by Precision",
+        "Non-Channelling Skills have -8 to Total Mana Cost while affected by Clarity",
+        "Unaffected by Temporal Chains while affected by Haste"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "status": [],
+      "requirements": [],
+      "rarity": "UNIQUE",
+      "influences": [],
+      "kind": "jewel",
+      "socket": "33631",
+      "properties": [
+        "Item Level: 87",
+        "Limited to: 1"
+      ],
+      "name": "Watcher's Eye",
+      "baseName": "Prismatic Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/Mastery.png"
+    },
+    {
+      "modifiers": [
+        "This Jewel's Socket has 25% increased effect per Allocated Passive Skill between\nit and your Class' starting location",
+        "+5 to Strength",
+        "+5 to maximum Life"
+      ],
+      "explicitModifiers": [
+        "This Jewel's Socket has 25% increased effect per Allocated Passive Skill between\nit and your Class' starting location",
+        "+5 to Strength",
+        "+5 to maximum Life"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "status": [
+        "Corrupted"
+      ],
+      "requirements": [],
+      "rarity": "UNIQUE",
+      "influences": [],
+      "kind": "jewel",
+      "socket": "33753",
+      "properties": [
+        "Item Level: 81",
+        "Limited to: 2"
+      ],
+      "name": "Split Personality",
+      "baseName": "Crimson Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/basicstr.png"
+    },
+    {
+      "modifiers": [
+        "Allocates Deadeye if you have the matching modifier on Forbidden Flesh"
+      ],
+      "explicitModifiers": [
+        "Allocates Deadeye if you have the matching modifier on Forbidden Flesh"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "status": [
+        "Corrupted"
+      ],
+      "requirements": [
+        "Class Scion"
+      ],
+      "rarity": "RELIC",
+      "influences": [],
+      "kind": "jewel",
+      "socket": "46393",
+      "properties": [
+        "Item Level: 84",
+        "Limited to: 1"
+      ],
+      "name": "Forbidden Flame",
+      "baseName": "Crimson Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/basicstr.png"
+    },
+    {
+      "modifiers": [
+        "Added Small Passive Skills also grant: +4% to Fire Resistance",
+        "1 Added Passive Skill is Overwhelming Malice",
+        "1 Added Passive Skill is Touch of Cruelty",
+        "1 Added Passive Skill is Unholy Grace"
+      ],
+      "explicitModifiers": [
+        "Added Small Passive Skills also grant: +4% to Fire Resistance",
+        "1 Added Passive Skill is Overwhelming Malice",
+        "1 Added Passive Skill is Touch of Cruelty",
+        "1 Added Passive Skill is Unholy Grace"
+      ],
+      "enchantModifiers": [
+        "Adds 8 Passive Skills (Crafted)",
+        "2 Added Passive Skills are Jewel Sockets (Crafted)",
+        "Added Small Passive Skills grant: 12% increased Chaos Damage (Crafted)"
+      ],
+      "implicitModifiers": [],
+      "status": [],
+      "requirements": [
+        "Level 54"
+      ],
+      "rarity": "RARE",
+      "influences": [],
+      "kind": "cluster",
+      "socket": "46882",
+      "properties": [
+        "Intangibility: 18%",
+        "Item Level: 83"
+      ],
+      "name": "Honour Curio",
+      "baseName": "Large Cluster Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/NewGemBase3.png"
+    },
+    {
+      "modifiers": [
+        "You cannot be Maimed",
+        "Allocated Small Passive Skills in Radius grant nothing",
+        "Grants all bonuses of Unallocated Small Passive Skills in Radius"
+      ],
+      "explicitModifiers": [
+        "Allocated Small Passive Skills in Radius grant nothing",
+        "Grants all bonuses of Unallocated Small Passive Skills in Radius"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [
+        "You cannot be Maimed"
+      ],
+      "status": [
+        "Corrupted"
+      ],
+      "requirements": [],
+      "rarity": "UNIQUE",
+      "influences": [],
+      "kind": "jewel",
+      "socket": "48768",
+      "properties": [
+        "Item Level: 85",
+        "Radius: Small",
+        "Limited to: 1"
+      ],
+      "name": "Unnatural Instinct",
+      "baseName": "Viridian Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/basicdex.png"
+    },
+    {
+      "modifiers": [
+        "15% increased Strength if 2 Warlord Items are Equipped",
+        "10% of Elemental Damage taken as Chaos Damage if 4 Hunter Items are Equipped",
+        "+1 to Level of all Cold Skill Gems if 6 Redeemer Items are Equipped"
+      ],
+      "explicitModifiers": [
+        "15% increased Strength if 2 Warlord Items are Equipped",
+        "10% of Elemental Damage taken as Chaos Damage if 4 Hunter Items are Equipped",
+        "+1 to Level of all Cold Skill Gems if 6 Redeemer Items are Equipped"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "status": [],
+      "requirements": [],
+      "rarity": "UNIQUE",
+      "influences": [],
+      "kind": "jewel",
+      "socket": "54127",
+      "properties": [
+        "Item Level: 86",
+        "Limited to: 1"
+      ],
+      "name": "Bound By Destiny",
+      "baseName": "Prismatic Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/Mastery.png"
+    },
+    {
+      "modifiers": [
+        "7% increased Attributes",
+        "4% increased maximum Life",
+        "3% increased Character Size",
+        "5% increased Global Defences"
+      ],
+      "explicitModifiers": [
+        "7% increased Attributes",
+        "4% increased maximum Life",
+        "3% increased Character Size",
+        "5% increased Global Defences"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "status": [],
+      "requirements": [],
+      "rarity": "RELIC",
+      "influences": [],
+      "kind": "jewel",
+      "socket": "60735",
+      "properties": [
+        "Intangibility: 6%",
+        "Item Level: 84",
+        "Limited to: 1"
+      ],
+      "name": "Emperor's Mastery",
+      "baseName": "Prismatic Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/Mastery.png"
+    },
+    {
+      "modifiers": [
+        "This Jewel's Socket has 25% increased effect per Allocated Passive Skill between\nit and your Class' starting location",
+        "+5 to Strength",
+        "+5 to maximum Life"
+      ],
+      "explicitModifiers": [
+        "This Jewel's Socket has 25% increased effect per Allocated Passive Skill between\nit and your Class' starting location",
+        "+5 to Strength",
+        "+5 to maximum Life"
+      ],
+      "enchantModifiers": [],
+      "implicitModifiers": [],
+      "status": [
+        "Corrupted"
+      ],
+      "requirements": [],
+      "rarity": "UNIQUE",
+      "influences": [],
+      "kind": "jewel",
+      "socket": "6910",
+      "properties": [
+        "Item Level: 82",
+        "Limited to: 2"
+      ],
+      "name": "Split Personality",
+      "baseName": "Crimson Jewel",
+      "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Jewels/basicstr.png"
+    }
+  ],
+  "buildFacts": {
+    "mobility": [
+      {
+        "name": "Lightning Warp"
+      }
+    ],
+    "buffs": [
+      {
+        "appliesTo": "player",
+        "name": "Purity of Fire",
+        "tags": [
+          "fire-resistance"
+        ],
+        "kind": "aura"
+      },
+      {
+        "appliesTo": "player",
+        "name": "Haste",
+        "tags": [],
+        "kind": "aura"
+      },
+      {
+        "appliesTo": "player",
+        "name": "Steelskin",
+        "tags": [],
+        "kind": "guard"
+      },
+      {
+        "appliesTo": "player",
+        "name": "Blood Rage",
+        "tags": [],
+        "kind": "buff"
+      },
+      {
+        "appliesTo": "enemy",
+        "name": "Sniper's Mark",
+        "tags": [],
+        "kind": "mark"
+      },
+      {
+        "appliesTo": "player",
+        "name": "Clarity",
+        "tags": [],
+        "kind": "aura"
+      },
+      {
+        "appliesTo": "player",
+        "name": "Arctic Armour",
+        "tags": [
+          "freeze-immunity"
+        ],
+        "kind": "buff"
+      },
+      {
+        "appliesTo": "player",
+        "name": "Precision",
+        "tags": [],
+        "kind": "aura"
+      }
+    ],
+    "defence": [
+      {
+        "value": 1891,
+        "kind": "life"
+      },
+      {
+        "value": 161,
+        "kind": "energy-shield"
+      },
+      {
+        "value": 670,
+        "kind": "mana"
+      },
+      {
+        "value": 2858,
+        "kind": "armour"
+      },
+      {
+        "value": 17,
+        "kind": "evasion"
+      },
+      {
+        "value": 84,
+        "kind": "fire-resistance"
+      },
+      {
+        "value": 75,
+        "kind": "chaos-resistance"
+      },
+      {
+        "value": 46,
+        "kind": "block"
+      },
+      {
+        "value": 1,
+        "kind": "guard"
+      }
+    ],
+    "passiveTags": [],
+    "skills": [
+      {
+        "metadataId": "Metadata/Items/Gems/SkillGemFireResistAura",
+        "qualityType": "Default",
+        "quality": 30,
+        "enabled": true,
+        "supports": [
+          {
+            "effects": [
+              "This Gem gains 150% increased Experience"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemAdditionalXP",
+            "enabled": true,
+            "level": 4,
+            "name": "Enlighten",
+            "qualityType": "Default",
+            "quality": 30,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/Enlighten.png"
+          }
+        ],
+        "level": 21,
+        "name": "Purity of Fire",
+        "effects": [
+          "Casts an aura that grants fire resistance to you and your allies.",
+          "+2 metres to radius",
+          "You and nearby allies gain 57% additional Fire Resistance",
+          "You and nearby allies gain 4% additional maximum Fire Resistance"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/FireResistAura.png"
+      },
+      {
+        "metadataId": "Metadata/Items/Gems/SkillGemHaste",
+        "qualityType": "Default",
+        "quality": 0,
+        "enabled": true,
+        "supports": [
+          {
+            "effects": [
+              "This Gem gains 150% increased Experience"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemAdditionalXP",
+            "enabled": true,
+            "level": 4,
+            "name": "Enlighten",
+            "qualityType": "Default",
+            "quality": 30,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/Enlighten.png"
+          }
+        ],
+        "level": 21,
+        "name": "Haste",
+        "effects": [
+          "Casts an aura that increases the movement speed, attack speed and cast speed of you and your allies.",
+          "+2 metres to radius",
+          "You and nearby allies gain 16% increased Movement Speed",
+          "You and nearby allies gain 25% increased Attack Speed",
+          "You and nearby allies gain 25% increased Cast Speed"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Haste.png"
+      },
+      {
+        "metadataId": "Metadata/Items/Gems/SkillGemSteelskin",
+        "qualityType": "Default",
+        "quality": 30,
+        "enabled": true,
+        "supports": [
+          {
+            "effects": [
+              "Supported Skills have 2% increased Cooldown Recovery Rate",
+              "Supported Spells are Triggered when their Cooldowns are over"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SkillGemAutomation",
+            "enabled": true,
+            "level": 20,
+            "name": "Automation",
+            "qualityType": "Default",
+            "quality": 30,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/AutoCastInstantSkills.png"
+          }
+        ],
+        "level": 20,
+        "name": "Steelskin",
+        "effects": [
+          "Applies a buff which can take some of the damage from hits for you before being depleted. Shares a cooldown with other Guard skills.",
+          "Base duration is 1.5 seconds",
+          "15% increased Cooldown Recovery Rate",
+          "This Skill's Cooldown does not recover during its effect",
+          "70% of Damage from Hits is taken from the Buff before Life or Energy Shield\nBuff can take 2209 Damage",
+          "Buff grants Immunity to Bleeding"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/QuickGuardGem.png"
+      },
+      {
+        "metadataId": "Metadata/Items/Gems/SkillGemAutomation",
+        "qualityType": "Default",
+        "quality": 30,
+        "enabled": true,
+        "supports": [],
+        "level": 20,
+        "name": "Automation",
+        "effects": [
+          "While this skill is active, supported spells will be repeatedly triggered.",
+          "Each Supported Spell will Trigger when its Cooldown is over"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/AutoCastInstantSkills.png"
+      },
+      {
+        "metadataId": "Metadata/Items/Gems/SkillGemBloodRage",
+        "qualityType": "Default",
+        "quality": 30,
+        "enabled": true,
+        "supports": [
+          {
+            "effects": [
+              "Supported Skills have 2% increased Cooldown Recovery Rate",
+              "Supported Spells are Triggered when their Cooldowns are over"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SkillGemAutomation",
+            "enabled": true,
+            "level": 20,
+            "name": "Automation",
+            "qualityType": "Default",
+            "quality": 30,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/AutoCastInstantSkills.png"
+          }
+        ],
+        "level": 20,
+        "name": "Blood Rage",
+        "effects": [
+          "Adds a buff that deals Physical Damage over time, while increasing Attack Speed and Life Leech. Killing an enemy while this buff is active refreshes the buff duration, and can grant a Frenzy Charge.",
+          "Base duration is 10.8 seconds",
+          "Grants 22% increased Attack Speed",
+          "1.2% of Attack Physical Damage Leeched as Life",
+          "You take 4% of your Maximum Life per second as Physical Damage",
+          "You take 4% of your Maximum Energy Shield per second as Physical Damage",
+          "25% chance to gain a Frenzy Charge on Kill"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/BloodRage.png"
+      },
+      {
+        "metadataId": "Metadata/Items/Gems/SupportGemSacredWisps",
+        "qualityType": "Default",
+        "quality": 20,
+        "enabled": true,
+        "supports": [
+          {
+            "effects": [
+              "Supported Skills deal 19% more Damage",
+              "Supported Skills have 64% less Skill Effect Duration"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemReducedDuration",
+            "enabled": true,
+            "level": 20,
+            "name": "Less Duration",
+            "qualityType": "Default",
+            "quality": 30,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/ReduceDuration.png"
+          }
+        ],
+        "level": 20,
+        "name": "Summon Sacred Wisps",
+        "effects": [
+          "This skill is triggered by supported skills to summon Sacred Wisps which use the triggering skill when you do.",
+          "Base duration is 10 seconds",
+          "Summons 2 Sacred Wisps\nMaximum 2 Sacred Wisps",
+          "Sacred Wisps have 25% chance to use the Triggering Skill when you fire a\nProjectile with that Skill",
+          "Sacred Wisps have +25% chance to use the Triggering Skill when you fire a Projectile with that Skill while a Rare or Unique Enemy is in your Presence"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/WandWispSupport.png"
+      },
+      {
+        "metadataId": "Metadata/Items/Gems/SkillGemKineticFusillade",
+        "qualityType": "Default",
+        "quality": 30,
+        "enabled": true,
+        "supports": [
+          {
+            "effects": [
+              "Supported Skills fire 4 additional Projectiles",
+              "Supported Skills deal 30% increased Projectile Damage",
+              "Supported Skills also fire Projectiles from up to 4 points on each side of you",
+              "Supported Skills deal 21% less Projectile Damage"
+            ],
+            "awakened": true,
+            "metadataId": "Metadata/Items/Gems/SupportGemGreaterVolley",
+            "enabled": true,
+            "level": 20,
+            "name": "Greater Volley",
+            "qualityType": "Default",
+            "quality": 30,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/GreaterVolleySupport.png"
+          },
+          {
+            "effects": [
+              "Supported Skills deal 19% more Damage",
+              "Supported Skills have 64% less Skill Effect Duration"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemReducedDuration",
+            "enabled": true,
+            "level": 20,
+            "name": "Less Duration",
+            "qualityType": "Default",
+            "quality": 30,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/ReduceDuration.png"
+          },
+          {
+            "effects": [
+              "Supported Skills deal 10% increased Attack Damage",
+              "Supported Skills deal 51% less Damage when used by Sacred Wisps",
+              "Supported Skills will Trigger Summon Sacred Wisps on Hit",
+              "Supported Skills can only be used with Wands"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemSacredWisps",
+            "enabled": true,
+            "level": 20,
+            "name": "Sacred Wisps",
+            "qualityType": "Default",
+            "quality": 20,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/WandWispSupport.png"
+          },
+          {
+            "effects": [
+              "Supported Skills deal 58% more Maximum Attack Damage",
+              "Supported Skills deal 69% less Minimum Attack Damage",
+              "Supported Skills deal 10% increased Damage"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemVolatility",
+            "enabled": true,
+            "level": 20,
+            "name": "Volatility",
+            "qualityType": "Default",
+            "quality": 20,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/Volatility.png"
+          },
+          {
+            "effects": [
+              "Supported Skills have +154% to Critical Strike Multiplier"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemIncreasedCriticalDamage",
+            "enabled": true,
+            "level": 20,
+            "name": "Increased Critical Damage",
+            "qualityType": "Default",
+            "quality": 33,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/IncreasedCriticalDamage.png"
+          }
+        ],
+        "level": 21,
+        "name": "Kinetic Fusillade",
+        "effects": [
+          "Wave your wand to create a hovering kinetic projectile. After a short duration, the projectile is fired at an enemy, dealing area damage on impact and chaining to further targets. Using this attack again will reset the duration for all hovering projectiles. Multiple projectiles fired in sequence will attempt to target different enemies. Cannot be directly used by traps or mines.",
+          "150% Arcane Might",
+          "Base duration is 0.5 seconds",
+          "Chains +3 Times",
+          "Base radius is 1.2 metres",
+          "Projectiles deal 14% more Damage per previous Projectile fired in sequence",
+          "Maximum 12 hovering Projectiles"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/KineticFullisadeSkillGem.png"
+      },
+      {
+        "metadataId": "Metadata/Items/Gems/SkillGemLightningWarp",
+        "qualityType": "Default",
+        "quality": 30,
+        "enabled": true,
+        "supports": [
+          {
+            "effects": [
+              "Supported Skills deal 19% more Damage",
+              "Supported Skills have 64% less Skill Effect Duration"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemReducedDuration",
+            "enabled": true,
+            "level": 20,
+            "name": "Less Duration",
+            "qualityType": "Default",
+            "quality": 30,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/ReduceDuration.png"
+          },
+          {
+            "effects": [
+              "Supported Skills have 40% less Mana Cost",
+              "Gain an Inspiration Charge when you Spend Mana on Upfront\nCosts or Effects of Supported Skills",
+              "Supported Skills have 8% increased Critical Strike Chance per Inspiration Charge",
+              "Supported Skills deal 5% more Elemental Damage per Inspiration Charge",
+              "Lose all Inspiration Charges after Spending a total of 922 Mana on Upfront Costs and Effects of Supported Skills"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemReducedMana",
+            "enabled": true,
+            "level": 21,
+            "name": "Inspiration",
+            "qualityType": "Default",
+            "quality": 20,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/ReducedManaCost.png"
+          }
+        ],
+        "level": 21,
+        "name": "Lightning Warp",
+        "effects": [
+          "Waits for a duration before teleporting to a targeted destination, with the duration based on the distance and your movement speed. When the teleport occurs, lightning damage is dealt to the area around both where the player was and where they teleported to. Casting again will queue up multiple teleportations to occur in sequence.",
+          "Deals 57 to 1077 Lightning Damage",
+          "30% increased Cast Speed",
+          "+0.5 metres to radius",
+          "Can queue up to 50 uses",
+          "50% reduced Duration"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/LightningWarp.png"
+      },
+      {
+        "metadataId": "Metadata/Items/Gems/SkillGemProjectileWeakness",
+        "qualityType": "Default",
+        "quality": 30,
+        "enabled": true,
+        "supports": [
+          {
+            "effects": [
+              "Supported Skills Cost Life instead of Mana",
+              "Gain Lifetap after Spending a total of 273 Life on Upfront\nCosts and Effects of a Supported Skill",
+              "Supported Skills deal 19% more Damage while you have Lifetap",
+              "Lifetap lasts 5 seconds"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemLifetap",
+            "enabled": true,
+            "level": 20,
+            "name": "Lifetap",
+            "qualityType": "Default",
+            "quality": 10,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/LifeTap.png"
+          },
+          {
+            "effects": [
+              "16% reduced Effect of Marks from Supported Skills",
+              "Trigger Supported Skill when you Hit a Rare or Unique Enemy with an Attack"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemMarkOnHit",
+            "enabled": true,
+            "level": 20,
+            "name": "Mark On Hit",
+            "qualityType": "Default",
+            "quality": 20,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/MarkOnHitting.png"
+          }
+        ],
+        "level": 21,
+        "name": "Sniper's Mark",
+        "effects": [
+          "Curses a single enemy, increasing the damage they take from projectiles, and making projectiles split when hitting them, to hit other targets around them. You can only have one Mark at a time.",
+          "Cursed enemies take 37% increased Damage from Projectile Hits",
+          "Projectiles which Hit Cursed Enemies Split towards 2 additional targets"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/ProjectileWeakness.png"
+      },
+      {
+        "metadataId": "Metadata/Items/Gems/SkillGemClarity",
+        "qualityType": "Default",
+        "quality": 10,
+        "enabled": true,
+        "supports": [
+          {
+            "effects": [
+              "This Gem gains 50% increased Experience"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemAdditionalXP",
+            "enabled": true,
+            "level": 3,
+            "name": "Enlighten",
+            "qualityType": "Default",
+            "quality": 10,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/Enlighten.png"
+          }
+        ],
+        "level": 1,
+        "name": "Clarity",
+        "effects": [
+          "Casts an aura that grants mana regeneration to you and your allies.",
+          "20% increased Area of Effect",
+          "You and nearby Allies Regenerate 2.9 Mana per second"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Clarity.png"
+      },
+      {
+        "metadataId": "Metadata/Items/Gems/SkillGemNewArcticArmour",
+        "qualityType": "Default",
+        "quality": 30,
+        "enabled": true,
+        "supports": [
+          {
+            "effects": [
+              "This Gem gains 50% increased Experience"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemAdditionalXP",
+            "enabled": true,
+            "level": 3,
+            "name": "Enlighten",
+            "qualityType": "Default",
+            "quality": 10,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/Enlighten.png"
+          }
+        ],
+        "level": 21,
+        "name": "Arctic Armour",
+        "effects": [
+          "Conjures an icy barrier that chills enemies when they hit you. You drop chilled ground while moving, and take less Fire and Physical damage while stationary.",
+          "Base duration is 4.5 seconds",
+          "30% increased Skill Effect Duration",
+          "Buff grants 21% less Physical Damage taken from Hits while stationary",
+          "Buff grants 21% less Fire Damage taken from Hits while stationary",
+          "Chill Enemy for 0.5 seconds when Hit, reducing their Action Speed by 30%",
+          "Buff grants Immunity to Freeze"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/IceShield.png"
+      },
+      {
+        "metadataId": "Metadata/Items/Gems/SkillGemPrecision",
+        "qualityType": "Default",
+        "quality": 0,
+        "enabled": true,
+        "supports": [
+          {
+            "effects": [
+              "This Gem gains 50% increased Experience"
+            ],
+            "awakened": false,
+            "metadataId": "Metadata/Items/Gems/SupportGemAdditionalXP",
+            "enabled": true,
+            "level": 3,
+            "name": "Enlighten",
+            "qualityType": "Default",
+            "quality": 10,
+            "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/Support/Enlighten.png"
+          }
+        ],
+        "level": 1,
+        "name": "Precision",
+        "effects": [
+          "Casts an aura that grants accuracy and critical strike chance to you and your allies.",
+          "You and nearby allies gain 20% increased Critical Strike Chance",
+          "You and nearby allies gain +93 to Accuracy Rating"
+        ],
+        "awakened": false,
+        "imageUrl": "https://web.poecdn.com/image/Art/2DItems/Gems/AccuracyandCriticalChanceAura.png"
+      }
+    ],
+    "operationFacts": [
+      {
+        "subject": "cooldown-recovery",
+        "sourceName": "Steelskin",
+        "sourceType": "skill",
+        "action": "cooldown",
+        "effects": [
+          "CooldownRecovery"
+        ]
+      },
+      {
+        "subject": "no-cooldown-recovery-in-duration",
+        "sourceName": "Steelskin",
+        "sourceType": "skill",
+        "action": "cooldown",
+        "effects": [
+          "NoCooldownRecoveryInDuration"
+        ]
+      },
+      {
+        "subject": "cooldown-recovery",
+        "sourceName": "Blood Rage",
+        "sourceType": "skill",
+        "action": "cooldown",
+        "effects": [
+          "CooldownRecovery"
+        ]
+      },
+      {
+        "subject": "duration",
+        "sourceName": "Summon Sacred Wisps",
+        "sourceType": "skill",
+        "action": "maintain",
+        "effects": [
+          "Duration"
+        ]
+      },
+      {
+        "subject": "damage",
+        "sourceName": "Summon Sacred Wisps",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "Damage"
+        ]
+      },
+      {
+        "subject": "projectile-count",
+        "sourceName": "Kinetic Fusillade",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "ProjectileCount"
+        ]
+      },
+      {
+        "subject": "damage",
+        "sourceName": "Kinetic Fusillade",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "Damage"
+        ]
+      },
+      {
+        "subject": "duration",
+        "sourceName": "Kinetic Fusillade",
+        "sourceType": "skill",
+        "action": "maintain",
+        "effects": [
+          "Duration"
+        ]
+      },
+      {
+        "subject": "sacred-wisps-less-damage",
+        "sourceName": "Kinetic Fusillade",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "SacredWispsLessDamage"
+        ]
+      },
+      {
+        "subject": "max-damage",
+        "sourceName": "Kinetic Fusillade",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "MaxDamage"
+        ]
+      },
+      {
+        "subject": "min-damage",
+        "sourceName": "Kinetic Fusillade",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "MinDamage"
+        ]
+      },
+      {
+        "subject": "projectile-count-maximum",
+        "sourceName": "Kinetic Fusillade",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "ProjectileCountMaximum"
+        ]
+      },
+      {
+        "subject": "spell-to-attacks",
+        "sourceName": "Kinetic Fusillade",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "SpellDamageAppliesToAttacks"
+        ]
+      },
+      {
+        "subject": "spell-to-attacks",
+        "sourceName": "Kinetic Fusillade",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "ImprovedSpellDamageAppliesToAttacks"
+        ]
+      },
+      {
+        "subject": "duration",
+        "sourceName": "Lightning Warp",
+        "sourceType": "skill",
+        "action": "maintain",
+        "effects": [
+          "Duration"
+        ]
+      },
+      {
+        "subject": "damage",
+        "sourceName": "Lightning Warp",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "Damage"
+        ]
+      },
+      {
+        "subject": "mana",
+        "sourceName": "Lightning Warp",
+        "sourceType": "skill",
+        "action": "consume",
+        "effects": [
+          "ManaCost"
+        ]
+      },
+      {
+        "subject": "elemental-damage",
+        "sourceName": "Lightning Warp",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "ElementalDamage"
+        ]
+      },
+      {
+        "subject": "speed",
+        "sourceName": "Lightning Warp",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "Speed"
+        ]
+      },
+      {
+        "subject": "mana",
+        "sourceName": "Sniper's Mark",
+        "sourceType": "skill",
+        "action": "consume",
+        "effects": [
+          "CostLifeInsteadOfMana"
+        ]
+      },
+      {
+        "subject": "damage",
+        "sourceName": "Sniper's Mark",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "Damage"
+        ]
+      },
+      {
+        "subject": "curse-effect",
+        "sourceName": "Sniper's Mark",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "CurseEffect"
+        ]
+      },
+      {
+        "subject": "area-of-effect",
+        "sourceName": "Clarity",
+        "sourceType": "skill",
+        "action": "enhance",
+        "effects": [
+          "AreaOfEffect"
+        ]
+      },
+      {
+        "subject": "duration",
+        "sourceName": "Arctic Armour",
+        "sourceType": "skill",
+        "action": "maintain",
+        "effects": [
+          "Duration"
+        ]
+      },
+      {
+        "subject": "adds-16-to-28-chaos-damage",
+        "sourceName": "Woe Chant",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "Adds 16 to 28 Chaos Damage"
+        ]
+      },
+      {
+        "subject": "19%-increased-attack-speed",
+        "sourceName": "Woe Chant",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "19% increased Attack Speed"
+        ]
+      },
+      {
+        "subject": "66%-increased-spell-damage",
+        "sourceName": "Woe Chant",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "66% increased Spell Damage"
+        ]
+      },
+      {
+        "subject": "cold-damage-taken-as-fire",
+        "sourceName": "Dawnbreaker",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "ColdDamageTakenAsFire"
+        ]
+      },
+      {
+        "subject": "lightning-damage-taken-as-fire",
+        "sourceName": "Dawnbreaker",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "LightningDamageTakenAsFire"
+        ]
+      },
+      {
+        "subject": "physical-damage-taken-as-fire",
+        "sourceName": "Dawnbreaker",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "PhysicalDamageTakenAsFire"
+        ]
+      },
+      {
+        "subject": "-1%-chance-to-block-attack-damage-for-every-200-fire-damage-taken-from-hits-recently",
+        "sourceName": "Dawnbreaker",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "-1% Chance to Block Attack Damage for every 200 Fire Damage taken from Hits Recently"
+        ]
+      },
+      {
+        "subject": "17%-of-cold-damage-taken-as-fire-damage",
+        "sourceName": "Dawnbreaker",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "17% of Cold Damage taken as Fire Damage"
+        ]
+      },
+      {
+        "subject": "16%-of-lightning-damage-taken-as-fire-damage",
+        "sourceName": "Dawnbreaker",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "16% of Lightning Damage taken as Fire Damage"
+        ]
+      },
+      {
+        "subject": "20%-of-physical-damage-taken-as-fire-damage",
+        "sourceName": "Dawnbreaker",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "20% of Physical Damage taken as Fire Damage"
+        ]
+      },
+      {
+        "subject": "scorch-enemies-in-close-range-when-you-block",
+        "sourceName": "Dawnbreaker",
+        "sourceType": "item",
+        "action": "consume",
+        "effects": [
+          "Scorch Enemies in Close Range when you Block"
+        ]
+      },
+      {
+        "subject": "gain-accuracy-rating-equal-to-your-strength",
+        "sourceName": "Fate Star",
+        "sourceType": "item",
+        "action": "gain",
+        "effects": [
+          "Gain Accuracy Rating equal to your Strength"
+        ]
+      },
+      {
+        "subject": "spell-block-chance-is-unlucky",
+        "sourceName": "Foulborn The Iron Fortress",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "SpellBlockChanceIsUnlucky"
+        ]
+      },
+      {
+        "subject": "spell-projectile-block-chance-is-unlucky",
+        "sourceName": "Foulborn The Iron Fortress",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "SpellProjectileBlockChanceIsUnlucky"
+        ]
+      },
+      {
+        "subject": "block-spell-damage-is-unlucky",
+        "sourceName": "Foulborn The Iron Fortress",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "Chance to Block Spell Damage is Unlucky"
+        ]
+      },
+      {
+        "subject": "strength's-damage-bonus-instead-grants-3%-increased-melee-physical-damage-per-10-strength",
+        "sourceName": "Foulborn The Iron Fortress",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "Strength's Damage Bonus instead grants 3% increased Melee\nPhysical Damage per 10 Strength"
+        ]
+      },
+      {
+        "subject": "+1%-chance-to-block-spell-damage-per-50-strength",
+        "sourceName": "Foulborn The Iron Fortress",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "+1% Chance to Block Spell Damage per 50 Strength"
+        ]
+      },
+      {
+        "subject": "15%-increased-attack-speed",
+        "sourceName": "Phoenix Clutches",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "15% increased Attack Speed"
+        ]
+      },
+      {
+        "subject": "19%-increased-projectile-speed",
+        "sourceName": "Phoenix Clutches",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "19% increased Projectile Speed"
+        ]
+      },
+      {
+        "subject": "16%-increased-projectile-damage",
+        "sourceName": "Phoenix Clutches",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "16% increased Projectile Damage"
+        ]
+      },
+      {
+        "subject": "cannot-deal-non-chaos-damage",
+        "sourceName": "Replica Alberon's Warpath",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "Cannot deal non-Chaos Damage"
+        ]
+      },
+      {
+        "subject": "chaos-to-attacks",
+        "sourceName": "Replica Alberon's Warpath",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "Adds 1 to 80 Chaos Damage to Attacks per 80 Strength"
+        ]
+      },
+      {
+        "subject": "mana",
+        "sourceName": "Agony Gorget",
+        "sourceType": "item",
+        "action": "consume",
+        "effects": [
+          "ManaCost"
+        ]
+      },
+      {
+        "subject": "1%-increased-damage-per-15-strength",
+        "sourceName": "Agony Gorget",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "1% increased Damage per 15 Strength"
+        ]
+      },
+      {
+        "subject": "mana",
+        "sourceName": "Agony Gorget",
+        "sourceType": "item",
+        "action": "consume",
+        "effects": [
+          "Non-Channelling Skills have -7 to Total Mana Cost"
+        ]
+      },
+      {
+        "subject": "physical-to-attacks",
+        "sourceName": "Horror Band",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "Adds 8 to 13 Physical Damage to Attacks"
+        ]
+      },
+      {
+        "subject": "mana",
+        "sourceName": "Rune Whorl",
+        "sourceType": "item",
+        "action": "consume",
+        "effects": [
+          "Non-Channelling Skills have -7 to Total Mana Cost"
+        ]
+      },
+      {
+        "subject": "17%-increased-damage",
+        "sourceName": "Armageddon Clasp",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "17% increased Damage"
+        ]
+      },
+      {
+        "subject": "flask-charge",
+        "sourceName": "Stormblood",
+        "sourceType": "item",
+        "action": "gain",
+        "effects": [
+          "34% chance to gain a Flask Charge when you deal a Critical Strike"
+        ]
+      },
+      {
+        "subject": "all-damage-from-critical-strikes-can-apply-lightning-ailments-during-effect",
+        "sourceName": "Stormblood",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "All Damage from Critical Strikes can apply Lightning Ailments during effect"
+        ]
+      },
+      {
+        "subject": "50%-reduced-duration",
+        "sourceName": "Stormblood",
+        "sourceType": "item",
+        "action": "maintain",
+        "effects": [
+          "50% reduced Duration"
+        ]
+      },
+      {
+        "subject": "flask-charge",
+        "sourceName": "Physician's Diamond Flask of Incision",
+        "sourceType": "item",
+        "action": "gain",
+        "effects": [
+          "16% chance to gain a Flask Charge when you deal a Critical Strike"
+        ]
+      },
+      {
+        "subject": "53%-increased-critical-strike-chance-during-effect",
+        "sourceName": "Physician's Diamond Flask of Incision",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "53% increased Critical Strike Chance during Effect"
+        ]
+      },
+      {
+        "subject": "gain-3-charges-when-you-are-hit-by-an-enemy",
+        "sourceName": "Flagellant's Ruby Flask of the Lynx",
+        "sourceType": "item",
+        "action": "gain",
+        "effects": [
+          "Gain 3 Charges when you are Hit by an Enemy"
+        ]
+      },
+      {
+        "subject": "gain-3-charges-when-you-are-hit-by-an-enemy",
+        "sourceName": "Flagellant's Ruby Flask of the Lynx",
+        "sourceType": "item",
+        "action": "on-damaged",
+        "effects": [
+          "Gain 3 Charges when you are Hit by an Enemy"
+        ]
+      },
+      {
+        "subject": "flask-charge",
+        "sourceName": "Specialist's Silver Flask of Tenaciousness",
+        "sourceType": "item",
+        "action": "gain",
+        "effects": [
+          "29% chance to gain a Flask Charge when you deal a Critical Strike"
+        ]
+      },
+      {
+        "subject": "54%-chance-to-avoid-being-stunned-during-effect",
+        "sourceName": "Specialist's Silver Flask of Tenaciousness",
+        "sourceType": "item",
+        "action": "enhance",
+        "effects": [
+          "54% Chance to Avoid being Stunned during Effect"
+        ]
+      },
+      {
+        "subject": "flask-charge",
+        "sourceName": "Medic's Quicksilver Flask of the Lynx",
+        "sourceType": "item",
+        "action": "gain",
+        "effects": [
+          "13% chance to gain a Flask Charge when you deal a Critical Strike"
+        ]
+      },
+      {
+        "subject": "purity-of-fire",
+        "sourceName": "Purity of Fire",
+        "sourceType": "buff",
+        "action": "maintain",
+        "effects": [
+          "Purity of Fire"
+        ]
+      },
+      {
+        "subject": "haste",
+        "sourceName": "Haste",
+        "sourceType": "buff",
+        "action": "maintain",
+        "effects": [
+          "Haste"
+        ]
+      },
+      {
+        "subject": "speed",
+        "sourceName": "Haste",
+        "sourceType": "buff",
+        "action": "enhance",
+        "effects": [
+          "Speed"
+        ]
+      },
+      {
+        "subject": "steelskin",
+        "sourceName": "Steelskin",
+        "sourceType": "buff",
+        "action": "maintain",
+        "effects": [
+          "Steelskin"
+        ]
+      },
+      {
+        "subject": "blood-rage",
+        "sourceName": "Blood Rage",
+        "sourceType": "buff",
+        "action": "maintain",
+        "effects": [
+          "Blood Rage"
+        ]
+      },
+      {
+        "subject": "speed",
+        "sourceName": "Blood Rage",
+        "sourceType": "buff",
+        "action": "enhance",
+        "effects": [
+          "Speed"
+        ]
+      },
+      {
+        "subject": "clarity",
+        "sourceName": "Clarity",
+        "sourceType": "buff",
+        "action": "maintain",
+        "effects": [
+          "Clarity"
+        ]
+      },
+      {
+        "subject": "arctic-armour",
+        "sourceName": "Arctic Armour",
+        "sourceType": "buff",
+        "action": "maintain",
+        "effects": [
+          "Arctic Armour"
+        ]
+      },
+      {
+        "subject": "physical-damage-taken-when-hit",
+        "sourceName": "Arctic Armour",
+        "sourceType": "buff",
+        "action": "trigger",
+        "effects": [
+          "PhysicalDamageTakenWhenHit"
+        ]
+      },
+      {
+        "subject": "physical-damage-taken-when-hit",
+        "sourceName": "Arctic Armour",
+        "sourceType": "buff",
+        "action": "on-damaged",
+        "effects": [
+          "PhysicalDamageTakenWhenHit"
+        ]
+      },
+      {
+        "subject": "fire-damage-taken-when-hit",
+        "sourceName": "Arctic Armour",
+        "sourceType": "buff",
+        "action": "trigger",
+        "effects": [
+          "FireDamageTakenWhenHit"
+        ]
+      },
+      {
+        "subject": "fire-damage-taken-when-hit",
+        "sourceName": "Arctic Armour",
+        "sourceType": "buff",
+        "action": "on-damaged",
+        "effects": [
+          "FireDamageTakenWhenHit"
+        ]
+      },
+      {
+        "subject": "precision",
+        "sourceName": "Precision",
+        "sourceType": "buff",
+        "action": "maintain",
+        "effects": [
+          "Precision"
+        ]
+      }
+    ],
+    "offence": [
+      {
+        "role": "primary",
+        "modifiers": [
+          {
+            "type": "MORE",
+            "name": "Damage",
+            "source": "Skill:KineticFusillade",
+            "conditional": false
+          },
+          {
+            "type": "BASE",
+            "name": "Multiplier:TraumaStacks",
+            "source": "Maximum Sustainable Trauma Stacks",
+            "conditional": false
+          },
+          {
+            "type": "FLAG",
+            "name": "Condition:PhysicalIsHighestDamageType",
+            "source": "Config",
+            "conditional": false
+          },
+          {
+            "type": "BASE",
+            "name": "ProjectileCount",
+            "source": "Skill:SupportGreaterVolley",
+            "conditional": false
+          },
+          {
+            "type": "INC",
+            "name": "Damage",
+            "source": "Skill:SupportGreaterVolley",
+            "conditional": false
+          },
+          {
+            "type": "MORE",
+            "name": "Damage",
+            "source": "Skill:SupportGreaterVolley",
+            "conditional": false
+          },
+          {
+            "type": "MORE",
+            "name": "SupportManaMultiplier",
+            "source": "Skill:SupportGreaterVolley",
+            "conditional": false
+          },
+          {
+            "type": "MORE",
+            "name": "PvpDamageMultiplier",
+            "source": "Skill:SupportGreaterVolley",
+            "conditional": false
+          },
+          {
+            "type": "MORE",
+            "name": "Duration",
+            "source": "Skill:SupportLessDuration",
+            "conditional": false
+          },
+          {
+            "type": "MORE",
+            "name": "Damage",
+            "source": "Skill:SupportLessDuration",
+            "conditional": false
+          },
+          {
+            "type": "MORE",
+            "name": "SupportManaMultiplier",
+            "source": "Skill:SupportLessDuration",
+            "conditional": false
+          },
+          {
+            "type": "BASE",
+            "name": "SacredWispsLessDamage",
+            "source": "Skill:SupportSacredWisps",
+            "conditional": false
+          },
+          {
+            "type": "INC",
+            "name": "Damage",
+            "source": "Skill:SupportSacredWisps",
+            "conditional": false
+          },
+          {
+            "type": "LIST",
+            "name": "SkillData",
+            "source": "Skill:SupportSacredWisps",
+            "conditional": true
+          },
+          {
+            "type": "MORE",
+            "name": "SupportManaMultiplier",
+            "source": "Skill:SupportSacredWisps",
+            "conditional": false
+          },
+          {
+            "type": "MORE",
+            "name": "MaxDamage",
+            "source": "Skill:SupportVolatility",
+            "conditional": true
+          },
+          {
+            "type": "INC",
+            "name": "Damage",
+            "source": "Skill:SupportVolatility",
+            "conditional": false
+          },
+          {
+            "type": "MORE",
+            "name": "MinDamage",
+            "source": "Skill:SupportVolatility",
+            "conditional": true
+          },
+          {
+            "type": "MORE",
+            "name": "SupportManaMultiplier",
+            "source": "Skill:SupportVolatility",
+            "conditional": false
+          },
+          {
+            "type": "BASE",
+            "name": "CritMultiplier",
+            "source": "Skill:SupportIncreasedCriticalDamage",
+            "conditional": false
+          },
+          {
+            "type": "MORE",
+            "name": "SupportManaMultiplier",
+            "source": "Skill:SupportIncreasedCriticalDamage",
+            "conditional": false
+          },
+          {
+            "type": "BASE",
+            "name": "GemLevel",
+            "source": "Max Level",
+            "conditional": false
+          },
+          {
+            "type": "BASE",
+            "name": "GemQuality",
+            "source": "Max Quality",
+            "conditional": false
+          },
+          {
+            "type": "BASE",
+            "name": "GemSocketQuality",
+            "source": "Socket Quality",
+            "conditional": false
+          },
+          {
+            "type": "LIST",
+            "name": "SkillData",
+            "source": "Skill:KineticFusillade",
+            "conditional": false
+          },
+          {
+            "type": "OVERRIDE",
+            "name": "ProjectileCountMaximum",
+            "source": "Skill:KineticFusillade",
+            "conditional": false
+          },
+          {
+            "type": "FLAG",
+            "name": "SpellDamageAppliesToAttacks",
+            "source": "Skill:KineticFusillade",
+            "conditional": false
+          },
+          {
+            "type": "MAX",
+            "name": "ImprovedSpellDamageAppliesToAttacks",
+            "source": "Skill:KineticFusillade",
+            "conditional": false
+          },
+          {
+            "type": "BASE",
+            "name": "ChainCountMax",
+            "source": "Skill:KineticFusillade",
+            "conditional": false
+          }
+        ],
+        "isMain": false,
+        "combinedDps": 0,
+        "name": "Kinetic Fusillade",
+        "tags": [
+          "attack",
+          "projectile",
+          "area"
+        ],
+        "delivery": "attack"
+      }
+    ],
+    "performance": {
+      "totalEhp": 7080.751025789,
+      "armour": 2858,
+      "energyShield": 161,
+      "life": 1891,
+      "totalDps": 0,
+      "combinedDps": 0,
+      "evasion": 17,
+      "mana": 670
+    },
+    "conditions": {
+      "conditionChampionIntimidate": true,
+      "conditionSacrificeMinion": true,
+      "conditionCorruptingCryStages": 1
+    },
+    "items": [
+      {
+        "modifiers": [
+          "Cannot roll Caster Modifiers",
+          "Adds 16 to 28 Chaos Damage",
+          "19% increased Attack Speed",
+          "37% increased Critical Strike Chance",
+          "+38% to Global Critical Strike Multiplier",
+          "Attacks with this Weapon Penetrate 22% Chaos Resistance",
+          "66% increased Spell Damage"
+        ],
+        "name": "Woe Chant",
+        "rarity": "RARE",
+        "slot": "Weapon 1",
+        "tags": [],
+        "baseName": "Kinetic Wand"
+      },
+      {
+        "modifiers": [
+          "+2 to Level of Socketed AoE Gems",
+          "+1% to maximum Chance to Block Attack Damage",
+          "179% increased Armour",
+          "+23% Chance to Block",
+          "-1% Chance to Block Attack Damage for every 200 Fire Damage taken from Hits Recently",
+          "17% of Cold Damage taken as Fire Damage",
+          "16% of Lightning Damage taken as Fire Damage",
+          "20% of Physical Damage taken as Fire Damage",
+          "Scorch Enemies in Close Range when you Block"
+        ],
+        "name": "Dawnbreaker",
+        "rarity": "UNIQUE",
+        "slot": "Weapon 2",
+        "tags": [],
+        "baseName": "Colossal Tower Shield"
+      },
+      {
+        "modifiers": [
+          "+49 to Strength",
+          "+83 to Armour",
+          "+24 to maximum Energy Shield",
+          "+143 to maximum Life",
+          "1% increased Critical Strike Chance per 10 Strength",
+          "Gain Accuracy Rating equal to your Strength",
+          "Nearby Enemies have -12% to Chaos Resistance",
+          "71% increased Armour and Energy Shield"
+        ],
+        "name": "Fate Star",
+        "rarity": "RARE",
+        "slot": "Helmet",
+        "tags": [
+          "life"
+        ],
+        "baseName": "Divine Crown"
+      },
+      {
+        "modifiers": [
+          "Chance to Block Spell Damage is Unlucky",
+          "+118 to Strength",
+          "90% increased Armour",
+          "10% reduced Movement Speed",
+          "Strength's Damage Bonus instead grants 3% increased Melee\nPhysical Damage per 10 Strength",
+          "+1% Chance to Block Spell Damage per 50 Strength"
+        ],
+        "name": "Foulborn The Iron Fortress",
+        "rarity": "UNIQUE",
+        "slot": "Body Armour",
+        "tags": [],
+        "baseName": "Crusader Plate"
+      },
+      {
+        "modifiers": [
+          "3% increased Damage per 100 Strength",
+          "Gain 1 Rage on Attack Hit",
+          "+55 to Strength",
+          "15% increased Attack Speed",
+          "+82 to Armour",
+          "+55 to maximum Life",
+          "Regenerate 5.3 Mana per second",
+          "+33% to Chaos Resistance",
+          "19% increased Projectile Speed",
+          "16% increased Projectile Damage"
+        ],
+        "name": "Phoenix Clutches",
+        "rarity": "RARE",
+        "slot": "Gloves",
+        "tags": [
+          "life",
+          "chaos-resistance"
+        ],
+        "baseName": "Leviathan Gauntlets"
+      },
+      {
+        "modifiers": [
+          "18% increased Strength",
+          "+188 to Armour",
+          "+17% to Chaos Resistance",
+          "25% increased Movement Speed",
+          "Cannot deal non-Chaos Damage",
+          "Adds 1 to 80 Chaos Damage to Attacks per 80 Strength"
+        ],
+        "name": "Replica Alberon's Warpath",
+        "rarity": "RELIC",
+        "slot": "Boots",
+        "tags": [
+          "chaos-resistance"
+        ],
+        "baseName": "Soldier Boots"
+      },
+      {
+        "modifiers": [
+          "+37 to all Attributes",
+          "10% increased Attributes",
+          "14% increased Strength",
+          "24% increased Rarity of Items found",
+          "1% increased Damage per 15 Strength",
+          "Non-Channelling Skills have -7 to Total Mana Cost"
+        ],
+        "name": "Agony Gorget",
+        "rarity": "RARE",
+        "slot": "Amulet",
+        "tags": [],
+        "baseName": "Great Maw Talisman"
+      },
+      {
+        "modifiers": [
+          "-1 Prefix Modifier allowed",
+          "+1 Suffix Modifier allowed",
+          "Implicit Modifiers Cannot Be Changed",
+          "25% increased Suffix Modifier magnitudes",
+          "+78 to Strength",
+          "Adds 8 to 13 Physical Damage to Attacks",
+          "+31% to Global Critical Strike Multiplier",
+          "+42% to Chaos Resistance",
+          "Gain 20 Life per Enemy Hit with Attacks",
+          "+18 to all Attributes"
+        ],
+        "name": "Horror Band",
+        "rarity": "RARE",
+        "slot": "Ring 1",
+        "tags": [],
+        "baseName": "Cogwork Ring"
+      },
+      {
+        "modifiers": [
+          "-1 Prefix Modifier allowed",
+          "+1 Suffix Modifier allowed",
+          "Implicit Modifiers Cannot Be Changed",
+          "25% increased Suffix Modifier magnitudes",
+          "+79 to Strength",
+          "+96 to maximum Life",
+          "+60% to Fire Resistance",
+          "+18% to Chaos Resistance",
+          "Non-Channelling Skills have -7 to Total Mana Cost",
+          "+28% to Global Critical Strike Multiplier"
+        ],
+        "name": "Rune Whorl",
+        "rarity": "RARE",
+        "slot": "Ring 2",
+        "tags": [],
+        "baseName": "Cogwork Ring"
+      },
+      {
+        "modifiers": [
+          "Has 1 Abyssal Socket",
+          "+69 to Strength",
+          "14% increased Attributes",
+          "+79 to maximum Life",
+          "10% increased maximum Life",
+          "+33% to Chaos Resistance",
+          "17% increased Damage"
+        ],
+        "name": "Armageddon Clasp",
+        "rarity": "RARE",
+        "slot": "Belt",
+        "tags": [
+          "life",
+          "chaos-resistance"
+        ],
+        "baseName": "Stygian Vise"
+      },
+      {
+        "modifiers": [
+          "34% chance to gain a Flask Charge when you deal a Critical Strike",
+          "All Damage from Critical Strikes can apply Lightning Ailments during effect",
+          "50% reduced Duration"
+        ],
+        "name": "Stormblood",
+        "rarity": "UNIQUE",
+        "slot": "Flask 1",
+        "tags": [],
+        "baseName": "Topaz Flask"
+      },
+      {
+        "modifiers": [
+          "16% chance to gain a Flask Charge when you deal a Critical Strike",
+          "53% increased Critical Strike Chance during Effect"
+        ],
+        "name": "Physician's Diamond Flask of Incision",
+        "rarity": "MAGIC",
+        "slot": "Flask 2",
+        "tags": [],
+        "baseName": "Diamond Flask"
+      },
+      {
+        "modifiers": [
+          "Gain 3 Charges when you are Hit by an Enemy",
+          "9% increased Movement Speed during Effect"
+        ],
+        "name": "Flagellant's Ruby Flask of the Lynx",
+        "rarity": "MAGIC",
+        "slot": "Flask 3",
+        "tags": [],
+        "baseName": "Ruby Flask"
+      },
+      {
+        "modifiers": [
+          "29% chance to gain a Flask Charge when you deal a Critical Strike",
+          "54% Chance to Avoid being Stunned during Effect"
+        ],
+        "name": "Specialist's Silver Flask of Tenaciousness",
+        "rarity": "MAGIC",
+        "slot": "Flask 4",
+        "tags": [],
+        "baseName": "Silver Flask"
+      },
+      {
+        "modifiers": [
+          "13% chance to gain a Flask Charge when you deal a Critical Strike",
+          "10% increased Movement Speed during Effect"
+        ],
+        "name": "Medic's Quicksilver Flask of the Lynx",
+        "rarity": "MAGIC",
+        "slot": "Flask 5",
+        "tags": [],
+        "baseName": "Quicksilver Flask"
+      }
+    ],
+    "jewels": [
+      {
+        "modifiers": [
+          "Allocates Deadeye if you have the matching modifier on Forbidden Flesh"
+        ],
+        "tags": [],
+        "kind": "jewel",
+        "rarity": "RELIC",
+        "name": "Forbidden Flame",
+        "socket": "46393",
+        "baseName": "Crimson Jewel"
+      },
+      {
+        "modifiers": [
+          "15% increased Strength if 2 Warlord Items are Equipped",
+          "10% of Elemental Damage taken as Chaos Damage if 4 Hunter Items are Equipped",
+          "+1 to Level of all Cold Skill Gems if 6 Redeemer Items are Equipped"
+        ],
+        "tags": [],
+        "kind": "jewel",
+        "rarity": "UNIQUE",
+        "name": "Bound By Destiny",
+        "socket": "54127",
+        "baseName": "Prismatic Jewel"
+      },
+      {
+        "modifiers": [
+          "6% increased maximum Energy Shield",
+          "6% increased maximum Life",
+          "4% increased maximum Mana",
+          "+26% to Critical Strike Multiplier while affected by Precision",
+          "Non-Channelling Skills have -8 to Total Mana Cost while affected by Clarity",
+          "Unaffected by Temporal Chains while affected by Haste"
+        ],
+        "tags": [],
+        "kind": "jewel",
+        "rarity": "UNIQUE",
+        "name": "Watcher's Eye",
+        "socket": "33631",
+        "baseName": "Prismatic Jewel"
+      },
+      {
+        "modifiers": [
+          "+14 to Strength",
+          "+50 to Evasion Rating",
+          "+23 to maximum Life",
+          "Regenerate 9.5 Life per second",
+          "50% chance to Avoid being Shocked"
+        ],
+        "tags": [
+          "evasion",
+          "life",
+          "life-regeneration"
+        ],
+        "kind": "jewel",
+        "rarity": "RARE",
+        "name": "Whispering Portent",
+        "socket": "28475",
+        "baseName": "Ghastly Eye Jewel"
+      },
+      {
+        "modifiers": [
+          "You cannot be Maimed",
+          "Allocated Small Passive Skills in Radius grant nothing",
+          "Grants all bonuses of Unallocated Small Passive Skills in Radius"
+        ],
+        "tags": [],
+        "kind": "jewel",
+        "rarity": "UNIQUE",
+        "name": "Unnatural Instinct",
+        "socket": "48768",
+        "baseName": "Viridian Jewel"
+      },
+      {
+        "modifiers": [
+          "Commanded leadership over 10665 warriors under Rakiata",
+          "Passives in radius are Conquered by the Karui",
+          "Historic"
+        ],
+        "tags": [],
+        "kind": "jewel",
+        "rarity": "UNIQUE",
+        "name": "Lethal Pride",
+        "socket": "31683",
+        "baseName": "Timeless Jewel"
+      },
+      {
+        "modifiers": [
+          "+13% to Lightning Resistance",
+          "Modifiers to Chance to Avoid being Shocked apply to all Elemental Ailments"
+        ],
+        "tags": [
+          "lightning-resistance"
+        ],
+        "kind": "jewel",
+        "rarity": "UNIQUE",
+        "name": "Stormshroud",
+        "socket": "26725",
+        "baseName": "Viridian Jewel"
+      },
+      {
+        "modifiers": [
+          "Added Small Passive Skills also grant: +4% to Fire Resistance",
+          "1 Added Passive Skill is Overwhelming Malice",
+          "1 Added Passive Skill is Touch of Cruelty",
+          "1 Added Passive Skill is Unholy Grace"
+        ],
+        "tags": [],
+        "kind": "cluster",
+        "rarity": "RARE",
+        "name": "Honour Curio",
+        "socket": "46882",
+        "baseName": "Large Cluster Jewel"
+      },
+      {
+        "modifiers": [
+          "7% increased Attributes",
+          "4% increased maximum Life",
+          "3% increased Character Size",
+          "5% increased Global Defences"
+        ],
+        "tags": [],
+        "kind": "jewel",
+        "rarity": "RELIC",
+        "name": "Emperor's Mastery",
+        "socket": "60735",
+        "baseName": "Prismatic Jewel"
+      },
+      {
+        "modifiers": [
+          "This Jewel's Socket has 25% increased effect per Allocated Passive Skill between\nit and your Class' starting location",
+          "+5 to Strength",
+          "+5 to maximum Life"
+        ],
+        "tags": [
+          "life"
+        ],
+        "kind": "jewel",
+        "rarity": "UNIQUE",
+        "name": "Split Personality",
+        "socket": "33753",
+        "baseName": "Crimson Jewel"
+      },
+      {
+        "modifiers": [
+          "Allocates Deadeye if you have the matching modifier on Forbidden Flame"
+        ],
+        "tags": [],
+        "kind": "jewel",
+        "rarity": "UNIQUE",
+        "name": "Forbidden Flesh",
+        "socket": "22994",
+        "baseName": "Cobalt Jewel"
+      },
+      {
+        "modifiers": [
+          "Added Small Passive Skills also grant: +4 to All Attributes",
+          "Added Small Passive Skills also grant: +13 to Armour",
+          "Added Small Passive Skills also grant: +8 to Strength",
+          "Added Small Passive Skills have 35% increased Effect"
+        ],
+        "tags": [],
+        "kind": "cluster",
+        "rarity": "RARE",
+        "name": "Bramble Scar",
+        "socket": "32763",
+        "baseName": "Large Cluster Jewel"
+      },
+      {
+        "modifiers": [
+          "This Jewel's Socket has 25% increased effect per Allocated Passive Skill between\nit and your Class' starting location",
+          "+5 to Strength",
+          "+5 to maximum Life"
+        ],
+        "tags": [
+          "life"
+        ],
+        "kind": "jewel",
+        "rarity": "UNIQUE",
+        "name": "Split Personality",
+        "socket": "6910",
+        "baseName": "Crimson Jewel"
+      }
+    ],
+    "ascendancies": [],
+    "passives": []
+  },
+  "specs": [],
+  "skillSets": [
+    {
+      "title": "Default",
+      "id": 1
+    }
+  ],
+  "activeSkillName": "Kinetic Fusillade",
+  "summary": {
+    "totalEhp": 7080.751025789,
+    "armour": 2858,
+    "energyShield": 161,
+    "life": 1891,
+    "totalDps": 0,
+    "combinedDps": 0,
+    "evasion": 17,
+    "mana": 670
+  },
+  "itemSets": [
+    {
+      "title": "Default",
+      "id": 1
+    }
+  ],
+  "activeItemSet": 1,
+  "activeSkillSet": 1
+}

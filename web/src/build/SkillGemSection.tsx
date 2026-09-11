@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { BuildFactSkill, BuildFactSupportGem, BrowserInspectResult } from '../pob/browserPob'
 import './SkillGemSection.css'
 
@@ -8,8 +9,16 @@ function gemMeta(gem: Pick<BuildFactSkill | BuildFactSupportGem, 'level' | 'qual
 }
 
 function GemImage({ gem, active = false }: { gem: Pick<BuildFactSkill | BuildFactSupportGem, 'name' | 'imageUrl'>, active?: boolean }) {
-  if (!gem.imageUrl) return null
-  return <span className={`gem-icon${active ? ' active-gem-icon' : ''}`}><img src={gem.imageUrl} alt={gem.name} /></span>
+  const [isThreeFrameSprite, setIsThreeFrameSprite] = useState(false)
+  const imageUrl = gem.imageUrl
+  if (!imageUrl) return null
+  return <span className={`gem-icon${active ? ' active-gem-icon' : ''}${isThreeFrameSprite ? ' gem-icon-sprite' : ''}`}>
+    <img className="gem-icon-layer gem-icon-frame-0" src={imageUrl} alt={gem.name} onLoad={(event) => {
+      const { naturalWidth, naturalHeight } = event.currentTarget
+      setIsThreeFrameSprite(naturalHeight > 0 && naturalWidth === naturalHeight * 3)
+    }} />
+    {isThreeFrameSprite && [1, 2].map((frame) => <img className={`gem-icon-layer gem-icon-frame-${frame}`} src={imageUrl} alt="" aria-hidden="true" key={frame} />)}
+  </span>
 }
 
 const defensiveTags = new Set(['life', 'energy-shield', 'life-regeneration', 'energy-shield-recovery', 'armour', 'evasion', 'ward', 'physical-mitigation', 'fire-resistance', 'cold-resistance', 'lightning-resistance', 'chaos-resistance', 'block', 'spell-block', 'spell-suppression', 'attack-dodge', 'spell-dodge', 'damage-avoidance', 'shock-immunity', 'shock-avoidance', 'freeze-immunity', 'chill-immunity', 'ignite-immunity'])

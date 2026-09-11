@@ -5,10 +5,12 @@
 .active-gem, .skill-gem-group li { display: grid; grid-template-columns: var(--gem-icon-size) minmax(0, 1fr); align-items: center; gap: 0.65rem; }
 .active-gem { padding: 0.8rem; border-left: 3px solid #3fa79e; background: rgb(28 69 75 / 28%); }
 .active-gem > div, .gem-copy { display: grid; gap: 0.2rem; }
-.skill-gem-group img { display: block; width: var(--gem-icon-size); height: var(--gem-icon-size); object-fit: contain; }
-.gem-icon { display: block; width: var(--gem-icon-size); height: var(--gem-icon-size); overflow: hidden; }
-.skill-gem-group .gem-icon img { width: auto; max-width: none; height: 100%; object-fit: initial; }
-.skill-gem-group .active-gem-icon img { height: 118%; transform: translate(-0.24rem, -0.24rem); }
+.gem-icon { display: block; position: relative; width: var(--gem-icon-size); height: var(--gem-icon-size); overflow: hidden; }
+.skill-gem-group .gem-icon-layer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.skill-gem-group .gem-icon-sprite .gem-icon-layer { width: 300%; max-width: none; height: 100%; object-fit: fill; }
+.skill-gem-group .gem-icon-sprite .gem-icon-frame-0 { z-index: 3; left: 0; }
+.skill-gem-group .gem-icon-sprite .gem-icon-frame-1 { z-index: 2; left: -100%; }
+.skill-gem-group .gem-icon-sprite .gem-icon-frame-2 { z-index: 1; left: -200%; }
 .skill-gem-group small { color: #8294a7; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.07em; }
 .skill-gem-group small b { margin-left: 0.4rem; padding: 0.08rem 0.3rem; border: 1px solid #8a5b34; color: #ee9b4b; font-size: 0.58rem; }
 .skill-gem-group strong { color: #e5e4d7; font-size: 0.92rem; }
